@@ -1,0 +1,163 @@
+.accordion__heading {
+    background-color: #27a9e3 !important;
+    color: white !important;
+    padding: 2px 5px;
+}
+
+.table_body tr {
+    margin-top: 10px;
+}
+
+.table_body tr td {
+    padding: 0;
+}
+
+.accordion__heading td {
+    padding: 0;
+}
+
+.accordion__heading tr th {
+    padding: 0px;
+    color: #fff;
+}
+
+/* .accordion__heading::after {
+  font-size: 9px;
+  height: 15px;
+  width: 15px; 
+} */
+
+.accordion__body {
+    padding: 10px;
+}
+
+/* .card {
+  margin-bottom: 0;
+} */
+
+.padding_bottom_zero {
+    padding-bottom: 0 !important;
+}
+
+.margin_bottom_zero {
+    margin-bottom: 0 !important;
+}
+
+/* accordion - 2  */
+
+.calculation_box_heading {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.calculation_box {
+    width: 100%;
+    margin-top: 2px;
+    display: flex;
+    background: #27a9e3;
+}
+.calculation_box_left {
+    width: 40%;
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: bold;
+    background: #2255a4;
+    padding: 3px 5px;
+    color: white;
+}
+.calculation_box_right {
+    width: 60%;
+    text-align: right;
+    padding: 3px 5px;
+    color: #fff;
+}
+
+.calculation_box_color_2 {
+    background-color: #28b779;
+}
+
+.form_input_group {
+    margin-top: 12px;
+}
+
+.form_input_group label {
+    width: 100%;
+}
+.form_input_group textarea {
+    width: 100%;
+}
+
+.custom_table_heading,
+.custom_table_footer {
+    background-color: #2255a4;
+    padding: 10px;
+}
+
+.custom_table_heading tr th,
+.custom_table_body tr td,
+.custom_table_footer tr th,
+.custom_table_footer tr td {
+    color: #fff;
+    padding: 8px;
+}
+.custom_table_body tr td {
+    color: #333;
+}
+
+.custom_table_body tr td div label {
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
+
+.custom_table_height {
+    height: 200px !important;
+}
+tbody {
+    height: 100px !important;
+    overflow-y: scroll !important;
+}
+
+.form-check-label {
+    font-size: 12px;
+}
+
+.chat__box {
+    position: fixed;
+    width: 380px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: none;
+}
+
+.chat__icon {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    background-color: rebeccapurple;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: 30px;
+    bottom: 50px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.chat__icon i {
+    font-size: 30px;
+}
+
+.hide_icon {
+    display: none;
+}
+.show__chat__box {
+    display: block;
+}
+
+.height__full_screen {
+    height: 100vh;
+}

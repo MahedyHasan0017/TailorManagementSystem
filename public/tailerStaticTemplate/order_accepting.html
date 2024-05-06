@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description" content="Tailorshop Easy Manager v.1.0.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Tailorshop Easy Manager</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css"
+        href="assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/libs/quill/dist/quill.snow.css">
+    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/custom_styles/c_styles.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon ps-2">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="assets/images/logo-text.jpg" alt="homepage" class="light-logo" />
+
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />
+
+                        </span>
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item d-none d-lg-block"><a
+                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
+                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                                    class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-end">
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="mdi mdi-bell font-24"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="font-24 mdi mdi-comment-processing"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown"
+                                aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-success btn-circle"><i
+                                                            class="ti-calendar"></i></span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Event today</h5>
+                                                        <span class="mail-desc">Just a reminder that event</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-info btn-circle"><i
+                                                            class="ti-settings"></i></span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Settings</h5>
+                                                        <span class="mail-desc">You can customize this template</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-primary btn-circle"><i
+                                                            class="ti-user"></i></span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Pavan kumar</h5>
+                                                        <span class="mail-desc">Just see the my admin!</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-danger btn-circle"><i
+                                                            class="fa fa-link"></i></span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Luanch Admin</h5>
+                                                        <span class="mail-desc">Just see the my new admin!</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated"
+                                aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user me-1 ms-1"></i>
+                                    My Profile</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet me-1 ms-1"></i>
+                                    My Balance</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email me-1 ms-1"></i>
+                                    Inbox</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings me-1 ms-1"></i>
+                                    Account Setting</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i
+                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="ps-4 p-10"><a href="javascript:void(0)"
+                                        class="btn btn-sm btn-success btn-rounded text-white">View Profile</a></div>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+       
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu">ড্যাশবোর্ড</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span
+                                    class="hide-menu">পোষাক অর্ডার </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="order_accepting.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu">অর্ডার গ্রহন
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="order_list.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu">অর্ডার লিস্ট
+                                        </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span
+                                    class="hide-menu">কর্মচারী পরিচালনা </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> কর্মচারী পরিচালনা
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> কর্মচারী পরিচালনা
+                                        </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span
+                                    class="hide-menu">মেসেজ প্রদান </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> মেসেজ প্রদান
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> মেসেজ প্রদান
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="pages-chat.html" class="sidebar-link"><i
+                                            class="mdi mdi-message-outline"></i><span class="hide-menu"> লাইভ চ্যাট
+                                        </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span
+                                    class="hide-menu">আয় ব্যয় হিসাব </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> আয় ব্যয় হিসাব
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> আয় ব্যয় হিসাব
+                                        </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span
+                                    class="hide-menu">রিপোর্ট </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> রিপোর্ট
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> রিপোর্ট
+                                        </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span
+                                    class="hide-menu">সেটিংস </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> সেটিংস
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-calendar-plus"></i><span class="hide-menu"> সেটিংস
+                                        </span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
+                                    class="mdi mdi-bulletin-board"></i><span class="hide-menu"> ইনভয়েস
+                                </span></a></li>
+                        <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
+                                    class="mdi mdi-calendar-check"></i><span class="hide-menu"> ক্যালেন্ডার
+                                </span></a></li>
+
+                        <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
+                                    class="mdi mdi-multiplication-box"></i><span class="hide-menu"> গ্যালারী
+                                </span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span
+                                    class="hide-menu">লগইন/রেজিস্টার </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i
+                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> লগইন </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="authentication-register.html" class="sidebar-link"><i
+                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> রেজিস্টার
+                                        </span></a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+
+        <div class="page-wrapper">
+
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">অর্ডার গ্রহন</h4>
+                        <div class="ms-auto text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header " id="headingOne">
+                            <button class="accordion-button accordion__heading" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                গ্রাহকের তথ্য
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body accordion__body">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form_input_group">
+                                            <label for="order_number"
+                                                class="form-label form_input_group_label_important">অর্ডার নং : <span
+                                                    style="color:red">*</span></label>
+                                            <input type="text" class="form-control" id="order_number"
+                                                name="order_number">
+                                        </div>
+
+                                        <div class="form_input_group">
+                                            <label for="name" class="form-label form_input_group_label_important"> নাম :
+                                                <span style="color:red">*</span></label>
+                                            <input type="text" class="form-control" id="name" name="name">
+                                        </div>
+
+                                        <div class="form_input_group">
+                                            <label for="mobile_number"
+                                                class="form-label form_input_group_label_important"> মোবাইল নং : <span
+                                                    style="color:red">*</span></label>
+                                            <input type="text" class="form-control" id="mobile_number"
+                                                name="mobile_number">
+                                        </div>
+
+                                        <div class="form_input_group">
+                                            <label for="email" class="form-label form_input_group_label_important">
+                                                ইমেইল:
+                                                <input type="email" class="form-control" id="order_number"
+                                                    name="order_number">
+                                        </div>
+
+                                        <div class="form_input_group">
+                                            <label for="contact_address"
+                                                class="form-label form_input_group_label_important"> যোগাযোগ এর ঠিকানা :
+                                                <textarea class="form-control" name="" id="" cols="30" rows="5"
+                                                    id="contact_address"></textarea>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="custom_table_heading">
+                                                    <tr>
+                                                        <th scope="col">পোশাকের নাম</th>
+                                                        <th scope="col">সংখ্যা </th>
+                                                        <th scope="col">মূল্য</th>
+                                                        <th scope="col">মোট মূল্য</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="custom_table_body ">
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    ফতুয়া
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    এরাবিয়ান
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    প্রিস কোর্ট
+
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    কলিদার পাঞ্জাবী
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    একছাটা জুব্বা
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    একছাটা পাঞ্জাবী
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    শার্ট
+                                                                </label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="number" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="">
+                                                                <input type="text" class="form-control"
+                                                                    id="exampleInputPassword1">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                                <tfoot class="custom_table_footer">
+
+                                                    <th scope="row">@twitter</th>
+                                                    <td></td>
+                                                    <td>cell-3</td>
+                                                    <td scope="col">cell 2</td>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item mt-3">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed accordion__heading" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                পোশাকের যাবতীয় তথ্য
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body accordion__body">
+                                <div class="row">
+                                    <div class="accordion" id="sub-accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="sub-headingOne">
+                                                <button class="accordion-button accordion__heading" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    পাঞ্জাবী / শার্ট প্রভৃতির মাপ
+                                                </button>
+                                            </h2>
+                                            <div id="sub-collapseOne" class="accordion-collapse collapse"
+                                                aria-labelledby="sub-headingOne" data-bs-parent="#sub-accordionExample">
+                                                <div class="accordion-body accordion__body">
+                                                    <div class="card p-2 mb-0">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        লম্বা : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        বডি : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">বডি
+                                                                        লুজ : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        পেট : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        পুট : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        হাতার লম্বা : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        হাতার মুখ : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        কাফ : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        গলা : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        প্লেট ফাড়া : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        কলার চউরা : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        প্লেট চউরা : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        ঘের : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        হিফ : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        নিচ হাতা : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        মাদানি ফাড়া :
+                                                                        <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        মোট মোড়া :
+                                                                        <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        হাতে পেস্টিং :
+                                                                        <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div>
+                                                        <div class="accordion__heading mt-5">
+                                                            পকেট
+                                                        </div>
+                                                        <div class="card p-2 mb-0 ">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            বুকে ১টি পকেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            বুকে ২টি পকেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            ১ পকেটে চেইন
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            ২ পকেটে চেইন
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            পকেট ঢাকা
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            পকেট ঢাকনা
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            কাধে সোলডার
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            হাতে ফিতা
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            বন পকেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            রানার
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/1.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/2.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/3.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/4.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/5.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/6.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/7.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/8.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/9.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            <img src="./assets/essential_Images/pocket/10.png"
+                                                                                style="height: 38px ; width:43px;"
+                                                                                alt="images">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            বগল পকেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div>
+                                                        <div class="accordion__heading mt-5">
+                                                            কলার
+                                                        </div>
+                                                        <div class="card p-2 mb-0 ">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            রাউন্ড
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            শেরওয়ানি
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            সিঙ্গেল
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            ডাবল
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            ব্যান্ড
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            স্কয়ার
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            সাইট হেম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <div class="accordion__heading mt-5">
+                                                                    গলা
+                                                                </div>
+                                                                <div class="card p-2 mb-0 ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    শার্ট কলার
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    কফ
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    সিঙ্গেল
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    বোগল
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    গোল গলা
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <div class="accordion__heading mt-5">
+                                                                    পাইপিন
+                                                                </div>
+                                                                <div class="card p-2 mb-0 ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    কলার
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    প্লেট
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    হাতা
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    প্লেটের এক সাইড
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <div class="accordion__heading mt-5">
+                                                                    প্লেট
+                                                                </div>
+                                                                <div class="card p-2 mb-0 ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/plate_img/1.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/plate_img/2.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/plate_img/3.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/plate_img/4.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    ডাবল
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <div class="accordion__heading mt-5">
+                                                                    কাফ
+                                                                </div>
+                                                                <div class="card p-2 mb-0 ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/kaf_img/1.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/kaf_img/2.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    <img src="./assets/essential_Images/kaf_img/3.png"
+                                                                                        style="height: 28px ; width:43px;"
+                                                                                        alt="images">
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    সিঙ্গেল কাফ
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    ডাবল কাফ লিং
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div>
+                                                        <div class="accordion__heading mt-5">
+                                                            পেস্টিং
+                                                        </div>
+                                                        <div class="card p-2 mb-0 ">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            সিঙ্গেল
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            ডাবল
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            হাতে পেস্টিং
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            বোতাম প্লেটে
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <div class="accordion__heading mt-5">
+                                                                    লেইস
+                                                                </div>
+                                                                <div class="card p-2 mb-0 ">
+                                                                    <div class="row">
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    কলার
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    প্লেট
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    হাতা
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    বুক
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <div class="accordion__heading mt-5">
+                                                                    তিরা
+                                                                </div>
+                                                                <div class="card p-2 mb-0 ">
+                                                                    <div class="row">
+
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    তিরা
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    মোড়া ডাবল চাপ সেলাই
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    নিচে রাউন্ড
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value=""
+                                                                                    id="flexCheckDefault">
+                                                                                <label class="form-check-label"
+                                                                                    for="flexCheckDefault">
+                                                                                    ভি-তিরা
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div>
+                                                        <div class="accordion__heading mt-5">
+                                                            ফুল
+                                                        </div>
+                                                        <div class="card p-2 mb-0 ">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            সামনা
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            কালার
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            প্লেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            কপ
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            গলা
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            মোড়া
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            কান্দি
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            দুই পকেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            বুক পকেট
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            হাতের মুহুরি
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div>
+                                                        <div class="accordion__heading mt-5">
+                                                            বোতাম
+                                                        </div>
+                                                        <div class="card p-2 mb-0 ">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            চেইন বোতাম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            কাস্টমারের দেয়া বোতাম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            কাঠ বোতাম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            মেটাল বোতাম(বড়)
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            নরমাল বোতাম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            ডিজাইন বোতাম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            মেটাল বোতাম(ছোট)
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexCheckDefault">
+                                                                            স্নাপ বোতাম
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item mt-2">
+                                            <h2 class="accordion-header" id="sub-headingTwo">
+                                                <button class="accordion-button accordion__heading" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-collapseTwo"
+                                                    aria-expanded="true" aria-controls="collapseTwo">
+                                                    পাজামা / প্যান্ট প্রভৃতির মাপ
+                                                </button>
+                                            </h2>
+                                            <div id="sub-collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="sub-collapseTwo"
+                                                data-bs-parent="#sub-accordionExample">
+
+                                                <div class="accordion-body accordion__body">
+                                                    <div class="card p-2 mb-0">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        লম্বা : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        পায়ের মুখ : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">বডি
+                                                                        হাই : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        ঘের/থাই লুজ : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        কোমর : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        বেল্ট টাইপ : <span
+                                                                            style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-md-2">
+                                                                <div class="form_input_group">
+                                                                    <label for="order_number"
+                                                                        class="form-label form_input_group_label_important">
+                                                                        হিফ : <span style="color:red">*</span></label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="order_number" name="order_number">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="card p-2 mb-0 mt-2">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        ১ পকেটে চেইন
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        ২ পকেট চেইন
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        মোবাইল পকেট ১টি
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        পেছনে ১টি পকেট
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        পেছনে ২টি পকেট
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        ১ টিকেন
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        ২ টিকেন
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        টিকেন ছাড়া
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        জিন্স প্যান্ট : গোল্ডেন সূতা
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        জিন্স প্যান্ট : সেইম সূতা
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        সামনে চেইন
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        মোবাইল পকেট ২টি
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="./assets/essential_Images/pant/01.png"
+                                                                            style="height: 38px ; width:43px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="./assets/essential_Images/pant/2.png"
+                                                                            style="height: 38px ; width:43px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="accordion-item mt-3">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed accordion__heading" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    ডেলিভারি তথ্য
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body accordion__body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form_input_group">
+                                                        <label for="order_number"
+                                                            class="form-label form_input_group_label_important">মজুরির
+                                                            পরিমান : <span style="color:red">*</span></label>
+                                                        <input type="text" class="form-control" id="order_number"
+                                                            name="order_number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form_input_group">
+                                                        <label for="order_number"
+                                                            class="form-label form_input_group_label_important">নগদ
+                                                            প্রদান : <span style="color:red">*</span></label>
+                                                        <input type="text" class="form-control" id="order_number"
+                                                            name="order_number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form_input_group">
+                                                        <label for="order_number"
+                                                            class="form-label form_input_group_label_important">অর্ডারের
+                                                            তারিখ
+                                                            : <span style="color:red">*</span></label>
+                                                        <input type="text" class="form-control" id="order_number"
+                                                            name="order_number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form_input_group">
+                                                        <label for="order_number"
+                                                            class="form-label form_input_group_label_important">ডেলিভারির
+                                                            তারিখ : <span style="color:red">*</span></label>
+                                                        <input type="text" class="form-control" id="order_number"
+                                                            name="order_number">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-12">
+                                                <div class="form_input_group">
+                                                    <label for="order_number"
+                                                        class="form-label form_input_group_label_important">
+                                                        মন্তব্য(পাঞ্জাবী / শার্ট প্রভৃতির) :
+                                                    </label>
+
+                                                    <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form_input_group">
+                                                    <label for="order_number"
+                                                        class="form-label form_input_group_label_important">
+                                                        মন্তব্য(পাজামা / প্যান্ট প্রভৃতির) :
+                                                    </label>
+                                                    <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="my-2">
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-success btn-rounded"> সংরক্ষণ করুন</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- <footer class="footer text-center">
+                        All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                            href="https://www.wrappixel.com">WrapPixel</a>.
+                    </footer> -->
+
+                </div>
+
+
+
+            </div>
+
+            <!-- All Jquery -->
+            <!-- ============================================================== -->
+            <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+            <!-- Bootstrap tether Core JavaScript -->
+            <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- slimscrollbar scrollbar JavaScript -->
+            <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+            <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+            <!--Wave Effects -->
+            <script src="dist/js/waves.js"></script>
+            <!--Menu sidebar -->
+            <script src="dist/js/sidebarmenu.js"></script>
+            <!--Custom JavaScript -->
+            <script src="dist/js/custom.min.js"></script>
+            <!-- This Page JS -->
+            <script src="assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+            <script src="dist/js/pages/mask/mask.init.js"></script>
+            <script src="assets/libs/select2/dist/js/select2.full.min.js"></script>
+            <script src="assets/libs/select2/dist/js/select2.min.js"></script>
+            <script src="assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+            <script src="assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+            <script src="assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+            <script src="assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+            <script src="assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+            <script src="assets/libs/quill/dist/quill.min.js"></script>
+            <script>
+                //***********************************//
+                // For select 2
+                //***********************************//
+                $(".select2").select2();
+
+                /*colorpicker*/
+                $('.demo').each(function () {
+                    //
+                    // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                    //
+                    //  $(selector).minicolors();
+                    //
+                    // The way I've done it below is just for the demo, so don't get confused
+                    // by it. Also, data- attributes aren't supported at this time...they're
+                    // only used for this demo.
+                    //
+                    $(this).minicolors({
+                        control: $(this).attr('data-control') || 'hue',
+                        position: $(this).attr('data-position') || 'bottom left',
+
+                        change: function (value, opacity) {
+                            if (!value) return;
+                            if (opacity) value += ', ' + opacity;
+                            if (typeof console === 'object') {
+                                console.log(value);
+                            }
+                        },
+                        theme: 'bootstrap'
+                    });
+
+                });
+                /*datwpicker*/
+                jQuery('.mydatepicker').datepicker();
+                jQuery('#datepicker-autoclose').datepicker({
+                    autoclose: true,
+                    todayHighlight: true
+                });
+                var quill = new Quill('#editor', {
+                    theme: 'snow'
+                });
+
+            </script>
+</body>
+
+</html>
