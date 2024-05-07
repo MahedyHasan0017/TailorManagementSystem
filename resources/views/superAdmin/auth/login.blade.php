@@ -1,4 +1,4 @@
-    @include('superAdmin.common_components.header')
+    @include('employee.common_components.header')
 
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark height__full_screen">
         <div class="auth-box bg-dark border-top border-secondary">
@@ -64,7 +64,7 @@
                                 <div class="pt-3">
                                     <button class="btn btn-warning" id="to-recover" type="button"><i
                                             class="fa fa-lock me-1"></i> Lost password?</button>
-                                    <button class="btn btn-success float-end text-white" type="submit">Login</button>
+                                    <button class="btn btn-success float-end text-white" type="submit">Admin Login</button>
                                 </div>
                             </div>
                         </div>
@@ -108,4 +108,4 @@
             </div> --}}
         </div>
     </div>
-    @include('superAdmin.common_components.footer')
+    @include('employee.common_components.footer')

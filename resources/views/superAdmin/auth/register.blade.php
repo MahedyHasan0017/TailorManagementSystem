@@ -1,4 +1,4 @@
-@include('superAdmin.common_components.header')
+@include('employee.common_components.header')
 
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark height__full_screen">
     <div class="auth-box bg-dark border-top border-secondary">
@@ -106,7 +106,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <div class="pt-3 d-grid">
-                                <button class="btn btn-block btn-lg btn-info" type="submit">Sign Up</button>
+                                <button class="btn btn-block btn-lg btn-info" type="submit">Admin Sign Up</button>
                             </div>
                         </div>
                         <div class="mt-5">
@@ -120,4 +120,4 @@
     </div>
 </div>
 
-@include('superAdmin.common_components.footer')
+@include('employee.common_components.footer')

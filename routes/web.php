@@ -12,6 +12,7 @@ use App\Http\Controllers\IncomeCost\DurationSummaryController;
 use App\Http\Controllers\IncomeCost\QSectorController;
 use App\Http\Controllers\MessageSending\SendingMessageController;
 use App\Http\Controllers\MessageSending\SendingMessageListController;
+use App\Http\Controllers\RegeneratePost;
 use App\Http\Controllers\Report\OrderReportController;
 use App\Http\Controllers\Settings\DressPartController;
 use App\Http\Controllers\Settings\DressWagesController;
@@ -20,6 +21,10 @@ use App\Http\Controllers\Settings\IncomeCostSectorController;
 use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
 use Illuminate\Support\Facades\Route;
+
+
+
+
 
 Route::get('/super_admin', function () {
     return view('superAdmin.dashboard');
@@ -106,7 +111,7 @@ Route::group(['prefix' => 'income_cost'], function () {
 Route::group(['prefix' => 'report'], function () {
     Route::get('order', [OrderReportController::class, 'order_report'])->name('order.report.view');
 });
-
+ 
 Route::group(['prefix' => 'settings'], function () {
     Route::get('dress/wages', [DressWagesController::class, 'dress_wages'])->name('dress.wages.view');
     Route::get('dress/part', [DressPartController::class, 'dress_part'])->name('dress.part.view');
