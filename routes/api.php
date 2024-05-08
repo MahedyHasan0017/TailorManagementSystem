@@ -25,22 +25,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/api', function(){
 
-    $client = new Client([
-            'verify' => false,
-        ]);
+    $response = Http::get('https://jsonplaceholder.typicode.com/posts');
 
-     $url = 'https://jsonplaceholder.typicode.com/posts';
+    if ($response->successful()) {
+        $posts = $response->json(); // Get JSON as an array
+        // Display the posts
+    } else {
+        // Handle errors
+    }
 
-    // $response = Http::get('https://jsonplaceholder.typicode.com/posts');
-
-    $response = $client->get($url) ; 
-
-    // $jsonData = $response->json();
-    return $response  ;
-
-    
-
-})->name('api_testing');
+    return $posts ; 
+});
 
 // Route::get('/api', [RegeneratePost::class , 'index']);
 

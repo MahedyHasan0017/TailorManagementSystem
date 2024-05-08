@@ -10,10 +10,8 @@ class RegeneratePost extends Controller
 {
     public function index(){
         $response = Http::get('https://jsonplaceholder.typicode.com/posts');
-
-        $jsonData = $response->json();
-
-        return $jsonData  ;
+        $posts = $response->json();
+        return $posts  ;
     }
 
     public function chat(Request $request){

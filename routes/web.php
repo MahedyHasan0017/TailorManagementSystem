@@ -20,7 +20,25 @@ use App\Http\Controllers\Settings\EmployeeDesignationController;
 use App\Http\Controllers\Settings\IncomeCostSectorController;
 use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/api', function(){
+
+    $response = Http::get('https://jsonplaceholder.typicode.com/posts');
+
+    if ($response->successful()) {
+        $posts = $response->json(); // Get JSON as an array
+        // Display the posts
+    } else {
+        // Handle errors
+    }
+
+    dd($posts) ; 
+
+    return $posts ; 
+});
 
 
 
