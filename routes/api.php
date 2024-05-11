@@ -23,18 +23,28 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::get('/api', function(){
+Route::post('/api', function(){
 
-    $response = Http::get('https://jsonplaceholder.typicode.com/posts');
+    $client = new Client(['verify' => false]);
+    $response = $client->post('https://api.openai.com/v1/engines/davinci-codex/completions', [
+        'headers' => [
+            'Authorization' => 'Bearer sk-proj-510CQJpMnCkW7l7o51DQT3BlbkFJPBF2PW49bsmkpvX3DxaU',
+            'Content-Type' => 'application/json',
+        ],
+        'json' => [
+            'prompt' => "hello",
+            'max_tokens' => 100,
+        ],
+    ]);
 
-    if ($response->successful()) {
-        $posts = $response->json(); // Get JSON as an array
-        // Display the posts
-    } else {
-        // Handle errors
-    }
+    // Handle response
+    $responseData = json_decode($response->getBody()->getContents(), true);
+    $answer = $responseData['choices'][0]['text'];
 
-    return $posts ; 
+    // Return the answer
+    return response()->json(['answer' => $answer]);
+
+
 });
 
 // Route::get('/api', [RegeneratePost::class , 'index']);

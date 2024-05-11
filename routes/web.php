@@ -3,7 +3,7 @@
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\EmployeeController;
 use App\Http\Controllers\Auth\VendorController;
-use App\Http\Controllers\ClothOrder\OrderAccepting;
+use App\Http\Controllers\ClothOrder\OrderAcceptingController;
 use App\Http\Controllers\EmployeeManagement\AddEmployeeController;
 use App\Http\Controllers\EmployeeManagement\ListEmployeeController;
 use App\Http\Controllers\EmployeeManagement\SalaryEmployeeController;
@@ -104,8 +104,8 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'cloth'], function () {
-    Route::get('order/accepting', [OrderAccepting::class, 'order_accepting'])->name('order.accepting.view');
-    Route::get('order/accepted/list', [OrderAccepting::class, 'order_accepted_list'])->name('order.accepting.list');
+    Route::get('order/accepting', [OrderAcceptingController::class, 'order_accepting'])->name('order.accepting.view');
+    Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('order.accepting.list');
 });
 
 Route::group(['prefix' => 'employee_management'], function () {

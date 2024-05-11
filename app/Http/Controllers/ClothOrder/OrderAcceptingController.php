@@ -4,7 +4,7 @@ namespace App\Http\Controllers\ClothOrder;
 
 use App\Http\Controllers\Controller;
 
-class OrderAccepting extends Controller
+class OrderAcceptingController extends Controller
 {
     public function order_accepting()
     {
