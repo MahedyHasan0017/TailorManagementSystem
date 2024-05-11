@@ -1,12 +1,34 @@
+
+
+@php
+   
+@endphp
+
+
 <aside class="left-sidebar" data-sidebarbg="skin5">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav" class="pt-4">
+
+                @php
+                    $x = false ; 
+                    count($permission_list)
+                    for($i = 0 ; $i < 3 ; $i++){
+                       
+                    }
+                @endphp
+
+                @if ($x == true)
+                    <h1>hello</h1>
+                @endif
+
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
                         aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                            class="hide-menu">ড্যাশবোর্ড</span></a></li>
+                            class="hide-menu">ড্যাশবোর্ড</span></a>
+                </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                         aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">পোষাক অর্ডার
                         </span></a>
@@ -19,6 +41,7 @@
                                 </span></a></li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                         href="{{ route('add.employee.view') }}" aria-expanded="false"><i class="fas fa-users"></i><span
                             class="hide-menu">কর্মচারী পরিচালনা
@@ -37,6 +60,7 @@
                                 </span></a></li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                         aria-expanded="false"><i class="fas fa-envelope"></i><span class="hide-menu">মেসেজ প্রদান
                         </span></a>
@@ -52,6 +76,7 @@
                                 </span></a></li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                         aria-expanded="false"><i class=" fas fa-calculator"></i><span class="hide-menu">আয় ব্যয় হিসাব
                         </span></a>
@@ -72,6 +97,7 @@
                                 </span></a></li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                         aria-expanded="false"><i class="fas fa-file"></i><span class="hide-menu">রিপোর্ট </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
@@ -80,6 +106,7 @@
                                 </span></a></li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                         aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu">সেটিংস </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">

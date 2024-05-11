@@ -125,6 +125,21 @@
                     </ul>
                 </li>
 
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
+                        aria-expanded="false"><i class="fas fa-envelope"></i><span class="hide-menu">Permissions
+                        </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="{{ route('permission.vendor.list.view') }}"
+                                class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu"> vendor list
+                                </span></a></li>
+                        <li class="sidebar-item"><a href="{{ route('permission.employee.list.view') }}"
+                                class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu"> employee list
+                                </span></a></li>
+                    </ul>
+                </li>
+
+
                 <!-- <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
                             class="mdi mdi-bulletin-board"></i><span class="hide-menu"> ইনভয়েস
                         </span></a></li>

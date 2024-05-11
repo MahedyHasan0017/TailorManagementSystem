@@ -12,6 +12,8 @@ use App\Http\Controllers\IncomeCost\DurationSummaryController;
 use App\Http\Controllers\IncomeCost\QSectorController;
 use App\Http\Controllers\MessageSending\SendingMessageController;
 use App\Http\Controllers\MessageSending\SendingMessageListController;
+use App\Http\Controllers\Permissions\Employee\EmployeePermissionController;
+use App\Http\Controllers\Permissions\Vendor\VendorPermissionController;
 use App\Http\Controllers\RegeneratePost;
 use App\Http\Controllers\Report\OrderReportController;
 use App\Http\Controllers\Settings\DressPartController;
@@ -20,6 +22,8 @@ use App\Http\Controllers\Settings\EmployeeDesignationController;
 use App\Http\Controllers\Settings\IncomeCostSectorController;
 use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
+use App\Models\Permission;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -53,7 +57,11 @@ Route::get('/vendor', function () {
 })->name('vendor_dashboard')->middleware('vendor');
 
 Route::get('/employee', function () {
-    return view('employee.dashboard');
+    // dd('hello') ; 
+
+    $employee_id = Auth::guard('employee')->user()->id ; 
+    $permission_list = Permission::where('employee_id',$employee_id)->get();
+    return view('employee.dashboard',compact('permission_list'));
 })->name('employee_dashboard')->middleware('employee');
 
 Route::get('/docs', function () {
@@ -138,3 +146,18 @@ Route::group(['prefix' => 'settings'], function () {
     Route::get('sms/template', [SmsTemplateController::class, 'sms_template'])->name('sms.template.view');
     Route::get('language', [LanguageSettingsController::class, 'git push -u origin main'])->name('language.setting.view');
 });
+
+
+Route::group(['prefix' => 'permissions'], function () {
+    Route::group(['prefix' => 'vendor'], function () {
+        Route::get('list', [VendorPermissionController::class, 'vendor_list'])->name('permission.vendor.list.view');
+        Route::get('single/{id}', [VendorPermissionController::class, 'vendor_single'])->name('permission.vendor.single');
+        Route::post('permissions/submit', [VendorPermissionController::class, 'vendor_submit_permissions'])->name('vendor.submit.permissions');
+    });
+     Route::group(['prefix' => 'employee'], function () {
+        Route::get('list', [EmployeePermissionController::class, 'employee_list'])->name('permission.employee.list.view');
+        Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single')->middleware('admin');
+        Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
+    });
+});
+
