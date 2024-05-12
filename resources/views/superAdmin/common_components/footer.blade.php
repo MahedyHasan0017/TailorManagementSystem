@@ -33,17 +33,17 @@
 <script src="{{ asset('tailerStaticTemplate/dist/js/pages/chart/chart-page-init.js') }}"></script>
 
 
- <!-- This Page JS -->
- <script src="{{ asset('tailerStaticTemplate/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/dist/js/pages/mask/mask.init.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColor/dist/jquery-asColor.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asGradient/dist/jquery-asGradient.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-minicolors/jquery.minicolors.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/quill/dist/quill.min.js')}}"></script>
+<!-- This Page JS -->
+<script src="{{ asset('tailerStaticTemplate/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/dist/js/pages/mask/mask.init.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColor/dist/jquery-asColor.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asGradient/dist/jquery-asGradient.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-minicolors/jquery.minicolors.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/quill/dist/quill.min.js')}}"></script>
 
 
 
@@ -84,15 +84,7 @@
 <script>
     /*colorpicker*/
     $('.demo').each(function() {
-        //
-        // Dear reader, it's actually very easy to initialize MiniColors. For example:
-        //
-        //  $(selector).minicolors();
-        //
-        // The way I've done it below is just for the demo, so don't get confused
-        // by it. Also, data- attributes aren't supported at this time...they're
-        // only used for this demo.
-        //
+
         $(this).minicolors({
             control: $(this).attr('data-control') || 'hue',
             position: $(this).attr('data-position') || 'bottom left',
@@ -134,6 +126,52 @@
     });
 </script>
 
+
+
+
+<script>
+    // const toggle__button = document.getElementById('toggle__button');
+    // const toggle_logo_heading = document.getElementById('toggle_logo_heading');
+    // const toggle_sidebar = document.getElementById('toggle_sidebar');
+
+    // toggle__button.addEventListener('click', function() {
+    //     // console.log('hello');
+    //     toggle_logo_heading.style.display = 'block';
+    //     toggle_sidebar.style.display = "block";
+    // })
+
+
+
+
+
+
+    $(document).ready(function() {
+        function checkWindowSize() {
+            const windowWidth = $(window).width();
+
+            // Set a breakpoint for adding the class (adjust as needed)
+            const breakpoint = 768; // Example: Add class for screens wider than 768px
+
+            if (windowWidth < breakpoint) {
+               
+                divStyle = {
+                    display : block,
+                };
+
+            } else {
+
+             
+            }
+
+        }
+
+        // Call the function on page load
+        checkWindowSize();
+
+        // Recheck on window resize to update the class
+        $(window).resize(checkWindowSize);
+    });
+</script>
 
 
 </body>

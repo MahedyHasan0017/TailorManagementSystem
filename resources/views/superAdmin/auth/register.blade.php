@@ -1,4 +1,8 @@
-@include('employee.common_components.header')
+
+
+@extends('.superAdmin.main')
+
+@section('content')
 
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark height__full_screen">
     <div class="auth-box bg-dark border-top border-secondary">
@@ -120,4 +124,4 @@
     </div>
 </div>
 
-@include('employee.common_components.footer')
+@endsection

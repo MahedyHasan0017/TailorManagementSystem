@@ -6,28 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description" content="Tailorshop Easy Manager v.1.0.0">
     <meta name="robots" content="noindex,nofollow">
     <title>Tailorshop Easy Manager</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('tailerStaticTemplate/assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('tailerStaticTemplate/assets/images/favicon.png') }}">
 
 
 
 
 
 
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/css/select2.min.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('tailerStaticTemplate/assets/libs/jquery-minicolors/jquery.minicolors.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('tailerStaticTemplate/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('tailerStaticTemplate/assets/libs/quill/dist/quill.snow.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/css/select2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('tailerStaticTemplate/assets/libs/jquery-minicolors/jquery.minicolors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('tailerStaticTemplate/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('tailerStaticTemplate/assets/libs/quill/dist/quill.snow.css') }}">
 
 
     <!-- plugin css  -->
@@ -61,14 +55,22 @@
         </div>
     </div>
 
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="mini-sidebar" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full" class="mini-sidebar">
 
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5">
 
-                    <a class="navbar-brand" href="index.html">
+                @php
+                $url = url()->current(); 
+                $spliting_url = explode('/', $url); 
+                $last_element = end($spliting_url);
+                @endphp
+
+               
+
+                <div class="navbar-header"  data-logobg="skin5">
+
+                    <a class="navbar-brand" href="{{route('super_admin_dashboard')}}">
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon ps-2"> -->
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -80,8 +82,7 @@
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{ asset('tailerStaticTemplate/assets/images/logo-text.jpg') }}" alt="homepage"
-                                class="light-logo" />
+                            <img src="{{ asset('tailerStaticTemplate/assets/images/logo-text.jpg') }}" alt="homepage" class="light-logo" />
 
                         </span>
                         <!-- Logo icon -->
@@ -99,8 +100,7 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-lg-none"  id="mini_toggler" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -110,37 +110,32 @@
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-start me-auto">
-                        <li class="nav-item d-none d-lg-block"><a
-                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <li class="nav-item d-block" id="toggle__button"><a id="sidebar_toggler"  class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                         <!-- ============================================================== -->
                         <!-- create new -->
                         <!-- ============================================================== -->
 
                         @if (Auth::guard('admin')->check())
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                                    <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
 
-                            <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                    href="javascript:void(0)"><i class="ti-search"></i></a>
-                                <form class="app-search position-absolute">
-                                    <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                        class="srh-btn"><i class="ti-close"></i></a>
-                                </form>
-                            </li>
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
                         @endif
 
 
@@ -148,94 +143,85 @@
 
                     <ul class="navbar-nav float-end">
 
-                        @if (Auth::guard('admin')->check() == null)
-                            <li class="nav-item dropdown">
-                                <a href="{{ route('auth.admin.login.view') }}" class="btn btn-success">Login</a>
-                                <a href="{{ route('auth.admin.register.view') }}" class="btn btn-info">Register</a>
-                            </li>
+                        @if (Auth::guard('admin')->check() == null )
+                        <li class="nav-item dropdown">
+                            <a href="{{ route('auth.admin.login.view') }}" class="btn btn-success">Login</a>
+                            <a href="{{ route('auth.admin.register.view') }}" class="btn btn-info">Register</a>
+                        </li>
                         @elseif (Auth::guard('admin')->check())
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="mdi mdi-bell font-24"></i>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="mdi mdi-bell font-24"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="font-24 mdi mdi-comment-processing"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
                                     <li>
-                                        <hr class="dropdown-divider">
+                                        <div class="">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">today's delivary</h5>
+                                                        <span class="mail-desc">Just a reminder that event</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">tomorrow's delivary</h5>
+                                                        <span class="mail-desc">You can customize this
+                                                            template</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
-                            </li>
+                            </ul>
+                        </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#"
-                                    id="2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="font-24 mdi mdi-comment-processing"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown"
-                                    aria-labelledby="2">
-                                    <ul class="list-style-none">
-                                        <li>
-                                            <div class="">
-                                                <!-- Message -->
-                                                <a href="javascript:void(0)" class="link border-top">
-                                                    <div class="d-flex no-block align-items-center p-10">
-                                                        <span class="btn btn-success btn-circle"><i
-                                                                class="ti-calendar"></i></span>
-                                                        <div class="ms-2">
-                                                            <h5 class="mb-0">today's delivary</h5>
-                                                            <span class="mail-desc">Just a reminder that event</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <!-- Message -->
-                                                <a href="javascript:void(0)" class="link border-top">
-                                                    <div class="d-flex no-block align-items-center p-10">
-                                                        <span class="btn btn-info btn-circle"><i
-                                                                class="ti-settings"></i></span>
-                                                        <div class="ms-2">
-                                                            <h5 class="mb-0">tomorrow's delivary</h5>
-                                                            <span class="mail-desc">You can customize this
-                                                                template</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('tailerStaticTemplate/assets/images/users/1.jpg') }}" alt="user" class="rounded-circle" width="31">
+                                <span><span style="font-size: 12px;">স্বাগতম</span>,
+                                    <span style="font-size: 16px;">
+                                        @if (Auth::guard('admin')->check() != null)
+                                        {{ Auth::guard('admin')->user()->name }}
+                                        @endif
+                                    </span>
 
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </ul>
-                            </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
-                                    href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <img src="{{ asset('tailerStaticTemplate/assets/images/users/1.jpg') }}"
-                                        alt="user" class="rounded-circle" width="31">
-                                    <span><span style="font-size: 12px;">স্বাগতম</span>,
-                                        <span style="font-size: 16px;">
-                                            @if (Auth::guard('admin')->check() != null)
-                                                {{ Auth::guard('admin')->user()->name }}
-                                            @endif
-                                        </span>
-                                        <span><i class="fas fa-angle-down"></i></span></span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end user-dd animated"
-                                    aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-lock"></i>
-                                        লগইন তথ্য</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-user"></i>
-                                        প্রোফাইল আপডেট</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i
-                                            class="fas fa-cart-plus"></i>
-                                        Bill Payment info</a>
-                                    <a class="dropdown-item" href="{{ route('auth.admin.logout') }}"><i
-                                            class="fa fa-power-off me-1 ms-1"></i> Logout</a>
-                                </ul>
-                            </li>
+                                    <span><i class="fas fa-angle-down"></i></span></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-lock"></i>
+                                    লগইন তথ্য</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-user"></i>
+                                    প্রোফাইল আপডেট</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-cart-plus"></i>
+                                    Bill Payment info</a>
+                                <a class="dropdown-item" href="{{ route('auth.admin.logout') }}"><i class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                            </ul>
+                        </li>
 
                         @endif
 

@@ -1,4 +1,6 @@
-    @include('vendor.common_components.header')
+@extends('.employee.main')
+
+@section('content')
 
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark height__full_screen">
         <div class="auth-box bg-dark border-top border-secondary">
@@ -40,7 +42,7 @@
                                         <span class="input-group-text bg-warning text-white h-100" id="basic-addon2"><i
                                                 class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Password"
+                                    <input type="password" class="form-control form-control-lg" placeholder="Password"
                                         id="password" name="password" aria-label="Password"
                                         aria-describedby="basic-addon1" required>
 
@@ -61,7 +63,7 @@
                                 <div class="pt-3">
                                     <button class="btn btn-info" id="to-recover" type="button"><i
                                             class="fa fa-lock me-1"></i> Lost password?</button>
-                                    <button class="btn btn-success float-end text-white" type="submit">Login</button>
+                                    <button class="btn btn-success float-end text-white" type="submit">Employee Login</button>
                                 </div>
                             </div>
                         </div>
@@ -105,4 +107,5 @@
             </div> --}}
         </div>
     </div>
-    @include('vendor.common_components.footer')
+
+@endsection

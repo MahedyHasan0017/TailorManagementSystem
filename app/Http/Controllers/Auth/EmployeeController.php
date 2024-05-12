@@ -12,6 +12,11 @@ class EmployeeController extends Controller
 {
     public function login()
     {
+        $user = Auth::guard('employee')->user() ; 
+     
+        if($user != null){
+            return redirect()->route('employee_dashboard') ; 
+        }
         return view('employee/auth/login');
     }
     public function login_store(Request $request)
@@ -42,6 +47,13 @@ class EmployeeController extends Controller
 
     public function register()
     {
+
+        $user = Auth::guard('employee')->user() ; 
+     
+        if($user != null){
+            return redirect()->route('employee_dashboard') ; 
+        }
+
         return view('employee/auth/register');
     }
     public function register_store(Request $request)

@@ -17,6 +17,11 @@ class AdminController extends Controller
 {
     public function login()
     {
+        $user = Auth::guard('admin')->user() ; 
+     
+        if($user != null){
+            return redirect()->route('super_admin_dashboard') ; 
+        }
         return view('superAdmin/auth/login');
     }
     public function login_store(LoginRequest $request)
@@ -48,6 +53,11 @@ class AdminController extends Controller
 
     public function register()
     {
+        $user = Auth::guard('admin')->user() ; 
+     
+        if($user != null){
+            return redirect()->route('super_admin_dashboard') ; 
+        }
         return view('superAdmin/auth/register');
     }
     public function register_store(RegisterRequest $request)

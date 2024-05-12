@@ -68,37 +68,17 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
 
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon -->
-                        <!-- <b class="logo-icon ps-2"> -->
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <!-- <img src="assets/images/logo-text.jpg" alt="homepage" class="light-logo" /> -->
-
-                        <!-- </b> -->
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
+                    <a class="navbar-brand" href="{{route('employee_dashboard')}}">
+                        
                         <span class="logo-text">
                             <!-- dark Logo text -->
                             <img src="{{ asset('tailerStaticTemplate/assets/images/logo-text.jpg') }}" alt="homepage"
                                 class="light-logo" />
 
                         </span>
-                        <!-- Logo icon -->
-                        <!-- <b class="logo-icon"> -->
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <!-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-
-                        <!-- </b> -->
-                        <!--End Logo icon -->
+                       
                     </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Toggle which is visible on mobile only -->
-                    <!-- ============================================================== -->
+                    
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
                 </div <!--==============================================================-->
@@ -114,7 +94,7 @@
                         <!-- create new -->
                         <!-- ============================================================== -->
 
-                        <li class="nav-item d-none d-lg-block"><a
+                        <li class="nav-item"><a
                                 class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
                                 data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                         @if (Auth::guard('employee')->check() != null)
