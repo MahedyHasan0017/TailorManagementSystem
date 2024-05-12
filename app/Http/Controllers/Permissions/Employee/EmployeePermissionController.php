@@ -28,28 +28,48 @@ class EmployeePermissionController extends Controller
     public function employee_submit_permissions(Request $request)
     {
 
+        $admin_id = null ; 
+        $vendor_id = null ; 
 
-        $admin_id = Auth::guard('admin')->user()->id;
-
-        $input = $request->all() ; 
-        $input['permission_name'] = $request->input('permission_name') ; 
-        $employee_id = $input['employee_id'] ; 
-       
-        $prevRecords = Permission::where('employee_id',$employee_id)->delete() ; 
-        $len = count($input['permission_name']);
-        for($i = 0 ; $i < $len ; $i++ ){
-            $inp = [
-                "created_by" => "admin",
-                "admin_id" => $admin_id,
-                "employee_id" => $input['employee_id'] , 
-                "permission_name" => $input['permission_name'][$i] 
-            ];
-            Permission::updateOrCreate($inp) ;  
+        if(Auth::guard('admin')->user() != null){
+            $admin_id = Auth::guard('admin')->user();
         }
 
-        
-        toastr()->success('Role Assigned Sucessfully!');
-        return redirect()->route('permission.employee.list.view');
+
+        if(Auth::guard('vendor')->user() != null){
+            $vendor_id = Auth::guard('vendor')->user()->id ; 
+        }
+
+
+        if($admin_id == null && $vendor_id == null ){
+            dd('not valid ') ; 
+        }
+        else{
+
+            $input = $request->all() ; 
+            $input['permission_name'] = $request->input('permission_name') ; 
+            $employee_id = $input['employee_id'] ; 
+           
+            $prevRecords = Permission::where('employee_id',$employee_id)->delete() ; 
+            $len = count($input['permission_name']);
+            for($i = 0 ; $i < $len ; $i++ ){
+                $inp = [
+                    "created_by" => "admin",
+                    "admin_id" => $admin_id,
+                    "vendor_id" => $vendor_id,
+                    "employee_id" => $input['employee_id'] , 
+                    "permission_name" => $input['permission_name'][$i] 
+                ];
+                Permission::updateOrCreate($inp) ;  
+            }
+    
+            
+            toastr()->success('Role Assigned Sucessfully!');
+            return redirect()->route('permission.employee.list.view');
+        }
+
+
+
 
 
     }
