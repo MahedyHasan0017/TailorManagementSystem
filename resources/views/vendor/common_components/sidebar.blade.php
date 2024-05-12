@@ -125,28 +125,18 @@
                     </ul>
                 </li>
 
-                <!-- <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
-                            class="mdi mdi-bulletin-board"></i><span class="hide-menu"> ইনভয়েস
-                        </span></a></li>
-                <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
-                            class="mdi mdi-calendar-check"></i><span class="hide-menu"> ক্যালেন্ডার
-                        </span></a></li>
-
-                <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
-                            class="mdi mdi-multiplication-box"></i><span class="hide-menu"> গ্যালারী
-                        </span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                        href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span
-                            class="hide-menu">লগইন/রেজিস্টার </span></a>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
+                        aria-expanded="false"><i class="fas fa-envelope"></i><span class="hide-menu">Permissions
+                        </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i
-                                    class="mdi mdi-all-inclusive"></i><span class="hide-menu"> লগইন </span></a>
-                        </li>
-                        <li class="sidebar-item"><a href="authentication-register.html" class="sidebar-link"><i
-                                    class="mdi mdi-all-inclusive"></i><span class="hide-menu"> রেজিস্টার
+                        <li class="sidebar-item"><a href="{{ route('permission.vendor.list.view') }}"
+                                class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu"> vendor list
+                                </span></a></li>
+                        <li class="sidebar-item"><a href="{{ route('permission.employee.list.view') }}"
+                                class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu"> employee list
                                 </span></a></li>
                     </ul>
-                </li> -->
+                </li>
 
             </ul>
         </nav>

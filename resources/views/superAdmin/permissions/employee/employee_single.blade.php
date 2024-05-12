@@ -37,6 +37,7 @@
 
                         <div class="form-group">
                             <label><strong>Permission Name :</strong></label>
+
                             <div>
 
                                 <label><input type="checkbox" name="permission_name[]" value="পোষাক অর্ডার"> পোষাক অর্ডার</label>
@@ -55,11 +56,11 @@
                             </div>
                             <div>
 
-                                <label><input type="checkbox" name="permission_name[]" value="Yellow"> Yellow</label>
+                                <label><input type="checkbox" name="permission_name[]" value="রিপোর্ট "> রিপোর্ট </label>
                             </div>
                             <div>
 
-                                <label><input type="checkbox" name="permission_name[]" value="Yellow"> Yellow</label>
+                                <label><input type="checkbox" name="permission_name[]" value="সেটিংস "> সেটিংস </label>
                             </div>
                         </div>
 
