@@ -156,7 +156,7 @@ Route::group(['prefix' => 'permissions'], function () {
     });
      Route::group(['prefix' => 'employee'], function () {
         Route::get('list', [EmployeePermissionController::class, 'employee_list'])->name('permission.employee.list.view');
-        Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single')->middleware('admin');
+        Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single');
         Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
     });
 });
