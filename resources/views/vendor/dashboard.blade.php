@@ -1,4 +1,4 @@
-@extends('vendor.main')
+@extends('superAdmin.main')
 
 @section('content')
     <div class="page-wrapper">
