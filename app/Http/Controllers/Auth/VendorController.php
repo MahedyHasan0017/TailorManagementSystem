@@ -12,6 +12,11 @@ class VendorController extends Controller
 {
     public function login()
     {
+        $user = Auth::guard('vendor')->user() ; 
+     
+        if($user != null){
+            return redirect()->route('vendor_dashboard') ; 
+        }
         return view('vendor/auth/login');
     }
     public function login_store(Request $request)
@@ -42,6 +47,11 @@ class VendorController extends Controller
 
     public function register()
     {
+        $user = Auth::guard('vendor')->user() ; 
+     
+        if($user != null){
+            return redirect()->route('vendor_dashboard') ; 
+        }
         return view('vendor/auth/register');
     }
     public function register_store(Request $request)

@@ -1,10 +1,5 @@
 
 
-@php
-    
-dd('this is from vendor main') ; 
-@endphp
-
 
 @include('.vendor/common_components/header')
 

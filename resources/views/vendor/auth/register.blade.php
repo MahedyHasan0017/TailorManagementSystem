@@ -1,4 +1,6 @@
-@include('vendor.common_components.header')
+@extends('.vendor.main')
+
+@section('content')
 
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark height__full_screen">
     <div class="auth-box bg-dark border-top border-secondary">
@@ -118,4 +120,4 @@
     </div>
 </div>
 
-@include('vendor.common_components.footer')
+@endsection
