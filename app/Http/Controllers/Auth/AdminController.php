@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\AdminUser;
 use App\Models\User;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -83,6 +84,77 @@ class AdminController extends Controller
         }
 
     }
+
+    public function manager_list(){
+        return view('superAdmin/manager/manager_list') ; 
+    }
+    
+
+    public function manager_activate(Request $request , $id){
+        dd($id) ; 
+    }
+
+
+
+    public function vendor_register_from_admin(){
+        return view('superAdmin/auth/vendor_register_from_admin') ; 
+    }
+
+    public function active_vendor_list_from_admin(){
+        $vendors = Vendor::where('status',1)->get() ; 
+        return view('superAdmin/auth/active_vendor_list_from_admin',compact('vendors')) ; 
+    }
+
+    public function pending_vendor_list_from_admin(){
+        $vendors = Vendor::where('status',0)->get() ; 
+        return view('superAdmin/auth/pending_vendor_list_from_admin',compact('vendors')) ; 
+    }
+
+    public function admin_activate_vendor(Request $request , $id){
+       
+        $vendor = Vendor::where('id',$id)->first() ; 
+        $vendor->status = 1 ; 
+        $done = $vendor->save() ; 
+
+        if($done){
+            toastr()->success('Vendor Activate Successfully !');
+            return redirect()->route('auth.admin.pending.vendor.list.view') ; 
+        }
+        else{
+            toastr()->info('Something Went Wrong');
+            return redirect()->back() ; 
+        }
+    }
+
+    public function admin_deactivate_vendor(Request $request , $id){
+        $vendor = Vendor::where('id',$id)->first() ; 
+        $vendor->status = 0 ; 
+        $done = $vendor->save() ; 
+
+        if($done){
+            toastr()->success('Vendor Deactivate Successfully !');
+            return redirect()->route('auth.admin.active.vendor.list.view') ; 
+        }
+        else{
+            toastr()->info('Something Went Wrong');
+            return redirect()->back() ; 
+        }
+    }
+
+    public function admin_delete_vendor(Request $request , $id){
+        $vendor = Vendor::where('id',$id)->first() ; 
+        $done = $vendor->delete() ; 
+        if($done){
+            toastr()->success('Vendor Deleted!');
+            return redirect()->back() ; 
+        }
+        else{
+            toastr()->info('Something Went Wrong');
+            return redirect()->back() ; 
+        }
+    }
+    
+
     public function recovery_password()
     {
         return view('admin_vendor_employee/auth/recover_form');

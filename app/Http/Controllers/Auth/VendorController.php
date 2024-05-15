@@ -71,7 +71,17 @@ class VendorController extends Controller
             ]);
             if ($user) {
                 toastr()->success('Vendor Registered Successfully! Please Login!');
-                return redirect()->route('auth.vendor.login.view');
+
+                $admin = Auth::guard('admin')->user() ; 
+
+           
+                if($admin){
+                    return redirect()->route('auth.admin.pending.vendor.list.view');
+                }
+                else{
+                    return redirect()->route('auth.vendor.login.view');
+                }
+
             } else {
                 toastr()->error('Something Went Wrong!');
                 return redirect()->back();

@@ -624,130 +624,251 @@
                                                                         value="" id="flexCheckDefault">
                                                                     <label class="form-check-label"
                                                                         for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/1.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/2.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/3.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/4.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/5.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/6.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/7.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/8.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/9.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
-                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket/10.png') }}"
-                                                                            style="height: 38px ; width:43px;"
-                                                                            alt="images">
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
-                                                                    <label class="form-check-label"
-                                                                        for="flexCheckDefault">
                                                                         বগল পকেট
                                                                     </label>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/1.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/2.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/3.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/4.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/5.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/6.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/7.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/8.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/9.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/10.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/11.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/12.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/13.jpg') }}"
+                                                                            style="height: 50px ; width:55px;"
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/14.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:3px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/15.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:3px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/16.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:4px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/17.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:3px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/18.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:3px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/19.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:3px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label class="form-check-label"
+                                                                        for="flexCheckDefault">
+                                                                        <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/20.jpg') }}"
+                                                                            style="height: 50px ; width:50px; margin-left:3px ; "
+                                                                            alt="images">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                           
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1302,8 +1423,6 @@
                                                     </div>
                                                 </div>
 
-
-
                                                 <div>
                                                     <div class="accordion__heading mt-5">
                                                         ফুল
@@ -1415,9 +1534,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
                                                 <div>
                                                     <div class="accordion__heading mt-5">
                                                         বোতাম
@@ -1511,8 +1627,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -1715,8 +1829,19 @@
                                                                 <input class="form-check-input" type="checkbox"
                                                                     value="" id="flexCheckDefault">
                                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pant/01.png') }}"
-                                                                        style="height: 38px ; width:43px;"
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/19.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/20.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
                                                                         alt="images">
                                                              </label>
                                                             </div>
@@ -1726,12 +1851,217 @@
                                                                 <input class="form-check-input" type="checkbox"
                                                                     value="" id="flexCheckDefault">
                                                                 <label class="form-check-label" for="flexCheckDefault">
-                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pant/2.png') }}"
-                                                                        style="height: 38px ; width:43px;"
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/21.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
                                                                         alt="images">
                                                                 </label>
                                                             </div>
                                                         </div>
+
+                                                        
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/22.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/23.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/24.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/25.jpg') }}"
+                                                                        style="height: 50px ; width:42px; margin-left:7px"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/26.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/27.jpg') }}"
+                                                                        style="height: 50px ; width:46px; margin-left : 4px"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/28.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/30.jpg') }}"
+                                                                        style="height: 50px ; width:50px; margin-left : 3px "
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/31.jpg') }}"
+                                                                        style="height: 50px ; width:52px; margin-left : 2px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/32.jpg') }}"
+                                                                        style="height: 50px ; width:50px; margin-left : 3px "
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/33.jpg') }}"
+                                                                        style="height: 50px ; width:50px; margin-left : 3px"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/34.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/35.jpg') }}"
+                                                                        style="height: 50px ; width:50px; margin-left : 3px; "
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/36.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/37.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/38.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/39.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="" id="flexCheckDefault">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/40.jpg') }}"
+                                                                        style="height: 50px ; width:55px;"
+                                                                        alt="images">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+
                                                     </div>
                                                 </div>
                                             </div>

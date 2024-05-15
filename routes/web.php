@@ -78,6 +78,18 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('register', [AdminController::class, 'register'])->name('auth.admin.register.view');
         Route::post('register/store', [AdminController::class, 'register_store'])->name('auth.admin.register.store');
 
+        Route::get('manager/list', [AdminController::class, 'manager_list'])->name('auth.manager.list.view');
+        Route::get('manager/active', [AdminController::class, 'manager_activate'])->name('auth.manager.active');
+
+
+        Route::get('register/vendor', [AdminController::class, 'vendor_register_from_admin'])->name('auth.admin.register.vendor.view');
+        Route::get('/vendor/active/list', [AdminController::class, 'active_vendor_list_from_admin'])->name('auth.admin.active.vendor.list.view');
+        Route::get('/vendor/pending/list', [AdminController::class, 'pending_vendor_list_from_admin'])->name('auth.admin.pending.vendor.list.view');
+
+        Route::get('/vendor/active/{id}', [AdminController::class, 'admin_activate_vendor'])->name('auth.admin.activate.vendor');
+        Route::get('/vendor/deactive/{id}', [AdminController::class, 'admin_deactivate_vendor'])->name('auth.admin.deactive.vendor');
+        Route::get('/vendor/delete/{id}', [AdminController::class, 'admin_delete_vendor'])->name('auth.admin.delete.vendor');
+
         Route::get('recovery/password', [AdminController::class, 'recovery_password'])->name('auth.admin.recovery.password');
         Route::post('recovery/password/store', [AdminController::class, 'recovery_password_store'])->name('auth.admin.recovery.password.store');
     });
@@ -145,18 +157,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
         Route::get('income/cost', [IncomeCostSectorController::class, 'income_cost'])->name('admin.income.cost.view');
         Route::get('employee/designation', [EmployeeDesignationController::class, 'employee_designation'])->name('admin.employee.designation.view');
         Route::get('sms/template', [SmsTemplateController::class, 'sms_template'])->name('admin.sms.template.view');
-        Route::get('language', [LanguageSettingsController::class, 'git push -u origin main'])->name('admin.language.setting.view');
+        Route::get('language', [LanguageSettingsController::class, 'language_setting'])->name('admin.language.setting.view');
     });
 });
-
-
-
-
-
-
-
-
-
 
 
 
