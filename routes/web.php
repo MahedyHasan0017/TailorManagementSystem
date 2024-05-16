@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\EmployeeController;
 use App\Http\Controllers\Auth\VendorController;
+use App\Http\Controllers\ClothOrder\ClothTypeController;
 use App\Http\Controllers\ClothOrder\OrderAcceptingController;
 use App\Http\Controllers\EmployeeManagement\AddEmployeeController;
 use App\Http\Controllers\EmployeeManagement\ListEmployeeController;
@@ -33,7 +34,7 @@ Route::get('/api', function () {
     $response = Http::get('https://jsonplaceholder.typicode.com/posts');
 
     if ($response->successful()) {
-        $posts = $response->json(); // Get JSON as an array
+        $posts = $response->json(); 
         // Display the posts
     } else {
         // Handle errors
@@ -49,6 +50,10 @@ Route::get('/api', function () {
 
 
 Route::get('/super_admin', function () {
+    
+
+
+
     return view('superAdmin.dashboard');
 })->name('super_admin_dashboard')->middleware('admin');
 
@@ -78,8 +83,12 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('register', [AdminController::class, 'register'])->name('auth.admin.register.view');
         Route::post('register/store', [AdminController::class, 'register_store'])->name('auth.admin.register.store');
 
+        Route::get('super-admin/list', [AdminController::class, 'super_admin_list'])->name('auth.super_admin.list.view');
         Route::get('manager/list', [AdminController::class, 'manager_list'])->name('auth.manager.list.view');
-        Route::get('manager/active', [AdminController::class, 'manager_activate'])->name('auth.manager.active');
+
+        Route::get('/update/manager/{id}', [AdminController::class, 'update_manager_from_admin'])->name('auth.update.manager.from.admin');
+        Route::get('/update/super-admin/{id}', [AdminController::class, 'update_super_admin_from_admin'])->name('auth.update.superadmin.from.admin');
+        Route::get('/delete/super-admin/{id}', [AdminController::class, 'delete_super_admin_from_admin'])->name('auth.delete.superadmin.from.admin');
 
 
         Route::get('register/vendor', [AdminController::class, 'vendor_register_from_admin'])->name('auth.admin.register.vendor.view');
@@ -125,7 +134,12 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function () {
     Route::group(['prefix' => 'cloth'], function () {
         Route::get('order/accepting', [OrderAcceptingController::class, 'order_accepting'])->name('admin.order.accepting.view');
+
+        Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
+
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
+
+        Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
 
     Route::group(['prefix' => 'employee_management'], function () {

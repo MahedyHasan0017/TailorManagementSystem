@@ -7,7 +7,7 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Managers লিস্ট</h4>
+                    <h4 class="page-title">Admin লিস্ট</h4>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -32,9 +32,9 @@
                         <table id="example" class="display" style="width:100%">
                             <thead class="accordion__heading">
                                 <tr>
-                                    <th>manager id</th>
-                                    <th>manager name</th>
-                                    <th>manager mobile number/email</th>
+                                    <th>admin id</th>
+                                    <th>admin name</th>
+                                    <th>admin mobile number/email</th>
                                     <th>view details</th>
                                     <!-- <th>অর্ডারের তারিখ</th>
                                     <th>ডেলিভারির তারিখ </th>
@@ -44,15 +44,17 @@
                             </thead>
                             <tbody>
 
-                                @foreach ($managers as  $manager)
+                                @foreach ($admins as  $admin)
                                 <tr>
-                                    <td>{{$manager->id}}</td>
-                                    <td>{{$manager->name}}</td>
-                                    <th>{{$manager->email}}</th>
+                                    <td>{{$admin->id}}</td>
+                                    <td>{{$admin->name}}</td>
+                                    <th>{{$admin->email}}</th>
                                    
                                     <td>
-                                        <a href="{{route('auth.update.superadmin.from.admin',['id' => $manager->id])}}" class="btn btn-primary">update super admin</a>
-                                        <a href="{{ route('auth.delete.superadmin.from.admin',['id' => $manager->id]) }}" class="btn btn-primary">Delete</a>
+
+                                        <a href="{{route('auth.update.manager.from.admin',['id' => $admin->id])}}" class="btn btn-primary">update manager</a>
+                                        <a href="{{ route('auth.delete.superadmin.from.admin',['id' => $admin->id]) }}" class="btn btn-primary">Delete</a>
+
                                     </td>
 
 

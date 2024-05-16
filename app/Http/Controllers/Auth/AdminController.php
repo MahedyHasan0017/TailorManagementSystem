@@ -85,14 +85,62 @@ class AdminController extends Controller
 
     }
 
-    public function manager_list(){
-        return view('superAdmin/manager/manager_list') ; 
+    public function super_admin_list(){
+        $admins = AdminUser::where('status',1)->get()  ; 
+        return view('superAdmin.admin.admin_list',compact('admins')); 
     }
-    
 
-    public function manager_activate(Request $request , $id){
-        dd($id) ; 
+    public function manager_list(){
+        $managers = AdminUser::where('status',0)->get()  ; 
+        return view('superAdmin/manager/manager_list',compact('managers')) ; 
     }
+
+
+    public function update_manager_from_admin(Request $request , $id){
+        $admin = AdminUser::where('id',$id)->first() ; 
+        $admin->status = 0 ; 
+        $done = $admin->save() ; 
+        if($done){
+            toastr()->success('Update Manager From Admin Successfully !');
+            return redirect()->route('auth.super_admin.list.view') ; 
+        }
+        else{
+            toastr()->info('Something Went Wrong');
+            return redirect()->back() ; 
+        }
+    }
+
+    public function update_super_admin_from_admin(Request $request , $id){
+        $admin = AdminUser::where('id',$id)->first() ; 
+        $admin->status = 1 ; 
+        $done = $admin->save() ; 
+        if($done){
+            toastr()->success('Update Super Admin From Manager Successfully !');
+            return redirect()->route('auth.manager.list.view') ; 
+        }
+        else{
+            toastr()->info('Something Went Wrong');
+            return redirect()->back() ; 
+        }
+    }
+
+    public function delete_super_admin_from_admin(Request $request , $id){
+
+
+        $admin = AdminUser::where('id',$id)->first() ; 
+        $done = $admin->delete() ; 
+        if($done){
+            toastr()->success('Admin Deleted!');
+            return redirect()->back() ; 
+        }
+        else{
+            toastr()->info('Something Went Wrong');
+            return redirect()->back() ; 
+        }
+
+    }
+
+    
 
 
 

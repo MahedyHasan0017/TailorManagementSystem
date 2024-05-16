@@ -7,6 +7,7 @@
 
 
 @include('./superAdmin.common_components.footer')
+@stack('scripts')
 
 
 
