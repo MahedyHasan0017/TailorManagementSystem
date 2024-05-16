@@ -557,17 +557,17 @@
                                                                         মোট মোড়া :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="mot_mora" name="mot_mora">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="haate_pesting"
                                                                         class="form-label form_input_group_label_important">
                                                                         হাতে পেস্টিং :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="haate_pesting" name="haate_pesting">
                                                                 </div>
                                                             </div>
 
