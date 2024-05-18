@@ -3,22 +3,39 @@
 namespace App\Http\Controllers\ClothOrder;
 
 use App\Http\Controllers\Controller;
+use App\Models\ClothType;
 use Illuminate\Http\Request;
 
 class ClothTypeController extends Controller
 {
 
-    public function add_cloth_type(){
-        return response()->json([
-            'success' => true,
-            'message' => 'Cloth saved successfully!',
-        ]);
+    public function add_cloth_type()
+    {
+        return response()->json("hello");
     }
 
-    
 
-    public function add_cloth_type_store(Request $request){
+
+    public function add_cloth_type_store(Request $request)
+    {
         // dd($request->all()) ; 
-        return response()->json('ok') ; 
+        $this->validate($request, [
+            'cloth_name' => 'required',
+        ]);
+        $clothName = $request->input('cloth_name');
+
+        $done = ClothType::create([
+            "cloth_name" => $clothName,
+        ]);
+
+        if ($done) {
+            return response()->json([
+                "msg" => "ok"
+            ]);
+        } else {
+            return response()->json([
+                "msg" => "snot ok"
+            ]);
+        }
     }
 }

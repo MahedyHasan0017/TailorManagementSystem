@@ -6,7 +6,9 @@
 
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap tether Core JavaScript -->
@@ -52,6 +54,9 @@
 
 <!-- plugin js  -->
 
+
+
+
 <script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
 
 <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.min.js"></script>
@@ -59,9 +64,7 @@
 <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 
 <!-- end plugin js  -->

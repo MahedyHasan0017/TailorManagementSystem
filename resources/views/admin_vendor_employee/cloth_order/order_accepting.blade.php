@@ -25,8 +25,6 @@
             <form action="{{ route('admin.order.accepting.store') }}" method="post">
                 @csrf
 
-
-
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header " id="headingOne">
@@ -52,34 +50,34 @@
                                         <div class="form_input_group">
                                             <label for="name" class="form-label form_input_group_label_important"> নাম :
                                                 <span style="color:red">*</span></label>
-                                            <input type="text" class="form-control" id="name" name="name">
+                                            <input type="text" class="form-control" id="customer_name" name="customer_name">
                                         </div>
 
                                         <div class="form_input_group">
                                             <label for="mobile_number" class="form-label form_input_group_label_important">
                                                 মোবাইল নং : <span style="color:red">*</span></label>
-                                            <input type="text" class="form-control" id="mobile_number"
-                                                name="mobile_number">
+                                            <input type="text" class="form-control" id="customer_mobile_number"
+                                                name="customer_mobile_number">
                                         </div>
 
                                         <div class="form_input_group">
                                             <label for="email" class="form-label form_input_group_label_important">
                                                 ইমেইল:
-                                                <input type="email" class="form-control" id="email" name="email">
+                                                <input type="email" class="form-control" id="customer_email" name="customer_email">
                                         </div>
 
                                         <div class="form_input_group">
                                             <label for="contact_address"
                                                 class="form-label form_input_group_label_important">
                                                 যোগাযোগ এর ঠিকানা :
-                                                <textarea class="form-control" name="contact_address" cols="30" rows="5" id="contact_address"></textarea>
+                                                <textarea class="form-control" name="customer_contact_address" cols="30" rows="5" id="customer_contact_address"></textarea>
                                         </div>
 
                                     </div>
 
 
                                     <div class="col-md-6">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive table__container">
                                             <table class="table">
                                                 <thead class="custom_table_heading">
                                                     <tr>
@@ -89,264 +87,86 @@
                                                         <th scope="col">মোট মূল্য</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody class="custom_table_body ">
-                                                    <tr>
-                                                        {{-- admin.add.cloth.store --}}
-                                                        <td scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    value="fotuya" id="flexCheckDefault">
-                                                                <label class="form-check-label" for="flexCheckDefault">
-                                                                    ফতুয়া
-                                                                </label>
-                                                            </div>
-                                                        </td>
+                                                    <tbody class="custom_table_body custom_table_height">
+                                                        @foreach ($cloth_list as $cloth )
+                                                        <tr>
+                                                            <td scope="row">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="{{ $cloth->cloth_name }}" name="cloth_full_name" id="flexCheckDefault">
+                                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                                        {{ $cloth->cloth_name }}
+                                                                    </label>
+                                                                </div>
+                                                            </td>
+    
+                                                            <td>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control"
+                                                                        name="number_of_cloth" id="number_of_cloth">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="">
+                                                                    <input type="text" class="form-control"
+                                                                        name="price_of_cloth" id="price_of_cloth">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="">
+                                                                    <input type="text" class="form-control"
+                                                                        name="total_price_of_cloth" id="total_price_of_cloth">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        @endforeach
 
-                                                        <td>
-                                                            <div class="">
-                                                                <input type="number" class="form-control"
-                                                                    name="number_of_cloth" id="number_of_cloth">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="">
-                                                                <input type="text" class="form-control"
-                                                                    name="price_of_cloth" id="price_of_cloth">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="">
-                                                                <input type="text" class="form-control"
-                                                                    name="total_price_of_cloth" id="total_price_of_cloth">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    value="" id="flexCheckDefault">
-                                                                <label class="form-check-label" for="flexCheckDefault">
-                                                                    এরাবিয়ান
-                                                                </label>
-                                                            </div>
-                                                        </td>
-
-                                                        <td>
-                                                            <div class="">
-                                                                <input type="number" class="form-control"
-                                                                    id="exampleInputPassword1">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="">
-                                                                <input type="text" class="form-control"
-                                                                    id="exampleInputPassword1">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="">
-                                                                <input type="text" class="form-control"
-                                                                    id="exampleInputPassword1">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    {{-- <tr>
-                                                    <td scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                প্রিন্স কোর্ট
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="number" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                কলিদার পাঞ্জাবী
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="number" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                একছাটা জুব্বা
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="number" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                একছাটা পাঞ্জাবী
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="number" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                শার্ট
-                                                            </label>
-                                                        </div>
-                                                    </td>
-
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="number" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="">
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                    </td>
-                                                </tr> --}}
-
-                                                </tbody>
-                                                <tfoot class="custom_table_footer">
-
-                                                    <th scope="row">@twitter</th>
-                                                    <td></td>
-                                                    <td>cell-3</td>
-                                                    <td scope="col">cell 2</td>
-                                                </tfoot>
+                                                    </tbody>
+                                                    <tfoot class="custom_table_footer">
+    
+                                                        <th scope="row">@twitter</th>
+                                                        <td></td>
+                                                        <td>cell-3</td>
+                                                        <td scope="col">cell 2</td>
+                                                    </tfoot>
+                                               
+                                                
                                             </table>
 
-                                            <div>
-                                                <div class="accordion-item mt-3">
-                                                    <h2 class="accordion-header" id="headingSeven">
-                                                        <button class="accordion-button collapsed accordion__heading"
-                                                            type="button" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapseSeven" aria-expanded="true"
-                                                            aria-controls="collapseSeven">
-                                                            নতুন পোশাক যোগ করুন
-                                                        </button>
-                                                    </h2>
-                                                    <div id="" class="" aria-labelledby="headingSeven"
-                                                        data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body accordion__body">
-                                                            <div class="row">
-                                                                {{-- <form id="add-new-cloth" action="{{ route('admin.add.cloth.store') }}"
-                                                                    method="post"> --}}
-                                                                <div class="col-12">
-                                                                    <input type="text" name='cloth_name'
-                                                                        id="cloth_name" placeholder="পোশাকের নাম"
-                                                                        class="form-control">
-                                                                </div>
-                                                                <div class="col-12" style="text-align: right">
-                                                                    <button id="add_cloth_name" type="button"
-                                                                        class="btn btn-success mt-2">যোগ করুন</button>
-                                                                </div>
+                                            
 
-                                                                {{-- </form> --}}
+                                        </div>
+                                        <div>
+                                            <div class="accordion-item mt-3">
+                                                <h2 class="accordion-header" id="headingSeven">
+                                                    <button class="accordion-button collapsed accordion__heading"
+                                                        type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseSeven" aria-expanded="true"
+                                                        aria-controls="collapseSeven">
+                                                        নতুন পোশাক যোগ করুন
+                                                    </button>
+                                                </h2>
+                                                <div id="" class="" aria-labelledby="headingSeven"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body accordion__body">
+                                                        <div class="row">
+                                                            {{-- <form id="add-new-cloth" action="{{ route('admin.add.cloth.store') }}"
+                                                                method="post"> --}}
+                                                            <div class="col-12">
+                                                                <input type="text" name='cloth_name'
+                                                                    id="cloth_name" placeholder="পোশাকের নাম"
+                                                                    class="form-control">
                                                             </div>
+                                                            <div class="col-12" style="text-align: right">
+                                                                <button id="add_cloth_name" type="button"
+                                                                    class="btn btn-success mt-2">যোগ করুন</button>
+                                                            </div>
+
+                                                            {{-- </form> --}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -380,22 +200,6 @@
                                                 aria-labelledby="sub-headingOne" data-bs-parent="#sub-accordionExample">
                                                 <div class="accordion-body accordion__body">
 
-                                                    {{-- <div class="card p-2 mb-0">
-                                                    <div class="row">
-                                                        <div class="col-md-2">
-                                                            <div class="form_input_group">
-                                                                <label for="order_number"
-                                                                    class="form-label form_input_group_label_important">
-                                                                    পোশাকের নাম : <span style="color:red">*</span></label>
-                                                            </div>
-                                                            <select name="name_of_cloth" id="" class="form-control">
-                                                                <option value="panjabi">পাঞ্জাবী</option>
-                                                                <option value="shirt">শার্ট</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
                                                             <div class="col-md-2">
@@ -404,7 +208,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         লম্বা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="lomba" name="lomba">
+                                                                        id="panjabi_lomba" name="panjabi_lomba">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -413,7 +217,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         বডি : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="body" name="body">
+                                                                        id="panjabi_body" name="panjabi_body">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -422,7 +226,7 @@
                                                                         class="form-label form_input_group_label_important">বডি
                                                                         লুজ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="body_luzz" name="body_luzz">
+                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -431,7 +235,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         পেট : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pet" name="pet">
+                                                                        id="panjabi_pet" name="panjabi_pet">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -440,7 +244,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         পুট : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="put" name="put">
+                                                                        id="panjabi_put" name="panjabi_put">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -450,7 +254,7 @@
                                                                         হাতার লম্বা : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="hatar_lomba" name="hatar_lomba">
+                                                                        id="panjabi_hatar_lomba" name="panjabi_hatar_lomba">
                                                                 </div>
                                                             </div>
 
@@ -462,7 +266,7 @@
                                                                         হাতার মুখ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="hatar_mukh" name="hatar_mukh">
+                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -471,7 +275,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         কাফ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="kaf" name="kaf">
+                                                                        id="panjabi_kaf" name="panjabi_kaf">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -480,7 +284,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         গলা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="gola" name="gola">
+                                                                        id="panjabi_gola" name="panjabi_gola">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -490,7 +294,7 @@
                                                                         প্লেট ফাড়া : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="plate_fara" name="plate_fara">
+                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -500,7 +304,7 @@
                                                                         কলার চউরা : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="kolar_choura" name="kolar_choura">
+                                                                        id="panjabi_kolar_choura" name="panjabi_kolar_choura">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -510,7 +314,7 @@
                                                                         প্লেট চউরা : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="plate_choura" name="plate_choura">
+                                                                        id="panjabi_plate_choura" name="panjabi_plate_choura">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -519,7 +323,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         ঘের : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="gher" name="gher">
+                                                                        id="panjabi_gher" name="panjabi_gher">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -528,7 +332,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         হিফ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="hiff" name="hiff">
+                                                                        id="panjabi_hiff" name="panjabi_hiff">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -537,7 +341,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         নিচ হাতা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="nich_hata" name="nich_hata">
+                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -547,7 +351,7 @@
                                                                         মাদানি ফাড়া :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="madani_fara" name="madani_fara">
+                                                                        id="panjabi_madani_fara" name="panjabi_madani_fara">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -557,7 +361,7 @@
                                                                         মোট মোড়া :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="mot_mora" name="mot_mora">
+                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -567,7 +371,7 @@
                                                                         হাতে পেস্টিং :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="haate_pesting" name="haate_pesting">
+                                                                        id="panjabi_haate_pesting" name="panjabi_haate_pesting">
                                                                 </div>
                                                             </div>
 
@@ -579,12 +383,23 @@
                                                         <div class="accordion__heading mt-5">
                                                             পকেট
                                                         </div>
+
+                                                        {{-- <div class="card">
+                                                            <div id="checkboxes">
+                                                                <input type="checkbox" name="options[]" value="option1"> Option 1
+                                                                <input type="checkbox" name="options[]" value="option2"> Option 2
+                                                                <input type="checkbox" name="options[]" value="option3"> Option 3
+                                                                <input type="checkbox" name="options[]" value="option4"> Option 4
+                                                                <input type="checkbox" name="options[]" value="option5"> Option 5
+                                                              </div>
+                                                        </div> --}}
+
                                                         <div class="card p-2 mb-0 ">
                                                             <div class="row">
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="panjabi_buke_pocket_1_ti" name="pocket[]">
                                                                         <label class="form-check-label"
                                                                             for="flexCheckDefault">
                                                                             বুকে ১টি পকেট
@@ -594,7 +409,7 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="panjabi_buke_pocket_2_ti" name="pocket[]">
                                                                         <label class="form-check-label"
                                                                             for="flexCheckDefault">
                                                                             বুকে ২টি পকেট
@@ -604,7 +419,7 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="1_pocket_chain" name='pocket[]'>
                                                                         <label class="form-check-label"
                                                                             for="flexCheckDefault">
                                                                             ১ পকেটে চেইন
@@ -614,7 +429,7 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="2_pocket_chain"  name='pocket[]'>
                                                                         <label class="form-check-label"
                                                                             for="flexCheckDefault">
                                                                             ২ পকেটে চেইন
@@ -624,7 +439,7 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="pocket_dhaka" name="pocket[]">
                                                                         <label class="form-check-label"
                                                                             for="flexCheckDefault">
                                                                             পকেট ঢাকা
@@ -634,7 +449,7 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="" id="flexCheckDefault" name="pocket[]">
                                                                         <label class="form-check-label"
                                                                             for="flexCheckDefault">
                                                                             পকেট ঢাকনা
@@ -1710,70 +1525,70 @@
                                                         <div class="row">
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_lomba"
                                                                         class="form-label form_input_group_label_important">
                                                                         লম্বা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_lomba" name="pant_lomba">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_payer_mukh"
                                                                         class="form-label form_input_group_label_important">
                                                                         পায়ের মুখ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_payer_mukh" name="pant_payer_mukh">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_high"
                                                                         class="form-label form_input_group_label_important">বডি
                                                                         হাই : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_high" name="pant_high">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_thai_luz"
                                                                         class="form-label form_input_group_label_important">
                                                                         ঘের/থাই লুজ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_thai_luz" name="pant_thai_luz">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_komor"
                                                                         class="form-label form_input_group_label_important">
                                                                         কোমর : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_komor" name="pant_komor">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_belt_type"
                                                                         class="form-label form_input_group_label_important">
                                                                         বেল্ট টাইপ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_belt_type" name="pant_belt_type">
                                                                 </div>
                                                             </div>
 
 
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
-                                                                    <label for="order_number"
+                                                                    <label for="pant_hiff"
                                                                         class="form-label form_input_group_label_important">
                                                                         হিফ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="order_number" name="order_number">
+                                                                        id="pant_hiff" name="pant_hiff">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2189,39 +2004,39 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form_input_group">
-                                                        <label for="order_number"
+                                                        <label for="majurir_poriman"
                                                             class="form-label form_input_group_label_important">মজুরির
                                                             পরিমান : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="order_number"
-                                                            name="order_number">
+                                                        <input type="text" class="form-control" id="majurir_poriman"
+                                                            name="majurir_poriman">
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form_input_group">
-                                                        <label for="order_number"
+                                                        <label for="nogod_prodan"
                                                             class="form-label form_input_group_label_important">নগদ
                                                             প্রদান : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="order_number"
-                                                            name="order_number">
+                                                        <input type="text" class="form-control" id="nogod_prodan"
+                                                            name="nogod_prodan">
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form_input_group">
-                                                        <label for="order_number"
+                                                        <label for="orderer_tarikh"
                                                             class="form-label form_input_group_label_important">অর্ডারের
                                                             তারিখ
                                                             : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="order_number"
-                                                            name="order_number">
+                                                        <input type="text" class="form-control" id="orderer_tarikh"
+                                                            name="orderer_tarikh">
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form_input_group">
-                                                        <label for="order_number"
+                                                        <label for="delivery_tarikh"
                                                             class="form-label form_input_group_label_important">ডেলিভারির
                                                             তারিখ : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="order_number"
-                                                            name="order_number">
+                                                        <input type="text" class="form-control" id="delivery_tarikh"
+                                                            name="delivery_tarikh">
                                                     </div>
 
                                                 </div>
@@ -2235,16 +2050,16 @@
                                                         মন্তব্য(পাঞ্জাবী / শার্ট প্রভৃতির) :
                                                     </label>
 
-                                                    <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                                    <textarea class="form-control" name="montobbo_shirt_panjabi" id="montobbo_shirt_panjabi" rows="1"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form_input_group">
-                                                    <label for="order_number"
+                                                    <label for="montobbo_pant_pajama"
                                                         class="form-label form_input_group_label_important">
                                                         মন্তব্য(পাজামা / প্যান্ট প্রভৃতির) :
                                                     </label>
-                                                    <textarea class="form-control" name="" id="" rows="1"></textarea>
+                                                    <textarea class="form-control" name="montobbo_pant_pajama" id="montobbo_pant_pajama" rows="1"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -2269,7 +2084,7 @@
 
 
     @push('scripts')
-        {{-- <script>
+        <script>
             $(document).ready(function() {
                 $(document).on('click', '#add_cloth_name', function(event) {
                     event.preventDefault();
@@ -2277,23 +2092,21 @@
                     const data = {
                         cloth_name: cloth_name 
                     }
+                   
                     $.ajax({
-                        url: {{ route('admin.add.cloth.store') }}, 
+                        // url: {{ route('admin.add.cloth.store') }}, 
+                        url : '/api/add/cloth-type/store',
                         type: 'POST',
                         dataType: 'json',
                         data: {
                             cloth_name: cloth_name
                         },
                         success: function(response) {
-                            if (response.success) {
-                                alert('Cloth saved successfully!');
-                            } else {
-                                alert('Error saving cloth: ' + response.message); 
-                            }
+                            $('.table').load(location.href+' .table');
+                            $('#cloth_name').val("");
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
-                            console.error('Error:', textStatus,
-                            errorThrown); 
+                            alert('please enter a cloth name') ; 
                         }
                     });
                 })
@@ -2320,5 +2133,5 @@
             //         }
             //     });
             // });
-        </script> --}}
+        </script>
     @endpush

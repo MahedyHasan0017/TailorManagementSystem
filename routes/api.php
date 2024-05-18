@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClothOrder\ClothTypeController;
 use App\Http\Controllers\RegeneratePost;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+
+Route::get('add/cloth-type', [ClothTypeController::class, 'add_cloth_type'])->name('admin.add.cloth');
+Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

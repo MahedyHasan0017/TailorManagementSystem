@@ -91,6 +91,17 @@
     width: 100%;
 }
 
+
+.custom_table_heading{
+    position: sticky;
+    top : 0 ; 
+}
+
+.custom_table_footer{
+    position: sticky;
+    bottom : 0 ; 
+}
+
 .custom_table_heading,
 .custom_table_footer {
     background-color: #2255a4;
@@ -113,6 +124,13 @@
     margin-bottom: 0px;
     margin-top: 2px;
 }
+
+
+.table__container{
+    max-height: 450px ;
+}
+
+
 
 .custom_table_height {
     height: 200px !important;
