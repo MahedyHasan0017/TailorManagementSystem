@@ -324,21 +324,21 @@
                                                             নতুন পোশাক যোগ করুন
                                                         </button>
                                                     </h2>
-                                                    <div id="collapseSevenn" class="accordion-collapse collapse show"
-                                                        aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                                    <div id="" class="" aria-labelledby="headingSeven"
+                                                        data-bs-parent="#accordionExample">
                                                         <div class="accordion-body accordion__body">
                                                             <div class="row">
                                                                 {{-- <form id="add-new-cloth" action="{{ route('admin.add.cloth.store') }}"
                                                                     method="post"> --}}
-                                                                    <div class="col-12">
-                                                                        <input type="text" name='cloth_name'
-                                                                            id="cloth_name" placeholder="পোশাকের নাম"
-                                                                            class="form-control">
-                                                                    </div>
-                                                                    <div class="col-12" style="text-align: right">
-                                                                        <button type="button"
-                                                                            class="btn btn-success mt-2">যোগ করুন</button>
-                                                                    </div>
+                                                                <div class="col-12">
+                                                                    <input type="text" name='cloth_name'
+                                                                        id="cloth_name" placeholder="পোশাকের নাম"
+                                                                        class="form-control">
+                                                                </div>
+                                                                <div class="col-12" style="text-align: right">
+                                                                    <button id="add_cloth_name" type="button"
+                                                                        class="btn btn-success mt-2">যোগ করুন</button>
+                                                                </div>
 
                                                                 {{-- </form> --}}
                                                             </div>
@@ -2269,22 +2269,56 @@
 
 
     @push('scripts')
-        <script>
-            $('#add-new-cloth').submit(function(e) {
-                e.preventDefault();
-
-                $.ajax({
-                    url: "{{ route('admin.add.cloth.store') }}",
-                    method: 'POST',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        console.log(response.message);
-                    },
-                    error: function(error) {
-                        console.error(error);
+        {{-- <script>
+            $(document).ready(function() {
+                $(document).on('click', '#add_cloth_name', function(event) {
+                    event.preventDefault();
+                    const cloth_name = $('#cloth_name').val();
+                    const data = {
+                        cloth_name: cloth_name 
                     }
-                });
+                    $.ajax({
+                        url: {{ route('admin.add.cloth.store') }}, 
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            cloth_name: cloth_name
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                alert('Cloth saved successfully!');
+                            } else {
+                                alert('Error saving cloth: ' + response.message); 
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            console.error('Error:', textStatus,
+                            errorThrown); 
+                        }
+                    });
+                })
             });
-        </script>
+
+
+            // $("#add_cloth_name").click(function() {
+            //         alert("The paragraph was clicked.");
+            //     });
+
+            // $('#add-new-cloth').submit(function(e) {
+            //     e.preventDefault();
+
+            //     $.ajax({
+            //         url: "{{ route('admin.add.cloth.store') }}",
+            //         method: 'POST',
+            //         data: $(this).serialize(),
+            //         dataType: 'json',
+            //         success: function(response) {
+            //             console.log(response.message);
+            //         },
+            //         error: function(error) {
+            //             console.error(error);
+            //         }
+            //     });
+            // });
+        </script> --}}
     @endpush

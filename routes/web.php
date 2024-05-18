@@ -139,6 +139,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
 
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
 
+        Route::get('add/cloth-type', [ClothTypeController::class, 'add_cloth_type'])->name('admin.add.cloth');
+
         Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
 

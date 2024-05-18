@@ -7,7 +7,18 @@ use Illuminate\Http\Request;
 
 class ClothTypeController extends Controller
 {
+
+    public function add_cloth_type(){
+        return response()->json([
+            'success' => true,
+            'message' => 'Cloth saved successfully!',
+        ]);
+    }
+
+    
+
     public function add_cloth_type_store(Request $request){
-        dd($request->all()) ; 
+        // dd($request->all()) ; 
+        return response()->json('ok') ; 
     }
 }
