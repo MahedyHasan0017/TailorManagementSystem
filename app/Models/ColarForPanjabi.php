@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClothName extends Model
+class ColarForPanjabi extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'cloth_name' , 
+        'panjabi_measurement_id' ,
+        'colar_name' , 
         'cloth_order_id'
     ];
-
-
-    public function cloth_order(){
-        return $this->belongsTo(ClothOrder::class) ; 
+    public function panjabi_measurement(){
+        return $this->belongsTo(PanjabiMeasurement::class) ;   
     }
 }

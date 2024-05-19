@@ -93,8 +93,8 @@
                                                             <td scope="row">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="{{ $cloth->cloth_name }}" name="cloth_full_name" id="flexCheckDefault">
-                                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                                        value="{{ $cloth->cloth_name }}" name="cloth_full_name" id="cloth_name[]" name="name[]">
+                                                                    <label class="form-check-label" for="name[]">
                                                                         {{ $cloth->cloth_name }}
                                                                     </label>
                                                                 </div>
@@ -384,16 +384,6 @@
                                                             পকেট
                                                         </div>
 
-                                                        {{-- <div class="card">
-                                                            <div id="checkboxes">
-                                                                <input type="checkbox" name="options[]" value="option1"> Option 1
-                                                                <input type="checkbox" name="options[]" value="option2"> Option 2
-                                                                <input type="checkbox" name="options[]" value="option3"> Option 3
-                                                                <input type="checkbox" name="options[]" value="option4"> Option 4
-                                                                <input type="checkbox" name="options[]" value="option5"> Option 5
-                                                              </div>
-                                                        </div> --}}
-
                                                         <div class="card p-2 mb-0 ">
                                                             <div class="row">
                                                                 <div class="col-md-3">
@@ -401,7 +391,7 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="panjabi_buke_pocket_1_ti" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             বুকে ১টি পকেট
                                                                         </label>
                                                                     </div>
@@ -411,7 +401,7 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="panjabi_buke_pocket_2_ti" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             বুকে ২টি পকেট
                                                                         </label>
                                                                     </div>
@@ -421,7 +411,7 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="1_pocket_chain" name='pocket[]'>
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             ১ পকেটে চেইন
                                                                         </label>
                                                                     </div>
@@ -431,7 +421,7 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="2_pocket_chain"  name='pocket[]'>
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             ২ পকেটে চেইন
                                                                         </label>
                                                                     </div>
@@ -441,7 +431,7 @@
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="pocket_dhaka" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             পকেট ঢাকা
                                                                         </label>
                                                                     </div>
@@ -449,9 +439,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault" name="pocket[]">
+                                                                            value="pocket_dhkna" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             পকেট ঢাকনা
                                                                         </label>
                                                                     </div>
@@ -459,9 +449,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="kadhe_soldger" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             কাধে সোলডার
                                                                         </label>
                                                                     </div>
@@ -469,9 +459,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="hatte_fita" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             হাতে ফিতা
                                                                         </label>
                                                                     </div>
@@ -479,9 +469,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="bon_pocket" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             বন পকেট
                                                                         </label>
                                                                     </div>
@@ -489,9 +479,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="rannar" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             রানার
                                                                         </label>
                                                                     </div>
@@ -499,9 +489,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="bogol_pocket" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             বগল পকেট
                                                                         </label>
                                                                     </div>
@@ -509,9 +499,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="pocket-1" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/1.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -521,9 +511,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="pocket-2" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/2.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -533,9 +523,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-3" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/3.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -545,9 +535,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                             value="pocket-4" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/4.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -557,9 +547,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-5" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/5.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -569,9 +559,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-6" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/6.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -581,9 +571,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-7" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/7.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -593,9 +583,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-8" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/8.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -605,9 +595,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-9" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/9.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -617,9 +607,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-10" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/10.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -629,9 +619,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-11" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/11.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -641,9 +631,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-12" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/12.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -653,9 +643,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-13" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/13.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -665,9 +655,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-14" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/14.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -677,9 +667,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-15" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/15.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -689,9 +679,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-16" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/16.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:4px ; "
                                                                                 alt="images">
@@ -701,9 +691,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-17" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/17.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -713,9 +703,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-18" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/18.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -725,9 +715,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-19" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/19.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -737,9 +727,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="pocket-20" id="" name="pocket[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/20.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -762,9 +752,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                            value="round" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             রাউন্ড
                                                                         </label>
                                                                     </div>
@@ -772,9 +762,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="sherwani" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             শেরওয়ানি
                                                                         </label>
                                                                     </div>
@@ -782,9 +772,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="single" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             সিঙ্গেল
                                                                         </label>
                                                                     </div>
@@ -792,9 +782,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="double" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             ডাবল
                                                                         </label>
                                                                     </div>
@@ -802,9 +792,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="band" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             ব্যান্ড
                                                                         </label>
                                                                     </div>
@@ -812,9 +802,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="square" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             স্কয়ার
                                                                         </label>
                                                                     </div>
@@ -822,9 +812,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="site_hem" id="" name="colar[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             সাইট হেম
                                                                         </label>
                                                                     </div>
@@ -846,10 +836,10 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" 
+                                                                                    value="shirt_colar" id="" name="gola[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     শার্ট কলার
                                                                                 </label>
                                                                             </div>
@@ -857,10 +847,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="kof" id="" name="gola[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     কফ
                                                                                 </label>
                                                                             </div>
@@ -868,10 +857,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="single" id="" name="gola[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     সিঙ্গেল
                                                                                 </label>
                                                                             </div>
@@ -879,10 +867,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="bogol" id="" name="gola[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     বোগল
                                                                                 </label>
                                                                             </div>
@@ -890,10 +877,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="gol-gola" id="" name="gola[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     গোল গলা
                                                                                 </label>
                                                                             </div>
@@ -913,10 +899,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="colar" id="" name="pypin[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     কলার
                                                                                 </label>
                                                                             </div>
@@ -924,10 +909,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate" id="" name="pypin[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     প্লেট
                                                                                 </label>
                                                                             </div>
@@ -935,10 +919,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="hata" id="" name="pypin[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     হাতা
                                                                                 </label>
                                                                             </div>
@@ -946,10 +929,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate_er_ek_side" id="" name="pypin[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     প্লেটের এক সাইড
                                                                                 </label>
                                                                             </div>
@@ -973,10 +955,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate-1" id="" name="plate[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
 
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/1.png') }}"
                                                                                         style="height: 28px ; width:43px;"
@@ -988,10 +969,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate-2" id="" name="plate[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/2.png') }}"
                                                                                         style="height: 28px ; width:43px;"
                                                                                         alt="images">
@@ -1002,10 +982,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate-3" id="" name="plate[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/3.png') }}"
                                                                                         style="height: 28px ; width:43px;"
                                                                                         alt="images">
@@ -1016,10 +995,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate-4" id="" name="plate[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/4.png') }}"
                                                                                         style="height: 28px ; width:43px;"
                                                                                         alt="images">
@@ -1030,10 +1008,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate_double" id="" name="plate[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     ডাবল
                                                                                 </label>
                                                                             </div>
@@ -1053,10 +1030,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="kaff-1" id="" name="kaff[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/kaf_img/1.png') }}"
                                                                                         style="height: 28px ; width:43px;"
                                                                                         alt="images">
@@ -1067,10 +1043,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="kaff-2" id="" name="kaff[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/kaf_img/2.png') }}"
                                                                                         style="height: 28px ; width:43px;"
                                                                                         alt="images">
@@ -1081,10 +1056,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="kaff-3" id="" name="kaff[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/kaf_img/3.png') }}"
                                                                                         style="height: 28px ; width:43px;"
                                                                                         alt="images">
@@ -1096,10 +1070,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="single_kaff" id="" name="kaff[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     সিঙ্গেল কাফ
                                                                                 </label>
                                                                             </div>
@@ -1108,10 +1081,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox"value="double_kaff_ling" id="" name="kaff[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     ডাবল কাফ লিং
                                                                                 </label>
                                                                             </div>
@@ -1133,9 +1105,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="single" id="" name="pasting[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             সিঙ্গেল
                                                                         </label>
                                                                     </div>
@@ -1143,9 +1115,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="double" id="" name="pasting[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             ডাবল
                                                                         </label>
                                                                     </div>
@@ -1153,9 +1125,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="haate_pasting" id="" name="pasting[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             হাতে পেস্টিং
                                                                         </label>
                                                                     </div>
@@ -1163,9 +1135,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="botam_plate" id="" name="pasting[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             বোতাম প্লেটে
                                                                         </label>
                                                                     </div>
@@ -1188,10 +1160,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="colar" id="" name="laise[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     কলার
                                                                                 </label>
                                                                             </div>
@@ -1200,10 +1171,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="plate" id="" name="laise[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     প্লেট
                                                                                 </label>
                                                                             </div>
@@ -1212,10 +1182,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox"value="hata" id="" name="laise[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     হাতা
                                                                                 </label>
                                                                             </div>
@@ -1225,10 +1194,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="buk" id="" name="laise[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     বুক
                                                                                 </label>
                                                                             </div>
@@ -1250,10 +1218,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="tira" id="" name="tira[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     তিরা
                                                                                 </label>
                                                                             </div>
@@ -1262,10 +1229,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="mora_double_chap_shelay" id="" name="tira[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     মোড়া ডাবল চাপ সেলাই
                                                                                 </label>
                                                                             </div>
@@ -1274,10 +1240,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="niche_round" id="" name="tira[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     নিচে রাউন্ড
                                                                                 </label>
                                                                             </div>
@@ -1286,10 +1251,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value=""
-                                                                                    id="flexCheckDefault">
+                                                                                    type="checkbox" value="v_tira" id="" name="tira[]">
                                                                                 <label class="form-check-label"
-                                                                                    for="flexCheckDefault">
+                                                                                    for="">
                                                                                     ভি-তিরা
                                                                                 </label>
                                                                             </div>
@@ -1310,9 +1274,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="shamna" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             সামনা
                                                                         </label>
                                                                     </div>
@@ -1320,9 +1284,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="kalar" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             কালার
                                                                         </label>
                                                                     </div>
@@ -1330,9 +1294,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="plate" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             প্লেট
                                                                         </label>
                                                                     </div>
@@ -1340,9 +1304,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="kop" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             কপ
                                                                         </label>
                                                                     </div>
@@ -1351,9 +1315,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="gola" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             গলা
                                                                         </label>
                                                                     </div>
@@ -1361,9 +1325,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="mora" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             মোড়া
                                                                         </label>
                                                                     </div>
@@ -1371,9 +1335,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="kandi" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             কান্দি
                                                                         </label>
                                                                     </div>
@@ -1381,9 +1345,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="dui_pocket" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             দুই পকেট
                                                                         </label>
                                                                     </div>
@@ -1391,9 +1355,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="buk_pocket" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             বুক পকেট
                                                                         </label>
                                                                     </div>
@@ -1401,9 +1365,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="haater_muhuri" id="" name="full[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             হাতের মুহুরি
                                                                         </label>
                                                                     </div>
@@ -1421,9 +1385,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="chain_botam" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             চেইন বোতাম
                                                                         </label>
                                                                     </div>
@@ -1431,9 +1395,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="customar_er_deya_botam" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             কাস্টমারের দেয়া বোতাম
                                                                         </label>
                                                                     </div>
@@ -1441,9 +1405,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="kath_botam" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             কাঠ বোতাম
                                                                         </label>
                                                                     </div>
@@ -1451,9 +1415,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="metal_botam_boro" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             মেটাল বোতাম(বড়)
                                                                         </label>
                                                                     </div>
@@ -1461,9 +1425,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="normal_botam" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             নরমাল বোতাম
                                                                         </label>
                                                                     </div>
@@ -1471,9 +1435,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="design_botam" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             ডিজাইন বোতাম
                                                                         </label>
                                                                     </div>
@@ -1483,9 +1447,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="metal_botam_choto" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             মেটাল বোতাম(ছোট)
                                                                         </label>
                                                                     </div>
@@ -1494,9 +1458,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="" id="flexCheckDefault">
+                                                                        value="snap_botam" id="" name="botam[]">
                                                                         <label class="form-check-label"
-                                                                            for="flexCheckDefault">
+                                                                            for="">
                                                                             স্নাপ বোতাম
                                                                         </label>
                                                                     </div>
@@ -1600,9 +1564,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="1_pocket_chain" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         ১ পকেটে চেইন
                                                                     </label>
                                                                 </div>
@@ -1610,9 +1574,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="2_pocket_chain" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         ২ পকেট চেইন
                                                                     </label>
                                                                 </div>
@@ -1621,9 +1585,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="mobile_pocket_1_ti" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         মোবাইল পকেট ১টি
                                                                     </label>
                                                                 </div>
@@ -1631,9 +1595,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pechone_pocket_1_ti" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         পেছনে ১টি পকেট
                                                                     </label>
                                                                 </div>
@@ -1641,9 +1605,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pechone_pocket_2_ti" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         পেছনে ২টি পকেট
                                                                     </label>
                                                                 </div>
@@ -1651,9 +1615,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="1_tiken" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         ১ টিকেন
                                                                     </label>
                                                                 </div>
@@ -1661,9 +1625,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="2_tiken" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         ২ টিকেন
                                                                     </label>
                                                                 </div>
@@ -1671,9 +1635,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="tiken_chara" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         টিকেন ছাড়া
                                                                     </label>
                                                                 </div>
@@ -1681,9 +1645,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="Geans_pant_golder_shuta" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         জিন্স প্যান্ট : গোল্ডেন সূতা
                                                                     </label>
                                                                 </div>
@@ -1691,9 +1655,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="Geans_pant_same_shuta" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         জিন্স প্যান্ট : সেইম সূতা
                                                                     </label>
                                                                 </div>
@@ -1701,9 +1665,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="shamne_chain" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         সামনে চেইন
                                                                     </label>
                                                                 </div>
@@ -1711,9 +1675,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="mobile_pocket_2_ti" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         মোবাইল পকেট ২টি
                                                                     </label>
                                                                 </div>
@@ -1721,9 +1685,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_1" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/19.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1733,9 +1697,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_2" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/20.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1745,9 +1709,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_3" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/21.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1760,9 +1724,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_4" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/22.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1773,9 +1737,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_5" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/23.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1786,9 +1750,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_6" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/24.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1798,9 +1762,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_7" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/25.jpg') }}"
                                                                             style="height: 50px ; width:42px; margin-left:7px"
                                                                             alt="images">
@@ -1810,9 +1774,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_8" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/26.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1822,9 +1786,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_9" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/27.jpg') }}"
                                                                             style="height: 50px ; width:46px; margin-left : 4px"
                                                                             alt="images">
@@ -1834,9 +1798,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_10" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/28.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1846,9 +1810,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_11" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/30.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px "
                                                                             alt="images">
@@ -1858,9 +1822,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_12" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/31.jpg') }}"
                                                                             style="height: 50px ; width:52px; margin-left : 2px;"
                                                                             alt="images">
@@ -1870,9 +1834,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_13" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/32.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px "
                                                                             alt="images">
@@ -1882,9 +1846,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_14" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/33.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px"
                                                                             alt="images">
@@ -1894,9 +1858,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_15" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/34.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1906,9 +1870,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_16" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/35.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px; "
                                                                             alt="images">
@@ -1918,9 +1882,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_17" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/36.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1930,9 +1894,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_18" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/37.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1942,9 +1906,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_19" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/38.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1954,9 +1918,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_20" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/39.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1966,9 +1930,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="" id="flexCheckDefault">
+                                                                    value="pant_pocket_21" id="" name="pant_pocket[]">
                                                                     <label class="form-check-label"
-                                                                        for="flexCheckDefault">
+                                                                        for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/40.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">

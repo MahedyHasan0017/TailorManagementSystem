@@ -140,7 +140,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
 
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
 
-        Route::post('order/accepting/con', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
+        // Route::post('order/accepting/con', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
+        Route::get('order/details/view', [OrderAcceptingController::class, 'order_details_view'])->name('admin.order.detals.view');
 
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
 

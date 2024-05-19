@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cloth_names', function (Blueprint $table) {
+        Schema::create('cloth_order_delivary_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('cloth_name') ;
             $table->foreignId('cloth_order_id')->constrained('cloth_orders')->cascadeOnDelete();
+            $table->string('majurir_poriman')->nullable();
+            $table->string('nogod_prodan')->nullable();
+            $table->string('montobbo_shirt_panjabi')->nullable();
+            $table->string('orderer_tarikh')->nullable();
+            $table->string('delivery_tarikh')->nullable();
+            $table->string('montobbo_pant_pajama')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cloth_names');
+        Schema::dropIfExists('cloth_order_delivary_infos');
     }
 };
