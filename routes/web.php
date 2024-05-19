@@ -45,7 +45,10 @@ Route::get('/api', function () {
     return $posts;
 });
 
+Route::get('/', function () {
 
+    return redirect()->route('super_admin_dashboard') ; 
+});
 
 
 
