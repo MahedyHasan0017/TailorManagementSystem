@@ -3,14 +3,24 @@
 namespace App\Http\Controllers\ClothOrder;
 
 use App\Http\Controllers\Controller;
+use App\Models\BotamForPanjabi;
 use App\Models\ClothName;
 use App\Models\ClothOrder;
 use App\Models\ClothOrderDelivaryInfo;
 use App\Models\ClothType;
 use App\Models\ColarForPanjabi;
+use App\Models\FullForPanjabi;
+use App\Models\GolaForPanjabi;
+use App\Models\KaffForPanjabi;
+use App\Models\LeiseForPanjabi;
 use App\Models\PanjabiMeasurement;
 use App\Models\PantMeasurement;
+use App\Models\PastingForPanjabi;
+use App\Models\PlateForPanjabi;
 use App\Models\PocketForPanjabi;
+use App\Models\PocketForPant;
+use App\Models\PypinForPanjabi;
+use App\Models\TiraForPanjabi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,13 +51,23 @@ class OrderAcceptingController extends Controller
             "customer_address" => $data['customer_contact_address']
         ]);
 
+
+        $num_of_cloth = $request->input('number_of_cloth',[]);
+        $num_of_cloth = array_filter($num_of_cloth, fn($value) => !is_null($value) && $value !== '') ; 
+        $num_of_cloth = array_values($num_of_cloth) ;
+        $num_of_cloth = $num_of_cloth[0] ; 
+
+
+        // dd($request->all()) ; 
+
         $cloth_order->save() ; 
 
         if($cloth_order){
 
             $cloth_name = ClothName::create([
                 'cloth_name' => $data['cloth_full_name'],
-                'cloth_order_id' => $cloth_order->id 
+                'cloth_order_id' => $cloth_order->id ,
+                'number_of_cloth' => $num_of_cloth,
             ]);
 
             $cloth_name->save() ; 
@@ -110,7 +130,113 @@ class OrderAcceptingController extends Controller
                     $colars_for_panjabi->save() ; 
                 }
 
-                // dd($colars) ; 
+
+                $golas = $request->input('gola',[]) ; 
+
+                for($i = 0 ; $i < count($golas) ; $i++){
+                    $golas_for_panjabi = GolaForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'gola_name' => $golas[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $golas_for_panjabi->save() ; 
+                }
+
+
+                $pypins = $request->input('pypin',[]) ; 
+
+                for($i = 0 ; $i < count($pypins) ; $i++){
+                    $pypins_for_panjabi = PypinForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'pypin_name' => $pypins[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $pypins_for_panjabi->save() ; 
+                }
+                
+
+                $plates = $request->input('plate',[]) ; 
+
+                for($i = 0 ; $i < count($plates) ; $i++){
+                    $plate_for_panjabi = PlateForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'plate_name' => $plates[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $plate_for_panjabi->save() ; 
+                }
+
+                $kaffs = $request->input('kaff',[]) ; 
+
+                for($i = 0 ; $i < count($kaffs) ; $i++){
+                    $kaffs_for_panjabi = KaffForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'kaff_name' => $kaffs[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $kaffs_for_panjabi->save() ; 
+                }
+
+
+                $pastings = $request->input('pasting',[]) ; 
+
+                for($i = 0 ; $i < count($pastings) ; $i++){
+                    $pastings_for_panjabi = PastingForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'pasting_name' => $pastings[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $pastings_for_panjabi->save() ; 
+                }
+
+
+
+
+                $laises = $request->input('laise',[]) ;
+
+
+                for($i = 0 ; $i < count($laises) ; $i++){
+                    $laises_for_panjabi = LeiseForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'leise_name' => $laises[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $laises_for_panjabi->save() ; 
+                }
+
+                $tiras = $request->input('tira',[]) ; 
+
+                for($i = 0 ; $i < count($tiras) ; $i++){
+                    $tiras_for_panjabi = TiraForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'tira_name' => $tiras[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $tiras_for_panjabi->save() ; 
+                }
+
+                $fulls = $request->input('full',[]) ; 
+
+
+                for($i = 0 ; $i < count($fulls) ; $i++){
+                    $fulls_for_panjabi = FullForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'full_name' => $fulls[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $fulls_for_panjabi->save() ; 
+                }
+
+                $botams = $request->input('botam',[]) ; 
+
+                for($i = 0 ; $i < count($botams) ; $i++){
+                    $botams_for_panjabi = BotamForPanjabi::create([
+                        'panjabi_measurement_id' => $panjabi_measurement->id ,
+                        'botam_name' => $botams[$i] ,
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $botams_for_panjabi->save() ; 
+                }
 
             }
 
@@ -131,19 +257,33 @@ class OrderAcceptingController extends Controller
 
 
 
+            if($pant_measurement){
 
+                $pockets = $request->input('pant_pocket',[]) ; 
 
+                for($i = 0 ; $i < count($pockets) ; $i++){
+                    $pockets_for_pant = PocketForPant::create([
+                        'pant_measurement_id' => $pant_measurement->id,
+                        'pant_pocket_name' => $pockets[$i],
+                        'cloth_order_id' => $cloth_order->id,
+                    ]);
+                    $pockets_for_pant->save() ; 
+                }
+
+            }
+
+    
 
         }
 
 
-        return 'data-proccessing';
+        return redirect()->route('admin.order.accepting.list');
     }
 
 
-    public function order_details_view(){
+    public function order_details_view(Request $request , $id){
 
-        $order_detail = ClothOrder::where('id',15)->first() ; 
+        $order_detail = ClothOrder::where('id',$id)->first() ; 
 
         return view('admin_vendor_employee.cloth_order.cloth_order_details',compact('order_detail')) ; 
     }
@@ -151,6 +291,9 @@ class OrderAcceptingController extends Controller
 
     public function order_accepted_list()
     {
-        return view('admin_vendor_employee.cloth_order.order_list');
+
+        $cloth_orders = ClothOrder::all(); 
+
+        return view('admin_vendor_employee.cloth_order.order_list',compact('cloth_orders'));
     }
 }

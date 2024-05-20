@@ -9,12 +9,12 @@ class PocketForPant extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'panjabi_measurement_id' ,
-        'pocket_name' , 
+        'pant_measurement_id' ,
+        'pant_pocket_name' , 
         'cloth_order_id'
     ];
 
-    public function panjabi_measurement(){
-        return $this->belongsTo(PanjabiMeasurement::class) ;   
+    public function pant_measurement(){
+        return $this->belongsTo(PantMeasurement::class) ;   
     }
 }

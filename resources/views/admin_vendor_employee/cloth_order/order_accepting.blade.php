@@ -93,7 +93,7 @@
                                                             <td scope="row">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                        value="{{ $cloth->cloth_name }}" name="cloth_full_name" id="cloth_name[]" name="name[]">
+                                                                        value="{{ $cloth->cloth_name }}" name="cloth_full_name" id="cloth_name[]">
                                                                     <label class="form-check-label" for="name[]">
                                                                         {{ $cloth->cloth_name }}
                                                                     </label>
@@ -102,8 +102,8 @@
     
                                                             <td>
                                                                 <div class="">
-                                                                    <input type="number" class="form-control"
-                                                                        name="number_of_cloth" id="number_of_cloth">
+                                                                    <input type="text" class="form-control"
+                                                                        name="number_of_cloth[]" id="number_of_cloth">
                                                                 </div>
                                                             </td>
                                                             <td>
@@ -1939,8 +1939,6 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1990,8 +1988,8 @@
                                                             class="form-label form_input_group_label_important">অর্ডারের
                                                             তারিখ
                                                             : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="orderer_tarikh"
-                                                            name="orderer_tarikh">
+                                                       
+                                                        <input id="datepicker1" class="form-control"  name="orderer_tarikh"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -1999,8 +1997,8 @@
                                                         <label for="delivery_tarikh"
                                                             class="form-label form_input_group_label_important">ডেলিভারির
                                                             তারিখ : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="delivery_tarikh"
-                                                            name="delivery_tarikh">
+                            
+                                                            <input id="datepicker2" class="form-control"  name="delivery_tarikh"/>
                                                     </div>
 
                                                 </div>

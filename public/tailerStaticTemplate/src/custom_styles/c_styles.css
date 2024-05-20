@@ -212,3 +212,88 @@ tbody {
     background: #27a9e3;
     cursor: pointer;
 }
+
+
+
+.vendor__info{
+    border-left: 1px solid #6610f2 ;
+    padding-left: 20px ;
+}
+
+.key_value{
+ display: flex;
+ width: 100% ;
+}
+
+.key{
+    width : 40% ; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.value{
+    width : 60% ; 
+    padding-left: 10px ;
+    display: block;
+}
+
+.shop__and__vendor__container{
+    background: #ddd;
+    padding: 10px ;
+    margin-bottom: 20px ;
+}
+
+.shop__name{
+   
+}
+
+.key__for__measurements{
+    width : 50% ; 
+    display: flex;
+    justify-content: space-between;
+    padding: 5px ;
+}
+.value__for__measurements{
+    width : 50% ;
+    text-align: center;
+    display: block;
+    padding: 5px ;
+}
+
+.panjabi_measurement_unit{
+    background-color: #ddd ;
+    height: 100%;
+}
+
+
+.key__for__measurements__with__loop{
+    width : 25% ; 
+    display: flex;
+    justify-content: space-between;
+    padding: 5px ;
+}
+
+.value__for__measurements__with__loop{
+    width : 75% ;
+    text-align: left;
+    display: block;
+    padding: 5px ;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width : 767px) {
+    .customer__info{
+        padding-left: 20px ;
+        border-right: 1px solid #6610f2 ;
+    }
+}
+
+
+
+

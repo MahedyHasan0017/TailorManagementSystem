@@ -23,4 +23,9 @@ class PantMeasurement extends Model
     public function cloth_order(){
         return $this->belongsTo(ClothOrder::class) ; 
     }
+
+    public function pant_pocket(){
+        return $this->hasMany(PocketForPant::class) ;  
+    }
+
 }

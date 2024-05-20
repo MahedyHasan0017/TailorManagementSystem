@@ -11,9 +11,11 @@ class ClothName extends Model
 
     protected $fillable = [
         'cloth_name' , 
-        'cloth_order_id'
+        'cloth_order_id',
+        'number_of_cloth',
+        'unit_of_cloth',
+        'total_of_cloth'
     ];
-
 
     public function cloth_order(){
         return $this->belongsTo(ClothOrder::class) ; 

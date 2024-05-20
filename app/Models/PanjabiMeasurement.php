@@ -41,6 +41,47 @@ class PanjabiMeasurement extends Model
 
     public function colar(){
         return $this->hasMany(ColarForPanjabi::class) ;  
+    } 
+
+    public function gola(){
+        return $this->hasMany(GolaForPanjabi::class) ;  
     }
+
+    public function pypin(){
+        return $this->hasMany(PypinForPanjabi::class) ;  
+    }
+    public function plate(){
+        return $this->hasMany(PlateForPanjabi::class) ;  
+    }
+    public function kaff(){
+        return $this->hasMany(KaffForPanjabi::class) ;  
+    }
+    public function pasting(){
+        return $this->hasMany(PastingForPanjabi::class) ;  
+    }
+    public function leise(){
+        return $this->hasMany(LeiseForPanjabi::class) ;  
+    }
+    public function tira(){
+        return $this->hasMany(TiraForPanjabi::class) ;  
+    }
+    public function full(){
+        return $this->hasMany(FullForPanjabi::class) ;  
+    }
+    public function botam_for_panjabi(){
+        return $this->hasMany(BotamForPanjabi::class) ;  
+    }
+
+
+    
+    
+
+
+
+    
+
+
+    
+
 
 }

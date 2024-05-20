@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pocket_for_pants', function (Blueprint $table) {
+        Schema::create('botam_for_pants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pant_measurement_id')->constrained('pant_measurements')->cascadeOnDelete();
-            $table->string('pant_pocket_name')->nullable() ; 
-            $table->string('cloth_order_id') ;
             $table->timestamps();
         });
     }
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pocket_for_pants');
+        Schema::dropIfExists('botam_for_pants');
     }
 };
