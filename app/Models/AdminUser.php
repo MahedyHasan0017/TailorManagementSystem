@@ -13,6 +13,9 @@ class AdminUser extends Authenticatable
 
     protected $guard = 'admin';
     protected $fillable = [
+        'admin_id',
+        'full_name',
+        'mobile_number',
         'name',
         'email',
         'password',

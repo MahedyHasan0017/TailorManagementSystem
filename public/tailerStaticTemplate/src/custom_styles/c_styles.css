@@ -92,14 +92,14 @@
 }
 
 
-.custom_table_heading{
+.custom_table_heading {
     position: sticky;
-    top : 0 ; 
+    top: 0;
 }
 
-.custom_table_footer{
+.custom_table_footer {
     position: sticky;
-    bottom : 0 ; 
+    bottom: 0;
 }
 
 .custom_table_heading,
@@ -126,8 +126,8 @@
 }
 
 
-.table__container{
-    max-height: 450px ;
+.table__container {
+    max-height: 450px;
 }
 
 
@@ -215,97 +215,147 @@ tbody {
 
 
 
-.vendor__info{
-    border-left: 1px solid #6610f2 ;
-    padding-left: 20px ;
+.vendor__info {
+    border-left: 1px solid #6610f2;
+    padding-left: 20px;
 }
 
-.key_value{
- display: flex;
- width: 100% ;
+.key_value {
+    display: flex;
+    width: 100%;
 }
 
-.key{
-    width : 40% ; 
+.key {
+    width: 40%;
     display: flex;
     justify-content: space-between;
 }
 
-.value{
-    width : 60% ; 
-    padding-left: 10px ;
+.value {
+    width: 60%;
+    padding-left: 10px;
     display: block;
 }
 
-.shop__and__vendor__container{
+.shop__and__vendor__container {
     background: #ddd;
-    padding: 10px ;
-    margin-bottom: 20px ;
+    padding: 10px;
+    margin-bottom: 10px;
+    
 }
 
-.shop__name{
-   
-}
+.shop__name {}
 
-.key__for__measurements{
-    width : 50% ; 
+.key__for__measurements {
+    width: 50%;
     display: flex;
     justify-content: space-between;
-    padding: 5px ;
+    padding: 5px;
 }
-.value__for__measurements{
-    width : 50% ;
+
+.value__for__measurements {
+    width: 50%;
     text-align: center;
     display: block;
-    padding: 5px ;
+    padding: 5px;
 }
 
-.panjabi_measurement_unit{
-    background-color: #ddd ;
+.panjabi_measurement_unit {
+    background-color: #ddd;
     height: 100%;
 }
 
 
-.key__for__measurements__with__loop{
-    width : 25% ; 
+.key__for__measurements__with__loop {
+    width: 25%;
     display: flex;
     justify-content: space-between;
-    padding: 5px ;
+    padding: 5px;
 }
 
-.value__for__measurements__with__loop{
-    width : 75% ;
+.value__for__measurements__with__loop {
+    width: 75%;
     text-align: left;
     display: block;
-    padding: 5px ;
+    padding: 5px;
 }
 
-.action_buttons_in_table{
+.action_buttons_in_table {
     display: flex;
     align-items: center;
-    gap : 5px ; 
+    gap: 5px;
     height: 100%;
 }
 
-.btn-danger{
-    color : #fff ; 
+.btn-danger {
+    color: #fff;
+}
+
+.vendor__infoo h4,
+.customer__infoo h4 {
+    font-size: 15px;
+}
+
+.key_value .key,
+.key_value .value {
+    font-size: 12px;
+}
+
+
+.key_value .valuee {
+    font-size: 15px;
+}
+
+
+@page {
+    size: A4;
+
 }
 
 
 
-
-
-
-
-
-
-@media screen and (max-width : 767px) {
-    .customer__info{
-        padding-left: 20px ;
-        border-right: 1px solid #6610f2 ;
+@media print {
+    body {
+        /* background-color: #cdebe0 !important; */
+    }
+    .panjabi_measurement_unit{
+        margin-top: -8px !important;
     }
 }
 
 
 
 
+@media screen and (max-width : 767px) {
+    .customer__info {}
+
+    .shop__and__vendor__container {}
+
+
+
+    .key_value .key,
+    .key_value .value {
+        font-size: 13px;
+    }
+
+
+    .vendor__infoo h4,
+    .customer__infoo h4 {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width : 500px) {
+    .key_value {
+        flex-wrap: wrap;
+    }
+
+    .key {
+        width: 100%;
+    }
+
+    .value {
+        padding-left: 0px;
+    }
+}

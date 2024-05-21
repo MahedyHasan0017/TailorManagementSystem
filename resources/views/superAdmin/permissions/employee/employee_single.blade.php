@@ -26,6 +26,9 @@
                 <div class="col-12">
                     <h2>here is all permissions for employees</h2>
                 </div>
+                <div class="col-12">
+                    Please assign the permissions for {{ $employee->full_name }}
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mt-3">
@@ -74,9 +77,22 @@
 
                 </div>
 
+                <div class="col-md-6 mt-3">
+                    <h4>Permissions you have already given.</h4>
+                    @foreach ($persmissions as $persmission)
+                        <div>
+                            {{ $persmission->permission_name }}
+                        </div>
+                    @endforeach
+                </div>
+
+
 
             </div>
         </div>
 
     </div>
     @endsection
+
+
+    

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +55,7 @@ class VendorController extends Controller
         }
         return view('vendor/auth/register');
     }
-    public function register_store(Request $request)
+    public function register_store(RegisterRequest $request)
     {
 
         $is_user_exists = Vendor::where('email', $request->email)->first();
@@ -64,10 +65,16 @@ class VendorController extends Controller
             return redirect()->back();
         } else {
 
+
+            $vendor_id = random_int(100000, 999999);
+
             $user = Vendor::create([
+                'vendor_id' => $vendor_id , 
+                'full_name' => $request->full_name ,
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
+                'mobile_number' => $request->mobile_number
             ]);
             if ($user) {
                 toastr()->success('Vendor Registered Successfully! Please Login!');

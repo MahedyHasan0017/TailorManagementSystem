@@ -96,7 +96,6 @@
 
                             </div>
 
-
                             <div>
 
                                 <div class="input-group mb-3">
@@ -104,23 +103,20 @@
                                         <span class="input-group-text bg-info text-white h-100" id="basic-addon2"><i
                                                 class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg"
-                                        placeholder=" Confirm Password" name="c_password" id="c_password"
-                                        aria-label="Password" aria-describedby="basic-addon1" required>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Mobile Number"
+                                        name="mobile_number" id="mobile_number" aria-label=""
+                                        aria-describedby="basic-addon1" >
                                 </div>
 
 
 
                                 <div style="display: block ; margin-bottom:15px">
-                                    @error('c_password')
+                                    @error('mobile_number')
                                         <div style="color: red">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                             </div>
-
-
-
 
                         </div>
                     </div>
@@ -132,7 +128,8 @@
                                 </div>
                             </div>
                             <div class="mt-5">
-                                <a href="{{ route('auth.admin.login.view') }}" class="btn btn-info">Already Have A Account ?
+                                <a href="{{ route('auth.admin.login.view') }}" class="btn btn-info">Already Have A Account
+                                    ?
                                     Login Here</a>
                             </div>
                         </div>

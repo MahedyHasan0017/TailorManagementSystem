@@ -38,13 +38,17 @@ class OrderAcceptingController extends Controller
     public function order_accepting_store(Request $request)
     {
 
+
+        $order_number = random_int(100000, 999999);
+
         $admin = Auth::guard('admin')->user();
         $data = $request->all() ; 
         // dd($data) ; 
         $cloth_order = ClothOrder::create([
             "shop_name" => "ABCD",
+            'order_id' => $order_number,
             "vendor_name" => $admin->name , 
-            "vendor_number" => "vender-mobile-number" , 
+            "vendor_number" => $admin->mobile_number , 
             "customer_name" => $data['customer_name'] ,
             "customer_mobile" => $data['customer_mobile_number'],
             "customer_email" => $data['customer_email'],

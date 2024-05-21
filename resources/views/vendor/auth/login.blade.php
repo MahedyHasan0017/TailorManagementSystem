@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <div class="pt-3">
                                 <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock me-1"></i> Lost password?</button>
-                                <button class="btn btn-success float-end text-white" type="submit">Login</button>
+                                <button class="btn btn-success float-end text-white" type="submit">Vendor Login</button>
                             </div>
                         </div>
                     </div>

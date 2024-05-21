@@ -12,6 +12,7 @@ class ClothOrder extends Model
     protected $fillable = [
         'cloth_name' , 
         'shop_name',
+        'order_id',
         'vendor_name',
         'vendor_number',
         'customer_name',

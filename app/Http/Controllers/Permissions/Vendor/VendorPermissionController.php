@@ -21,6 +21,8 @@ class VendorPermissionController extends Controller
 
         $vendors = Vendor::all() ; 
 
+        
+
         return view('superAdmin.permissions.vendor.vendor_single',compact('vendors'));
     }
 

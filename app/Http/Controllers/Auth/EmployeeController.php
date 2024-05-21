@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,7 +57,7 @@ class EmployeeController extends Controller
 
         return view('employee/auth/register');
     }
-    public function register_store(Request $request)
+    public function register_store(RegisterRequest $request)
     {
 
         $is_user_exists = Employee::where('email', $request->email)->first();
@@ -66,10 +67,16 @@ class EmployeeController extends Controller
             return redirect()->back();
         } else {
 
+
+            $employee_id = random_int(100000, 999999);
+
             $user = Employee::create([
+                'employee_id' => $employee_id,
+                'full_name' => $request->full_name , 
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
+                'mobile_number' => $request->mobile_number 
             ]);
             if ($user) {
                 toastr()->success('User Registered Successfully! Please Login!');

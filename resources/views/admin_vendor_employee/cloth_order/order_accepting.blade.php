@@ -39,13 +39,13 @@
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        <div class="form_input_group">
+                                        {{-- <div class="form_input_group">
                                             <label for="order_number"
                                                 class="form-label form_input_group_label_important">অর্ডার
                                                 নং : <span style="color:red">*</span></label>
                                             <input type="text" class="form-control" id="order_number"
                                                 name="order_number">
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form_input_group">
                                             <label for="name" class="form-label form_input_group_label_important"> নাম :

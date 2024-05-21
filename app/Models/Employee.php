@@ -13,10 +13,13 @@ class Employee extends Authenticatable
 
     protected $guard = 'employee';
     protected $fillable = [
+        'employee_id',
+        'full_name',
         'name',
         'email',
         'password',
         'status',
+        'mobile_number'
     ];
 
     /**

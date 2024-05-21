@@ -22,7 +22,14 @@ class EmployeePermissionController extends Controller
     {
        
 
-        return view('superAdmin.permissions.employee.employee_single',compact('id'));
+        $persmissions = Permission::where('employee_id',$id)->get() ; 
+
+        $employee = Employee::where('id',$id)->first() ; 
+
+
+        // dd($employee) ; 
+
+        return view('superAdmin.permissions.employee.employee_single',compact(['id','persmissions','employee']));
     }
 
     public function employee_submit_permissions(Request $request)
