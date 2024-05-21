@@ -4,28 +4,23 @@
     $len = count($order_detail->panjabi_measurement->pocket);
     $pockets = $order_detail->panjabi_measurement->pocket;
 
-   
-    $colars = $order_detail->panjabi_measurement->colar ; 
+    $colars = $order_detail->panjabi_measurement->colar;
 
-    $golas = $order_detail->panjabi_measurement->gola ; 
-    $pypins = $order_detail->panjabi_measurement->pypin ;
-    $plates = $order_detail->panjabi_measurement->plate ;
-    $kaffs = $order_detail->panjabi_measurement->kaff ;
+    $golas = $order_detail->panjabi_measurement->gola;
+    $pypins = $order_detail->panjabi_measurement->pypin;
+    $plates = $order_detail->panjabi_measurement->plate;
+    $kaffs = $order_detail->panjabi_measurement->kaff;
 
-    $pastings = $order_detail->panjabi_measurement->pasting ;
+    $pastings = $order_detail->panjabi_measurement->pasting;
 
-
-    $leises = $order_detail->panjabi_measurement->leise; 
+    $leises = $order_detail->panjabi_measurement->leise;
 
     $tiras = $order_detail->panjabi_measurement->tira;
 
     $fulls = $order_detail->panjabi_measurement->full;
 
     $botams_for_panjabi = $order_detail->panjabi_measurement->botam_for_panjabi;
-    
 
-
-    
     $pant_pocket_len = count($order_detail->pant_measurement->pant_pocket);
     $pant_pockets = $order_detail->pant_measurement->pant_pocket;
 
@@ -60,45 +55,49 @@
             <div class="row shop__and__vendor__container">
 
                 <div class="col-md-6 shop__name">
-                    <h2>Shop Name : <span>{{ $order_detail->shop_name }}</span> </h2>
-                </div>
-                <div class="col-md-6">
-                    <div class="vendor__info">
+                    <h3>{{ $order_detail->shop_name }}</h3>
+                    <div class="vendor__infoo">
                         <h4 class="key_value">
-                            <span class="key">
+                            {{-- <span class="key">
                                 <div>
                                     Vendor Name
                                 </div>
                                 <div>
                                     :
                                 </div>
-                            </span><span class="value">{{ $order_detail->vendor_name }}
+                            </span> --}}
+                            <span class="valuee">{{ $order_detail->vendor_name }}
                             </span>
                         </h4>
                         <h4 class="key_value">
-                            <span class="key">
+                            {{-- <span class="key">
                                 <div>
                                     Vendor Number
                                 </div>
                                 <div>
                                     :
                                 </div>
-                            </span><span class="value">{{ $order_detail->vendor_number }}
+                            </span> --}}
+                            <span class="valuee">{{ $order_detail->vendor_number }}
                             </span>
                         </h4>
                         <h4 class="key_value">
-                            <span class="key">
+                            {{-- <span class="key">
                                 <div>
                                     Vendor Number
                                 </div>
                                 <div>
                                     :
                                 </div>
-                            </span><span class="value">{{ $order_detail->vendor_number }}
+                            </span> --}}
+                            <span class="valuee">{{ $order_detail->vendor_number }}
                             </span>
                         </h4>
                     </div>
                 </div>
+                {{-- <div class="col-md-6">
+                    
+                </div> --}}
 
             </div>
 
@@ -182,7 +181,7 @@
                                     পোশাকের নাম(পাঞ্জাবী / শার্ট)
                                 </div> --}}
                                 <div>
-                                    সংখ্যা 
+                                    সংখ্যা
                                 </div>
                                 <div>
                                     :
@@ -832,7 +831,7 @@
                                     পোশাকের নাম(পাঞ্জাবী / শার্ট)
                                 </div> --}}
                                 <div>
-                                    সংখ্যা 
+                                    সংখ্যা
                                 </div>
                                 <div>
                                     :
@@ -842,7 +841,7 @@
                         </h4>
                     </div>
 
-                    
+
 
 
 
@@ -1048,7 +1047,7 @@
                             <h4 class="key_value">
                                 <span class="key">
                                     <div>
-                                        Order Date 
+                                        Order Date
                                     </div>
                                     <div>
                                         :
@@ -1067,7 +1066,7 @@
                                 </span><span class="value">{{ $order_detail->cloth_order_delivary->delivery_tarikh }}
                                 </span>
                             </h4>
-                        
+
                         </div>
                     </div>
                 </div>

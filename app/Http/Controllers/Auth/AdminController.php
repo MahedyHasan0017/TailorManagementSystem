@@ -63,6 +63,9 @@ class AdminController extends Controller
     }
     public function register_store(RegisterRequest $request)
     {
+
+        dd($request->all()) ; 
+
         $is_user_exists = AdminUser::where('email', $request->email)->first();
         if ($is_user_exists) {
             toastr()->error('User already exists!');

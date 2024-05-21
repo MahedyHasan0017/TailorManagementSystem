@@ -289,6 +289,13 @@ class OrderAcceptingController extends Controller
     }
 
 
+    public function order_details_delete(Request $request , $id){
+        
+    }
+
+    
+
+
     public function order_accepted_list()
     {
 

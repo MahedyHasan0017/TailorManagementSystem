@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cloth_orders', function (Blueprint $table) {
             $table->id();
             $table->string('shop_name')->nullable();
+            $table->string('order_id')->unique();
             $table->string('vendor_name')->nullable();
             $table->string('vendor_number')->nullable();
             $table->string('customer_name')->nullable();

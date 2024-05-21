@@ -280,6 +280,18 @@ tbody {
     padding: 5px ;
 }
 
+.action_buttons_in_table{
+    display: flex;
+    align-items: center;
+    gap : 5px ; 
+    height: 100%;
+}
+
+.btn-danger{
+    color : #fff ; 
+}
+
+
 
 
 

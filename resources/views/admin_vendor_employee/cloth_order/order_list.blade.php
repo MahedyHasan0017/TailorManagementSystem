@@ -159,12 +159,13 @@
                                     <th>ডেলিভারির তারিখ </th>
                                     <th>মোট বিল</th>
                                     <th>জমার পরিমান</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($cloth_orders as $cloth_order)
                                 <tr>
-                                    <td><span>{{ $loop->iteration }}</span> <a href="{{ route('admin.order.detals.view',['id' => $cloth_order->id]) }}" class="btn btn-success">view-details</a></td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $cloth_order->customer_name }}</td>
                                     <td>{{ $cloth_order->cloth_name->cloth_name }}</td>
                                     <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
@@ -172,6 +173,10 @@
                                     
                                     <td>{{ $cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_cloth}}</td>
                                     <td>{{ $cloth_order->cloth_order_delivary->nogod_prodan }}</td>
+                                    <td class="action_buttons_in_tablee">
+                                        <span><a href="{{ route('admin.order.details.view',['id' => $cloth_order->id]) }}" class="btn btn-primary">view</a></span>
+                                        <span><a href="{{ route('admin.order.details.delete',['id' => $cloth_order->id]) }}" class="btn btn-danger">delete</a></span>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

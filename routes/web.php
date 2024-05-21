@@ -141,11 +141,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
 
         // Route::post('order/accepting/con', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
-        Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'order_details_view'])->name('admin.order.detals.view');
+        Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'order_details_view'])->name('admin.order.details.view');
+
+        Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'order_details_delete'])->name('admin.order.details.delete');
 
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
 
-       
+        
 
         // Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
