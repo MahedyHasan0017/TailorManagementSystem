@@ -37,7 +37,9 @@
 
     <!-- plugin css end  -->
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{ asset('tailerStaticTemplate/assets/libs/flot/css/float-chart.css') }}" rel="stylesheet">
@@ -51,7 +53,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
+    <style>
+        body {
+            font-family: "Noto Sans Bengali", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500 !important;
+            font-style: normal;
+            font-variation-settings:
+                "width" 100;
+        }
+    </style>
 
 </head>
 
