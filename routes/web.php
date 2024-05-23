@@ -34,7 +34,7 @@ Route::get('/api', function () {
     $response = Http::get('https://jsonplaceholder.typicode.com/posts');
 
     if ($response->successful()) {
-        $posts = $response->json(); 
+        $posts = $response->json();
         // Display the posts
     } else {
         // Handle errors
@@ -47,15 +47,12 @@ Route::get('/api', function () {
 
 Route::get('/', function () {
 
-    return redirect()->route('super_admin_dashboard') ; 
+    return redirect()->route('super_admin_dashboard');
 });
 
 
 
 Route::get('/super_admin', function () {
-    
-
-
 
     return view('superAdmin.dashboard');
 })->name('super_admin_dashboard')->middleware('admin');
@@ -135,6 +132,8 @@ Route::group(['prefix' => 'auth'], function () {
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function () {
+
+
     Route::group(['prefix' => 'cloth'], function () {
         Route::get('order/accepting', [OrderAcceptingController::class, 'order_accepting'])->name('admin.order.accepting.view');
 
@@ -147,7 +146,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
 
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
 
-        
+
 
         // Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
@@ -173,8 +172,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
         Route::get('order', [OrderReportController::class, 'order_report'])->name('admin.order.report.view');
     });
 
-
-
     Route::group(['prefix' => 'settings'], function () {
         Route::get('dress/wages', [DressWagesController::class, 'dress_wages'])->name('admin.dress.wages.view');
         Route::get('dress/part', [DressPartController::class, 'dress_part'])->name('admin.dress.part.view');
@@ -183,19 +180,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
         Route::get('sms/template', [SmsTemplateController::class, 'sms_template'])->name('admin.sms.template.view');
         Route::get('language', [LanguageSettingsController::class, 'language_setting'])->name('admin.language.setting.view');
     });
+
+
+    Route::group(['prefix' => 'permissions'], function () {
+        Route::group(['prefix' => 'vendor'], function () {
+            Route::get('list', [VendorPermissionController::class, 'vendor_list'])->name('permission.vendor.list.view');
+            Route::get('single/{id}', [VendorPermissionController::class, 'vendor_single'])->name('permission.vendor.single');
+            Route::post('permissions/submit', [VendorPermissionController::class, 'vendor_submit_permissions'])->name('vendor.submit.permissions');
+        });
+        Route::group(['prefix' => 'employee'], function () {
+            Route::get('list', [EmployeePermissionController::class, 'employee_list'])->name('permission.employee.list.view');
+            Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single')->middleware('admin_or_vendor');
+            Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
+        });
+    });
 });
 
 
 
-Route::group(['prefix' => 'permissions'], function () {
-    Route::group(['prefix' => 'vendor'], function () {
-        Route::get('list', [VendorPermissionController::class, 'vendor_list'])->name('permission.vendor.list.view');
-        Route::get('single/{id}', [VendorPermissionController::class, 'vendor_single'])->name('permission.vendor.single');
-        Route::post('permissions/submit', [VendorPermissionController::class, 'vendor_submit_permissions'])->name('vendor.submit.permissions');
-    });
-    Route::group(['prefix' => 'employee'], function () {
-        Route::get('list', [EmployeePermissionController::class, 'employee_list'])->name('permission.employee.list.view');
-        Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single')->middleware('admin_or_vendor');
-        Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
-    });
+Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function () {
+
 });

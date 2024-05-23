@@ -147,11 +147,15 @@ tbody {
 
 .chat__box {
     position: fixed;
-    width: 380px;
-    bottom: 20px;
+    /* width: 380px;
+    bottom: 20px; */
+    height: 0px ;
+    width: 0px;
+    bottom: 0px;
     right: 20px;
     z-index: 100;
-    display: none;
+    transition: all 0.3s linear;
+    /* display: none; */
 }
 
 .chat__icon {
@@ -178,8 +182,13 @@ tbody {
     display: none;
 }
 
+
+
 .show__chat__box {
-    display: block;
+    width: 380px;
+    height: auto;
+    bottom: 20px;
+    transition: all 0.1s linear;
 }
 
 .height__full_screen {
