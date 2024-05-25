@@ -24,7 +24,6 @@
 
             <form action="{{ route('order.accepting.store') }}" method="post">
                 @csrf
-
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header " id="headingOne">
