@@ -11,12 +11,17 @@ use Illuminate\Support\Facades\Hash;
 
 class VendorController extends Controller
 {
+    public function index()
+    {
+        return view('vendor.dashboard');
+    }
+
     public function login()
     {
-        $user = Auth::guard('vendor')->user() ; 
-     
-        if($user != null){
-            return redirect()->route('vendor_dashboard') ; 
+        $user = Auth::guard('vendor')->user();
+
+        if ($user != null) {
+            return redirect()->route('vendor_dashboard');
         }
         return view('vendor/auth/login');
     }
@@ -35,7 +40,6 @@ class VendorController extends Controller
             toastr()->error('Invalid Credentials !');
             return redirect()->back();
         }
-
     }
 
     public function vendor_logout()
@@ -48,10 +52,10 @@ class VendorController extends Controller
 
     public function register()
     {
-        $user = Auth::guard('vendor')->user() ; 
-     
-        if($user != null){
-            return redirect()->route('vendor_dashboard') ; 
+        $user = Auth::guard('vendor')->user();
+
+        if ($user != null) {
+            return redirect()->route('vendor_dashboard');
         }
         return view('vendor/auth/register');
     }
@@ -69,8 +73,8 @@ class VendorController extends Controller
             $vendor_id = random_int(100000, 999999);
 
             $user = Vendor::create([
-                'vendor_id' => $vendor_id , 
-                'full_name' => $request->full_name ,
+                'vendor_id' => $vendor_id,
+                'full_name' => $request->full_name,
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
@@ -79,16 +83,14 @@ class VendorController extends Controller
             if ($user) {
                 toastr()->success('Vendor Registered Successfully! Please Login!');
 
-                $admin = Auth::guard('admin')->user() ; 
+                $admin = Auth::guard('admin')->user();
 
-           
-                if($admin){
+
+                if ($admin) {
                     return redirect()->route('auth.admin.pending.vendor.list.view');
-                }
-                else{
+                } else {
                     return redirect()->route('auth.vendor.login.view');
                 }
-
             } else {
                 toastr()->error('Something Went Wrong!');
                 return redirect()->back();
@@ -97,10 +99,15 @@ class VendorController extends Controller
     }
     public function recovery_password()
     {
-
     }
     public function recovery_password_store(Request $request)
     {
+    }
 
+
+    public function vendor_profile(Request $request, $id)
+    {
+        // dd($id);
+        return view('vendor.auth.profile') ; 
     }
 }

@@ -214,6 +214,14 @@ class AdminController extends Controller
     }
 
 
+    public function vendor_profile(Request $request , $id){
+        $vendor = Vendor::where('mobile_number',$id)->first() ; 
+        // dd($vendor) ; 
+        return view('superAdmin.auth.vendor_profile',compact('vendor')) ; 
+    }
+
+
+
     public function recovery_password()
     {
         return view('admin_vendor_employee/auth/recover_form');

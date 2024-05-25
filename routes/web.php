@@ -57,9 +57,7 @@ Route::get('/super_admin', function () {
     return view('superAdmin.dashboard');
 })->name('super_admin_dashboard')->middleware('admin');
 
-Route::get('/vendor', function () {
-    return view('vendor.dashboard');
-})->name('vendor_dashboard')->middleware('vendor');
+Route::get('/vendor', [VendorController::class, 'index'])->name('vendor_dashboard')->middleware('vendor');
 
 Route::get('/employee', function () {
 
@@ -131,22 +129,14 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function () {
-
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::group(['prefix' => 'cloth'], function () {
         Route::get('order/accepting', [OrderAcceptingController::class, 'order_accepting'])->name('admin.order.accepting.view');
-
-        Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
-
         // Route::post('order/accepting/con', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'order_details_view'])->name('admin.order.details.view');
-
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'order_details_delete'])->name('admin.order.details.delete');
-
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
-
-
 
         // Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
@@ -194,10 +184,42 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function 
             Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
         });
     });
+
+
+    Route::group(['prefix' => 'vendor'], function () {
+        Route::get('/profile/{mobile_number}', [AdminController::class, 'vendor_profile'])->name('admin.vendor.profile.view');
+    });
 });
 
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'admin_or_vendor'], function () {
+Route::group(['prefix' => 'admin-or-vendor', 'middleware' => 'admin_or_vendor'], function () {
+    Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
+});
 
+
+
+Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
+
+    Route::group(['prefix' => 'cloth'], function () {
+        Route::get('order/accepting', [OrderAcceptingController::class, 'vendor_order_accepting'])->name('vendor.order.accepting.view');
+        Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'vendor_order_details_view'])->name('vendor.order.details.view');
+        Route::get('order/accepted/list/{mobile_number}', [OrderAcceptingController::class, 'vendor_order_accepted_list'])->name('vendor.order.accepting.list');
+        Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'vendor_order_details_delete'])->name('vendor.order.details.delete');
+    });
+
+
+    Route::group(['prefix' => 'permissions'], function () {
+        Route::group(['prefix' => 'employee'], function () {
+            Route::get('list', [EmployeePermissionController::class, 'vendor_employee_list'])->name('vendor.permission.employee.list.view');
+            Route::get('single/{id}', [EmployeePermissionController::class, 'vendor_employee_single'])->name('vendor.permission.employee.single')->middleware('admin_or_vendor');
+            Route::post('permissions/submit', [EmployeePermissionController::class, 'vendor_employee_submit_permissions'])->name('vendor.employee.submit.permissions');
+        });
+    });
+
+
+
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('{id}', [VendorController::class, 'vendor_profile'])->name('vendor.profile.view');
+    });
 });

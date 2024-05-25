@@ -56,7 +56,7 @@
                 <div class="col-12 d-flex no-block align-items-center">
                     <div class="page_titlee">
 
-                        <div class="col-12 shop__name">
+                        {{-- <div class="col-12 shop__name">
                             <h4>{{ $order_detail->shop_name }}</h4>
                             <div class="vendor__infoo">
                                 <h4 class="key_value">
@@ -72,7 +72,7 @@
                                     </span>
                                 </h4>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                     {{-- <div class="ms-auto text-end">
@@ -93,7 +93,7 @@
 
             <div class="row shop__and__vendor__container">
 
-                {{-- <div class="col-4 shop__name">
+                <div class="col-4 shop__name">
                     <h4>{{ $order_detail->shop_name }}</h4>
                     <div class="vendor__infoo">
                         <h4 class="key_value">
@@ -109,9 +109,9 @@
                             </span>
                         </h4>
                     </div>
-                </div> --}}
+                </div>
 
-                <div class="col-6">
+                <div class="col-4">
                     <div class="customer__infoo">
                         <h4>Customer Info</h4>
                         <div>
@@ -164,7 +164,7 @@
                 </div>
 
 
-                <div class="col-6">
+                <div class="col-4">
                     <div class="customer__info">
                         <h4>Delivary Info</h4>
                         <div>
@@ -259,7 +259,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_lomba != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -299,7 +299,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_body_luz != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -342,7 +342,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_put != null)
                     <div class="col-md-3 col-lg-2 col-3  mt-2">
-                        <div class="panjabi_measurement_unit ">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -385,9 +385,9 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_hatar_mukh != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
-                                <span class="key__for__measurements">
+                                <span class="key__for__measurements bg_transparent_panjabi_measurement_unit">
                                     <div>
                                         হাতার মুখ
                                     </div>
@@ -428,7 +428,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_gola != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -471,7 +471,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_colar_choura != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -515,7 +515,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_gher != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -556,7 +556,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_nich_hata != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -598,7 +598,7 @@
 
                 @if ($order_detail->panjabi_measurement->panjabi_mot_mora != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -642,7 +642,7 @@
 
             <div class="row asset_info_heading">
                 <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -682,7 +682,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -702,7 +702,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit ">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -742,7 +742,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit ">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -761,8 +761,8 @@
                         </h6>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit">
+                <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info ">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -802,7 +802,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit ">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -822,7 +822,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit ">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>
@@ -903,7 +903,7 @@
 
                 @if ($order_detail->pant_measurement->pant_lomba != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -942,7 +942,7 @@
 
                 @if ($order_detail->pant_measurement->pant_body_high != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -981,7 +981,7 @@
 
                 @if ($order_detail->pant_measurement->pant_komor != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -1020,7 +1020,7 @@
 
                 @if ($order_detail->pant_measurement->pant_hiff != null)
                     <div class="col-md-3 col-lg-2 col-3 mt-2">
-                        <div class="panjabi_measurement_unit">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
                                 <span class="key__for__measurements">
                                     <div>
@@ -1041,7 +1041,7 @@
 
             <div class="row asset_info_heading">
                 <div class="col-md-6 col-lg-4 col-6 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit">
+                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                         <h6 class="key_value">
                             <span class="key__for__measurements__with__loop">
                                 <div>

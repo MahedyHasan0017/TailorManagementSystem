@@ -231,7 +231,7 @@
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-lock"></i>
                                         লগইন তথ্য</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-user"></i>
+                                    <a class="dropdown-item" href="{{ route('vendor.profile.view',['id'=> Auth::guard('vendor')->user()->id]) }}"><i class="fas fa-user"></i>
                                         প্রোফাইল আপডেট</a>
                                     <a class="dropdown-item" href="javascript:void(0)"><i
                                             class="fas fa-cart-plus"></i>

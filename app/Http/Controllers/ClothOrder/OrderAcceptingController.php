@@ -31,24 +31,43 @@ class OrderAcceptingController extends Controller
 
         // $cloth_list = ClothType::latest()->get() ; 
         $cloth_list = ClothType::get();
-
-        return view('admin_vendor_employee.cloth_order.order_accepting', compact('cloth_list'));
+        return view('superAdmin.cloth_order.order_accepting', compact('cloth_list'));
     }
+
+    public function vendor_order_accepting(){
+        $cloth_list = ClothType::get();
+        return view('vendor.cloth_order.order_accepting', compact('cloth_list'));
+    }
+
 
     public function order_accepting_store(Request $request)
     {
-
-
         $order_number = random_int(100000, 999999);
 
-        $admin = Auth::guard('admin')->user();
+        $vendor_name = "" ; 
+        $user = Auth::guard('admin')->user();
+        $user_vendor = Auth::guard('vendor')->user();
+       
+        // dd($vendor_name) ;
+        // dd(Auth::user()) ; 
+
+        if( $user != null){
+            $vendor_name = $user ; 
+        }
+        else if($user_vendor != null) {
+            $vendor_name = $user_vendor; 
+        }
+
+
+        // dd($vendor_name) ; 
+
         $data = $request->all() ; 
-        // dd($data) ; 
+
         $cloth_order = ClothOrder::create([
             "shop_name" => "ABCD",
             'order_id' => $order_number,
-            "vendor_name" => $admin->name , 
-            "vendor_number" => $admin->mobile_number , 
+            "vendor_name" => $vendor_name->full_name , 
+            "vendor_number" => $vendor_name->mobile_number , 
             "customer_name" => $data['customer_name'] ,
             "customer_mobile" => $data['customer_mobile_number'],
             "customer_email" => $data['customer_email'],
@@ -276,35 +295,80 @@ class OrderAcceptingController extends Controller
 
             }
 
-    
-
         }
 
 
-        return redirect()->route('admin.order.accepting.list');
+        $user = Auth::guard('admin')->user();
+        $user_vendor = Auth::guard('vendor')->user();
+
+        if($user != null){
+            return redirect()->route('admin.order.accepting.list');
+        }
+        else if( $user_vendor != null){
+            return redirect()->route('vendor.order.accepting.list',['mobile_number' => $user_vendor->mobile_number]);
+        }
+
+        
     }
 
 
     public function order_details_view(Request $request , $id){
-
         $order_detail = ClothOrder::where('id',$id)->first() ; 
-
-        return view('admin_vendor_employee.cloth_order.cloth_order_details',compact('order_detail')) ; 
+        return view('superAdmin.cloth_order.cloth_order_details',compact('order_detail')) ; 
     }
 
 
+    public function vendor_order_details_view(Request $request , $id){
+        $order_detail = ClothOrder::where('id',$id)->first() ; 
+        return view('vendor.cloth_order.cloth_order_details',compact('order_detail')) ; 
+    }
+    
     public function order_details_delete(Request $request , $id){
-        
+        $cloth = ClothOrder::where('id',$id)->first() ; 
+        $done = $cloth->delete() ; 
+        if($done){
+            toastr()->success('Order Deleted Successfully!');
+            return redirect()->back() ; 
+        }
+        else{
+            toastr()->error('Something Went Wrong!');
+            return redirect()->back() ; 
+        }
     }
+
+     
+
+
+    public function vendor_order_details_delete(Request $request , $id){
+        $cloth = ClothOrder::where('id',$id)->first() ; 
+        $done = $cloth->delete() ; 
+        if($done){
+            toastr()->success('Order Deleted Successfully!');
+            return redirect()->back() ; 
+        }
+        else{
+            toastr()->error('Something Went Wrong!');
+            return redirect()->back() ; 
+        }
+
+    }
+
+    
+    public function order_accepted_list()
+    {
+        $cloth_orders = ClothOrder::all(); 
+        return view('superAdmin.cloth_order.order_list',compact('cloth_orders'));
+    }
+
+
+    public function vendor_order_accepted_list(Request $request , $mobile_number){
+        
+        $cloth_orders = ClothOrder::where('vendor_number',$mobile_number)->get(); 
+        return view('vendor.cloth_order.order_list',compact('cloth_orders'));
+    }
+
 
     
 
 
-    public function order_accepted_list()
-    {
-
-        $cloth_orders = ClothOrder::all(); 
-
-        return view('admin_vendor_employee.cloth_order.order_list',compact('cloth_orders'));
-    }
 }
