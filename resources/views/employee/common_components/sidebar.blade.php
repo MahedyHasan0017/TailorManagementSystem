@@ -1,6 +1,8 @@
 @php
 
 
+$employee = Auth::guard('employee')->user(); 
+
 
 if(Auth::guard('employee')->user()){
     $employee_id = Auth::guard('employee')->user()->id;
@@ -60,10 +62,12 @@ if(Auth::guard('employee')->user()){
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">পোষাক অর্ডার
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('admin.order.accepting.view') }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার গ্রহন
+                                <li class="sidebar-item"><a href="{{ route('employee.order.accepting.view') }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার গ্রহন
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="{{ route('admin.order.accepting.list') }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার লিস্ট
+                                <li class="sidebar-item"><a href="{{ route('employee.order.accepting.list', ['mobile_number' => $employee->mobile_number]) }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার লিস্ট
                                         </span></a></li>
+
+                                        
                             </ul>
                         </li>
                         @else

@@ -1,4 +1,4 @@
-@extends('.vendor.main')
+@extends('.employee.main')
 
 @section('content')
     <div class="page-wrapper">

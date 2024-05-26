@@ -95,6 +95,15 @@ class AdminController extends Controller
     public function super_admin_list()
     {
         $admins = AdminUser::where('status', 1)->get();
+
+        $user = Auth::guard('admin')->user(); 
+
+        dd($user->status) ; 
+
+        if($user->status == 0){
+            return redirect()->route('super_admin_dashboard');
+        }
+        
         return view('superAdmin.admin.admin_list', compact('admins'));
     }
 
@@ -157,6 +166,50 @@ class AdminController extends Controller
         return view('superAdmin/auth/vendor_register_from_admin');
     }
 
+
+    public function admin_vendor_register_store(RegisterRequest $request)
+    {
+
+
+        dd($request->all()) ; 
+
+        $is_user_exists = Vendor::where('email', $request->email)->first();
+
+        if ($is_user_exists) {
+            toastr()->error('User already exists!');
+            return redirect()->back();
+        } else {
+
+
+            $vendor_id = random_int(100000, 999999);
+
+            $user = Vendor::create([
+                'vendor_id' => $vendor_id,
+                'full_name' => $request->full_name,
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'mobile_number' => $request->mobile_number
+            ]);
+            if ($user) {
+                toastr()->success('Vendor Registered Successfully! Please Login!');
+
+                $admin = Auth::guard('admin')->user();
+
+
+                if ($admin) {
+                    return redirect()->route('auth.admin.pending.vendor.list.view');
+                } else {
+                    return redirect()->route('auth.vendor.login.view');
+                }
+            } else {
+                toastr()->error('Something Went Wrong!');
+                return redirect()->back();
+            }
+        }
+    }
+
+
     public function active_vendor_list_from_admin()
     {
         $vendors = Vendor::where('status', 1)->get();
@@ -214,10 +267,11 @@ class AdminController extends Controller
     }
 
 
-    public function vendor_profile(Request $request , $id){
-        $vendor = Vendor::where('mobile_number',$id)->first() ; 
+    public function vendor_profile(Request $request, $id)
+    {
+        $vendor = Vendor::where('mobile_number', $id)->first();
         // dd($vendor) ; 
-        return view('superAdmin.auth.vendor_profile',compact('vendor')) ; 
+        return view('superAdmin.auth.vendor_profile', compact('vendor'));
     }
 
 

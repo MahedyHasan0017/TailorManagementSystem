@@ -7,3 +7,6 @@
 
 
 @include('./employee.common_components.footer')
+
+
+@stack('scripts')

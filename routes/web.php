@@ -35,7 +35,7 @@ Route::get('/api', function () {
 
     if ($response->successful()) {
         $posts = $response->json();
-        // Display the posts
+        
     } else {
         // Handle errors
     }
@@ -79,7 +79,7 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('logout', [AdminController::class, 'admin_logout'])->name('auth.admin.logout');
 
         Route::get('register', [AdminController::class, 'register'])->name('auth.admin.register.view');
-        Route::post('register/store', [AdminController::class, 'register_store'])->name('auth.admin.register.store');
+        Route::post('register/store', [VendorController::class, 'register_store'])->name('auth.admin.register.store');
 
         Route::get('super-admin/list', [AdminController::class, 'super_admin_list'])->name('auth.super_admin.list.view');
         Route::get('manager/list', [AdminController::class, 'manager_list'])->name('auth.manager.list.view');
@@ -171,7 +171,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('language', [LanguageSettingsController::class, 'language_setting'])->name('admin.language.setting.view');
     });
 
-
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'vendor'], function () {
             Route::get('list', [VendorPermissionController::class, 'vendor_list'])->name('permission.vendor.list.view');
@@ -193,7 +192,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 
 
-Route::group(['prefix' => 'admin-or-vendor', 'middleware' => 'admin_or_vendor'], function () {
+// Route::group(['prefix' => 'admin-or-vendor', 'middleware' => 'admin_or_vendor'], function () {
+//     Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
+// });
+
+Route::group(['prefix' => 'admin-or-vendor'], function () {
     Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
 });
 
@@ -223,3 +226,14 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::get('{id}', [VendorController::class, 'vendor_profile'])->name('vendor.profile.view');
     });
 });
+
+
+Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
+    Route::group(['prefix' => 'cloth'], function () {
+        Route::get('order/accepting', [OrderAcceptingController::class, 'employee_order_accepting'])->name('employee.order.accepting.view');
+        Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'employee_order_details_view'])->name('employee.order.details.view');
+        Route::get('order/accepted/list/{mobile_number}', [OrderAcceptingController::class, 'employee_order_accepted_list'])->name('employee.order.accepting.list');
+        Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'employee_order_details_delete'])->name('employee.order.details.delete');
+    });
+});
+

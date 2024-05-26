@@ -34,66 +34,80 @@ class OrderAcceptingController extends Controller
         return view('superAdmin.cloth_order.order_accepting', compact('cloth_list'));
     }
 
-    public function vendor_order_accepting(){
+    public function vendor_order_accepting()
+    {
         $cloth_list = ClothType::get();
         return view('vendor.cloth_order.order_accepting', compact('cloth_list'));
     }
 
 
+    public function employee_order_accepting()
+    {
+        $cloth_list = ClothType::get();
+        return view('employee.cloth_order.order_accepting', compact('cloth_list'));
+    }
+
+    
+
     public function order_accepting_store(Request $request)
     {
         $order_number = random_int(100000, 999999);
 
-        $vendor_name = "" ; 
+        $vendor_name = "";
         $user = Auth::guard('admin')->user();
         $user_vendor = Auth::guard('vendor')->user();
-       
+        $user_employee = Auth::guard('employee')->user() ; 
+
         // dd($vendor_name) ;
         // dd(Auth::user()) ; 
 
-        if( $user != null){
-            $vendor_name = $user ; 
+        if ($user != null) {
+            $vendor_name = $user;
+        } else if ($user_vendor != null) {
+            $vendor_name = $user_vendor;
         }
-        else if($user_vendor != null) {
-            $vendor_name = $user_vendor; 
+        else if($user_employee != null){
+            $vendor_name = $user_employee;
         }
+
+
 
 
         // dd($vendor_name) ; 
 
-        $data = $request->all() ; 
+        $data = $request->all();
 
         $cloth_order = ClothOrder::create([
             "shop_name" => "ABCD",
             'order_id' => $order_number,
-            "vendor_name" => $vendor_name->full_name , 
-            "vendor_number" => $vendor_name->mobile_number , 
-            "customer_name" => $data['customer_name'] ,
+            "vendor_name" => $vendor_name->full_name,
+            "vendor_number" => $vendor_name->mobile_number,
+            "customer_name" => $data['customer_name'],
             "customer_mobile" => $data['customer_mobile_number'],
             "customer_email" => $data['customer_email'],
             "customer_address" => $data['customer_contact_address']
         ]);
 
 
-        $num_of_cloth = $request->input('number_of_cloth',[]);
-        $num_of_cloth = array_filter($num_of_cloth, fn($value) => !is_null($value) && $value !== '') ; 
-        $num_of_cloth = array_values($num_of_cloth) ;
-        $num_of_cloth = $num_of_cloth[0] ; 
+        $num_of_cloth = $request->input('number_of_cloth', []);
+        $num_of_cloth = array_filter($num_of_cloth, fn ($value) => !is_null($value) && $value !== '');
+        $num_of_cloth = array_values($num_of_cloth);
+        $num_of_cloth = $num_of_cloth[0];
 
 
         // dd($request->all()) ; 
 
-        $cloth_order->save() ; 
+        $cloth_order->save();
 
-        if($cloth_order){
+        if ($cloth_order) {
 
             $cloth_name = ClothName::create([
                 'cloth_name' => $data['cloth_full_name'],
-                'cloth_order_id' => $cloth_order->id ,
+                'cloth_order_id' => $cloth_order->id,
                 'number_of_cloth' => $num_of_cloth,
             ]);
 
-            $cloth_name->save() ; 
+            $cloth_name->save();
 
             $cloth_delivary = ClothOrderDelivaryInfo::create([
                 'cloth_order_id' => $cloth_order->id,
@@ -105,7 +119,7 @@ class OrderAcceptingController extends Controller
                 'montobbo_pant_pajama' => $data['montobbo_pant_pajama']
             ]);
 
-            $cloth_delivary->save() ; 
+            $cloth_delivary->save();
 
 
             $panjabi_measurement = PanjabiMeasurement::create([
@@ -129,138 +143,137 @@ class OrderAcceptingController extends Controller
                 'panjabi_mot_mora' => $data['panjabi_mot_mora'],
                 'panjabi_hatte_pasting' => $data['panjabi_haate_pesting']
             ]);
-            $panjabi_measurement->save() ; 
+            $panjabi_measurement->save();
 
-            if($panjabi_measurement){
-            
-                $pockets = $request->input('pocket',[]) ; 
-                for($i = 0 ; $i < count($pockets) ; $i++){
+            if ($panjabi_measurement) {
+
+                $pockets = $request->input('pocket', []);
+                for ($i = 0; $i < count($pockets); $i++) {
                     $pockets_for_panjabi = PocketForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id , 
-                        'pocket_name' => $pockets[$i] , 
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'pocket_name' => $pockets[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $pockets_for_panjabi->save() ; 
+                    $pockets_for_panjabi->save();
                 }
 
-                $colars = $request->input('colar',[]) ; 
-                for($i = 0 ; $i < count($colars) ; $i++){
+                $colars = $request->input('colar', []);
+                for ($i = 0; $i < count($colars); $i++) {
                     $colars_for_panjabi = ColarForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'colar_name' => $colars[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'colar_name' => $colars[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $colars_for_panjabi->save() ; 
+                    $colars_for_panjabi->save();
                 }
 
 
-                $golas = $request->input('gola',[]) ; 
+                $golas = $request->input('gola', []);
 
-                for($i = 0 ; $i < count($golas) ; $i++){
+                for ($i = 0; $i < count($golas); $i++) {
                     $golas_for_panjabi = GolaForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'gola_name' => $golas[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'gola_name' => $golas[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $golas_for_panjabi->save() ; 
+                    $golas_for_panjabi->save();
                 }
 
 
-                $pypins = $request->input('pypin',[]) ; 
+                $pypins = $request->input('pypin', []);
 
-                for($i = 0 ; $i < count($pypins) ; $i++){
+                for ($i = 0; $i < count($pypins); $i++) {
                     $pypins_for_panjabi = PypinForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'pypin_name' => $pypins[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'pypin_name' => $pypins[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $pypins_for_panjabi->save() ; 
+                    $pypins_for_panjabi->save();
                 }
-                
 
-                $plates = $request->input('plate',[]) ; 
 
-                for($i = 0 ; $i < count($plates) ; $i++){
+                $plates = $request->input('plate', []);
+
+                for ($i = 0; $i < count($plates); $i++) {
                     $plate_for_panjabi = PlateForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'plate_name' => $plates[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'plate_name' => $plates[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $plate_for_panjabi->save() ; 
+                    $plate_for_panjabi->save();
                 }
 
-                $kaffs = $request->input('kaff',[]) ; 
+                $kaffs = $request->input('kaff', []);
 
-                for($i = 0 ; $i < count($kaffs) ; $i++){
+                for ($i = 0; $i < count($kaffs); $i++) {
                     $kaffs_for_panjabi = KaffForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'kaff_name' => $kaffs[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'kaff_name' => $kaffs[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $kaffs_for_panjabi->save() ; 
+                    $kaffs_for_panjabi->save();
                 }
 
 
-                $pastings = $request->input('pasting',[]) ; 
+                $pastings = $request->input('pasting', []);
 
-                for($i = 0 ; $i < count($pastings) ; $i++){
+                for ($i = 0; $i < count($pastings); $i++) {
                     $pastings_for_panjabi = PastingForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'pasting_name' => $pastings[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'pasting_name' => $pastings[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $pastings_for_panjabi->save() ; 
+                    $pastings_for_panjabi->save();
                 }
 
 
 
 
-                $laises = $request->input('laise',[]) ;
+                $laises = $request->input('laise', []);
 
 
-                for($i = 0 ; $i < count($laises) ; $i++){
+                for ($i = 0; $i < count($laises); $i++) {
                     $laises_for_panjabi = LeiseForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'leise_name' => $laises[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'leise_name' => $laises[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $laises_for_panjabi->save() ; 
+                    $laises_for_panjabi->save();
                 }
 
-                $tiras = $request->input('tira',[]) ; 
+                $tiras = $request->input('tira', []);
 
-                for($i = 0 ; $i < count($tiras) ; $i++){
+                for ($i = 0; $i < count($tiras); $i++) {
                     $tiras_for_panjabi = TiraForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'tira_name' => $tiras[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'tira_name' => $tiras[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $tiras_for_panjabi->save() ; 
+                    $tiras_for_panjabi->save();
                 }
 
-                $fulls = $request->input('full',[]) ; 
+                $fulls = $request->input('full', []);
 
 
-                for($i = 0 ; $i < count($fulls) ; $i++){
+                for ($i = 0; $i < count($fulls); $i++) {
                     $fulls_for_panjabi = FullForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'full_name' => $fulls[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'full_name' => $fulls[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $fulls_for_panjabi->save() ; 
+                    $fulls_for_panjabi->save();
                 }
 
-                $botams = $request->input('botam',[]) ; 
+                $botams = $request->input('botam', []);
 
-                for($i = 0 ; $i < count($botams) ; $i++){
+                for ($i = 0; $i < count($botams); $i++) {
                     $botams_for_panjabi = BotamForPanjabi::create([
-                        'panjabi_measurement_id' => $panjabi_measurement->id ,
-                        'botam_name' => $botams[$i] ,
+                        'panjabi_measurement_id' => $panjabi_measurement->id,
+                        'botam_name' => $botams[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $botams_for_panjabi->save() ; 
+                    $botams_for_panjabi->save();
                 }
-
             }
 
 
@@ -276,99 +289,132 @@ class OrderAcceptingController extends Controller
                 'pant_hiff' => $data['pant_hiff'],
             ]);
 
-            $pant_measurement->save() ; 
+            $pant_measurement->save();
 
 
 
-            if($pant_measurement){
+            if ($pant_measurement) {
 
-                $pockets = $request->input('pant_pocket',[]) ; 
+                $pockets = $request->input('pant_pocket', []);
 
-                for($i = 0 ; $i < count($pockets) ; $i++){
+                for ($i = 0; $i < count($pockets); $i++) {
                     $pockets_for_pant = PocketForPant::create([
                         'pant_measurement_id' => $pant_measurement->id,
                         'pant_pocket_name' => $pockets[$i],
                         'cloth_order_id' => $cloth_order->id,
                     ]);
-                    $pockets_for_pant->save() ; 
+                    $pockets_for_pant->save();
                 }
-
             }
-
         }
 
 
         $user = Auth::guard('admin')->user();
         $user_vendor = Auth::guard('vendor')->user();
+        $user_employee = Auth::guard('employee')->user() ; 
 
-        if($user != null){
+        if ($user != null) {
             return redirect()->route('admin.order.accepting.list');
+        } else if ($user_vendor != null) {
+            return redirect()->route('vendor.order.accepting.list', ['mobile_number' => $user_vendor->mobile_number]);
         }
-        else if( $user_vendor != null){
-            return redirect()->route('vendor.order.accepting.list',['mobile_number' => $user_vendor->mobile_number]);
+        else if($user_employee != null){
+            return redirect()->route('employee.order.accepting.list',['mobile_number' => $user_employee->mobile_number]);
         }
-
-        
     }
 
 
-    public function order_details_view(Request $request , $id){
-        $order_detail = ClothOrder::where('id',$id)->first() ; 
-        return view('superAdmin.cloth_order.cloth_order_details',compact('order_detail')) ; 
+    public function order_details_view(Request $request, $id)
+    {
+        $order_detail = ClothOrder::where('id', $id)->first();
+        return view('superAdmin.cloth_order.cloth_order_details', compact('order_detail'));
     }
 
 
-    public function vendor_order_details_view(Request $request , $id){
-        $order_detail = ClothOrder::where('id',$id)->first() ; 
-        return view('vendor.cloth_order.cloth_order_details',compact('order_detail')) ; 
+    public function vendor_order_details_view(Request $request, $id)
+    {
+        $order_detail = ClothOrder::where('id', $id)->first();
+        return view('vendor.cloth_order.cloth_order_details', compact('order_detail'));
+    }
+
+    public function employee_order_details_view(Request $request, $id)
+    {
+        $order_detail = ClothOrder::where('id', $id)->first();
+        return view('employee.cloth_order.cloth_order_details', compact('order_detail'));
     }
     
-    public function order_details_delete(Request $request , $id){
-        $cloth = ClothOrder::where('id',$id)->first() ; 
-        $done = $cloth->delete() ; 
-        if($done){
+
+
+    public function order_details_delete(Request $request, $id)
+    {
+        $cloth = ClothOrder::where('id', $id)->first();
+        $done = $cloth->delete();
+        if ($done) {
             toastr()->success('Order Deleted Successfully!');
-            return redirect()->back() ; 
-        }
-        else{
+            return redirect()->back();
+        } else {
             toastr()->error('Something Went Wrong!');
-            return redirect()->back() ; 
+            return redirect()->back();
         }
     }
 
-     
 
 
-    public function vendor_order_details_delete(Request $request , $id){
-        $cloth = ClothOrder::where('id',$id)->first() ; 
-        $done = $cloth->delete() ; 
-        if($done){
+
+    public function vendor_order_details_delete(Request $request, $id)
+    {
+        $cloth = ClothOrder::where('id', $id)->first();
+        $done = $cloth->delete();
+        if ($done) {
             toastr()->success('Order Deleted Successfully!');
-            return redirect()->back() ; 
-        }
-        else{
+            return redirect()->back();
+        } else {
             toastr()->error('Something Went Wrong!');
-            return redirect()->back() ; 
+            return redirect()->back();
         }
+    }
 
+    public function employee_order_details_delete(Request $request, $id)
+    {
+        $cloth = ClothOrder::where('id', $id)->first();
+        $done = $cloth->delete();
+        if ($done) {
+            toastr()->success('Order Deleted Successfully!');
+            return redirect()->back();
+        } else {
+            toastr()->error('Something Went Wrong!');
+            return redirect()->back();
+        }
     }
 
     
+
+
+
     public function order_accepted_list()
     {
-        $cloth_orders = ClothOrder::all(); 
-        return view('superAdmin.cloth_order.order_list',compact('cloth_orders'));
+        $cloth_orders = ClothOrder::all();
+        return view('superAdmin.cloth_order.order_list', compact('cloth_orders'));
     }
 
 
-    public function vendor_order_accepted_list(Request $request , $mobile_number){
-        
-        $cloth_orders = ClothOrder::where('vendor_number',$mobile_number)->get(); 
-        return view('vendor.cloth_order.order_list',compact('cloth_orders'));
+    public function vendor_order_accepted_list(Request $request, $mobile_number)
+    {
+
+        $cloth_orders = ClothOrder::where('vendor_number', $mobile_number)->get();
+        return view('vendor.cloth_order.order_list', compact('cloth_orders'));
     }
+
+
+    public function employee_order_accepted_list(Request $request, $mobile_number)
+    {
+        $cloth_orders = ClothOrder::where('vendor_number', $mobile_number)->get();
+        return view('employee.cloth_order.order_list', compact('cloth_orders'));
+    }
+
+
 
 
     
-
 
 }
