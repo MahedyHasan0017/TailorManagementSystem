@@ -1,5 +1,11 @@
-
 @extends('.superAdmin.main')
+
+
+@php
+    $user = Auth::guard('admin')->user();
+@endphp
+
+
 
 @section('content')
     <div class="page-wrapper">
@@ -24,9 +30,9 @@
 
 
             <div class="accordion" id="accordionExample">
-            
+
                 <div class="row">
-                   
+
                     <div class="mt-3">
 
                         <table id="example" class="display" style="width:100%">
@@ -40,20 +46,30 @@
                             </thead>
                             <tbody>
 
-                                @foreach ($vendors as  $vendor)
-                                <tr>
-                                    <td>{{$vendor->id}}</td>
-                                    <td>{{$vendor->name}}</td>
-                                    <td>{{$vendor->email}}</td>
-                                    <td>
-                                        <a href="{{route('auth.admin.activate.vendor',['id' => $vendor->id])}}" class="btn btn-primary">Activate</a>
-                                        <a href="{{route('auth.admin.delete.vendor',['id' => $vendor->id])}}" class="btn btn-primary">Delete</a>
-                                    </td>
-                                </tr>
+                                @foreach ($vendors as $vendor)
+                                    <tr>
+                                        <td>{{ $vendor->id }}</td>
+                                        <td>{{ $vendor->name }}</td>
+                                        <td>{{ $vendor->email }}</td>
+                                        <td>
+
+                                            @if ($user->status == 1)
+                                                <a href="{{ route('auth.admin.activate.vendor', ['id' => $vendor->id]) }}"
+                                                    class="btn btn-primary">Activate</a>
+                                                <a href="{{ route('auth.admin.delete.vendor', ['id' => $vendor->id]) }}"
+                                                    class="btn btn-primary">Delete</a>
+                                            @else
+                                                <a href="{{ route('auth.admin.activate.vendor', ['id' => $vendor->id]) }}"
+                                                    class="btn btn-primary">Activate</a>
+                                            @endif
+
+
+                                        </td>
+                                    </tr>
                                 @endforeach
 
                             </tbody>
-                           
+
                         </table>
 
 

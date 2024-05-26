@@ -1,5 +1,11 @@
-
 @extends('.superAdmin.main')
+
+
+@php
+    $user = Auth::guard('admin')->user();
+   
+@endphp
+
 
 @section('content')
     <div class="page-wrapper">
@@ -24,9 +30,9 @@
 
 
             <div class="accordion" id="accordionExample">
-            
+
                 <div class="row">
-                   
+
                     <div class="mt-3">
 
                         <table id="example" class="display" style="width:100%">
@@ -37,32 +43,41 @@
                                     <th>vendor mobile number/email</th>
                                     <th>view details</th>
                                     <!-- <th>অর্ডারের তারিখ</th>
-                                    <th>ডেলিভারির তারিখ </th>
-                                    <th>মোট বিল</th>
-                                    <th>জমার পরিমান</th> -->
+                                        <th>ডেলিভারির তারিখ </th>
+                                        <th>মোট বিল</th>
+                                        <th>জমার পরিমান</th> -->
                                 </tr>
                             </thead>
                             <tbody>
 
-                                @foreach ($vendors as  $vendor)
-                                <tr>
-                                    <td>{{$vendor->id}}</td>
-                                    <td>{{$vendor->name}}</td>
-                                    <th>{{$vendor->email}}</th>
-                                   
-                                    <td>
+                                @foreach ($vendors as $vendor)
+                                    <tr>
+                                        <td>{{ $vendor->id }}</td>
+                                        <td>{{ $vendor->name }}</td>
+                                        <th>{{ $vendor->email }}</th>
 
-                                        <a href="{{route('auth.admin.deactive.vendor',['id' => $vendor->id])}}" class="btn btn-primary">Deactivate</a>
-                                        <a href="{{route('auth.admin.delete.vendor',['id' => $vendor->id])}}" class="btn btn-primary">Delete</a>
+                                        <td>
 
-                                    </td>
+                                            @if ($user->status == 1)
+                                                <a href="{{ route('auth.admin.deactive.vendor', ['id' => $vendor->id]) }}"
+                                                    class="btn btn-primary">Deactivate</a>
+                                                <a href="{{ route('auth.admin.delete.vendor', ['id' => $vendor->id]) }}"
+                                                    class="btn btn-primary">Delete</a>
+                                            @else
+                                                <a href="{{ route('auth.admin.deactive.vendor', ['id' => $vendor->id]) }}"
+                                                    class="btn btn-primary">Delete</a>
+                                            @endif
 
 
-                                </tr>
+
+                                        </td>
+
+
+                                    </tr>
                                 @endforeach
 
                             </tbody>
-                           
+
                         </table>
 
 

@@ -98,8 +98,6 @@ class AdminController extends Controller
 
         $user = Auth::guard('admin')->user(); 
 
-        dd($user->status) ; 
-
         if($user->status == 0){
             return redirect()->route('super_admin_dashboard');
         }
