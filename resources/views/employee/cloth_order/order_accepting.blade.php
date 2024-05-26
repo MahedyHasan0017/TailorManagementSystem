@@ -20,7 +20,7 @@
         </div>
 
         <div class="container-fluid">
-            <form action="{{ route('order.accepting.store') }}" method="post">
+            <form action="{{ route('employee.order.accepting.store') }}" method="post">
                 @csrf
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">

@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
@@ -16,6 +13,7 @@ return new class extends Migration
             $table->string('employee_id');
             $table->string('full_name');
             $table->string('mobile_number')->unique();
+            $table->string('vendor_mobile') ; 
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

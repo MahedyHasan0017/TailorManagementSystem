@@ -19,7 +19,8 @@ class Employee extends Authenticatable
         'email',
         'password',
         'status',
-        'mobile_number'
+        'mobile_number',
+        'vendor_mobile'
     ];
 
     /**

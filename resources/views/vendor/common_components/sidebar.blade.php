@@ -164,7 +164,7 @@
                                 class="hide-menu">Permissions
                             </span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{ route('vendor.permission.employee.list.view') }}"
+                            <li class="sidebar-item"><a href="{{ route('vendor.permission.employee.list.view',['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                         employee list
                                     </span></a></li>

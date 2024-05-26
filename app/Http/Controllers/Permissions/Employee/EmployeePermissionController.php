@@ -79,9 +79,21 @@ class EmployeePermissionController extends Controller
     }
 
 
-    public function vendor_employee_list(Request $request){
+    public function vendor_employee_list(Request $request , $mobile){
 
-        $employees = Employee::all() ; 
+
+        $employees = Employee::where('vendor_mobile',$mobile)->get() ; 
+
+
+        $total = count($employees) ; 
+
+        if($total > 5){
+            return view('vendor.terms_and_conditions.terms_and_conditions');
+        }
+
+
+
+
 
         return view('vendor.permissions.employee.employee_list',compact('employees')) ; 
     }
@@ -136,7 +148,7 @@ class EmployeePermissionController extends Controller
     
             
             toastr()->success('Role Assigned Sucessfully!');
-            return redirect()->route('vendor.permission.employee.list.view');
+            return redirect()->route('vendor.permission.employee.list.view',['mobile' => Auth::guard('vendor')->user()->mobile_number]);
         }
 
     }

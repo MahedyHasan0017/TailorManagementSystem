@@ -9,7 +9,7 @@
                             alt="logo" /></span>
                 </div>
                 <!-- Form -->
-                <form class="form-horizontal mt-3" action="{{ route('auth.vendor.register.store') }}" method="POST">
+                <form class="form-horizontal mt-3" action="{{ route('auth.admin.register.vendor.store') }}" method="POST">
                     @csrf
                     <div class="row pb-4">
 

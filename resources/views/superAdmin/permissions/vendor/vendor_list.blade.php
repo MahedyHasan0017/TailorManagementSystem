@@ -48,7 +48,7 @@
                                     <td>{{$vendor->id}}</td>
                                     <td>{{$vendor->name}}</td>
                                     <th>{{$vendor->email}}</th>
-                                    <td><a href="{{route('permission.vendor.single',['id' => $vendor->id])}}" class="btn btn-primary">view details</a></td>
+                                    <td><a href="{{route('admin.vendor.profile.view',['mobile_number' => $vendor->mobile_number])}}" class="btn btn-primary">view details</a></td>
                                 </tr>
                                 @endforeach
 

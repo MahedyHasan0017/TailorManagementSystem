@@ -52,19 +52,11 @@ Route::get('/', function () {
 
 
 
-Route::get('/super_admin', function () {
-
-    return view('superAdmin.dashboard');
-})->name('super_admin_dashboard')->middleware('admin');
+Route::get('/super_admin', [AdminController::class, 'index'])->name('super_admin_dashboard')->middleware('admin');
 
 Route::get('/vendor', [VendorController::class, 'index'])->name('vendor_dashboard')->middleware('vendor');
 
-Route::get('/employee', function () {
-
-    $employee_id = Auth::guard('employee')->user()->id;
-    $permission_list = Permission::where('employee_id', $employee_id)->get();
-    return view('employee.dashboard', compact('permission_list'));
-})->name('employee_dashboard')->middleware('employee');
+Route::get('/employee', [EmployeeController::class, 'index'] )->name('employee_dashboard')->middleware('employee');
 
 Route::get('/docs', function () {
     return view('docs');
@@ -79,7 +71,7 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('logout', [AdminController::class, 'admin_logout'])->name('auth.admin.logout');
 
         Route::get('register', [AdminController::class, 'register'])->name('auth.admin.register.view');
-        Route::post('register/store', [VendorController::class, 'register_store'])->name('auth.admin.register.store');
+        Route::post('register/store', [AdminController::class, 'register_store'])->name('auth.admin.register.store');
 
         Route::get('super-admin/list', [AdminController::class, 'super_admin_list'])->name('auth.super_admin.list.view');
         Route::get('manager/list', [AdminController::class, 'manager_list'])->name('auth.manager.list.view');
@@ -90,6 +82,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 
         Route::get('register/vendor', [AdminController::class, 'vendor_register_from_admin'])->name('auth.admin.register.vendor.view');
+        Route::post('register/vendor/store', [AdminController::class, 'vendor_register_from_admin_store'])->name('auth.admin.register.vendor.store');
         Route::get('/vendor/active/list', [AdminController::class, 'active_vendor_list_from_admin'])->name('auth.admin.active.vendor.list.view');
         Route::get('/vendor/pending/list', [AdminController::class, 'pending_vendor_list_from_admin'])->name('auth.admin.pending.vendor.list.view');
 
@@ -134,6 +127,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['prefix' => 'cloth'], function () {
         Route::get('order/accepting', [OrderAcceptingController::class, 'order_accepting'])->name('admin.order.accepting.view');
         // Route::post('order/accepting/con', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
+        Route::post('order/accepting/store', [OrderAcceptingController::class, 'admin_order_accepting_store'])->name('admin.order.accepting.store');
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'order_details_view'])->name('admin.order.details.view');
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'order_details_delete'])->name('admin.order.details.delete');
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
@@ -185,6 +179,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     });
 
 
+
     Route::group(['prefix' => 'vendor'], function () {
         Route::get('/profile/{mobile_number}', [AdminController::class, 'vendor_profile'])->name('admin.vendor.profile.view');
     });
@@ -196,25 +191,23 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 //     Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
 // });
 
-Route::group(['prefix' => 'admin-or-vendor'], function () {
-    Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
-});
 
 
 
 Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
     Route::group(['prefix' => 'cloth'], function () {
-        Route::get('order/accepting', [OrderAcceptingController::class, 'vendor_order_accepting'])->name('vendor.order.accepting.view');
+        Route::get('order/accepting', [OrderAcceptingController::class, 'vendor_order_accepting'])->name('vendor.order.accepting.view')->middleware('vendor');
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'vendor_order_details_view'])->name('vendor.order.details.view');
         Route::get('order/accepted/list/{mobile_number}', [OrderAcceptingController::class, 'vendor_order_accepted_list'])->name('vendor.order.accepting.list');
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'vendor_order_details_delete'])->name('vendor.order.details.delete');
+        Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
     });
 
 
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'employee'], function () {
-            Route::get('list', [EmployeePermissionController::class, 'vendor_employee_list'])->name('vendor.permission.employee.list.view');
+            Route::get('list/{mobile}', [EmployeePermissionController::class, 'vendor_employee_list'])->name('vendor.permission.employee.list.view');
             Route::get('single/{id}', [EmployeePermissionController::class, 'vendor_employee_single'])->name('vendor.permission.employee.single')->middleware('admin_or_vendor');
             Route::post('permissions/submit', [EmployeePermissionController::class, 'vendor_employee_submit_permissions'])->name('vendor.employee.submit.permissions');
         });
@@ -234,6 +227,7 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'employee_order_details_view'])->name('employee.order.details.view');
         Route::get('order/accepted/list/{mobile_number}', [OrderAcceptingController::class, 'employee_order_accepted_list'])->name('employee.order.accepting.list');
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'employee_order_details_delete'])->name('employee.order.details.delete');
+        Route::post('order/accepting/store', [OrderAcceptingController::class, 'employee_order_accepting_store'])->name('employee.order.accepting.store');
     });
 });
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('order_id')->unique();
             $table->string('vendor_name')->nullable();
             $table->string('vendor_number')->nullable();
+            $table->string('employee_number')->nullable();
             $table->string('customer_name')->nullable();
             $table->string('customer_mobile')->nullable();
             $table->string('customer_email')->nullable();

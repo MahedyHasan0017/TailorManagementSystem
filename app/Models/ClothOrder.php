@@ -15,6 +15,7 @@ class ClothOrder extends Model
         'order_id',
         'vendor_name',
         'vendor_number',
+        'employee_number',
         'customer_name',
         'customer_mobile',
         'customer_email',

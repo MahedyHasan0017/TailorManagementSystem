@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\AdminUser;
+use App\Models\Employee;
 use App\Models\User;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+
+    public function index() {
+        return view('superAdmin.dashboard');
+    }
+
     public function login()
     {
         $user = Auth::guard('admin')->user();
@@ -165,11 +171,13 @@ class AdminController extends Controller
     }
 
 
-    public function admin_vendor_register_store(RegisterRequest $request)
+    
+
+
+    public function vendor_register_from_admin_store(RegisterRequest $request)
     {
 
-
-        dd($request->all()) ; 
+        // dd($request->all()) ; 
 
         $is_user_exists = Vendor::where('email', $request->email)->first();
 
@@ -198,7 +206,7 @@ class AdminController extends Controller
                 if ($admin) {
                     return redirect()->route('auth.admin.pending.vendor.list.view');
                 } else {
-                    return redirect()->route('auth.vendor.login.view');
+                    return redirect()->back() ; 
                 }
             } else {
                 toastr()->error('Something Went Wrong!');
@@ -268,8 +276,12 @@ class AdminController extends Controller
     public function vendor_profile(Request $request, $id)
     {
         $vendor = Vendor::where('mobile_number', $id)->first();
-        // dd($vendor) ; 
-        return view('superAdmin.auth.vendor_profile', compact('vendor'));
+
+        $emp = Employee::where('vendor_mobile',$vendor->mobile_number)->get() ; 
+        $emp = count($emp) ; 
+
+
+        return view('superAdmin.auth.vendor_profile', compact(['vendor','emp']));
     }
 
 

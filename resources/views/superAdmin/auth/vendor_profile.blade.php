@@ -24,6 +24,7 @@
         <div class="container-fluid">
             <div class="row">
                 <h3>{{ $vendor->full_name }}</h3>
+                <h4>Employee No : {{ $emp }}</h4>
             </div>
         </div>
     </div>

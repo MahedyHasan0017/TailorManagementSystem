@@ -22,6 +22,27 @@
                                                 class="fas fa-address-book"></i></span>
                                     </div>
                                     <div>
+                                        <input type="text" class="form-control form-control-lg" placeholder="Vendor Mobile Number"
+                                            name="vendor_number" id="vendor_number" aria-label="vendor_number"
+                                            aria-describedby="basic-addon1" required>
+                                    </div>
+
+                                </div>
+                                <div style="display: block ; margin-bottom:15px">
+                                    @error('vendor_number')
+                                        <div style="color: red">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-primary text-white h-100" id="basic-addon1"><i
+                                                class="fas fa-address-book"></i></span>
+                                    </div>
+                                    <div>
                                         <input type="text" class="form-control form-control-lg" placeholder="Full Name"
                                             name="full_name" id="full_name" aria-label="Full_name"
                                             aria-describedby="basic-addon1" required>
