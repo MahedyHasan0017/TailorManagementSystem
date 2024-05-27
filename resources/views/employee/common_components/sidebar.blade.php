@@ -239,8 +239,8 @@ if(Auth::guard('employee')->user()){
                                                 <ul aria-expanded="false" class="collapse  first-level">
                                                     <li class="sidebar-item"><a href="{{ route('auth.employee.login.view') }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">লগইন
                                                             </span></a></li>
-                                                    <li class="sidebar-item"><a href="{{ route('auth.employee.register.view') }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">রেজিস্টার
-                                                            </span></a></li>
+                                                    {{-- <li class="sidebar-item"><a href="{{ route('auth.employee.register.view') }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">রেজিস্টার
+                                                            </span></a></li> --}}
                                                 </ul>
                                             </li>
 

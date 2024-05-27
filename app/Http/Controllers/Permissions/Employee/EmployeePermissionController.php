@@ -153,8 +153,8 @@ class EmployeePermissionController extends Controller
     }
 
 
-    public function register(){
-        return view('');
-    }
+    // public function register(){
+    //     return view('');
+    // }
 
 }

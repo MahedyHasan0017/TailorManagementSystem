@@ -61,18 +61,18 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <div class="pt-3">
-                                    <button class="btn btn-info" id="to-recover" type="button"><i
-                                            class="fa fa-lock me-1"></i> Lost password?</button>
+                                    {{-- <button class="btn btn-info" id="to-recover" type="button"><i
+                                            class="fa fa-lock me-1"></i> Lost password?</button> --}}
                                     <button class="btn btn-success float-end text-white" type="submit">Employee Login</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
+                        {{-- <div class="col-12">
                             <div class="">
                                 <a href="{{ route('auth.employee.register.view') }}" class="btn btn-info">Have No
                                     Account ? Register Here</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </form>
             </div>

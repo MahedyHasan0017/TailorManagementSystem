@@ -16,22 +16,30 @@
                         <div class="col-12">
 
                             <div>
-                                <div class="input-group mb-3">
+                                <div class="">
                                     {{-- <div class="input-group-prepend">
                                         <span class="input-group-text bg-primary text-white h-100" id="basic-addon1"><i
                                                 class="fas fa-address-book"></i></span>
                                     </div> --}}
-                                    <div>
+                                    <div class="form-group" style="width:100% ; display : flex">
                                         {{-- <input type="text" class="form-control form-control-lg" placeholder="Vendor Mobile Number"
                                             name="vendor_number" id="vendor_number" aria-label="vendor_number"
                                             aria-describedby="basic-addon1" required> --}}
-
-
-                                            <select name="" id="" class="form-control">
-                                                <option value="" class="form-control">
-                                                    option-1
-                                                </option>
-                                            </select>
+                                        <div class="input-group-prepend" style="width:35px">
+                                            <span class="input-group-text bg-primary text-white h-100" id="basic-addon1"><i
+                                                    class="fas fa-address-book"></i></span>
+                                        </div>
+                                        <select name="designation" id="" class="form-control employee_designation">
+                                            <option value="tailor" class="form-control employee_designation_option">
+                                                Tailor
+                                            </option>
+                                            <option value="manager" class="form-control employee_designation_option">
+                                                Manager
+                                            </option>
+                                            <option value="account" class="form-control employee_designation_option">
+                                                Account
+                                            </option>
+                                        </select>
                                     </div>
 
                                 </div>
@@ -84,7 +92,7 @@
                             </div>
 
                             <!-- email -->
-                            {{-- <div>
+                            <div>
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -144,7 +152,7 @@
                                     @enderror
                                 </div>
 
-                            </div> --}}
+                            </div>
 
                         </div>
                     </div>
@@ -155,11 +163,11 @@
                                     <button class="btn btn-block btn-lg btn-info" type="submit">Employee Sign Up</button>
                                 </div>
                             </div>
-                            <div class="mt-5">
+                            {{-- <div class="mt-5">
                                 <a href="{{ route('auth.employee.login.view') }}" class="btn btn-info">Already Have A
                                     Account ?
                                     Login Here</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </form>

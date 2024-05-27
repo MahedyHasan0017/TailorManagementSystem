@@ -138,8 +138,8 @@
                         @if (Auth::guard('employee')->check() == null)
                             <li class="nav-item dropdown">
                                 <a href="{{ route('auth.employee.login.view') }}" class="btn btn-success">Login</a>
-                                <a href="{{ route('auth.employee.register.view') }}"
-                                    class="btn btn-info">Register</a>
+                                {{-- <a href="#"
+                                    class="btn btn-info">Register</a> --}}
                             </li>
                         @elseif (Auth::guard('employee')->check())
                             <li class="nav-item dropdown">

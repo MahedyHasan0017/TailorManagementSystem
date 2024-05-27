@@ -115,11 +115,11 @@ Route::group(['prefix' => 'auth'], function () {
 
         Route::get('logout', [EmployeeController::class, 'employee_logout'])->name('auth.employee.logout');
 
-        Route::get('register', [EmployeeController::class, 'register'])->name('auth.employee.register.view');
-        Route::post('register/store', [EmployeeController::class, 'register_store'])->name('auth.employee.register.store');
+        // Route::get('register', [EmployeeController::class, 'register'])->name('auth.employee.register.view');
+        // Route::post('register/store', [EmployeeController::class, 'register_store'])->name('auth.employee.register.store');
 
-        Route::get('recovery/password', [EmployeeController::class, 'recovery_password'])->name('auth.employee.recovery.password');
-        Route::post('recovery/password/store', [EmployeeController::class, 'recovery_password_store'])->name('auth.employee.recovery.password.store');
+        // Route::get('recovery/password', [EmployeeController::class, 'recovery_password'])->name('auth.employee.recovery.password');
+        // Route::post('recovery/password/store', [EmployeeController::class, 'recovery_password_store'])->name('auth.employee.recovery.password.store');
     });
 });
 
@@ -186,12 +186,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 
 
-// Route::group(['prefix' => 'admin-or-vendor', 'middleware' => 'admin_or_vendor'], function () {
-//     Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
-// });
-
-
-
 
 Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
@@ -206,16 +200,12 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'employee'], function () {
-
             Route::get('/register',[EmployeeController::class, 'register'])->name('vendor.employee.register.view') ; 
-
             Route::get('list/{mobile}', [EmployeePermissionController::class, 'vendor_employee_list'])->name('vendor.permission.employee.list.view');
             Route::get('single/{id}', [EmployeePermissionController::class, 'vendor_employee_single'])->name('vendor.permission.employee.single')->middleware('admin_or_vendor');
             Route::post('permissions/submit', [EmployeePermissionController::class, 'vendor_employee_submit_permissions'])->name('vendor.employee.submit.permissions');
         });
     });
-
-
 
     Route::group(['prefix' => 'profile'], function () {
         Route::get('{id}', [VendorController::class, 'vendor_profile'])->name('vendor.profile.view');

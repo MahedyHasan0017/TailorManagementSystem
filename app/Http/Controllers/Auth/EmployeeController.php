@@ -63,25 +63,23 @@ class EmployeeController extends Controller
     public function register_store(RegisterRequest $request)
     {
      
+        // dd($request->all()) ; 
 
-        $vendor = Vendor::where('mobile_number' , $request->vendor_number)->first() ; 
-
-
-        if($vendor == null){
-            toastr()->error('Something Went Wrong!');
-            return redirect()->back();
-        }
+        $vendor = Auth::guard('vendor')->user();
 
 
-        // if($vendor)
+        if($vendor);
 
         $is_user_exists = Employee::where('email', $request->email)->first();
+        $mobile_number_exists = Employee::where('mobile_number',$request->mobile_number)->first(); 
 
-        if ($is_user_exists) {
+        if ($is_user_exists || $mobile_number_exists) {
             toastr()->error('User already exists!');
             return redirect()->back();
         } else {
 
+
+            // dd($request->all()) ; 
 
             $employee_id = random_int(100000, 999999);
 
@@ -92,11 +90,12 @@ class EmployeeController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'mobile_number' => $request->mobile_number,
-                'vendor_mobile' => $request->vendor_number
+                'vendor_mobile' => $vendor->mobile_number,
+                'designation' => $request->designation
             ]);
             if ($user) {
-                toastr()->success('User Registered Successfully! Please Login!');
-                return redirect()->route('auth.employee.login.view');
+                toastr()->success('Employee Registered Successfully!');
+                return redirect()->route('vendor.permission.employee.list.view',['mobile' => $vendor->mobile_number]);
             } else {
                 toastr()->error('Something Went Wrong!');
                 return redirect()->back();

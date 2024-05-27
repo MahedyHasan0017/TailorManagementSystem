@@ -342,6 +342,22 @@ tbody {
 }
 
 
+.employee_designation:focus{
+    outline : none ; 
+    border : 0 ; 
+    border-radius: 0 3px 3px 0;
+    /* font-size: 15px ; */
+    /* background-color: green ; */
+}
+
+.employee_designation_option{
+    background-color: white ;
+    /* font-size: 15px ; */
+}
+
+
+
+
 @page {
     size: A4;
 
