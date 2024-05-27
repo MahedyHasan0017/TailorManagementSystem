@@ -178,8 +178,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         });
     });
 
-
-
     Route::group(['prefix' => 'vendor'], function () {
         Route::get('/profile/{mobile_number}', [AdminController::class, 'vendor_profile'])->name('admin.vendor.profile.view');
     });

@@ -278,7 +278,7 @@ class AdminController extends Controller
         $vendor = Vendor::where('mobile_number', $id)->first();
 
         $emp = Employee::where('vendor_mobile',$vendor->mobile_number)->get() ; 
-        $emp = count($emp) ; 
+        // $emp = count($emp) ; 
 
 
         return view('superAdmin.auth.vendor_profile', compact(['vendor','emp']));

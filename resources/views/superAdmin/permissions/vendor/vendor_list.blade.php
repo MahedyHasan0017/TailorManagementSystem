@@ -20,8 +20,6 @@
         </div>
 
         <div class="container-fluid">
-
-
             <div class="accordion" id="accordionExample">
             
                 <div class="row">
@@ -42,7 +40,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach ($vendors as  $vendor)
                                 <tr>
                                     <td>{{$vendor->id}}</td>
@@ -51,7 +48,6 @@
                                     <td><a href="{{route('admin.vendor.profile.view',['mobile_number' => $vendor->mobile_number])}}" class="btn btn-primary">view details</a></td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                            
                         </table>
