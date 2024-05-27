@@ -56,8 +56,10 @@
                                             @if ($user->status == 1)
                                                 <a href="{{ route('auth.admin.activate.vendor', ['id' => $vendor->id]) }}"
                                                     class="btn btn-primary">Activate</a>
-                                                <a href="{{ route('auth.admin.delete.vendor', ['id' => $vendor->id]) }}"
-                                                    class="btn btn-primary">Delete</a>
+                                                @if ($user->status == 5)
+                                                    <a href="{{ route('auth.admin.delete.vendor', ['id' => $vendor->id]) }}"
+                                                        class="btn btn-primary">Delete</a>
+                                                @endif
                                             @else
                                                 <a href="{{ route('auth.admin.activate.vendor', ['id' => $vendor->id]) }}"
                                                     class="btn btn-primary">Activate</a>

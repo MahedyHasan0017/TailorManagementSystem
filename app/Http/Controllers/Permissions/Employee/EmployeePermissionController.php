@@ -20,8 +20,7 @@ class EmployeePermissionController extends Controller
 
     public function employee_single(Request $request,$id)
     {
-       
-
+    
         $persmissions = Permission::where('employee_id',$id)->get() ; 
 
         $employee = Employee::where('id',$id)->first() ; 
@@ -151,6 +150,11 @@ class EmployeePermissionController extends Controller
             return redirect()->route('vendor.permission.employee.list.view',['mobile' => Auth::guard('vendor')->user()->mobile_number]);
         }
 
+    }
+
+
+    public function register(){
+        return view('');
     }
 
 }

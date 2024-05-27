@@ -1,4 +1,3 @@
-
 @extends('.superAdmin.main')
 
 
@@ -24,7 +23,39 @@
         <div class="container-fluid">
             <div class="row">
                 <h3>{{ $vendor->full_name }}</h3>
-                <h4>Employee No : {{ $emp }}</h4>
+                <h4>Employee No : {{ count($employees) }}</h4>
+            </div>
+
+            <div class="row">
+                <div class="mt-3">
+                    <table id="example" class="display" style="width:100%">
+                        <thead class="accordion__heading">
+                            <tr>
+                                <th>employee id</th>
+                                <th>employee name</th>
+                                <th>employee mobile number/email</th>
+                                <th>view details</th>
+                                <!-- <th>অর্ডারের তারিখ</th>
+                                    <th>ডেলিভারির তারিখ </th>
+                                    <th>মোট বিল</th>
+                                    <th>জমার পরিমান</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($employees as $employee)
+                                <tr>
+                                    <td>{{ $employee->id }}</td>
+                                    <td>{{ $employee->name }}</td>
+                                    <th>{{ $employee->email }}</th>
+
+                                    <td><a href="{{ route('permission.employee.single', ['id' => $employee->id]) }}"
+                                            class="btn btn-primary">view details</a></td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

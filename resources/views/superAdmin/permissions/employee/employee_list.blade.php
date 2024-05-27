@@ -27,7 +27,6 @@
                 <div class="row">
                    
                     <div class="mt-3">
-
                         <table id="example" class="display" style="width:100%">
                             <thead class="accordion__heading">
                                 <tr>
@@ -56,8 +55,6 @@
                             </tbody>
                            
                         </table>
-
-
                     </div>
                 </div>
             </div>

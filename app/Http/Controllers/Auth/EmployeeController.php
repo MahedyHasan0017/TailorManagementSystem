@@ -58,13 +58,6 @@ class EmployeeController extends Controller
 
     public function register()
     {
-
-        $user = Auth::guard('employee')->user();
-
-        if ($user != null) {
-            return redirect()->route('employee_dashboard');
-        }
-
         return view('employee/auth/register');
     }
     public function register_store(RegisterRequest $request)

@@ -1,4 +1,4 @@
-@extends('.employee.main')
+@extends('.vendor.main')
 
 @section('content')
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark height__full_screen">
@@ -17,14 +17,21 @@
 
                             <div>
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
+                                    {{-- <div class="input-group-prepend">
                                         <span class="input-group-text bg-primary text-white h-100" id="basic-addon1"><i
                                                 class="fas fa-address-book"></i></span>
-                                    </div>
+                                    </div> --}}
                                     <div>
-                                        <input type="text" class="form-control form-control-lg" placeholder="Vendor Mobile Number"
+                                        {{-- <input type="text" class="form-control form-control-lg" placeholder="Vendor Mobile Number"
                                             name="vendor_number" id="vendor_number" aria-label="vendor_number"
-                                            aria-describedby="basic-addon1" required>
+                                            aria-describedby="basic-addon1" required> --}}
+
+
+                                            <select name="" id="" class="form-control">
+                                                <option value="" class="form-control">
+                                                    option-1
+                                                </option>
+                                            </select>
                                     </div>
 
                                 </div>
@@ -77,7 +84,7 @@
                             </div>
 
                             <!-- email -->
-                            <div>
+                            {{-- <div>
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -137,7 +144,7 @@
                                     @enderror
                                 </div>
 
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>

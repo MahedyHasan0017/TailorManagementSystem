@@ -3,7 +3,7 @@
 
 @php
     $user = Auth::guard('admin')->user();
-   
+
 @endphp
 
 
@@ -43,9 +43,9 @@
                                     <th>vendor mobile number/email</th>
                                     <th>view details</th>
                                     <!-- <th>অর্ডারের তারিখ</th>
-                                        <th>ডেলিভারির তারিখ </th>
-                                        <th>মোট বিল</th>
-                                        <th>জমার পরিমান</th> -->
+                                            <th>ডেলিভারির তারিখ </th>
+                                            <th>মোট বিল</th>
+                                            <th>জমার পরিমান</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,8 +61,11 @@
                                             @if ($user->status == 1)
                                                 <a href="{{ route('auth.admin.deactive.vendor', ['id' => $vendor->id]) }}"
                                                     class="btn btn-primary">Deactivate</a>
-                                                <a href="{{ route('auth.admin.delete.vendor', ['id' => $vendor->id]) }}"
-                                                    class="btn btn-primary">Delete</a>
+
+                                                @if ($user->status == 5)
+                                                    <a href="{{ route('auth.admin.delete.vendor', ['id' => $vendor->id]) }}"
+                                                        class="btn btn-primary">Delete</a>
+                                                @endif
                                             @else
                                                 <a href="{{ route('auth.admin.deactive.vendor', ['id' => $vendor->id]) }}"
                                                     class="btn btn-primary">Delete</a>

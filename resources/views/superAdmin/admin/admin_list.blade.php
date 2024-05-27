@@ -1,4 +1,3 @@
-
 @extends('.superAdmin.main')
 
 @section('content')
@@ -24,9 +23,9 @@
 
 
             <div class="accordion" id="accordionExample">
-            
+
                 <div class="row">
-                   
+
                     <div class="mt-3">
 
                         <table id="example" class="display" style="width:100%">
@@ -36,33 +35,36 @@
                                     <th>admin name</th>
                                     <th>admin mobile number/email</th>
                                     <th>view details</th>
-                                    <!-- <th>অর্ডারের তারিখ</th>
-                                    <th>ডেলিভারির তারিখ </th>
-                                    <th>মোট বিল</th>
-                                    <th>জমার পরিমান</th> -->
+
                                 </tr>
                             </thead>
                             <tbody>
 
-                                @foreach ($admins as  $admin)
-                                <tr>
-                                    <td>{{$admin->id}}</td>
-                                    <td>{{$admin->name}}</td>
-                                    <th>{{$admin->email}}</th>
-                                   
-                                    <td>
+                                @foreach ($admins as $admin)
+                                    <tr>
+                                        <td>{{ $admin->id }}</td>
+                                        <td>{{ $admin->name }}</td>
+                                        <th>{{ $admin->email }}</th>
 
-                                        <a href="{{route('auth.update.manager.from.admin',['id' => $admin->id])}}" class="btn btn-primary">update manager</a>
-                                        <a href="{{ route('auth.delete.superadmin.from.admin',['id' => $admin->id]) }}" class="btn btn-primary">Delete</a>
+                                        <td>
 
-                                    </td>
+                                            <a href="{{ route('auth.update.manager.from.admin', ['id' => $admin->id]) }}"
+                                                class="btn btn-primary">update manager</a>
+
+                                            @if (Auth::guard('admin')->user()->status == 5)
+                                                <a href="{{ route('auth.delete.superadmin.from.admin', ['id' => $admin->id]) }}"
+                                                    class="btn btn-primary">Delete</a>
+                                            @endif
 
 
-                                </tr>
+                                        </td>
+
+
+                                    </tr>
                                 @endforeach
 
                             </tbody>
-                           
+
                         </table>
 
 
