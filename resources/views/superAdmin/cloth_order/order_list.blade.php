@@ -163,6 +163,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @foreach ($cloth_orders as $cloth_order)
                                 <tr>
                                     {{-- <td>{{ $loop->iteration }}</td> --}}

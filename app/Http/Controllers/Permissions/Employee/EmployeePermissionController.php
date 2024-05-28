@@ -79,31 +79,21 @@ class EmployeePermissionController extends Controller
 
 
     public function vendor_employee_list(Request $request , $mobile){
-
-
         $employees = Employee::where('vendor_mobile',$mobile)->get() ; 
 
-
-        $total = count($employees) ; 
-
-        if($total > 5){
-            return view('vendor.terms_and_conditions.terms_and_conditions');
-        }
+        $employee_count = Employee::where('vendor_mobile',$mobile)->where('designation','tailor')->get() ; 
 
 
 
 
-
-        return view('vendor.permissions.employee.employee_list',compact('employees')) ; 
+        return view('vendor.permissions.employee.employee_list',compact(['employees','employee_count'])) ; 
     }
 
 
 
     public function vendor_employee_single(Request $request,$id){
         $persmissions = Permission::where('employee_id',$id)->get() ; 
-
         $employee = Employee::where('id',$id)->first() ; 
-
         return view('vendor.permissions.employee.employee_single',compact(['id','persmissions','employee']));
     }
 

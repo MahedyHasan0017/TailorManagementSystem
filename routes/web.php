@@ -45,7 +45,6 @@ Route::get('/api', function () {
 });
 
 Route::get('/', function () {
-
     return redirect()->route('super_admin_dashboard');
 });
 
@@ -116,8 +115,6 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('logout', [EmployeeController::class, 'employee_logout'])->name('auth.employee.logout');
 
         // Route::get('register', [EmployeeController::class, 'register'])->name('auth.employee.register.view');
-        // Route::post('register/store', [EmployeeController::class, 'register_store'])->name('auth.employee.register.store');
-
         // Route::get('recovery/password', [EmployeeController::class, 'recovery_password'])->name('auth.employee.recovery.password');
         // Route::post('recovery/password/store', [EmployeeController::class, 'recovery_password_store'])->name('auth.employee.recovery.password.store');
     });
@@ -200,7 +197,8 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'employee'], function () {
-            Route::get('/register',[EmployeeController::class, 'register'])->name('vendor.employee.register.view') ; 
+            Route::get('/register/{mobile}',[EmployeeController::class, 'register'])->name('vendor.employee.register.view') ; 
+            Route::post('register/store', [EmployeeController::class, 'register_store'])->name('auth.employee.register.store');
             Route::get('list/{mobile}', [EmployeePermissionController::class, 'vendor_employee_list'])->name('vendor.permission.employee.list.view');
             Route::get('single/{id}', [EmployeePermissionController::class, 'vendor_employee_single'])->name('vendor.permission.employee.single')->middleware('admin_or_vendor');
             Route::post('permissions/submit', [EmployeePermissionController::class, 'vendor_employee_submit_permissions'])->name('vendor.employee.submit.permissions');

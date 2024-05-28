@@ -11,7 +11,6 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav" class="pt-4">
-
                 @if ($vendor == null)
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                             aria-expanded="false"><i class="fas fa-file"></i><span class="hide-menu">লগইন/রেজিস্টার
@@ -174,10 +173,10 @@
                             <ul aria-expanded="false" class="collapse  first-level">
 
                                 <li class="sidebar-item"><a
-                                        href="{{ route('vendor.employee.register.view') }}"
+                                        href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">
-                                            register a employee 
+                                            register a employee
                                         </span></a></li>
 
                                 <li class="sidebar-item"><a

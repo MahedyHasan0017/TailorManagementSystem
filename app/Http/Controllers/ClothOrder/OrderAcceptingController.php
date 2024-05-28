@@ -890,6 +890,7 @@ class OrderAcceptingController extends Controller
     public function order_accepted_list()
     {
         $cloth_orders = ClothOrder::all();
+        // dd($cloth_orders) ; 
         return view('superAdmin.cloth_order.order_list', compact('cloth_orders'));
     }
 

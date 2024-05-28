@@ -27,7 +27,21 @@
                     <h2>here is all permissions for employees</h2>
                 </div>
                 <div class="col-12">
-                    Please assign the permissions for {{ $employee->full_name }}
+                    <div>
+                        Please assign the permissions for 
+                    </div>
+                    <div>
+                        employee name : {{ $employee->full_name }}
+                    </div>
+                    <div>
+                        employee id : {{ $employee->employee_id }}
+                    </div>
+                    <div>
+                        employee mobile number : {{ $employee->mobile_number }}
+                    </div>
+                    <div>
+                        vendor mobile number : {{ $employee->vendor_mobile }}
+                    </div>
                 </div>
             </div>
             <div class="row">
