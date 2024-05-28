@@ -10,13 +10,7 @@
                 </div>
 
                 @if ($total >= 5)
-
-                <div class="text-white">
-                    <h2>আপনার টেইলর যোগ করার সীমা অতিক্রান্ত হয়েছে</h2>
-                    <h3>৫ জনের বেশি টেইলর যোগ করতে চাইলে </h3>
-                    <h3>আমাদের পেমেন্ট সেকশনে যোগাযোগ করুন</h3>
-                </div>
-
+                    @include('employee.auth.employee_package')
                 @else
                     <form class="form-horizontal mt-3" action="{{ route('auth.employee.register.store') }}" method="POST">
                         @csrf
@@ -187,3 +181,5 @@
         </div>
     </div>
 @endsection
+
+

@@ -357,6 +357,13 @@ tbody {
 
 
 
+.cash_out_number{
+    background-color: white;
+    color: #333 ;
+    padding: 7px 20px ;
+    margin-top: 8px ;
+}
+
 
 @page {
     size: A4;

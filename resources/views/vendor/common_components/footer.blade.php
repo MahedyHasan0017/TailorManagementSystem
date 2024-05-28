@@ -1,5 +1,5 @@
 <footer class="footer text-center">
-    All Rights Reserved by Zero Point Computing. Designed and Developed by <a href="https://www.zeropointcomputing.com">WrapPixel</a>.
+    All Rights Reserved by Zero Point Computing. Designed and Developed by <a href="https://www.zeropointcomputing.com">Zero-Point-Computing</a>.
 </footer>
 
 </div>

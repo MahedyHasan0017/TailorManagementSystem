@@ -15,7 +15,6 @@ use App\Http\Controllers\MessageSending\SendingMessageController;
 use App\Http\Controllers\MessageSending\SendingMessageListController;
 use App\Http\Controllers\Permissions\Employee\EmployeePermissionController;
 use App\Http\Controllers\Permissions\Vendor\VendorPermissionController;
-use App\Http\Controllers\RegeneratePost;
 use App\Http\Controllers\Report\OrderReportController;
 use App\Http\Controllers\Settings\DressPartController;
 use App\Http\Controllers\Settings\DressWagesController;
@@ -23,8 +22,6 @@ use App\Http\Controllers\Settings\EmployeeDesignationController;
 use App\Http\Controllers\Settings\IncomeCostSectorController;
 use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
-use App\Models\Permission;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -180,7 +177,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/profile/{mobile_number}', [AdminController::class, 'vendor_profile'])->name('admin.vendor.profile.view');
     });
 });
-
 
 
 
