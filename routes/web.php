@@ -3,7 +3,6 @@
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\EmployeeController;
 use App\Http\Controllers\Auth\VendorController;
-use App\Http\Controllers\ClothOrder\ClothTypeController;
 use App\Http\Controllers\ClothOrder\OrderAcceptingController;
 use App\Http\Controllers\EmployeeManagement\AddEmployeeController;
 use App\Http\Controllers\EmployeeManagement\ListEmployeeController;
@@ -22,6 +21,7 @@ use App\Http\Controllers\Settings\EmployeeDesignationController;
 use App\Http\Controllers\Settings\IncomeCostSectorController;
 use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
+use App\Http\Controllers\SubscriptionPaymentController;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -130,6 +130,34 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         // Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
 
+    Route::group(['prefix' => 'payments'], function () {
+        Route::get('pending',[SubscriptionPaymentController::class, 'pending_payment'])->name('admin.payments.pending.view') ; 
+        Route::get('approved',[SubscriptionPaymentController::class, 'approved_payment'])->name('admin.payments.approved.view') ; 
+
+        Route::get('payment/request/{vendor_id}',[SubscriptionPaymentController::class, 'payment_details_for_vendor'])->name('admin.payments.approved.details.view') ; 
+
+    });
+
+    
+
+    Route::group(['prefix' => 'permissions'], function () {
+        Route::group(['prefix' => 'vendor'], function () {
+            Route::get('list', [VendorPermissionController::class, 'vendor_list'])->name('permission.vendor.list.view');
+            Route::get('single/{id}', [VendorPermissionController::class, 'vendor_single'])->name('permission.vendor.single');
+            Route::post('permissions/submit', [VendorPermissionController::class, 'vendor_submit_permissions'])->name('vendor.submit.permissions');
+        });
+        Route::group(['prefix' => 'employee'], function () {
+            Route::get('list', [EmployeePermissionController::class, 'employee_list'])->name('permission.employee.list.view');
+            Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single')->middleware('admin_or_vendor');
+            Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
+        });
+    });
+
+    Route::group(['prefix' => 'vendor'], function () {
+        Route::get('/profile/{mobile_number}', [AdminController::class, 'vendor_profile'])->name('admin.vendor.profile.view');
+    });
+
+
     Route::group(['prefix' => 'employee_management'], function () {
         Route::get('add/employee', [AddEmployeeController::class, 'add_employee'])->name('admin.add.employee.view');
         Route::get('list/employee', [ListEmployeeController::class, 'list_employee'])->name('admin.list.employee.view');
@@ -159,23 +187,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('sms/template', [SmsTemplateController::class, 'sms_template'])->name('admin.sms.template.view');
         Route::get('language', [LanguageSettingsController::class, 'language_setting'])->name('admin.language.setting.view');
     });
-
-    Route::group(['prefix' => 'permissions'], function () {
-        Route::group(['prefix' => 'vendor'], function () {
-            Route::get('list', [VendorPermissionController::class, 'vendor_list'])->name('permission.vendor.list.view');
-            Route::get('single/{id}', [VendorPermissionController::class, 'vendor_single'])->name('permission.vendor.single');
-            Route::post('permissions/submit', [VendorPermissionController::class, 'vendor_submit_permissions'])->name('vendor.submit.permissions');
-        });
-        Route::group(['prefix' => 'employee'], function () {
-            Route::get('list', [EmployeePermissionController::class, 'employee_list'])->name('permission.employee.list.view');
-            Route::get('single/{id}', [EmployeePermissionController::class, 'employee_single'])->name('permission.employee.single')->middleware('admin_or_vendor');
-            Route::post('permissions/submit', [EmployeePermissionController::class, 'employee_submit_permissions'])->name('employee.submit.permissions');
-        });
-    });
-
-    Route::group(['prefix' => 'vendor'], function () {
-        Route::get('/profile/{mobile_number}', [AdminController::class, 'vendor_profile'])->name('admin.vendor.profile.view');
-    });
 });
 
 
@@ -193,7 +204,7 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'employee'], function () {
-            Route::get('/register/{mobile}',[EmployeeController::class, 'register'])->name('vendor.employee.register.view') ; 
+            Route::get('/register/{mobile}', [EmployeeController::class, 'register'])->name('vendor.employee.register.view');
             Route::post('register/store', [EmployeeController::class, 'register_store'])->name('auth.employee.register.store');
             Route::get('list/{mobile}', [EmployeePermissionController::class, 'vendor_employee_list'])->name('vendor.permission.employee.list.view');
             Route::get('single/{id}', [EmployeePermissionController::class, 'vendor_employee_single'])->name('vendor.permission.employee.single')->middleware('admin_or_vendor');
@@ -203,6 +214,11 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
     Route::group(['prefix' => 'profile'], function () {
         Route::get('{id}', [VendorController::class, 'vendor_profile'])->name('vendor.profile.view');
+    });
+
+
+    Route::group(['prefix' => 'subscription'], function () {
+        Route::post('/submit/{mobile_number}', [VendorController::class, 'vendor_subscription_payment'])->name('vendor.subscription.payment.request');
     });
 });
 

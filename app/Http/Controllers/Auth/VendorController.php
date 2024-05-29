@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Payment\VendorPaymentRequest;
+use App\Models\SubscriptionPayment;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -108,6 +110,39 @@ class VendorController extends Controller
     public function vendor_profile(Request $request, $id)
     {
         // dd($id);
-        return view('vendor.auth.profile') ; 
+        return view('vendor.auth.profile');
+    }
+
+
+    public function vendor_subscription_payment(VendorPaymentRequest $request, $mobile_number)
+    {
+
+        $data = $request->validated();
+        $vendor = Auth::guard('vendor')->user();
+        $unique_payment_request_id =  random_int(100000, 999999);
+        $payment_request = SubscriptionPayment::create([
+            'vendor_id' => $vendor->id , 
+            'our_mobile_number' => $data['our_number'],
+            'payment_request_id' => $unique_payment_request_id,
+            'number_of_tailor' => $data['tailor_number'],
+            'time_span' => $data['time_span'],
+            'mobile_number' => $data['mobile_number'],
+            'transection_id' => $data['transection_id'],
+            'total_amount' => $data['total_amount'],
+            'vendor_identity' => $vendor->full_name,
+            'vendor_mobile_number' => $vendor->mobile_number,
+            'vendor_status' => $vendor->status
+        ]);
+
+
+        if($payment_request){
+            toastr()->success('Your Payment Submitted Successfully! Please Wait for Our Confirmation!');
+            return redirect()->back() ; 
+        }
+        else{
+            toastr()->error('Something Went Wrong!');
+            return redirect()->back() ; 
+        }
+
     }
 }

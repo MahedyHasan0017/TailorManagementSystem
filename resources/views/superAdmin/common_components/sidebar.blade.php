@@ -175,7 +175,6 @@
                                     </span></a></li>
                         </ul>
                     </li>
-
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                             href="order.html" aria-expanded="false"><i class="fas fa-envelope"></i><span
                                 class="hide-menu">Permissions
@@ -191,7 +190,6 @@
                                     </span></a></li>
                         </ul>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html"
                             aria-expanded="false"><i class="fas fa-user"></i><span
@@ -207,7 +205,6 @@
                                     </span></a></li>
                         </ul>
                     </li>
-
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                             href="order.html" aria-expanded="false"><i class="fas fa-envelope"></i><span
                                 class="hide-menu">Office
@@ -365,6 +362,24 @@
                                     </span></a></li>
                         </ul>
                     </li>
+
+
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                            href="order.html" aria-expanded="false"><i class="fas fa-plus"></i><span
+                                class="hide-menu">Payments
+                            </span></a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item"><a href="{{ route('admin.payments.pending.view') }}" class="sidebar-link"><i
+                                        class="fas fa-angle-right"></i><span class="hide-menu">
+                                        pending payment requests
+                                    </span></a></li>
+                            <li class="sidebar-item"><a href="{{ route('admin.payments.approved.view') }}" class="sidebar-link"><i
+                                        class="fas fa-angle-right"></i><span class="hide-menu">
+                                        accepted payment requests
+                                    </span></a></li>
+                        </ul>
+                    </li>
+
 
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                             href="order.html" aria-expanded="false"><i class="fas fa-envelope"></i><span
