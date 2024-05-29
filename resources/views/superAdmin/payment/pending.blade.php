@@ -50,7 +50,7 @@
                                         <td>{{ $payment->number_of_tailor }}</td>
                                         <td>{{ $payment->time_span }}</td>
                                         <td>
-                                            <a href="{{ route('') }}"
+                                            <a href="{{ route('admin.payments.approved.details.view',['transection_id' => $payment->transection_id]) }}"
                                                 class="btn btn-primary">View</a>
 
                                             @if (Auth::guard('admin')->user()->status == 5)

@@ -21,11 +21,13 @@ class SubscriptionPaymentController extends Controller
     }
 
 
-    public function payment_details_for_vendor(Request $request , $vendor_id){
+    public function payment_details_for_vendor(Request $request , $transection_id){
 
-        dd($vendor_id) ; 
+        // dd($transection_id) ; 
 
-        return "hello" ; 
+        $transection_info = SubscriptionPayment::where('transection_id',$transection_id)->first() ; 
+
+        return view('superAdmin.payment.payment_approve_confirm',compact('transection_info')) ; 
     }
 
 }
