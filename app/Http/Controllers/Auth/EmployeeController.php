@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Employee;
 use App\Models\Permission;
 use App\Models\Vendor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -33,15 +34,35 @@ class EmployeeController extends Controller
     }
     public function login_store(Request $request)
     {
-        
+
         $data = $request->all();
         $check['email'] = $data['email'];
         $check['password'] = $data['password'];
 
+
+        // if()
+
+        // 'draft_at', '<=', Carbon::now()
+
         if (Auth::guard('employee')->attempt($check)) {
 
-            toastr()->success('Employee Login Successfully !');
-            return redirect()->route('employee_dashboard');
+            $user = Auth::guard('employee')->user()->employee_id;
+            $tailor = Employee::where('employee_id', $user)->first();
+
+            if ($tailor->status == 0) {
+                dd('tailor deactive') ; 
+            } else {
+                if ($tailor->draft_at != null && $tailor->draft_at <= Carbon::now()) {
+                    $tailor->status = 0;
+                    $done = $tailor->save();
+                    if ($done) {
+                        dd('tailor deactive');
+                    }
+                } else {
+                    toastr()->success('Employee Login Successfully !');
+                    return redirect()->route('employee_dashboard');
+                }
+            }
         } else {
             toastr()->error('Invalid Credentials !');
             return redirect()->back();
@@ -56,20 +77,17 @@ class EmployeeController extends Controller
         return redirect()->route('auth.employee.login.view');
     }
 
-    public function register(Request $request , $mobile)
+    public function register(Request $request, $mobile)
     {
 
-        $employees = Employee::where('vendor_mobile', $mobile)->where('designation','tailor')->get();
+        $employees = Employee::where('vendor_mobile', $mobile)->where('designation', 'tailor')->get();
         $total = count($employees);
-        return view('employee/auth/register',compact('total'));
+        return view('employee/auth/register', compact('total'));
     }
     public function register_store(RegisterRequest $request)
     {
 
-        // dd($request->all()) ; 
-
         $vendor = Auth::guard('vendor')->user();
-
 
         if ($vendor);
 
@@ -81,21 +99,35 @@ class EmployeeController extends Controller
             return redirect()->back();
         } else {
 
-
-            // dd($request->all()) ; 
-
+            $user = "";
             $employee_id = random_int(100000, 999999);
 
-            $user = Employee::create([
-                'employee_id' => $employee_id,
-                'full_name' => $request->full_name,
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'mobile_number' => $request->mobile_number,
-                'vendor_mobile' => $vendor->mobile_number,
-                'designation' => $request->designation
-            ]);
+            if ($vendor->tailor_adding_limit > 5) {
+                $user = Employee::create([
+                    'employee_id' => $employee_id,
+                    'full_name' => $request->full_name,
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'mobile_number' => $request->mobile_number,
+                    'vendor_mobile' => $vendor->mobile_number,
+                    'designation' => $request->designation,
+                    'draft_at' => Carbon::now()->addMinutes(2),
+                    'status' => 1
+                ]);
+            } else {
+                $user = Employee::create([
+                    'employee_id' => $employee_id,
+                    'full_name' => $request->full_name,
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'mobile_number' => $request->mobile_number,
+                    'vendor_mobile' => $vendor->mobile_number,
+                    'designation' => $request->designation,
+                    'status' => 1
+                ]);
+            }
             if ($user) {
                 toastr()->success('Employee Registered Successfully!');
                 return redirect()->route('vendor.permission.employee.list.view', ['mobile' => $vendor->mobile_number]);

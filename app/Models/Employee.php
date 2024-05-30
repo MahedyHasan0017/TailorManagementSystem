@@ -21,7 +21,8 @@ class Employee extends Authenticatable
         'status',
         'mobile_number',
         'vendor_mobile',
-        'designation'
+        'designation',
+        'draft_at'
     ];
 
     /**

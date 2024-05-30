@@ -29,6 +29,9 @@
                                 Vendor Name : {{ $transection_info->vendor_identity }}
                             </h3>
                             <div>
+                                Vendor Mobile : {{ $transection_info->vendor_mobile_number }}
+                            </div>
+                            <div>
                                 Payment Number : {{ $transection_info->mobile_number }}
                             </div>
                             <div>
@@ -47,18 +50,21 @@
                                     month
                                 @endif
                             </div>
-
-                            <div>
-                                <form action="" method="post">
-
+                            <div> 	
+                                
+                                <form action="{{ route('admin.payments.request.submit.store') }}" method="post">
+                                    @csrf
                                     <div>
-                                        <input type="text" value="">
+                                        <input type="text" hidden name="payment_id" value="{{ $transection_info->payment_request_id }}" readonly>
+                                    </div> 
+                                    <div>
+                                        <input type="text" hidden name="vendor_id" value="{{ $transection_info->vendor_mobile_number }}" readonly>
                                     </div>
                                     <div>
-                                        <input type="text" value="">
+                                        <input type="text" hidden name='number_of_tailor' value="{{ $transection_info->number_of_tailor }}" readonly>
                                     </div>
                                     <div>
-                                        <input type="text" value="">
+                                        <input type="text" hidden name="time_span" value="{{ $transection_info->time_span }}" readonly>
                                     </div>
 
                                     <button class="btn btn-success">
@@ -66,7 +72,6 @@
                                     </button>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>

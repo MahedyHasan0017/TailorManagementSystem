@@ -360,6 +360,17 @@
                                         ভাষা
                                         সেটিংস
                                     </span></a></li>
+
+
+                            <li class="sidebar-item"><a href="{{ route('admin.language.setting.view') }}"
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
+                                        Vendor Settings
+                                    </span></a></li>
+                            <li class="sidebar-item"><a href="{{ route('admin.language.setting.view') }}"
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
+                                        Tailor Settings
+                                    </span></a></li>
+
                         </ul>
                     </li>
 
@@ -369,12 +380,12 @@
                                 class="hide-menu">Payments
                             </span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{ route('admin.payments.pending.view') }}" class="sidebar-link"><i
-                                        class="fas fa-angle-right"></i><span class="hide-menu">
+                            <li class="sidebar-item"><a href="{{ route('admin.payments.pending.view') }}"
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                         pending payment requests
                                     </span></a></li>
-                            <li class="sidebar-item"><a href="{{ route('admin.payments.approved.view') }}" class="sidebar-link"><i
-                                        class="fas fa-angle-right"></i><span class="hide-menu">
+                            <li class="sidebar-item"><a href="{{ route('admin.payments.approved.view') }}"
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                         accepted payment requests
                                     </span></a></li>
                         </ul>

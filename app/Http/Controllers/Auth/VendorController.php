@@ -64,6 +64,7 @@ class VendorController extends Controller
     public function register_store(RegisterRequest $request)
     {
 
+
         $is_user_exists = Vendor::where('email', $request->email)->first();
 
         if ($is_user_exists) {
@@ -118,7 +119,7 @@ class VendorController extends Controller
     {
 
         $data = $request->validated();
-        $vendor = Auth::guard('vendor')->user();
+        $vendor = Vendor::where('mobile_number',$mobile_number)->first() ;
         $unique_payment_request_id =  random_int(100000, 999999);
         $payment_request = SubscriptionPayment::create([
             'vendor_id' => $vendor->id , 
@@ -137,6 +138,8 @@ class VendorController extends Controller
 
         if($payment_request){
             toastr()->success('Your Payment Submitted Successfully! Please Wait for Our Confirmation!');
+            $vendor->is_payment_requested = 1 ; 
+            $vendor->save() ; 
             return redirect()->back() ; 
         }
         else{

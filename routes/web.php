@@ -134,6 +134,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('pending',[SubscriptionPaymentController::class, 'pending_payment'])->name('admin.payments.pending.view') ; 
         Route::get('approved',[SubscriptionPaymentController::class, 'approved_payment'])->name('admin.payments.approved.view') ; 
         Route::get('payment/request/{transection_id}',[SubscriptionPaymentController::class, 'payment_details_for_vendor'])->name('admin.payments.approved.details.view') ; 
+
+        Route::post('payment/request/submit',[SubscriptionPaymentController::class, 'payment_request_submit'])->name('admin.payments.request.submit.store') ; 
     });
 
     

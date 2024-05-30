@@ -151,7 +151,7 @@
 
         function change_tailor_month() {
             const tailor_number = number.value;
-            const time_span =  parseInt(span.value[0]);
+            const time_span =  parseInt(span.value.slice(0,2));
             const total_amount = tailor_number * time_span * 500;
             month.innerHTML = time_span;
             tailor.innerHTML = tailor_number;

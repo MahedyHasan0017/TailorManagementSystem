@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('status')->default(0);
             $table->integer('tailor_adding_limit')->default(5);
             $table->integer('additional_tailor_duration')->default(0);
+            $table->boolean('is_payment_requested')->default(false); 
             $table->timestamps();
         });
     }
