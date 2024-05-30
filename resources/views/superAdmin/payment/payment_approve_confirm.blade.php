@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <div>
                             <h3>
-                                Vendor Name : {{$transection_info->vendor_identity}}
+                                Vendor Name : {{ $transection_info->vendor_identity }}
                             </h3>
                             <div>
                                 Payment Number : {{ $transection_info->mobile_number }}
@@ -35,14 +35,38 @@
                                 Transection Id : {{ $transection_info->transection_id }}
                             </div>
                             <div>
-                               Total Amount : {{ $transection_info->total_amount }}
+                                Total Amount : {{ $transection_info->total_amount }}
                             </div>
                             <div>
-                                Number Of Tailor Vendor Wants To Be Added : {{ $transection_info->number_of_tailor }}  
+                                Number Of Tailor Vendor Wants To Be Added : {{ $transection_info->number_of_tailor }}
                             </div>
                             <div>
-                                Active Time Span For each employee {{ $transection_info->time_span }} 
+                                Active Time Span For each employee {{ $transection_info->time_span[0] }} @if ($transection_info->time_span[0] > 1)
+                                    months
+                                @else
+                                    month
+                                @endif
                             </div>
+
+                            <div>
+                                <form action="" method="post">
+
+                                    <div>
+                                        <input type="text" value="">
+                                    </div>
+                                    <div>
+                                        <input type="text" value="">
+                                    </div>
+                                    <div>
+                                        <input type="text" value="">
+                                    </div>
+
+                                    <button class="btn btn-success">
+                                        Activate
+                                    </button>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
