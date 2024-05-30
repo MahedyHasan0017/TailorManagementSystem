@@ -21,6 +21,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('status')->default(0);
+            $table->integer('tailor_adding_limit')->default(5);
+            $table->integer('additional_tailor_duration')->default(0);
             $table->timestamps();
         });
     }
