@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Employee;
 use App\Models\Permission;
-use App\Models\Vendor;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +25,6 @@ class EmployeeController extends Controller
     public function login()
     {
         $user = Auth::guard('employee')->user();
-
         if ($user != null) {
             return redirect()->route('employee_dashboard');
         }
@@ -34,15 +32,9 @@ class EmployeeController extends Controller
     }
     public function login_store(Request $request)
     {
-
         $data = $request->all();
         $check['email'] = $data['email'];
         $check['password'] = $data['password'];
-
-
-        // if()
-
-        // 'draft_at', '<=', Carbon::now()
 
         if (Auth::guard('employee')->attempt($check)) {
 
