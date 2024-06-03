@@ -42,9 +42,8 @@ class EmployeeController extends Controller
             $tailor = Employee::where('employee_id', $user)->first();
 
             if ($tailor->status == 0) {
-                dd('tailor deactive') ; 
-
-                return view('')
+            
+                return view('employee.auth.deactivate_page') ; 
 
             } else {
                 if ($tailor->draft_at != null && $tailor->draft_at <= Carbon::now()) {
