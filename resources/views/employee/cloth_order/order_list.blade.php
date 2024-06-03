@@ -171,8 +171,8 @@
                                     <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
                                     <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
                                     
-                                    <td>{{ $cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_cloth}}</td>
-                                    <td>{{ $cloth_order->cloth_order_delivary->nogod_prodan }}</td>
+                                    <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_cloth) }}</td>
+                                    <td>{{ en2bn ((int)$cloth_order->cloth_order_delivary->nogod_prodan) }}</td>
                                     <td class="action_buttons_in_tablee">
                                         <span><a href="{{ route('employee.order.details.view',['id' => $cloth_order->id]) }}" class="btn btn-primary">view</a></span>
                                         <span><a href="{{ route('employee.order.details.delete',['id' => $cloth_order->id]) }}" class="btn btn-danger">delete</a></span>

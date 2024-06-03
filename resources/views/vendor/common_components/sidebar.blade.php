@@ -26,9 +26,9 @@
                         </ul>
                     </li>
                 @else
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                    {{-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                             href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                class="hide-menu">ড্যাশবোর্ড</span></a></li>
+                                class="hide-menu">ড্যাশবোর্ড</span></a></li> --}}
 
                     @if ($vendor->status == 1)
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
@@ -36,7 +36,7 @@
                                     class="hide-menu">পোষাক অর্ডার
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('vendor.order.accepting.view') }}"
+                                <li class="sidebar-item"><a href="{{ route('vendor.order.accepting.view',['id' => $vendor->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">অর্ডার গ্রহন
                                         </span></a>
@@ -131,7 +131,7 @@
                                 href="order.html" aria-expanded="false"><i class="fas fa-cog"></i><span
                                     class="hide-menu">সেটিংস </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('admin.dress.wages.view') }}"
+                                <li class="sidebar-item"><a href="{{ route('vendor.settings.dress.info',['id' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">
                                             পোশাকের নাম ও

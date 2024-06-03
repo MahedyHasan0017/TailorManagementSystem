@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Permissions\Employee;
 
 use App\Http\Controllers\Controller;
-use App\Http\Middleware\Admin;
-use App\Models\AdminUser;
 use App\Models\Employee;
 use App\Models\Permission;
 use Illuminate\Http\Request;

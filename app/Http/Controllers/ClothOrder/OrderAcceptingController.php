@@ -96,6 +96,10 @@ class OrderAcceptingController extends Controller
 
             $cloth_name->save();
 
+
+            
+
+
             $cloth_delivary = ClothOrderDelivaryInfo::create([
                 'cloth_order_id' => $cloth_order->id,
                 'majurir_poriman' => $data['majurir_poriman'],
@@ -355,10 +359,18 @@ class OrderAcceptingController extends Controller
 
             $cloth_name->save();
 
+
+            $majurir_poriman = bn2en($data['majurir_poriman']) ; 
+            $majurir_poriman = (int)$majurir_poriman ; 
+            $nogod_prodan = bn2en($data['nogod_prodan']) ;
+            $nogod_prodan = (int)$nogod_prodan ; 
+
+
+
             $cloth_delivary = ClothOrderDelivaryInfo::create([
                 'cloth_order_id' => $cloth_order->id,
-                'majurir_poriman' => $data['majurir_poriman'],
-                'nogod_prodan' => $data['nogod_prodan'],
+                'majurir_poriman' => $majurir_poriman,
+                'nogod_prodan' => $nogod_prodan,
                 'montobbo_shirt_panjabi' => $data['montobbo_shirt_panjabi'],
                 'orderer_tarikh' => $data['orderer_tarikh'],
                 'delivery_tarikh' => $data['delivery_tarikh'],
@@ -609,10 +621,16 @@ class OrderAcceptingController extends Controller
 
             $cloth_name->save();
 
+            $majurir_poriman = bn2en($data['majurir_poriman']) ; 
+            $majurir_poriman = (int)$majurir_poriman ; 
+            $nogod_prodan = bn2en($data['nogod_prodan']) ;
+            $nogod_prodan = (int)$nogod_prodan ; 
+
+
             $cloth_delivary = ClothOrderDelivaryInfo::create([
                 'cloth_order_id' => $cloth_order->id,
-                'majurir_poriman' => $data['majurir_poriman'],
-                'nogod_prodan' => $data['nogod_prodan'],
+                'majurir_poriman' => $majurir_poriman,
+                'nogod_prodan' => $nogod_prodan,
                 'montobbo_shirt_panjabi' => $data['montobbo_shirt_panjabi'],
                 'orderer_tarikh' => $data['orderer_tarikh'],
                 'delivery_tarikh' => $data['delivery_tarikh'],

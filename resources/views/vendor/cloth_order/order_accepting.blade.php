@@ -197,55 +197,58 @@
                                                                 <div class="form_input_group">
                                                                     <label for="lomba"
                                                                         class="form-label form_input_group_label_important">
-                                                                        লম্বা : <span style="color:red">*</span></label>
+                                                                        লম্বা : </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_lomba" name="panjabi_lomba" required>
+                                                                        id="panjabi_lomba" name="panjabi_lomba" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="body"
                                                                         class="form-label form_input_group_label_important">
-                                                                        বডি : <span style="color:red">*</span></label>
+                                                                        বডি :</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_body" name="panjabi_body" required>
+                                                                        id="panjabi_body" name="panjabi_body" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="body_luzz"
                                                                         class="form-label form_input_group_label_important">বডি
-                                                                        লুজ : <span style="color:red">*</span></label>
+                                                                        লুজ : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz" required>
+                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pet"
                                                                         class="form-label form_input_group_label_important">
-                                                                        পেট : <span style="color:red">*</span></label>
+                                                                        পেট : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_pet" name="panjabi_pet" required>
+                                                                        id="panjabi_pet" name="panjabi_pet" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="put"
                                                                         class="form-label form_input_group_label_important">
-                                                                        পুট : <span style="color:red">*</span></label>
+                                                                        পুট : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_put" name="panjabi_put" required>
+                                                                        id="panjabi_put" name="panjabi_put" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="hatar_lomba"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হাতার লম্বা : <span
-                                                                            style="color:red">*</span></label>
+                                                                        হাতার লম্বা : 
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hatar_lomba" name="panjabi_hatar_lomba" required>
+                                                                        id="panjabi_hatar_lomba" name="panjabi_hatar_lomba" >
                                                                 </div>
                                                             </div>
 
@@ -254,85 +257,90 @@
                                                                 <div class="form_input_group">
                                                                     <label for="hatar_mukh"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হাতার মুখ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        হাতার মুখ : 
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh" required>
+                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="kaf"
                                                                         class="form-label form_input_group_label_important">
-                                                                        কাফ : <span style="color:red">*</span></label>
+                                                                        কাফ : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_kaf" name="panjabi_kaf" required>
+                                                                        id="panjabi_kaf" name="panjabi_kaf" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="gola"
                                                                         class="form-label form_input_group_label_important">
-                                                                        গলা : <span style="color:red">*</span></label>
+                                                                        গলা : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_gola" name="panjabi_gola" required>
+                                                                        id="panjabi_gola" name="panjabi_gola" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="plate_fara"
                                                                         class="form-label form_input_group_label_important">
-                                                                        প্লেট ফাড়া : <span
-                                                                            style="color:red">*</span></label>
+                                                                        প্লেট ফাড়া : 
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara" required>
+                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="kolar_choura"
                                                                         class="form-label form_input_group_label_important">
-                                                                        কলার চউরা : <span
-                                                                            style="color:red">*</span></label>
+                                                                        কলার চউরা : 
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_kolar_choura" name="panjabi_kolar_choura" required>
+                                                                        id="panjabi_kolar_choura" name="panjabi_kolar_choura" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="plate_choura"
                                                                         class="form-label form_input_group_label_important">
-                                                                        প্লেট চউরা : <span
-                                                                            style="color:red">*</span></label>
+                                                                        প্লেট চউরা : 
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_plate_choura" name="panjabi_plate_choura" required>
+                                                                        id="panjabi_plate_choura" name="panjabi_plate_choura" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="gher"
                                                                         class="form-label form_input_group_label_important">
-                                                                        ঘের : <span style="color:red">*</span></label>
+                                                                        ঘের : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_gher" name="panjabi_gher" required>
+                                                                        id="panjabi_gher" name="panjabi_gher" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="hiff"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হিফ : <span style="color:red">*</span></label>
+                                                                        হিফ : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hiff" name="panjabi_hiff" required>
+                                                                        id="panjabi_hiff" name="panjabi_hiff" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="nich_hata"
                                                                         class="form-label form_input_group_label_important">
-                                                                        নিচ হাতা : <span style="color:red">*</span></label>
+                                                                        নিচ হাতা : 
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata" required>
+                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -340,9 +348,10 @@
                                                                     <label for="madani_fara"
                                                                         class="form-label form_input_group_label_important">
                                                                         মাদানি ফাড়া :
-                                                                        <span style="color:red">*</span></label>
+                                                                       
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_madani_fara" name="panjabi_madani_fara" required>
+                                                                        id="panjabi_madani_fara" name="panjabi_madani_fara" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -350,9 +359,10 @@
                                                                     <label for="mot_mora"
                                                                         class="form-label form_input_group_label_important">
                                                                         মোট মোড়া :
-                                                                        <span style="color:red">*</span></label>
+                                                                        
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora" required>
+                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -360,9 +370,10 @@
                                                                     <label for="haate_pesting"
                                                                         class="form-label form_input_group_label_important">
                                                                         হাতে পেস্টিং :
-                                                                        <span style="color:red">*</span></label>
+                                                                        
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_haate_pesting" name="panjabi_haate_pesting" required>
+                                                                        id="panjabi_haate_pesting" name="panjabi_haate_pesting" >
                                                                 </div>
                                                             </div>
 
@@ -1483,57 +1494,66 @@
                                                                 <div class="form_input_group">
                                                                     <label for="pant_lomba"
                                                                         class="form-label form_input_group_label_important">
-                                                                        লম্বা : <span style="color:red">*</span></label>
+                                                                        লম্বা : 
+                                                                        
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_lomba" name="pant_lomba" required>
+                                                                        id="pant_lomba" name="pant_lomba" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_payer_mukh"
                                                                         class="form-label form_input_group_label_important">
-                                                                        পায়ের মুখ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        পায়ের মুখ : 
+                                                                        
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_payer_mukh" name="pant_payer_mukh" required>
+                                                                        id="pant_payer_mukh" name="pant_payer_mukh" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_high"
                                                                         class="form-label form_input_group_label_important">বডি
-                                                                        হাই : <span style="color:red">*</span></label>
+                                                                        হাই : 
+                                                                        
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_high" name="pant_high" required>
+                                                                        id="pant_high" name="pant_high" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_thai_luz"
                                                                         class="form-label form_input_group_label_important">
-                                                                        ঘের/থাই লুজ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        ঘের/থাই লুজ : 
+                                                                        
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_thai_luz" name="pant_thai_luz" required>
+                                                                        id="pant_thai_luz" name="pant_thai_luz" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_komor"
                                                                         class="form-label form_input_group_label_important">
-                                                                        কোমর : <span style="color:red">*</span></label>
+                                                                        কোমর : 
+                                                                        
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_komor" name="pant_komor" required>
+                                                                        id="pant_komor" name="pant_komor" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_belt_type"
                                                                         class="form-label form_input_group_label_important">
-                                                                        বেল্ট টাইপ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        বেল্ট টাইপ : 
+                                                                        
+                                                                        </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_belt_type" name="pant_belt_type" required>
+                                                                        id="pant_belt_type" name="pant_belt_type" >
                                                                 </div>
                                                             </div>
 
@@ -1542,9 +1562,11 @@
                                                                 <div class="form_input_group">
                                                                     <label for="pant_hiff"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হিফ : <span style="color:red">*</span></label>
+                                                                        হিফ : 
+                                                                        
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_hiff" name="pant_hiff" required>
+                                                                        id="pant_hiff" name="pant_hiff" >
                                                                 </div>
                                                             </div>
                                                         </div>

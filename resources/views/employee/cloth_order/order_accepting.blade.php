@@ -43,6 +43,7 @@
                                             <input type="text" class="form-control" id="customer_name" name="customer_name" required>
                                         </div>
 
+                                        
                                         <div class="form_input_group">
                                             <label for="mobile_number" class="form-label form_input_group_label_important">
                                                 মোবাইল নং : <span style="color:red">*</span></label>
@@ -65,6 +66,7 @@
                                         </div>
 
                                     </div>
+                                    
 
 
                                     <div class="col-md-6">
@@ -199,7 +201,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         লম্বা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_lomba" name="panjabi_lomba" required>
+                                                                        id="panjabi_lomba" name="panjabi_lomba" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -208,7 +210,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         বডি : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_body" name="panjabi_body" required>
+                                                                        id="panjabi_body" name="panjabi_body" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -217,7 +219,7 @@
                                                                         class="form-label form_input_group_label_important">বডি
                                                                         লুজ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz" required>
+                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -226,7 +228,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         পেট : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_pet" name="panjabi_pet" required>
+                                                                        id="panjabi_pet" name="panjabi_pet" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -235,7 +237,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         পুট : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_put" name="panjabi_put" required>
+                                                                        id="panjabi_put" name="panjabi_put" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -245,7 +247,7 @@
                                                                         হাতার লম্বা : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hatar_lomba" name="panjabi_hatar_lomba" required>
+                                                                        id="panjabi_hatar_lomba" name="panjabi_hatar_lomba" >
                                                                 </div>
                                                             </div>
 
@@ -257,7 +259,7 @@
                                                                         হাতার মুখ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh" required>
+                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -266,7 +268,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         কাফ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_kaf" name="panjabi_kaf" required>
+                                                                        id="panjabi_kaf" name="panjabi_kaf" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -275,7 +277,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         গলা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_gola" name="panjabi_gola" required>
+                                                                        id="panjabi_gola" name="panjabi_gola" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -285,7 +287,7 @@
                                                                         প্লেট ফাড়া : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara" required>
+                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -295,7 +297,7 @@
                                                                         কলার চউরা : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_kolar_choura" name="panjabi_kolar_choura" required>
+                                                                        id="panjabi_kolar_choura" name="panjabi_kolar_choura" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -305,7 +307,7 @@
                                                                         প্লেট চউরা : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_plate_choura" name="panjabi_plate_choura" required>
+                                                                        id="panjabi_plate_choura" name="panjabi_plate_choura" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -314,7 +316,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         ঘের : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_gher" name="panjabi_gher" required>
+                                                                        id="panjabi_gher" name="panjabi_gher" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -323,7 +325,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         হিফ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hiff" name="panjabi_hiff" required>
+                                                                        id="panjabi_hiff" name="panjabi_hiff" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -332,7 +334,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         নিচ হাতা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata" required>
+                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -342,7 +344,7 @@
                                                                         মাদানি ফাড়া :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_madani_fara" name="panjabi_madani_fara" required>
+                                                                        id="panjabi_madani_fara" name="panjabi_madani_fara" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -352,7 +354,7 @@
                                                                         মোট মোড়া :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora" required>
+                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -362,7 +364,7 @@
                                                                         হাতে পেস্টিং :
                                                                         <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_haate_pesting" name="panjabi_haate_pesting" required>
+                                                                        id="panjabi_haate_pesting" name="panjabi_haate_pesting" >
                                                                 </div>
                                                             </div>
 
@@ -1485,7 +1487,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         লম্বা : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_lomba" name="pant_lomba" required>
+                                                                        id="pant_lomba" name="pant_lomba" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -1495,7 +1497,7 @@
                                                                         পায়ের মুখ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_payer_mukh" name="pant_payer_mukh" required>
+                                                                        id="pant_payer_mukh" name="pant_payer_mukh" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -1504,7 +1506,7 @@
                                                                         class="form-label form_input_group_label_important">বডি
                                                                         হাই : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_high" name="pant_high" required>
+                                                                        id="pant_high" name="pant_high" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -1514,7 +1516,7 @@
                                                                         ঘের/থাই লুজ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_thai_luz" name="pant_thai_luz" required>
+                                                                        id="pant_thai_luz" name="pant_thai_luz" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -1523,7 +1525,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         কোমর : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_komor" name="pant_komor" required>
+                                                                        id="pant_komor" name="pant_komor" >
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -1533,7 +1535,7 @@
                                                                         বেল্ট টাইপ : <span
                                                                             style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_belt_type" name="pant_belt_type" required>
+                                                                        id="pant_belt_type" name="pant_belt_type" >
                                                                 </div>
                                                             </div>
 
@@ -1544,7 +1546,7 @@
                                                                         class="form-label form_input_group_label_important">
                                                                         হিফ : <span style="color:red">*</span></label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_hiff" name="pant_hiff" required>
+                                                                        id="pant_hiff" name="pant_hiff" >
                                                                 </div>
                                                             </div>
                                                         </div>

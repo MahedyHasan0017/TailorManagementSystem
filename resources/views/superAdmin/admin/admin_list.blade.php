@@ -49,7 +49,7 @@
                                         <td>
 
                                             <a href="{{ route('auth.update.manager.from.admin', ['id' => $admin->id]) }}"
-                                                class="btn btn-primary">update manager</a>
+                                                class="btn btn-primary">update to manager</a>
 
                                             @if (Auth::guard('admin')->user()->status == 5)
                                                 <a href="{{ route('auth.delete.superadmin.from.admin', ['id' => $admin->id]) }}"

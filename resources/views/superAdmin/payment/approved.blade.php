@@ -36,7 +36,7 @@
                                     <th>Amount</th>
                                     <th>Num of Tailor</th>
                                     <th>Time Span</th>
-                                    <th>Actions</th>
+                                    {{-- <th>Actions</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,7 +50,7 @@
                                         <td>{{ $payment->number_of_tailor }}</td>
                                         <td>{{ $payment->time_span }}</td>
 
-                                        <td>
+                                        {{-- <td>
                                             <a href="#" class="btn btn-primary">Approve</a>
 
                                             @if (Auth::guard('admin')->user()->status == 5)
@@ -58,7 +58,7 @@
                                                     class="btn btn-primary">Delete</a>
                                             @endif
 
-                                        </td>
+                                        </td> --}}
 
 
                                     </tr>

@@ -22,6 +22,12 @@ class Vendor
             toastr()->error('Please Login First!');
             return redirect()->route('auth.vendor.login.view');
         }
+        else{
+            $vendor = Auth::guard('vendor')->user() ; 
+            if($vendor->status == 0){
+                return redirect()->route('auth.vendor.deactivated') ; 
+            }
+        }
 
         return $next($request);
     }

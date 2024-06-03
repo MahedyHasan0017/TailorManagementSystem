@@ -15,6 +15,7 @@ use App\Http\Controllers\MessageSending\SendingMessageListController;
 use App\Http\Controllers\Permissions\Employee\EmployeePermissionController;
 use App\Http\Controllers\Permissions\Vendor\VendorPermissionController;
 use App\Http\Controllers\Report\OrderReportController;
+use App\Http\Controllers\Settings\DressNameAndWageController;
 use App\Http\Controllers\Settings\DressPartController;
 use App\Http\Controllers\Settings\DressWagesController;
 use App\Http\Controllers\Settings\EmployeeDesignationController;
@@ -101,6 +102,9 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('register', [VendorController::class, 'register'])->name('auth.vendor.register.view');
         Route::post('register/store', [VendorController::class, 'register_store'])->name('auth.vendor.register.store');
 
+        Route::get('/deactivated', [VendorController::class, 'vendor_deactivated'])->name('auth.vendor.deactivated');
+
+
         Route::get('recovery/password', [VendorController::class, 'recovery_password'])->name('auth.vendor.recovery.password');
         Route::post('recovery/password/store', [VendorController::class, 'recovery_password_store'])->name('auth.vendor.recovery.password.store');
     });
@@ -133,9 +137,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['prefix' => 'payments'], function () {
         Route::get('pending',[SubscriptionPaymentController::class, 'pending_payment'])->name('admin.payments.pending.view') ; 
         Route::get('approved',[SubscriptionPaymentController::class, 'approved_payment'])->name('admin.payments.approved.view') ; 
-        Route::get('payment/request/{transection_id}',[SubscriptionPaymentController::class, 'payment_details_for_vendor'])->name('admin.payments.approved.details.view') ; 
+        Route::get('request/{transection_id}',[SubscriptionPaymentController::class, 'payment_details_for_vendor'])->name('admin.payments.approved.details.view') ; 
 
-        Route::post('payment/request/submit',[SubscriptionPaymentController::class, 'payment_request_submit'])->name('admin.payments.request.submit.store') ; 
+        Route::post('request/submit',[SubscriptionPaymentController::class, 'payment_request_submit'])->name('admin.payments.request.submit.store') ; 
     });
 
     
@@ -220,6 +224,12 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
     Route::group(['prefix' => 'subscription'], function () {
         Route::post('/submit/{mobile_number}', [VendorController::class, 'vendor_subscription_payment'])->name('vendor.subscription.payment.request');
     });
+
+
+    Route::group(['prefix' => 'settings'], function () {
+        Route::get('/dress/info',[DressNameAndWageController::class, 'index'])->name('vendor.settings.dress.info');
+    });
+
 });
 
 

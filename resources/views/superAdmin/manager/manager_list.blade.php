@@ -31,14 +31,14 @@
                         <table id="example" class="display" style="width:100%">
                             <thead class="accordion__heading">
                                 <tr>
-                                    <th>manager id</th>
-                                    <th>manager name</th>
-                                    <th>manager mobile number/email</th>
-                                    <th>view details</th>
+                                    <th>Manager id</th>
+                                    <th>Manager name</th>
+                                    <th>Manager mobile number/email</th>
+                                    <th>Action</th>
                                     <!-- <th>অর্ডারের তারিখ</th>
-                                        <th>ডেলিভারির তারিখ </th>
-                                        <th>মোট বিল</th>
-                                        <th>জমার পরিমান</th> -->
+                                                <th>ডেলিভারির তারিখ </th>
+                                                <th>মোট বিল</th>
+                                                <th>জমার পরিমান</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,14 +48,17 @@
                                         <td>{{ $manager->id }}</td>
                                         <td>{{ $manager->name }}</td>
                                         <th>{{ $manager->email }}</th>
-                                      
-                                        <td>
-                                            <a href="{{ route('auth.update.superadmin.from.admin', ['id' => $manager->id]) }}"
-                                                class="btn btn-primary">update super admin</a>
 
-                                            @if (Auth::guard('admin')->user()->status == 5)
-                                                <a href="{{ route('auth.delete.superadmin.from.admin', ['id' => $manager->id]) }}"
-                                                    class="btn btn-primary">Delete</a>
+                                        <td>
+
+
+                                            @if (Auth::guard('admin')->user()->status != 0)
+                                                <a href="{{ route('auth.update.superadmin.from.admin', ['id' => $manager->id]) }}"
+                                                    class="btn btn-primary">update to system admin</a>
+                                                @if (Auth::guard('admin')->user()->status == 5)
+                                                    <a href="{{ route('auth.delete.superadmin.from.admin', ['id' => $manager->id]) }}"
+                                                        class="btn btn-primary">Delete</a>
+                                                @endif
                                             @endif
 
                                         </td>

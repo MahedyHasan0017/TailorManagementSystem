@@ -107,6 +107,14 @@ class VendorController extends Controller
     {
     }
 
+    public function vendor_deactivated(){
+        return view('vendor.auth.vendor_activation') ;
+    }
+
+   
+
+
+
 
     public function vendor_profile(Request $request, $id)
     {

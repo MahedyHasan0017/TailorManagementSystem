@@ -195,6 +195,12 @@
                             aria-expanded="false"><i class="fas fa-user"></i><span
                                 class="hide-menu">Admins</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
+
+                            <li class="sidebar-item"><a href="#" class="sidebar-link"><i
+                                        class="fas fa-angle-right"></i><span class="hide-menu">
+                                        Create Admin
+                                    </span></a></li>
+
                             <li class="sidebar-item"><a href="{{ route('auth.super_admin.list.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                         Admin List
@@ -412,6 +418,9 @@
                             aria-expanded="false"><i class="fas fa-user"></i><span
                                 class="hide-menu">Admins</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
+
+
+
                             <li class="sidebar-item"><a href="{{ route('auth.super_admin.list.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                         Admin List

@@ -71,7 +71,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                            name="order_number"> -->
+                                                name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important"> শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                            name="order_number"> -->
+                                                name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -93,7 +93,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                            name="order_number"> -->
+                                                name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -164,33 +164,36 @@
                             </thead>
                             <tbody>
                                 @foreach ($cloth_orders as $cloth_order)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $cloth_order->customer_name }}</td>
-                                    <td>{{ $cloth_order->cloth_name->cloth_name }}</td>
-                                    <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
-                                    <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
-                                    
-                                    <td>{{ $cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_cloth}}</td>
-                                    <td>{{ $cloth_order->cloth_order_delivary->nogod_prodan }}</td>
-                                    <td class="action_buttons_in_tablee">
-                                        <span><a href="{{ route('vendor.order.details.view',['id' => $cloth_order->id]) }}" class="btn btn-primary">view</a></span>
-                                        <span><a href="{{ route('vendor.order.details.delete',['id' => $cloth_order->id]) }}" class="btn btn-danger">delete</a></span>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $cloth_order->customer_name }}</td>
+                                        <td>{{ $cloth_order->cloth_name->cloth_name }}</td>
+                                        <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
+                                        <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
+
+                                        <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->majurir_poriman) }}
+                                        </td>
+                                        <td>{{ en2bn ((int)$cloth_order->cloth_order_delivary->nogod_prodan) }}</td>
+                                        <td class="action_buttons_in_tablee">
+                                            <span><a href="{{ route('vendor.order.details.view', ['id' => $cloth_order->id]) }}"
+                                                    class="btn btn-primary">view</a></span>
+                                            <span><a href="{{ route('vendor.order.details.delete', ['id' => $cloth_order->id]) }}"
+                                                    class="btn btn-danger">delete</a></span>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                             <!-- <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                    <td>$313,500</td>
-                                </tr>
-                            </tfoot> -->
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                        <td>$313,500</td>
+                                    </tr>
+                                </tfoot> -->
                         </table>
 
 
