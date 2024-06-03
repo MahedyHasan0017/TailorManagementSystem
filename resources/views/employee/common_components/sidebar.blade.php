@@ -62,9 +62,9 @@ if(Auth::guard('employee')->user()){
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="order.html" aria-expanded="false"><i class="mdi mdi-calendar-plus"></i><span class="hide-menu">পোষাক অর্ডার
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('employee.order.accepting.view',['vendor_id' => $employee->vendor_mobile , 'employee_id' => $employee->employee_id ]) }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার গ্রহন
+                                <li class="sidebar-item"><a href="{{ route('employee.order.accepting.view',['vendor_id' => $employee->vendor_mobile , 'employee_id' => $employee->mobile_number ]) }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার গ্রহন
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="{{ route('employee.order.accepting.list', ['mobile_number' => $employee->mobile_number]) }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার লিস্ট
+                                <li class="sidebar-item"><a href="{{ route('employee.order.accepting.list', ['vendor_id' => $employee->vendor_mobile , 'employee_number' => $employee->mobile_number]) }}" class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">অর্ডার লিস্ট
                                         </span></a></li>
                                         
                                         
