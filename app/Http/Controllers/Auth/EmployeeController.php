@@ -43,6 +43,9 @@ class EmployeeController extends Controller
 
             if ($tailor->status == 0) {
                 dd('tailor deactive') ; 
+
+                return view('')
+
             } else {
                 if ($tailor->draft_at != null && $tailor->draft_at <= Carbon::now()) {
                     $tailor->status = 0;
