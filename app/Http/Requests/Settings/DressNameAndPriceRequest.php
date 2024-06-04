@@ -24,7 +24,10 @@ class DressNameAndPriceRequest extends FormRequest
         return [
             'dress_name' => 'required',
             'dress_price' => 'required',
-            'vendor_id' => 'sometimes'
+            'vendor_id' => 'sometimes',
+            'dress_type' => 'sometimes',
+            'dress_wages' => 'sometimes',
+            'admin_id' => 'sometimes' 
         ];
     }
 }

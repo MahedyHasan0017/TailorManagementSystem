@@ -185,8 +185,16 @@
 </script>
 
 <script>
-  
+    function updateTotal(index) {
+        const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
+        const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
+        const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+        const value_number_of_cloth = number_of_cloth.value ; 
+        const value_price_of_cloth = price_of_cloth.value ; 
+        const ans = value_number_of_cloth*value_price_of_cloth ; 
+        total_price_of_cloth.value = ans ;  
 
+    }
 </script>
 
 

@@ -336,11 +336,22 @@
                             href="order.html" aria-expanded="false"><i class="fas fa-cog"></i><span
                                 class="hide-menu">সেটিংস </span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{ route('admin.dress.wages.view') }}"
+
+
+                            <li class="sidebar-item"><a
+                                    href="{{ route('admin.settings.dress.info', ['id' => Auth::guard('admin')->user()->mobile_number]) }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
-                                        পোশাকের নাম ও
-                                        মুজুরি
+                                        পোশাকের তথ্য যোগ করুন
                                     </span></a></li>
+
+
+                            <li class="sidebar-item"><a
+                                    href="{{ route('admin.dress.settings') }}"
+                                    {{-- href="{{ route('admin.settings.dress.info', ['id' => Auth::guard('admin')->user()->mobile_number]) }}" --}}
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
+                                        সকল পোশাকের লিস্ট 
+                                    </span></a></li>
+
                             <li class="sidebar-item"><a href="{{ route('admin.dress.part.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                         পোশাকের বিভিন্ন অংশ

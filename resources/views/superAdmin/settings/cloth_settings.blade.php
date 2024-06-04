@@ -1,4 +1,4 @@
-@extends('.vendor.main')
+@extends('.superAdmin.main')
 
 @section('content')
     <div class="page-wrapper">
@@ -6,7 +6,7 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">vendor settings</h4>
+                    <h4 class="page-title">Add Dress Information</h4>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <form
-                        action="{{ route('vendor.settings.dress.info.submit', ['id' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                        action="{{ route('admin.settings.dress.info.submit', ['id' => Auth::guard('admin')->user()->mobile_number]) }}"
                         method="post">
                         @csrf
                         <div class="form-group">
@@ -48,16 +48,38 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="dress_wages" id='dress_wages'
+                                placeholder="Enter Dress Wages" />
+                            <div>
+                                @error('dress_wages') 
+                                    <div style="color: red ; font-weight : bold">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="dress_type" id='dress_type'
+                                placeholder="Enter Dress Type" />
+                            <div>
+                                @error('dress_type')
+                                    <div style="color: red ; font-weight : bold">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
                         <div>
                             @if (Auth::guard('admin')->user() != null)
                                 <input type="text" name="admin_id" id="admin_id"
-                                    value="{{ Auth::guard('admin')->user()->admin_id }}">
+                                    value="{{ Auth::guard('admin')->user()->mobile_number }}" hidden>
                             @endif
                         </div>
                         <div>
                             @if (Auth::guard('vendor')->user() != null)
                                 <input type="text" name="vendor_id" id="vendor_id"
-                                    value="{{ Auth::guard('vendor')->user()->vendor_id }}" hidden>
+                                    value="{{ Auth::guard('vendor')->user()->mobile_number }}" hidden>
                             @endif
                         </div>
                         <div class="form-group">

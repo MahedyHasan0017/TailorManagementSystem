@@ -1,5 +1,6 @@
 <footer class="footer text-center">
-    All Rights Reserved by Zero Point Computing. Designed and Developed by <a href="https://www.zeropointcomputing.com">Zero-Point-Computing</a>.
+    All Rights Reserved by Zero Point Computing. Designed and Developed by <a
+        href="https://www.zeropointcomputing.com">Zero-Point-Computing</a>.
 </footer>
 
 </div>
@@ -33,17 +34,20 @@
 <script src="{{ asset('tailerStaticTemplate/dist/js/pages/chart/chart-page-init.js') }}"></script>
 
 
- <!-- This Page JS -->
- <script src="{{ asset('tailerStaticTemplate/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/dist/js/pages/mask/mask.init.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColor/dist/jquery-asColor.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asGradient/dist/jquery-asGradient.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-minicolors/jquery.minicolors.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
- <script src="{{ asset('tailerStaticTemplate/assets/libs/quill/dist/quill.min.js')}}"></script>
+<!-- This Page JS -->
+<script src="{{ asset('tailerStaticTemplate/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js') }}">
+</script>
+<script src="{{ asset('tailerStaticTemplate/dist/js/pages/mask/mask.init.js') }}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.full.min.js') }}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/select2/dist/js/select2.min.js') }}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColor/dist/jquery-asColor.min.js') }}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asGradient/dist/jquery-asGradient.js') }}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js') }}">
+</script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/jquery-minicolors/jquery.minicolors.min.js') }}"></script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}">
+</script>
+<script src="{{ asset('tailerStaticTemplate/assets/libs/quill/dist/quill.min.js') }}"></script>
 
 
 
@@ -136,17 +140,16 @@
 
 
 <script>
-  
+    function updateTotal(index) {
+        const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
+        const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
+        const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+        const value_number_of_cloth = number_of_cloth.value ; 
+        const value_price_of_cloth = price_of_cloth.value ; 
+        const ans = value_number_of_cloth*value_price_of_cloth ; 
+        total_price_of_cloth.value = ans ;  
 
-  const number_of_cloth = document.getElementById('number_of_cloth[]') ; 
-  const price_of_cloth = document.getElementById('price_of_cloth[]') ; 
-  const total_price_of_cloth = document.getElementById('total_price_of_cloth[]') ; 
-
-
-
-  console.log(number_of_cloth);
-
-
+    }
 </script>
 
 

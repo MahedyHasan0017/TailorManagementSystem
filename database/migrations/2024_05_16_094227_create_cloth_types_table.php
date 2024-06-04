@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('cloth_name') ; 
             $table->string('cloth_price') ; 
+            $table->string('dress_type')->nullable() ; 
+            $table->string('dress_wages')->nullable() ;
             $table->string('vendor_id')->nullable() ; 
             $table->string('admin_id')->nullable() ;
             $table->timestamps();

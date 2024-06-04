@@ -20,23 +20,22 @@
                             </label>
                         </div>
                     </td>
-
                     <td>
                         <div class="">
                             <input type="number" class="form-control"
-                                name="number_of_cloth[]" id="number_of_cloth[]" value="1">
+                                name="number_of_cloth{{ $loop->index }}" min=1 id="number_of_cloth{{ $loop->index }}" value="1" onchange="updateTotal({{ $loop->index }})">
                         </div>
                     </td>
                     <td>
                         <div class="">
                             <input type="text" class="form-control"
-                                name="price_of_cloth[]" id="price_of_cloth[]" value="{{ $cloth->cloth_price }}" readonly>
+                                name="price_of_cloth{{ $loop->index }}" id="price_of_cloth{{ $loop->index }}" value="{{ $cloth->cloth_price }}" readonly>
                         </div>
                     </td>
                     <td>
                         <div class="">
                             <input type="text" class="form-control"
-                                name="total_price_of_cloth[]" id="total_price_of_cloth[]">
+                                name="total_price_of_cloth{{ $loop->index }}" id="total_price_of_cloth{{ $loop->index }}">
                         </div>
                     </td>
                 </tr>

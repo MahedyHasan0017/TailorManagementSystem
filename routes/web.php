@@ -135,14 +135,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'payments'], function () {
-        Route::get('pending',[SubscriptionPaymentController::class, 'pending_payment'])->name('admin.payments.pending.view') ; 
-        Route::get('approved',[SubscriptionPaymentController::class, 'approved_payment'])->name('admin.payments.approved.view') ; 
-        Route::get('request/{transection_id}',[SubscriptionPaymentController::class, 'payment_details_for_vendor'])->name('admin.payments.approved.details.view') ; 
+        Route::get('pending', [SubscriptionPaymentController::class, 'pending_payment'])->name('admin.payments.pending.view');
+        Route::get('approved', [SubscriptionPaymentController::class, 'approved_payment'])->name('admin.payments.approved.view');
+        Route::get('request/{transection_id}', [SubscriptionPaymentController::class, 'payment_details_for_vendor'])->name('admin.payments.approved.details.view');
 
-        Route::post('request/submit',[SubscriptionPaymentController::class, 'payment_request_submit'])->name('admin.payments.request.submit.store') ; 
+        Route::post('request/submit', [SubscriptionPaymentController::class, 'payment_request_submit'])->name('admin.payments.request.submit.store');
     });
 
-    
+
 
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'vendor'], function () {
@@ -191,7 +191,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('sms/template', [SmsTemplateController::class, 'sms_template'])->name('admin.sms.template.view');
         Route::get('language', [LanguageSettingsController::class, 'language_setting'])->name('admin.language.setting.view');
     });
+
+
+    Route::group(['prefix' => 'settings'], function () {
+        Route::get('/dress/info/{id}', [DressNameAndWageController::class, 'dress_info_settings_from_admin'])->name('admin.settings.dress.info');
+        Route::post('/dress/info/submit/{id}', [DressNameAndWageController::class, 'dress_info_submit_from_admin'])->name('admin.settings.dress.info.submit');
+
+        Route::get('/admin/dress/info/list', [DressNameAndWageController::class, 'dress_info_list_from_admin'])->name('admin.dress.settings');
+
+    });
 });
+
+// {{ route('admin.settings.dress.info', ['id' => Auth::guard('vendor')->user()->mobile_number]) }}
 
 
 
@@ -224,13 +235,6 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
     Route::group(['prefix' => 'subscription'], function () {
         Route::post('/submit/{mobile_number}', [VendorController::class, 'vendor_subscription_payment'])->name('vendor.subscription.payment.request');
     });
-
-
-    Route::group(['prefix' => 'settings'], function () {
-        Route::get('/dress/info/{id}',[DressNameAndWageController::class, 'dress_info_settings_from_vendor'])->name('vendor.settings.dress.info');
-        Route::post('/dress/info/submit/{id}',[DressNameAndWageController::class, 'dress_info_submit_from_vendor'])->name('vendor.settings.dress.info.submit');
-    });
-
 });
 
 

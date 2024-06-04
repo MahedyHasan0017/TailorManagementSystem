@@ -28,13 +28,11 @@ class OrderAcceptingController extends Controller
 {
     public function order_accepting()
     {
-
-        // $cloth_list = ClothType::latest()->get() ; 
         $cloth_list = ClothType::get();
         return view('superAdmin.cloth_order.order_accepting', compact('cloth_list'));
     }
 
-    public function vendor_order_accepting()
+    public function vendor_order_accepting(Request $request , $id)
     {
         $cloth_list = ClothType::get();
         return view('vendor.cloth_order.order_accepting', compact('cloth_list'));

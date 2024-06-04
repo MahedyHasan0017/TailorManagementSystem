@@ -14,6 +14,8 @@ class ClothType extends Model
     protected $fillable = [
         'cloth_name' , 
         'cloth_price',
+        'dress_type',
+        'dress_wages',
         'vendor_id' , 
         'admin_id' 
     ];
