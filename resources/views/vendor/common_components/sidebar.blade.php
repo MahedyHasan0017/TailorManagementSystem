@@ -131,7 +131,7 @@
                                 href="order.html" aria-expanded="false"><i class="fas fa-cog"></i><span
                                     class="hide-menu">সেটিংস </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('vendor.settings.dress.info',['id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                                <li class="sidebar-item"><a href="{{ route('vendor.settings.dress.info',['id' => Auth::guard('vendor')->user()->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">
                                             পোশাকের নাম ও

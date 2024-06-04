@@ -227,7 +227,8 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
 
     Route::group(['prefix' => 'settings'], function () {
-        Route::get('/dress/info/{id}',[DressNameAndWageController::class, 'index'])->name('vendor.settings.dress.info');
+        Route::get('/dress/info/{id}',[DressNameAndWageController::class, 'dress_info_settings_from_vendor'])->name('vendor.settings.dress.info');
+        Route::post('/dress/info/submit/{id}',[DressNameAndWageController::class, 'dress_info_submit_from_vendor'])->name('vendor.settings.dress.info.submit');
     });
 
 });

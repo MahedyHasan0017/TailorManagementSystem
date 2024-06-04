@@ -135,6 +135,22 @@
 </script>
 
 
+<script>
+  
+
+  const number_of_cloth = document.getElementById('number_of_cloth[]') ; 
+  const price_of_cloth = document.getElementById('price_of_cloth[]') ; 
+  const total_price_of_cloth = document.getElementById('total_price_of_cloth[]') ; 
+
+
+
+  console.log(number_of_cloth);
+
+
+</script>
+
+
+
 
 </body>
 

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('cloth_types', function (Blueprint $table) {
             $table->id();
             $table->string('cloth_name') ; 
+            $table->string('cloth_price') ; 
+            $table->string('vendor_id')->nullable() ; 
+            $table->string('admin_id')->nullable() ;
             $table->timestamps();
         });
     }

@@ -68,66 +68,8 @@
 
 
                                     <div class="col-md-6">
-                                        <div class="table-responsive table__container">
-                                            <table class="table">
-                                                <thead class="custom_table_heading">
-                                                    <tr>
-                                                        <th scope="col">পোশাকের নাম <span style="color:red">*</span></th>
-                                                        <th scope="col">সংখ্যা <span style="color:red">*</span></th>
-                                                        <th scope="col">মূল্য</th>
-                                                        <th scope="col">মোট মূল্য</th>
-                                                    </tr>
-                                                </thead>
-                                                    <tbody class="custom_table_body custom_table_height">
-                                                        @foreach ($cloth_list as $cloth )
-                                                        <tr>
-                                                            <td scope="row">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="{{ $cloth->cloth_name }}" name="cloth_full_name" id="cloth_name[]">
-                                                                    <label class="form-check-label" for="name[]">
-                                                                        {{ $cloth->cloth_name }} 
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-    
-                                                            <td>
-                                                                <div class="">
-                                                                    <input type="text" class="form-control"
-                                                                        name="number_of_cloth[]" id="number_of_cloth">
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="">
-                                                                    <input type="text" class="form-control"
-                                                                        name="price_of_cloth" id="price_of_cloth">
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="">
-                                                                    <input type="text" class="form-control"
-                                                                        name="total_price_of_cloth" id="total_price_of_cloth">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        @endforeach
-
-                                                    </tbody>
-                                                    <tfoot class="custom_table_footer">
-    
-                                                        <th scope="row">@twitter</th>
-                                                        <td></td>
-                                                        <td>cell-3</td>
-                                                        <td scope="col">cell 2</td>
-                                                    </tfoot>
-                                               
-                                                
-                                            </table>
-
-                                            
-
-                                        </div>
-                                        <div>
+                                        @include('vendor.cloth_order.cloth_order_table') 
+                                        {{-- <div>
                                             <div class="accordion-item mt-3">
                                                 <h2 class="accordion-header" id="headingSeven">
                                                     <button class="accordion-button collapsed accordion__heading"
@@ -141,8 +83,7 @@
                                                     data-bs-parent="#accordionExample">
                                                     <div class="accordion-body accordion__body">
                                                         <div class="row">
-                                                            {{-- <form id="add-new-cloth" action="{{ route('admin.add.cloth.store') }}"
-                                                                method="post"> --}}
+                                                           
                                                             <div class="col-12">
                                                                 <input type="text" name='cloth_name'
                                                                     id="cloth_name" placeholder="পোশাকের নাম"
@@ -153,12 +94,12 @@
                                                                     class="btn btn-success mt-2">যোগ করুন</button>
                                                             </div>
 
-                                                            {{-- </form> --}}
+                                                           
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -2056,11 +1997,14 @@
             </form>
 
         </div>
+
+       
+
     @endsection
 
 
     @push('scripts')
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 $(document).on('click', '#add_cloth_name', function(event) {
                     event.preventDefault();
@@ -2109,5 +2053,9 @@
             //         }
             //     });
             // });
-        </script>
+        </script> --}}
+
+        {{-- <script src="main.js"></script> --}}
+
+
     @endpush
