@@ -15,6 +15,7 @@ class ClothType extends Model
         'cloth_name' , 
         'cloth_price',
         'dress_type',
+        'dress_part_type' , 
         'dress_wages',
         'vendor_id' , 
         'admin_id' 

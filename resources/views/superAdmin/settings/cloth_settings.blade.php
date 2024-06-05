@@ -52,7 +52,7 @@
                             <input type="text" class="form-control" name="dress_wages" id='dress_wages'
                                 placeholder="Enter Dress Wages" />
                             <div>
-                                @error('dress_wages') 
+                                @error('dress_wages')
                                     <div style="color: red ; font-weight : bold">
                                         {{ $message }}
                                     </div>
@@ -69,6 +69,23 @@
                                     </div>
                                 @enderror
                             </div>
+                        </div>
+                        <div class="form-group">
+                            {{-- <input type="text" class="form-control" name="dress_type" id='dress_type'
+                                placeholder="Enter Dress Type" />
+                            <div>
+                                @error('dress_type')
+                                    <div style="color: red ; font-weight : bold">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div> --}}
+
+                            <select name="dress_part_type" id="dress_part_type" class="form-control">
+                                <option value="upper_part">Upper Part</option>
+                                <option value="lower_part">Lower Part</option>
+                            </select>
+
                         </div>
                         <div>
                             @if (Auth::guard('admin')->user() != null)

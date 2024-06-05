@@ -144,12 +144,49 @@
         const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
         const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
         const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
-        const value_number_of_cloth = number_of_cloth.value ; 
-        const value_price_of_cloth = price_of_cloth.value ; 
-        const ans = value_number_of_cloth*value_price_of_cloth ; 
-        total_price_of_cloth.value = ans ;  
-
+        const value_number_of_cloth = number_of_cloth.value;
+        const value_price_of_cloth = price_of_cloth.value;
+        const ans = value_number_of_cloth * value_price_of_cloth;
+        total_price_of_cloth.value = ans;
     }
+
+    let total_price = 0
+
+    function updateMark(index) {
+
+        const cloth_full_name = document.getElementById(`cloth_full_name${index}`);
+        const selected_check_boxes = document.getElementById('selected_check_boxes');
+        const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+        const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
+        const total_price_table_cell = document.getElementById('total_price') ; 
+
+        const dress_part_type = document.getElementById(`dress_part_type${index}`) ; 
+
+
+        console.log(dress_part_type);
+
+
+        selected_check_boxes.innerHTML = "";
+
+    
+        if (cloth_full_name.checked == true) {
+            total_price += parseInt(total_price_of_cloth.value) ; 
+            number_of_cloth.readOnly = true ; 
+            const option = document.createElement('option') ; 
+            option.value = cloth_full_name.value ; 
+            option.textContent = cloth_full_name.value ; 
+            selected_check_boxes.appendChild(option) ; 
+           
+        } else {
+            total_price -= parseInt(total_price_of_cloth.value) ; 
+            number_of_cloth.readOnly = false ; 
+        }
+        total_price_table_cell.innerHTML = total_price ; 
+        // console.log(selected_check_boxes);
+    }
+
+    
+
 </script>
 
 

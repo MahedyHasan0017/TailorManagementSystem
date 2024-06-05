@@ -27,7 +27,8 @@ class DressNameAndPriceRequest extends FormRequest
             'vendor_id' => 'sometimes',
             'dress_type' => 'sometimes',
             'dress_wages' => 'sometimes',
-            'admin_id' => 'sometimes' 
+            'admin_id' => 'sometimes' ,
+            'dress_part_type' => 'sometimes'
         ];
     }
 }

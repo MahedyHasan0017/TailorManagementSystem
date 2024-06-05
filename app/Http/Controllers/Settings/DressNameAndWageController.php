@@ -18,9 +18,6 @@ class DressNameAndWageController extends Controller
 
     public function dress_info_settings_from_admin()
     {
-
-        // dd('hello') ; 
-
         return view('superAdmin.settings.cloth_settings');
     }
 
@@ -36,7 +33,8 @@ class DressNameAndWageController extends Controller
             'cloth_price' => $data['dress_price'],
             'dress_type' => $data['dress_type'],
             'dress_wages' => $data['dress_wages'],
-            'admin_id' => $data['admin_id']
+            'admin_id' => $data['admin_id'],
+            'dress_part_type' => $data['dress_part_type']
         ]);
 
         if ($record) {

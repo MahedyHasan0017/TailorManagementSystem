@@ -103,6 +103,15 @@
                                                 aria-labelledby="sub-headingOne" data-bs-parent="#sub-accordionExample">
                                                 <div class="accordion-body accordion__body">
 
+                                                    {{-- <div class="row">
+                                                        <div class="col-md-6">
+                                                            <select name="" id="">
+                                                                <option value="">option-1</option>
+                                                                <option value="">option-1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div> --}}
+
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
                                                             <div class="col-md-2">
