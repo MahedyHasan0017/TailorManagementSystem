@@ -1467,10 +1467,8 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6 mb-3">
-                                                            <select name="selected_check_boxes_pant"
-                                                                id="selected_check_boxes_pant" class="form-control">
-
-                                                            </select>
+                                                            <input type="text" name="selected_check_boxes_pant"
+                                                                id="selected_check_boxes_pant" class="form-control" readonly/>
                                                         </div>
                                                     </div>
 

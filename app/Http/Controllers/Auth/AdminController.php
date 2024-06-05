@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
 
-    public function index() {
+    public function index()
+    {
         return view('superAdmin.dashboard');
     }
 
@@ -41,7 +42,8 @@ class AdminController extends Controller
 
         if (Auth::guard('admin')->attempt($check)) {
 
-            toastr()->success('Admin Login Successfully !');
+            toastr()
+                ->success('Admin Login Successfully !');
             return redirect()->route('super_admin_dashboard');
         } else {
             toastr()->error('Invalid Credentials !');
@@ -102,12 +104,12 @@ class AdminController extends Controller
     {
         $admins = AdminUser::where('status', 1)->get();
 
-        $user = Auth::guard('admin')->user(); 
+        $user = Auth::guard('admin')->user();
 
-        if($user->status == 0){
+        if ($user->status == 0) {
             return redirect()->route('super_admin_dashboard');
         }
-        
+
         return view('superAdmin.admin.admin_list', compact('admins'));
     }
 
@@ -171,7 +173,7 @@ class AdminController extends Controller
     }
 
 
-    
+
 
 
     public function vendor_register_from_admin_store(RegisterRequest $request)
@@ -206,7 +208,7 @@ class AdminController extends Controller
                 if ($admin) {
                     return redirect()->route('auth.admin.pending.vendor.list.view');
                 } else {
-                    return redirect()->back() ; 
+                    return redirect()->back();
                 }
             } else {
                 toastr()->error('Something Went Wrong!');
@@ -277,11 +279,11 @@ class AdminController extends Controller
     {
         $vendor = Vendor::where('mobile_number', $id)->first();
 
-        $employees = Employee::where('vendor_mobile',$vendor->mobile_number)->get() ; 
+        $employees = Employee::where('vendor_mobile', $vendor->mobile_number)->get();
         // $emp = count($emp) ; 
 
 
-        return view('superAdmin.auth.vendor_profile', compact(['vendor','employees']));
+        return view('superAdmin.auth.vendor_profile', compact(['vendor', 'employees']));
     }
 
 

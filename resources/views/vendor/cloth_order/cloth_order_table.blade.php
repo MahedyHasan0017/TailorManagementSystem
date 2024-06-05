@@ -13,8 +13,8 @@
                 <tr>
                     <td scope="row">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" onchange="updateMark({{ $loop->index }})"
-                                value="{{ $cloth->cloth_name }}" name="cloth_full_name{{ $loop->index }}"
+                            <input class="form-check-input" type="radio" onchange="updateMark({{ $loop->index }})"
+                                value="{{ $cloth->cloth_name }}" name="cloth_full_name{{ $cloth->dress_part_type }}"
                                 id="cloth_full_name{{ $loop->index }}">
                             <label class="form-check-label" for="cloth_full_name{{ $loop->index }}">
                                 {{ $cloth->cloth_name }}
@@ -55,7 +55,8 @@
             <th scope="row"></th>
             <td></td>
             <td></td>
-            <td scope="col" id='total_price'>0</td>
+            <td scope="col" >0</td>
+            {{-- <td scope="col" id='total_price'>0</td> --}}
         </tfoot>
     </table>
 </div>
