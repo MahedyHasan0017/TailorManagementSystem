@@ -150,43 +150,93 @@
         total_price_of_cloth.value = ans;
     }
 
-    let total_price = 0
+
+
+    const selected_check_boxes = document.getElementById('selected_check_boxes');
+    selected_check_boxes.innerHTML = "";
+    const selected_check_boxes_pant = document.getElementById('selected_check_boxes_pant');
+    selected_check_boxes_pant.innerHTML = "";
+
+
 
     function updateMark(index) {
 
+
+        let total_price = 0
+
         const cloth_full_name = document.getElementById(`cloth_full_name${index}`);
-        const selected_check_boxes = document.getElementById('selected_check_boxes');
         const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
         const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
-        const total_price_table_cell = document.getElementById('total_price') ; 
+        const total_price_table_cell = document.getElementById('total_price');
+        const dress_part_type = document.getElementById(`dress_part_type${index}`);
 
-        const dress_part_type = document.getElementById(`dress_part_type${index}`) ; 
 
-
+        console.log(cloth_full_name);
         console.log(dress_part_type);
 
 
-        selected_check_boxes.innerHTML = "";
 
-    
+
         if (cloth_full_name.checked == true) {
-            total_price += parseInt(total_price_of_cloth.value) ; 
-            number_of_cloth.readOnly = true ; 
-            const option = document.createElement('option') ; 
-            option.value = cloth_full_name.value ; 
-            option.textContent = cloth_full_name.value ; 
-            selected_check_boxes.appendChild(option) ; 
-           
+            total_price += parseInt(total_price_of_cloth.value);
+            number_of_cloth.readOnly = true;
+            // const option = document.createElement('option');
+            // option.value = cloth_full_name.value;
+            // option.textContent = cloth_full_name.value;
+
+
+            if (dress_part_type.value == 'upper_part') {
+                // selected_check_boxes.appendChild(option);
+                selected_check_boxes.value = cloth_full_name.value
+
+            } else if (dress_part_type.value == 'lower_part') {
+                // selected_check_boxes_pant.appendChild(option);
+                selected_check_boxes_pant.value = cloth_full_name.value
+            }
+
         } else {
-            total_price -= parseInt(total_price_of_cloth.value) ; 
-            number_of_cloth.readOnly = false ; 
+            // total_price -= parseInt(total_price_of_cloth.value);
+            total_price = 0
+            number_of_cloth.readOnly = false;
+
+
+
+            if (dress_part_type.value == 'upper_part') {
+                // selected_check_boxes.appendChild(option);
+                selected_check_boxes.value = ""
+
+            } else if (dress_part_type.value == 'lower_part') {
+                // selected_check_boxes_pant.appendChild(option);
+                selected_check_boxes_pant.value = ""
+            }
+
+
+
+            // console.log();
+
+
+            // if (dress_part_type.value == 'lower_part') {
+
+            //     for (i = 0; i < selected_check_boxes_pant.length; i++) {
+            //         const option = selected_check_boxes_pant.options[i];
+            //         if (option.value == cloth_full_name.value) {
+            //             return selected_check_boxes_pant.remove(i);
+            //         }
+            //     }
+
+            // } else if (dress_part_type.value == 'upper_part') {
+            //     for (i = 0; i < selected_check_boxes.length; i++) {
+            //         const option = selected_check_boxes.options[i];
+            //         if (option.value == cloth_full_name.value) {
+            //             return selected_check_boxes.remove(i);
+            //         }
+            //     }
+            // }
+
         }
-        total_price_table_cell.innerHTML = total_price ; 
+        total_price_table_cell.innerHTML = total_price;
         // console.log(selected_check_boxes);
     }
-
-    
-
 </script>
 
 

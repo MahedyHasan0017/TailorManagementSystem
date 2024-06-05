@@ -192,7 +192,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('language', [LanguageSettingsController::class, 'language_setting'])->name('admin.language.setting.view');
     });
 
-
     Route::group(['prefix' => 'settings'], function () {
         Route::get('/dress/info/{id}', [DressNameAndWageController::class, 'dress_info_settings_from_admin'])->name('admin.settings.dress.info');
         Route::post('/dress/info/submit/{id}', [DressNameAndWageController::class, 'dress_info_submit_from_admin'])->name('admin.settings.dress.info.submit');

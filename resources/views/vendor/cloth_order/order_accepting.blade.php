@@ -110,7 +110,7 @@
                     </div>
 
 
-                     <div class="accordion-item mt-3">
+                    <div class="accordion-item mt-3">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed accordion__heading" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
@@ -137,14 +137,12 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6 mb-3">
-                                                            <select name="selected_check_boxes" id="selected_check_boxes" class="form-control">
-                                                                <option value="">option-1</option>
-                                                                <option value="">option-1</option>
-                                                            </select>
+                                                            <input name="selected_check_boxes" id="selected_check_boxes"
+                                                                class="form-control" value="" readonly/>
                                                         </div>
                                                     </div>
 
-
+                                                    
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
                                                             <div class="col-md-2">
@@ -1465,6 +1463,18 @@
                                                 data-bs-parent="#sub-accordionExample">
 
                                                 <div class="accordion-body accordion__body">
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-3">
+                                                            <select name="selected_check_boxes_pant"
+                                                                id="selected_check_boxes_pant" class="form-control">
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
                                                             <div class="col-md-2">

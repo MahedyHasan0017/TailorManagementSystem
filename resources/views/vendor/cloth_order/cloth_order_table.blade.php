@@ -22,7 +22,7 @@
                             <div>
                                 <input type="text" name='dress_part_type{{ $loop->index }}'
                                     id='dress_part_type{{ $loop->index }}' value="{{ $cloth->dress_part_type }}"
-                                    placeholder="value">
+                                    placeholder="value" hidden>
                             </div>
                         </div>
                     </td>
@@ -43,7 +43,7 @@
                         <div class="">
                             <input type="text" class="form-control" value="{{ $cloth->cloth_price }}"
                                 name="total_price_of_cloth{{ $loop->index }}"
-                                id="total_price_of_cloth{{ $loop->index }}">
+                                id="total_price_of_cloth{{ $loop->index }}"/>
                         </div>
                     </td>
                 </tr>
