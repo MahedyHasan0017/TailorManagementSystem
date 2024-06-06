@@ -30,6 +30,7 @@ class AdminController extends Controller
         if ($user != null) {
             return redirect()->route('super_admin_dashboard');
         }
+        // return "hello" ; 
         return view('superAdmin/auth/login');
     }
     public function login_store(LoginRequest $request)

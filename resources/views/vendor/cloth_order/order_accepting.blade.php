@@ -135,14 +135,47 @@
                                                 aria-labelledby="sub-headingOne" data-bs-parent="#sub-accordionExample">
                                                 <div class="accordion-body accordion__body">
 
-                                                    <div class="row">
+
+
+
+                                                    <div class="row dress_input">
                                                         <div class="col-md-6 mb-3">
-                                                            <input name="selected_check_boxes" id="selected_check_boxes"
-                                                                class="form-control" value="" readonly/>
+                                                            <div>
+                                                                <label for="">
+                                                                    Dress Name
+                                                                </label>
+                                                            </div>
+                                                            <div class="">
+                                                                <input name="selected_check_boxes"
+                                                                    id="selected_check_boxes" class="form-control"
+                                                                    value="" readonly />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Quantity For Upper Dress 
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control"
+                                                                        id="quantity_for_upper_dress"></div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Total Amount for Upper Dress 
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control" id='total_for_upper_dress'>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
-                                                    
+
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
                                                             <div class="col-md-2">
@@ -1253,7 +1286,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="shamna" id="" name="full[]">
+                                                                            value="shamna" id=""
+                                                                            name="full[]">
                                                                         <label class="form-check-label" for="">
                                                                             সামনা
                                                                         </label>
@@ -1262,7 +1296,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="kalar" id="" name="full[]">
+                                                                            value="kalar" id=""
+                                                                            name="full[]">
                                                                         <label class="form-check-label" for="">
                                                                             কালার
                                                                         </label>
@@ -1464,13 +1499,48 @@
 
                                                 <div class="accordion-body accordion__body">
 
-
-                                                    <div class="row">
+                                                    <div class="row dress_input_pant">
                                                         <div class="col-md-6 mb-3">
-                                                            <input type="text" name="selected_check_boxes_pant"
-                                                                id="selected_check_boxes_pant" class="form-control" readonly/>
+                                                            <div>
+                                                                <label for="">
+                                                                    Dress Name
+                                                                </label>
+                                                            </div>
+                                                        
+                                                            <div class="col-md-6 mb-3">
+                                                                <input type="text" name="selected_check_boxes_pant"
+                                                                    id="selected_check_boxes_pant" class="form-control"
+                                                                    readonly />
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Quantity For Lower Dress 
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control"
+                                                                        id="quantity_for_lower_dress"></div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Total Amount for Lower Dress 
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control" id='total_for_lower_dress' onchange="text('hey')">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
+
+
+
+
 
 
                                                     <div class="card p-2 mb-0">

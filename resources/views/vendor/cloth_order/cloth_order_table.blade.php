@@ -8,13 +8,20 @@
                 <th scope="col">মোট মূল্য</th>
             </tr>
         </thead>
+
+
+
         <tbody class="custom_table_body custom_table_height">
             @foreach ($cloth_list as $cloth)
                 <tr>
                     <td scope="row">
+                        <small class="badge bg-primary">
+                            {{ $cloth->dress_part_type }}
+                        </small>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" onchange="updateMark({{ $loop->index }})"
-                                value="{{ $cloth->cloth_name }}" name="cloth_full_name{{ $cloth->dress_part_type }}"
+                            <input class="form-check-input {{ $cloth->dress_part_type }}" type="radio"
+                                oninput="updateMark({{ $loop->index }})" value="{{ $cloth->cloth_name }}"
+                                name="cloth_full_name{{ $cloth->dress_part_type }}"
                                 id="cloth_full_name{{ $loop->index }}">
                             <label class="form-check-label" for="cloth_full_name{{ $loop->index }}">
                                 {{ $cloth->cloth_name }}
@@ -28,9 +35,10 @@
                     </td>
                     <td>
                         <div class="">
-                            <input type="number" class="form-control" name="number_of_cloth{{ $loop->index }}" min=1
+                            <input type="number" class="form-control {{ $cloth->dress_part_type }}"
+                                name="number_of_cloth{{ $loop->index }}" min=1
                                 id="number_of_cloth{{ $loop->index }}" value="1"
-                                onchange="updateTotal({{ $loop->index }})">
+                                oninput="updateTotal({{ $loop->index }})" readonly>
                         </div>
                     </td>
                     <td>
@@ -41,9 +49,17 @@
                     </td>
                     <td>
                         <div class="">
-                            <input type="text" class="form-control" value="{{ $cloth->cloth_price }}"
+                            {{-- <input type="number" class="form-control" value="{{ $cloth->cloth_price }}"
+                                oninput="updatingValues({{ $loop->index }})"
                                 name="total_price_of_cloth{{ $loop->index }}"
-                                id="total_price_of_cloth{{ $loop->index }}"/>
+                                id="total_price_of_cloth{{ $loop->index }}" /> --}}
+                        </div>
+
+                        <div class="">
+                            <div type="number" class="form-control" {{-- oninput="updatingValues({{ $loop->index }})" --}}
+                                name="total_price_of_cloth{{ $loop->index }}"
+                                id="total_price_of_cloth{{ $loop->index }}">
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -55,8 +71,8 @@
             <th scope="row"></th>
             <td></td>
             <td></td>
-            <td scope="col" >0</td>
-            {{-- <td scope="col" id='total_price'>0</td> --}}
+            {{-- <td scope="col" >0</td> --}}
+            <td scope="col" id='total_price'>0</td>
         </tfoot>
     </table>
 </div>

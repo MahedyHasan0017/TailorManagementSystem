@@ -140,14 +140,73 @@
 
 
 <script>
+    let prevDynmTotal = 0;
+    const total_price_table_cell = document.getElementById('total_price');
+    let finalPrice = 0 ; 
+
+
     function updateTotal(index) {
+
+
         const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
         const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
         const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+
+        const dress_part_type = document.getElementById(`dress_part_type${index}`);
+
         const value_number_of_cloth = number_of_cloth.value;
         const value_price_of_cloth = price_of_cloth.value;
         const ans = value_number_of_cloth * value_price_of_cloth;
-        total_price_of_cloth.value = ans;
+        total_price_of_cloth.innerHTML = ans;
+
+
+        // const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+        // const total_price_table_cell = document.getElementById('total_price');
+
+        const total_for_upper_dress = document.getElementById('total_for_upper_dress');
+        const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress');
+
+
+
+        const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress');
+        const total_for_lower_dress = document.getElementById('total_for_lower_dress');
+
+
+
+
+
+        console.log(dress_part_type.value);
+
+
+
+        // console.log(total_for_upper_dress);
+
+
+        // total_price_table_cell.innerHTML = ans;
+
+        if (dress_part_type.value == 'upper_part') {
+            total_for_upper_dress.innerHTML = ans;
+            quantity_for_upper_dress.innerHTML = value_number_of_cloth
+
+            console.log('hello from inc');             
+
+        } else {
+            quantity_for_lower_dress.innerHTML = value_number_of_cloth;
+            total_for_lower_dress.innerHTML = ans;
+
+            console.log('hello from desc');  
+
+        }
+
+
+
+
+
+
+
+
+        // const total_price = document.getElementById('total')
+
     }
 
 
@@ -158,106 +217,129 @@
 
     let prevName = "";
     let prevNumOfCloth = "";
-    let prevTotal = "" ; 
+    let prevTotal = "";
+    let prevTotalLower = 0;
+    let PrevNameLower = 0;
+    let total_price = 0;
+    let total_price_lower = 0;
 
     function updateMark(index) {
 
-        let total_price = 0
         const cloth_full_name = document.getElementById(`cloth_full_name${index}`);
         const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+        const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
         const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
-        const total_price_table_cell = document.getElementById('total_price');
+       
         const dress_part_type = document.getElementById(`dress_part_type${index}`);
 
+        const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress');
+        const total_for_upper_dress = document.getElementById('total_for_upper_dress');
+
+        const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress');
+        const total_for_lower_dress = document.getElementById('total_for_lower_dress');
 
 
-        console.log(cloth_full_name);
+
+        const selected_check_boxes_pant = document.getElementById('selected_check_boxes_pant')
+
+        total_price_of_cloth.innerHTML = number_of_cloth.value * price_of_cloth.value
+        selected_check_boxes.value = cloth_full_name.value;
+
+
+        if (dress_part_type.value == 'upper_part') {
+
+            $('.upper_part').prop('readonly', true);
+            let ans = number_of_cloth.value * price_of_cloth.value
+            quantity_for_upper_dress.innerHTML = number_of_cloth.value
+            total_for_upper_dress.innerHTML = ans
+            
+        } else {
+            $('.lower_part').prop('readonly', true);
+            let ans = number_of_cloth.value * price_of_cloth.value
+            quantity_for_lower_dress.innerHTML = number_of_cloth.value
+            console.log("ans " + ans);
+            total_for_lower_dress.innerHTML = ans ; 
+            // console.log(total_for_lower_dress);
+        }
 
         if (prevName != cloth_full_name) {
-            // number_of_cloth.readOnly = false;
-            // prevNumOfCloth.readOnly = false;
-
             number_of_cloth.readOnly = false;
             prevNumOfCloth.readOnly = false;
         }
-
         if (cloth_full_name.checked == true) {
+            if (prevName.name == undefined || (prevName.name == cloth_full_name.name)) {
+                if (dress_part_type.value == 'upper_part') {
+                    // total_price = parseInt(total_price_of_cloth.value);
+
+                    total_price = parseInt(total_price_of_cloth.innerHTML);
+                    quantity_for_upper_dress.value = number_of_cloth.value;
+                    total_for_upper_dress.value = number_of_cloth.value * price_of_cloth.value
 
 
-            console.log(prevName.name);
+                } else if (dress_part_type.value == 'lower_part') {
+                    total_price_lower = parseInt(total_price_of_cloth.innerHTML);
 
-            console.log(cloth_full_name.name);
+                    selected_check_boxes_pant.value = cloth_full_name.value
 
-            console.log(prevTotal);
+                }
 
-            if((prevName.name != undefined) && (prevName.name != cloth_full_name.name)){
-                total_price = prevTotal +  parseInt(total_price_of_cloth.value);
+            } else {
+                number_of_cloth.readOnly = true;
+                if (prevName.name != cloth_full_name.name) {
+                    total_price_lower = prevTotal + parseInt(total_price_of_cloth.innerHTML);
+                    if (dress_part_type.value == 'upper_part') {
+                        selected_check_boxes.value = cloth_full_name.value
+                    } else if (dress_part_type.value == 'lower_part') {
+                        selected_check_boxes_pant.value = cloth_full_name.value
+                    }
+                }
             }
-
-            // if()
-
-            total_price += parseInt(total_price_of_cloth.value);
-            number_of_cloth.readOnly = true;
-            
-            prevName = cloth_full_name;
-            prevNumOfCloth = number_of_cloth;
-            prevTotal = total_price ; 
-            // const option = document.createElement('option');
-            // option.value = cloth_full_name.value;
-            // option.textContent = cloth_full_name.value;
-
-
-            if (dress_part_type.value == 'upper_part') {
-                selected_check_boxes.value = cloth_full_name.value
-            } else if (dress_part_type.value == 'lower_part') {
-                selected_check_boxes_pant.value = cloth_full_name.value
-            }
-
-        } else {
-
-            
-            // total_price -= parseInt(total_price_of_cloth.value);
-            total_price = 0
-            number_of_cloth.readOnly = false;
-
-
-
-            if (dress_part_type.value == 'upper_part') {
-                // selected_check_boxes.appendChild(option);
-                selected_check_boxes.value = ""
-
-            } else if (dress_part_type.value == 'lower_part') {
-                // selected_check_boxes_pant.appendChild(option);
-                selected_check_boxes_pant.value = ""
-            }
-
-
-
-            // console.log();
-
-
-            // if (dress_part_type.value == 'lower_part') {
-
-            //     for (i = 0; i < selected_check_boxes_pant.length; i++) {
-            //         const option = selected_check_boxes_pant.options[i];
-            //         if (option.value == cloth_full_name.value) {
-            //             return selected_check_boxes_pant.remove(i);
-            //         }
-            //     }
-
-            // } else if (dress_part_type.value == 'upper_part') {
-            //     for (i = 0; i < selected_check_boxes.length; i++) {
-            //         const option = selected_check_boxes.options[i];
-            //         if (option.value == cloth_full_name.value) {
-            //             return selected_check_boxes.remove(i);
-            //         }
-            //     }
-            // }
-
         }
-        total_price_table_cell.innerHTML = total_price;
-        // console.log(selected_check_boxes);
+
+        // console.log(total_for_upper_dress);
+        // console.log(total_for_lower_dress);
+
+        // total_price_table_cell.innerHTML = parseInt(total_for_upper_dress.innerHTML) + parseInt(total_for_lower_dress.innerHTML)
+
+
+        example()
+
     }
+    // total_price_table_cell.innerHTML = finalPrice ; 
+
+    // console.log('table_cell');
+    // console.log(total_price_table_cell);
+
+
+    // const text = (value) => {
+    //     console.log(value);
+    // }
+
+
+
+    function example(){
+
+
+        const total_for_upper_dress = document.getElementById('total_for_upper_dress')
+        const total_for_lower_dress = document.getElementById('total_for_lower_dress')
+        const total_price = document.getElementById('total_price')
+
+        console.log(total_for_upper_dress.innerHTML);
+        console.log(total_for_lower_dress.innerHTML);
+
+        total_price = parseInt(total_for_upper_dress.innerHTML) + parseInt(total_for_lower_dress.innerHTML) ; 
+
+
+    }
+
+
+
+    // function updatingValues(index) {
+    //     const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+
+    //     console.log(total_price_of_cloth);
+
+    // }
 </script>
 
 
