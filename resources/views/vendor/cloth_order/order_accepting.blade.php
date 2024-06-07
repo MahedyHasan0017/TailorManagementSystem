@@ -135,9 +135,6 @@
                                                 aria-labelledby="sub-headingOne" data-bs-parent="#sub-accordionExample">
                                                 <div class="accordion-body accordion__body">
 
-
-
-
                                                     <div class="row dress_input">
                                                         <div class="col-md-6 mb-3">
                                                             <div>
@@ -156,19 +153,32 @@
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <label for="">
-                                                                            Quantity For Upper Dress 
+                                                                            Quantity For Upper Dress
                                                                         </label>
                                                                     </div>
                                                                     <div class="form-control"
                                                                         id="quantity_for_upper_dress"></div>
+
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            name='upper_part_dress_quantity'
+                                                                            id='upper_part_dress_quantity' value="0">
+                                                                    </div>
+
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <label for="">
-                                                                            Total Amount for Upper Dress 
+                                                                            Total Amount for Upper Dress
                                                                         </label>
                                                                     </div>
                                                                     <div class="form-control" id='total_for_upper_dress'>
+                                                                        0
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            name="upper_part_dress_total"
+                                                                            id='upper_part_dress_total' value="0">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1506,11 +1516,18 @@
                                                                     Dress Name
                                                                 </label>
                                                             </div>
-                                                        
+
                                                             <div class="col-md-6 mb-3">
                                                                 <input type="text" name="selected_check_boxes_pant"
                                                                     id="selected_check_boxes_pant" class="form-control"
                                                                     readonly />
+
+                                                                <div>
+                                                                    <input type="number"
+                                                                        name="lower_part_dress_quantity"
+                                                                        id="lower_part_dress_quantity">
+                                                                </div>
+
                                                             </div>
 
                                                         </div>
@@ -1519,19 +1536,27 @@
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <label for="">
-                                                                            Quantity For Lower Dress 
+                                                                            Quantity For Lower Dress
                                                                         </label>
                                                                     </div>
                                                                     <div class="form-control"
                                                                         id="quantity_for_lower_dress"></div>
+
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            id="lower_part_dress_total"
+                                                                            name="lower_part_dress_total">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div>
                                                                         <label for="">
-                                                                            Total Amount for Lower Dress 
+                                                                            Total Amount for Lower Dress
                                                                         </label>
                                                                     </div>
-                                                                    <div class="form-control" id='total_for_lower_dress' onchange="text('hey')">
+                                                                    <div class="form-control"
+                                                                        id='total_for_lower_dress'>
+                                                                        0
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2169,4 +2194,134 @@
         </script> --}}
 
         {{-- <script src="main.js"></script> --}}
+
+
+        <script>
+            let prevDynmTotal = 0;
+            const total_price_table_cell = document.getElementById('total_price');
+            let finalPrice = 0;
+
+
+            function updateTotal(index) {
+
+                const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
+                const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
+                const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+                const dress_part_type = document.getElementById(`dress_part_type${index}`);
+                const value_number_of_cloth = number_of_cloth.value;
+                const value_price_of_cloth = price_of_cloth.value;
+                const ans = value_number_of_cloth * value_price_of_cloth;
+                total_price_of_cloth.innerHTML = ans;
+
+                const total_for_upper_dress = document.getElementById('total_for_upper_dress');
+                const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress');
+                const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress');
+                const total_for_lower_dress = document.getElementById('total_for_lower_dress');
+
+                if (dress_part_type.value == 'upper_part') {
+                    total_for_upper_dress.innerHTML = ans;
+                    quantity_for_upper_dress.innerHTML = value_number_of_cloth
+                } else {
+                    quantity_for_lower_dress.innerHTML = value_number_of_cloth;
+                    total_for_lower_dress.innerHTML = ans;
+                }
+                example()
+            }
+
+
+            const selected_check_boxes = document.getElementById('selected_check_boxes');
+            selected_check_boxes.innerHTML = "";
+            const selected_check_boxes_pant = document.getElementById('selected_check_boxes_pant');
+            selected_check_boxes_pant.innerHTML = "";
+
+            let prevName = "";
+            let prevNumOfCloth = "";
+            let prevTotal = "";
+            let prevTotalLower = 0;
+            let PrevNameLower = 0;
+            let total_price = 0;
+            let total_price_lower = 0;
+
+            function updateMark(index) {
+
+                const cloth_full_name = document.getElementById(`cloth_full_name${index}`);
+                const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
+                const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
+                const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
+                const dress_part_type = document.getElementById(`dress_part_type${index}`);
+                const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress');
+                const total_for_upper_dress = document.getElementById('total_for_upper_dress');
+                const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress');
+                const total_for_lower_dress = document.getElementById('total_for_lower_dress');
+
+                const selected_check_boxes_pant = document.getElementById('selected_check_boxes_pant')
+
+                total_price_of_cloth.innerHTML = number_of_cloth.value * price_of_cloth.value
+
+                if (dress_part_type.value == 'upper_part') {
+
+                    $('.upper_part').prop('readonly', true);
+                    let ans = number_of_cloth.value * price_of_cloth.value
+                    quantity_for_upper_dress.innerHTML = number_of_cloth.value
+                    total_for_upper_dress.innerHTML = ans
+
+                } else {
+                    $('.lower_part').prop('readonly', true);
+                    let ans = number_of_cloth.value * price_of_cloth.value
+                    quantity_for_lower_dress.innerHTML = number_of_cloth.value
+                    console.log("ans " + ans);
+                    total_for_lower_dress.innerHTML = ans;
+                }
+
+                if (prevName != cloth_full_name) {
+                    number_of_cloth.readOnly = false;
+                    prevNumOfCloth.readOnly = false;
+                }
+                if (cloth_full_name.checked == true) {
+                    if (prevName.name == undefined || (prevName.name == cloth_full_name.name)) {
+                        if (dress_part_type.value == 'upper_part') {
+
+                            total_price = parseInt(total_price_of_cloth.innerHTML);
+                            quantity_for_upper_dress.value = number_of_cloth.value;
+                            total_for_upper_dress.value = number_of_cloth.value * price_of_cloth.value
+                            selected_check_boxes.value = cloth_full_name.value;
+
+                        } else if (dress_part_type.value == 'lower_part') {
+                            total_price_lower = parseInt(total_price_of_cloth.innerHTML);
+                            selected_check_boxes_pant.value = cloth_full_name.value
+                        }
+
+                    } else {
+                        number_of_cloth.readOnly = true;
+                        if (prevName.name != cloth_full_name.name) {
+                            total_price_lower = prevTotal + parseInt(total_price_of_cloth.innerHTML);
+                            if (dress_part_type.value == 'upper_part') {
+                                selected_check_boxes.value = cloth_full_name.value
+                            } else if (dress_part_type.value == 'lower_part') {
+                                selected_check_boxes_pant.value = cloth_full_name.value
+                            }
+                        }
+                    }
+                }
+                example()
+            }
+
+            function example() {
+                const total_for_upper_dress = document.getElementById('total_for_upper_dress')
+                const total_for_lower_dress = document.getElementById('total_for_lower_dress')
+                let total_price = document.getElementById('total_price')
+                let total = 0;
+                total = parseInt(total_for_upper_dress.innerHTML) + parseInt(total_for_lower_dress.innerHTML);
+                total_price.innerHTML = total;
+
+
+                const upper_part_dress_quantity = document.getElementById('upper_part_dress_quantity')
+                const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress')
+                const upper_part_dress_total = document.getElementById('upper_part_dress_total')
+
+                upper_part_dress_quantity.value = parseInt(quantity_for_upper_dress.innerHTML);
+                upper_part_dress_total.value = parseInt(total_for_upper_dress.innerHTML);
+
+            }
+        </script>
     @endpush

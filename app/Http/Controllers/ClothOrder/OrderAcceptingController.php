@@ -311,11 +311,12 @@ class OrderAcceptingController extends Controller
     public function order_accepting_store(Request $request)
     {
         $order_number = random_int(100000, 999999);
-
         $vendor_name = "";
-       
         $user_vendor = Auth::guard('vendor')->user();
        
+
+        dd($request->all()) ; 
+
 
 
         if ($user_vendor != null) {

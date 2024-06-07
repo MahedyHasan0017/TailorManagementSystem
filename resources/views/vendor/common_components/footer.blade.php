@@ -142,71 +142,33 @@
 <script>
     let prevDynmTotal = 0;
     const total_price_table_cell = document.getElementById('total_price');
-    let finalPrice = 0 ; 
+    let finalPrice = 0;
 
 
     function updateTotal(index) {
 
-
         const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
         const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
         const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
-
         const dress_part_type = document.getElementById(`dress_part_type${index}`);
-
         const value_number_of_cloth = number_of_cloth.value;
         const value_price_of_cloth = price_of_cloth.value;
         const ans = value_number_of_cloth * value_price_of_cloth;
         total_price_of_cloth.innerHTML = ans;
 
-
-        // const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
-        // const total_price_table_cell = document.getElementById('total_price');
-
         const total_for_upper_dress = document.getElementById('total_for_upper_dress');
         const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress');
-
-
-
         const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress');
         const total_for_lower_dress = document.getElementById('total_for_lower_dress');
-
-
-
-
-
-        console.log(dress_part_type.value);
-
-
-
-        // console.log(total_for_upper_dress);
-
-
-        // total_price_table_cell.innerHTML = ans;
 
         if (dress_part_type.value == 'upper_part') {
             total_for_upper_dress.innerHTML = ans;
             quantity_for_upper_dress.innerHTML = value_number_of_cloth
-
-            console.log('hello from inc');             
-
         } else {
             quantity_for_lower_dress.innerHTML = value_number_of_cloth;
             total_for_lower_dress.innerHTML = ans;
-
-            console.log('hello from desc');  
-
         }
-
-
-
-
-
-
-
-
-        // const total_price = document.getElementById('total')
-
+        example()
     }
 
 
@@ -229,22 +191,15 @@
         const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
         const price_of_cloth = document.getElementById(`price_of_cloth${index}`);
         const number_of_cloth = document.getElementById(`number_of_cloth${index}`);
-       
         const dress_part_type = document.getElementById(`dress_part_type${index}`);
-
         const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress');
         const total_for_upper_dress = document.getElementById('total_for_upper_dress');
-
         const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress');
         const total_for_lower_dress = document.getElementById('total_for_lower_dress');
-
-
 
         const selected_check_boxes_pant = document.getElementById('selected_check_boxes_pant')
 
         total_price_of_cloth.innerHTML = number_of_cloth.value * price_of_cloth.value
-        selected_check_boxes.value = cloth_full_name.value;
-
 
         if (dress_part_type.value == 'upper_part') {
 
@@ -252,14 +207,13 @@
             let ans = number_of_cloth.value * price_of_cloth.value
             quantity_for_upper_dress.innerHTML = number_of_cloth.value
             total_for_upper_dress.innerHTML = ans
-            
+
         } else {
             $('.lower_part').prop('readonly', true);
             let ans = number_of_cloth.value * price_of_cloth.value
             quantity_for_lower_dress.innerHTML = number_of_cloth.value
             console.log("ans " + ans);
-            total_for_lower_dress.innerHTML = ans ; 
-            // console.log(total_for_lower_dress);
+            total_for_lower_dress.innerHTML = ans;
         }
 
         if (prevName != cloth_full_name) {
@@ -269,18 +223,15 @@
         if (cloth_full_name.checked == true) {
             if (prevName.name == undefined || (prevName.name == cloth_full_name.name)) {
                 if (dress_part_type.value == 'upper_part') {
-                    // total_price = parseInt(total_price_of_cloth.value);
 
                     total_price = parseInt(total_price_of_cloth.innerHTML);
                     quantity_for_upper_dress.value = number_of_cloth.value;
                     total_for_upper_dress.value = number_of_cloth.value * price_of_cloth.value
-
+                    selected_check_boxes.value = cloth_full_name.value;
 
                 } else if (dress_part_type.value == 'lower_part') {
                     total_price_lower = parseInt(total_price_of_cloth.innerHTML);
-
                     selected_check_boxes_pant.value = cloth_full_name.value
-
                 }
 
             } else {
@@ -295,51 +246,26 @@
                 }
             }
         }
-
-        // console.log(total_for_upper_dress);
-        // console.log(total_for_lower_dress);
-
-        // total_price_table_cell.innerHTML = parseInt(total_for_upper_dress.innerHTML) + parseInt(total_for_lower_dress.innerHTML)
-
-
         example()
-
     }
-    // total_price_table_cell.innerHTML = finalPrice ; 
 
-    // console.log('table_cell');
-    // console.log(total_price_table_cell);
-
-
-    // const text = (value) => {
-    //     console.log(value);
-    // }
-
-
-
-    function example(){
-
-
+    function example() {
         const total_for_upper_dress = document.getElementById('total_for_upper_dress')
         const total_for_lower_dress = document.getElementById('total_for_lower_dress')
-        const total_price = document.getElementById('total_price')
+        let total_price = document.getElementById('total_price')
+        let total = 0;
+        total = parseInt(total_for_upper_dress.innerHTML) + parseInt(total_for_lower_dress.innerHTML);
+        total_price.innerHTML = total;
 
-        console.log(total_for_upper_dress.innerHTML);
-        console.log(total_for_lower_dress.innerHTML);
 
-        total_price = parseInt(total_for_upper_dress.innerHTML) + parseInt(total_for_lower_dress.innerHTML) ; 
+        const upper_part_dress_quantity = document.getElementById('upper_part_dress_quantity')
+        const quantity_for_upper_dress = document.getElementById('quantity_for_upper_dress')
+        const upper_part_dress_total = document.getElementById('upper_part_dress_total')
 
+        upper_part_dress_quantity.value = parseInt(quantity_for_upper_dress.innerHTML);
+        upper_part_dress_total.value = parseInt(total_for_upper_dress.innerHTML);
 
     }
-
-
-
-    // function updatingValues(index) {
-    //     const total_price_of_cloth = document.getElementById(`total_price_of_cloth${index}`);
-
-    //     console.log(total_price_of_cloth);
-
-    // }
 </script>
 
 

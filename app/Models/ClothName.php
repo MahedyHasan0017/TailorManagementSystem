@@ -10,14 +10,17 @@ class ClothName extends Model
     use HasFactory;
 
     protected $fillable = [
-        'cloth_name' , 
-        'cloth_order_id',
-        'number_of_cloth',
-        'unit_of_cloth',
-        'total_of_cloth'
+        'upper_part_dress_name',
+        'quantity_of_upper_part_dress',
+        'total_upper_part_dress',
+        'lower_part_dress_name',
+        'quantity_of_lower_part_dress',
+        'total_lower_part_dress',
+        'total_of_upper_and_lower_part_dress'
     ];
 
-    public function cloth_order(){
-        return $this->belongsTo(ClothOrder::class) ; 
+    public function cloth_order()
+    {
+        return $this->belongsTo(ClothOrder::class);
     }
 }
