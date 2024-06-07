@@ -71,7 +71,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                name="order_number"> -->
+                                                                        name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important"> শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                name="order_number"> -->
+                                                                        name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -93,7 +93,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                name="order_number"> -->
+                                                                        name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -155,10 +155,12 @@
                                     <th>অর্ডার নং:</th>
                                     <th>গ্রাহকের তথ্য</th>
                                     <th>পোশাকের নাম</th>
-                                    <th>অর্ডারের তারিখ</th>
-                                    <th>ডেলিভারির তারিখ </th>
+                                    <th>পোশাকের মূল্য</th>
+                                    <th>মজুরি</th>
                                     <th>মোট বিল</th>
                                     <th>জমার পরিমান</th>
+                                    <th>অর্ডারের তারিখ</th>
+                                    <th>ডেলিভারির তারিখ </th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -167,13 +169,47 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $cloth_order->customer_name }}</td>
-                                        <td>{{ $cloth_order->cloth_name->cloth_name }}</td>
+                                        <td>
+
+                                            @if ($cloth_order->cloth_name->upper_part_dress_name != null)
+                                                <p>
+                                                    <span>{{ $cloth_order->cloth_name->upper_part_dress_name }}</span> x
+                                                    <span>{{ en2bn((int) $cloth_order->cloth_name->quantity_of_upper_part_dress) }}
+                                                    </span>
+                                                </p>
+                                            @endif
+
+                                            @if ($cloth_order->cloth_name->lower_part_dress_name != null)
+                                                <p>
+                                                    <span>{{ $cloth_order->cloth_name->lower_part_dress_name }}</span> x
+                                                    <span>{{ en2bn((int) $cloth_order->cloth_name->quantity_of_lower_part_dress) }}</span>
+                                                </p>
+                                            @endif
+
+                                        </td>
+
+                                        <td>
+                                            <p>
+                                                @if ($cloth_order->cloth_name->total_upper_part_dress != 0)
+                                                    {{ en2bn((int) $cloth_order->cloth_name->total_upper_part_dress) }}
+                                                @endif
+                                            </p>
+                                            <p>
+                                                @if ($cloth_order->cloth_name->total_lower_part_dress != 0)
+                                                    {{ en2bn((int) $cloth_order->cloth_name->total_lower_part_dress) }}
+                                                @endif
+                                            </p>
+                                        </td>
+
+                                        <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->majurir_poriman) }}</td>
+
+                                        <td>{{ en2bn((int) ($cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_upper_and_lower_part_dress)) }}
+                                        </td>
+                                        <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->nogod_prodan) }}</td>
+
                                         <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
                                         <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
 
-                                        <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->majurir_poriman) }}
-                                        </td>
-                                        <td>{{ en2bn ((int)$cloth_order->cloth_order_delivary->nogod_prodan) }}</td>
                                         <td class="action_buttons_in_tablee">
                                             <span><a href="{{ route('vendor.order.details.view', ['id' => $cloth_order->id]) }}"
                                                     class="btn btn-primary">view</a></span>
@@ -184,16 +220,16 @@
                                 @endforeach
                             </tbody>
                             <!-- <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                        <td>$313,500</td>
-                                    </tr>
-                                </tfoot> -->
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Position</th>
+                                                                <th>Office</th>
+                                                                <th>Age</th>
+                                                                <th>Start date</th>
+                                                                <th>Salary</th>
+                                                                <td>$313,500</td>
+                                                            </tr>
+                                                        </tfoot> -->
                         </table>
 
 

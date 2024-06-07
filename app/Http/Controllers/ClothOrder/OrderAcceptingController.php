@@ -32,7 +32,7 @@ class OrderAcceptingController extends Controller
         return view('superAdmin.cloth_order.order_accepting', compact('cloth_list'));
     }
 
-    public function vendor_order_accepting(Request $request , $id)
+    public function vendor_order_accepting(Request $request, $id)
     {
         $cloth_list = ClothType::get();
         return view('vendor.cloth_order.order_accepting', compact('cloth_list'));
@@ -52,12 +52,12 @@ class OrderAcceptingController extends Controller
 
         $vendor_name = "";
         $user = Auth::guard('admin')->user();
-       
+
 
 
         if ($user != null) {
             $vendor_name = $user;
-        } 
+        }
 
 
         $data = $request->all();
@@ -95,7 +95,7 @@ class OrderAcceptingController extends Controller
             $cloth_name->save();
 
 
-            
+
 
 
             $cloth_delivary = ClothOrderDelivaryInfo::create([
@@ -299,11 +299,11 @@ class OrderAcceptingController extends Controller
 
 
         $user = Auth::guard('admin')->user();
-       
+
 
         if ($user != null) {
             return redirect()->route('admin.order.accepting.list');
-        } 
+        }
     }
 
 
@@ -313,10 +313,6 @@ class OrderAcceptingController extends Controller
         $order_number = random_int(100000, 999999);
         $vendor_name = "";
         $user_vendor = Auth::guard('vendor')->user();
-       
-
-        dd($request->all()) ; 
-
 
 
         if ($user_vendor != null) {
@@ -338,12 +334,6 @@ class OrderAcceptingController extends Controller
         ]);
 
 
-        $num_of_cloth = $request->input('number_of_cloth', []);
-        $num_of_cloth = array_filter($num_of_cloth, fn ($value) => !is_null($value) && $value !== '');
-        $num_of_cloth = array_values($num_of_cloth);
-        $num_of_cloth = $num_of_cloth[0];
-
-
         // dd($request->all()) ; 
 
         $cloth_order->save();
@@ -351,18 +341,23 @@ class OrderAcceptingController extends Controller
         if ($cloth_order) {
 
             $cloth_name = ClothName::create([
-                'cloth_name' => $data['cloth_full_name'],
                 'cloth_order_id' => $cloth_order->id,
-                'number_of_cloth' => $num_of_cloth,
+                'upper_part_dress_name' => $data['selected_check_boxes'],
+                'quantity_of_upper_part_dress' => $data['upper_part_dress_quantity'],
+                'total_upper_part_dress' => $data['upper_part_dress_total'],
+                'lower_part_dress_name' => $data['selected_check_boxes_pant'],
+                'quantity_of_lower_part_dress' => $data['lower_part_dress_quantity'],
+                'total_lower_part_dress' => $data['lower_part_dress_total'],
+                'total_of_upper_and_lower_part_dress' => $data['total_of_upper_and_lower_part_dress']
             ]);
 
             $cloth_name->save();
 
 
-            $majurir_poriman = bn2en($data['majurir_poriman']) ; 
-            $majurir_poriman = (int)$majurir_poriman ; 
-            $nogod_prodan = bn2en($data['nogod_prodan']) ;
-            $nogod_prodan = (int)$nogod_prodan ; 
+            $majurir_poriman = bn2en($data['majurir_poriman']);
+            $majurir_poriman = (int)$majurir_poriman;
+            $nogod_prodan = bn2en($data['nogod_prodan']);
+            $nogod_prodan = (int)$nogod_prodan;
 
 
 
@@ -566,10 +561,10 @@ class OrderAcceptingController extends Controller
         }
 
         $user_vendor = Auth::guard('vendor')->user();
-    
+
         if ($user_vendor != null) {
             return redirect()->route('vendor.order.accepting.list', ['mobile_number' => $user_vendor->mobile_number]);
-        } 
+        }
     }
 
 
@@ -620,10 +615,10 @@ class OrderAcceptingController extends Controller
 
             $cloth_name->save();
 
-            $majurir_poriman = bn2en($data['majurir_poriman']) ; 
-            $majurir_poriman = (int)$majurir_poriman ; 
-            $nogod_prodan = bn2en($data['nogod_prodan']) ;
-            $nogod_prodan = (int)$nogod_prodan ; 
+            $majurir_poriman = bn2en($data['majurir_poriman']);
+            $majurir_poriman = (int)$majurir_poriman;
+            $nogod_prodan = bn2en($data['nogod_prodan']);
+            $nogod_prodan = (int)$nogod_prodan;
 
 
             $cloth_delivary = ClothOrderDelivaryInfo::create([
@@ -847,6 +842,9 @@ class OrderAcceptingController extends Controller
     public function vendor_order_details_view(Request $request, $id)
     {
         $order_detail = ClothOrder::where('id', $id)->first();
+
+        // dd($order_detail) ; 
+
         return view('vendor.cloth_order.cloth_order_details', compact('order_detail'));
     }
 
@@ -916,6 +914,9 @@ class OrderAcceptingController extends Controller
     {
 
         $cloth_orders = ClothOrder::where('vendor_number', $mobile_number)->get();
+
+        // dd($cloth_orders) ; 
+
         return view('vendor.cloth_order.order_list', compact('cloth_orders'));
     }
 

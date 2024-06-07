@@ -67,6 +67,10 @@
                                                 id="customer_contact_address" required></textarea>
                                         </div>
 
+                                        <div class="form_input_group">
+                                            <input type="text" name="total_of_upper_and_lower_part_dress" id="total_of_upper_and_lower_part_dress" hidden required/>
+                                        </div>
+
                                     </div>
 
 
@@ -162,7 +166,7 @@
                                                                     <div>
                                                                         <input type="number"
                                                                             name='upper_part_dress_quantity'
-                                                                            id='upper_part_dress_quantity' value="0">
+                                                                            id='upper_part_dress_quantity' value="0" hidden>
                                                                     </div>
 
                                                                 </div>
@@ -178,7 +182,7 @@
                                                                     <div>
                                                                         <input type="number"
                                                                             name="upper_part_dress_total"
-                                                                            id='upper_part_dress_total' value="0">
+                                                                            id='upper_part_dress_total' value="0" hidden>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1521,13 +1525,6 @@
                                                                 <input type="text" name="selected_check_boxes_pant"
                                                                     id="selected_check_boxes_pant" class="form-control"
                                                                     readonly />
-
-                                                                <div>
-                                                                    <input type="number"
-                                                                        name="lower_part_dress_quantity"
-                                                                        id="lower_part_dress_quantity">
-                                                                </div>
-
                                                             </div>
 
                                                         </div>
@@ -1544,9 +1541,11 @@
 
                                                                     <div>
                                                                         <input type="number"
-                                                                            id="lower_part_dress_total"
-                                                                            name="lower_part_dress_total">
+                                                                            name="lower_part_dress_quantity"
+                                                                            id="lower_part_dress_quantity" hidden>
                                                                     </div>
+
+
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div>
@@ -1558,15 +1557,17 @@
                                                                         id='total_for_lower_dress'>
                                                                         0
                                                                     </div>
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            id="lower_part_dress_total"
+                                                                            name="lower_part_dress_total"
+                                                                            hidden
+                                                                            >
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-
-
-
 
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
