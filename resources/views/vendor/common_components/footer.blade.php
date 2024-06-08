@@ -127,7 +127,8 @@
         order: [
             [3, 'desc']
         ],
-        responsive: true
+        responsive: true,
+        ordering: false
     });
 
     $('#datepicker1').datepicker({
@@ -137,6 +138,8 @@
         uiLibrary: 'bootstrap5'
     });
 </script>
+
+
 
 
 <script>
@@ -267,19 +270,19 @@
 
 
 
-        const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress') 
-        const lower_part_dress_quantity = document.getElementById('lower_part_dress_quantity') 
+        const quantity_for_lower_dress = document.getElementById('quantity_for_lower_dress')
+        const lower_part_dress_quantity = document.getElementById('lower_part_dress_quantity')
 
-        lower_part_dress_quantity.value = parseInt(quantity_for_lower_dress.innerHTML) 
+        lower_part_dress_quantity.value = parseInt(quantity_for_lower_dress.innerHTML)
 
 
         const lower_part_dress_total = document.getElementById('lower_part_dress_total')
 
-        lower_part_dress_total.value = parseInt(total_for_lower_dress.innerHTML) 
+        lower_part_dress_total.value = parseInt(total_for_lower_dress.innerHTML)
 
 
-        const total_of_upper_and_lower_part_dress = document.getElementById('total_of_upper_and_lower_part_dress') ; 
-        total_of_upper_and_lower_part_dress.value = total ; 
+        const total_of_upper_and_lower_part_dress = document.getElementById('total_of_upper_and_lower_part_dress');
+        total_of_upper_and_lower_part_dress.value = total;
 
 
 
@@ -287,6 +290,9 @@
 </script>
 
 
+<script>
+    
+</script>
 
 
 </body>

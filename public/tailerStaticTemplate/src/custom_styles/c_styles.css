@@ -222,7 +222,9 @@ tbody {
     cursor: pointer;
 }
 
-
+.key_value_calc {
+    font-size: 13px;
+}
 
 .vendor__info {
     border-left: 1px solid #6610f2;
@@ -342,27 +344,46 @@ tbody {
 }
 
 
-.employee_designation:focus{
-    outline : none ; 
-    border : 0 ; 
+.employee_designation:focus {
+    outline: none;
+    border: 0;
     border-radius: 0 3px 3px 0;
     /* font-size: 15px ; */
     /* background-color: green ; */
 }
 
-.employee_designation_option{
-    background-color: white ;
+.employee_designation_option {
+    background-color: white;
     /* font-size: 15px ; */
 }
 
 
 
-.cash_out_number{
+.cash_out_number {
     background-color: white;
-    color: #333 ;
-    padding: 7px 20px ;
-    margin-top: 8px ;
+    color: #333;
+    padding: 7px 20px;
+    margin-top: 8px;
 }
+
+.action_buttons_in_tablee {
+    /* display: list-item; */
+
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.display__none {
+    display: none;
+}
+
+.display__block {
+    display: block;
+}
+
+
 
 
 @page {

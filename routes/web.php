@@ -224,6 +224,13 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
             Route::get('single/{id}', [EmployeePermissionController::class, 'vendor_employee_single'])->name('vendor.permission.employee.single')->middleware('admin_or_vendor');
             Route::post('permissions/submit', [EmployeePermissionController::class, 'vendor_employee_submit_permissions'])->name('vendor.employee.submit.permissions');
         });
+
+
+        Route::group(['prefix' => 'work/distribution'], function () {
+            Route::get('list/{mobile_number}',[EmployeePermissionController::class  , 'vendor_work_distribution_list'])->name('vendor.work.distribution.employee.list');
+        });
+
+
     });
 
     Route::group(['prefix' => 'profile'], function () {

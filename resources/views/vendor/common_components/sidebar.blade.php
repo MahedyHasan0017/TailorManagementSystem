@@ -56,16 +56,27 @@
                                     class="fas fa-users"></i><span class="hide-menu">কর্মচারী পরিচালনা
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('admin.add.employee.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                             নতুন
                                             কর্মচারী যোগ
                                         </span></a></li>
 
-                                <li class="sidebar-item"><a href="{{ route('admin.list.employee.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                             কর্মচারী লিস্ট
                                         </span></a></li>
+
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.work.distribution.employee.list', ['mobile_number' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        class="sidebar-link">
+                                        <i class="fas fa-angle-right"></i><span class="hide-menu">
+                                            কাজ বণ্টন
+                                        </span></a></li>
+
+
 
                                 <li class="sidebar-item"><a href="{{ route('admin.salary.employee.view') }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
@@ -132,17 +143,13 @@
                                 href="order.html" aria-expanded="false"><i class="fas fa-cog"></i><span
                                     class="hide-menu">সেটিংস </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a
-                                        href="#"
-                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
-                                            class="hide-menu">
-                                            পোশাকের তথ্য যোগ করুন 
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><i
+                                            class="fas fa-angle-right"></i><span class="hide-menu">
+                                            পোশাকের তথ্য যোগ করুন
                                         </span></a></li>
-                                <li class="sidebar-item"><a
-                                        href="#"
-                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
-                                            class="hide-menu">
-                                            পোশাকের তথ্যের লিস্ট 
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><i
+                                            class="fas fa-angle-right"></i><span class="hide-menu">
+                                            পোশাকের তথ্যের লিস্ট
                                         </span></a></li>
                                 <li class="sidebar-item"><a href="{{ route('admin.dress.part.view') }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
@@ -179,19 +186,21 @@
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
 
-                                <li class="sidebar-item"><a
-                                        href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
-                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                <li class="sidebar-item">
+                                    {{-- <a href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}" --}}
+                                    <a href="#" class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">
                                             register a employee
-                                        </span></a></li>
+                                        </span></a>
+                                </li>
 
-                                <li class="sidebar-item"><a
-                                        href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
-                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                <li class="sidebar-item">
+                                    {{-- <a href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}" --}}
+                                    <a href="#" class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">
                                             employee list
-                                        </span></a></li>
+                                        </span></a>
+                                </li>
                             </ul>
                         </li>
                     @endif

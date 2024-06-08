@@ -19,6 +19,9 @@
             </div>
         </div>
 
+        
+
+
         <div class="container-fluid">
             <form action="{{ route('employee.order.accepting.store') }}" method="post">
                 @csrf
@@ -36,14 +39,14 @@
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        
+
                                         <div class="form_input_group">
                                             <label for="name" class="form-label form_input_group_label_important"> নাম :
                                                 <span style="color:red">*</span></label>
-                                            <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+                                            <input type="text" class="form-control" id="customer_name"
+                                                name="customer_name" required>
                                         </div>
 
-                                        
                                         <div class="form_input_group">
                                             <label for="mobile_number" class="form-label form_input_group_label_important">
                                                 মোবাইল নং : <span style="color:red">*</span></label>
@@ -54,7 +57,8 @@
                                         <div class="form_input_group">
                                             <label for="email" class="form-label form_input_group_label_important">
                                                 ইমেইল:
-                                                <input type="email" class="form-control" id="customer_email" name="customer_email">
+                                                <input type="email" class="form-control" id="customer_email"
+                                                    name="customer_email">
                                         </div>
 
                                         <div class="form_input_group">
@@ -62,15 +66,50 @@
                                                 class="form-label form_input_group_label_important">
                                                 যোগাযোগ এর ঠিকানা : <span style="color:red">*</span>
                                             </label>
-                                                <textarea class="form-control" name="customer_contact_address" cols="30" rows="5" id="customer_contact_address" required></textarea>
+                                            <textarea class="form-control" name="customer_contact_address" cols="30" rows="5"
+                                                id="customer_contact_address" required></textarea>
+                                        </div>
+
+                                        <div class="form_input_group">
+                                            <input type="text" name="total_of_upper_and_lower_part_dress" id="total_of_upper_and_lower_part_dress" hidden required/>
                                         </div>
 
                                     </div>
-                                    
 
 
                                     <div class="col-md-6">
-                                       @include('employee.cloth_order.cloth_table')
+                                        @include('employee.cloth_order.cloth_order_table')
+                                        {{-- <div>
+                                            <div class="accordion-item mt-3">
+                                                <h2 class="accordion-header" id="headingSeven">
+                                                    <button class="accordion-button collapsed accordion__heading"
+                                                        type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseSeven" aria-expanded="true"
+                                                        aria-controls="collapseSeven">
+                                                        নতুন পোশাক যোগ করুন
+                                                    </button>
+                                                </h2>
+                                                <div id="" class="" aria-labelledby="headingSeven"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body accordion__body">
+                                                        <div class="row">
+                                                           
+                                                            <div class="col-12">
+                                                                <input type="text" name='cloth_name'
+                                                                    id="cloth_name" placeholder="পোশাকের নাম"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div class="col-12" style="text-align: right">
+                                                                <button id="add_cloth_name" type="button"
+                                                                    class="btn btn-success mt-2">যোগ করুন</button>
+                                                            </div>
+
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -103,14 +142,56 @@
                                                 aria-labelledby="sub-headingOne" data-bs-parent="#sub-accordionExample">
                                                 <div class="accordion-body accordion__body">
 
-                                                    {{-- <div class="row">
-                                                        <div class="col-md-6">
-                                                            <select name="" id="">
-                                                                <option value="">option-1</option>
-                                                                <option value="">option-1</option>
-                                                            </select>
+                                                    <div class="row dress_input">
+                                                        <div class="col-md-6 mb-3">
+                                                            <div>
+                                                                <label for="">
+                                                                    Dress Name
+                                                                </label>
+                                                            </div>
+                                                            <div class="">
+                                                                <input name="selected_check_boxes"
+                                                                    id="selected_check_boxes" class="form-control"
+                                                                    value="" readonly />
+                                                            </div>
                                                         </div>
-                                                    </div> --}}
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Quantity For Upper Dress
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control"
+                                                                        id="quantity_for_upper_dress"></div>
+
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            name='upper_part_dress_quantity'
+                                                                            id='upper_part_dress_quantity' value="0" hidden>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Total Amount for Upper Dress
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control" id='total_for_upper_dress'>
+                                                                        0
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            name="upper_part_dress_total"
+                                                                            id='upper_part_dress_total' value="0" hidden>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
 
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
@@ -118,55 +199,59 @@
                                                                 <div class="form_input_group">
                                                                     <label for="lomba"
                                                                         class="form-label form_input_group_label_important">
-                                                                        লম্বা : <span style="color:red">*</span></label>
+                                                                        লম্বা : </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_lomba" name="panjabi_lomba" >
+                                                                        id="panjabi_lomba" name="panjabi_lomba">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="body"
                                                                         class="form-label form_input_group_label_important">
-                                                                        বডি : <span style="color:red">*</span></label>
+                                                                        বডি :</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_body" name="panjabi_body" >
+                                                                        id="panjabi_body" name="panjabi_body">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="body_luzz"
                                                                         class="form-label form_input_group_label_important">বডি
-                                                                        লুজ : <span style="color:red">*</span></label>
+                                                                        লুজ :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz" >
+                                                                        id="panjabi_body_luzz" name="panjabi_body_luzz">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pet"
                                                                         class="form-label form_input_group_label_important">
-                                                                        পেট : <span style="color:red">*</span></label>
+                                                                        পেট :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_pet" name="panjabi_pet" >
+                                                                        id="panjabi_pet" name="panjabi_pet">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="put"
                                                                         class="form-label form_input_group_label_important">
-                                                                        পুট : <span style="color:red">*</span></label>
+                                                                        পুট :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_put" name="panjabi_put" >
+                                                                        id="panjabi_put" name="panjabi_put">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="hatar_lomba"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হাতার লম্বা : <span
-                                                                            style="color:red">*</span></label>
+                                                                        হাতার লম্বা :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hatar_lomba" name="panjabi_hatar_lomba" >
+                                                                        id="panjabi_hatar_lomba"
+                                                                        name="panjabi_hatar_lomba">
                                                                 </div>
                                                             </div>
 
@@ -175,85 +260,92 @@
                                                                 <div class="form_input_group">
                                                                     <label for="hatar_mukh"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হাতার মুখ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        হাতার মুখ :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh" >
+                                                                        id="panjabi_hatar_mukh" name="panjabi_hatar_mukh">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="kaf"
                                                                         class="form-label form_input_group_label_important">
-                                                                        কাফ : <span style="color:red">*</span></label>
+                                                                        কাফ :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_kaf" name="panjabi_kaf" >
+                                                                        id="panjabi_kaf" name="panjabi_kaf">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="gola"
                                                                         class="form-label form_input_group_label_important">
-                                                                        গলা : <span style="color:red">*</span></label>
+                                                                        গলা :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_gola" name="panjabi_gola" >
+                                                                        id="panjabi_gola" name="panjabi_gola">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="plate_fara"
                                                                         class="form-label form_input_group_label_important">
-                                                                        প্লেট ফাড়া : <span
-                                                                            style="color:red">*</span></label>
+                                                                        প্লেট ফাড়া :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara" >
+                                                                        id="panjabi_plate_fara" name="panjabi_plate_fara">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="kolar_choura"
                                                                         class="form-label form_input_group_label_important">
-                                                                        কলার চউরা : <span
-                                                                            style="color:red">*</span></label>
+                                                                        কলার চউরা :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_kolar_choura" name="panjabi_kolar_choura" >
+                                                                        id="panjabi_kolar_choura"
+                                                                        name="panjabi_kolar_choura">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="plate_choura"
                                                                         class="form-label form_input_group_label_important">
-                                                                        প্লেট চউরা : <span
-                                                                            style="color:red">*</span></label>
+                                                                        প্লেট চউরা :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_plate_choura" name="panjabi_plate_choura" >
+                                                                        id="panjabi_plate_choura"
+                                                                        name="panjabi_plate_choura">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="gher"
                                                                         class="form-label form_input_group_label_important">
-                                                                        ঘের : <span style="color:red">*</span></label>
+                                                                        ঘের :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_gher" name="panjabi_gher" >
+                                                                        id="panjabi_gher" name="panjabi_gher">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="hiff"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হিফ : <span style="color:red">*</span></label>
+                                                                        হিফ :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_hiff" name="panjabi_hiff" >
+                                                                        id="panjabi_hiff" name="panjabi_hiff">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="nich_hata"
                                                                         class="form-label form_input_group_label_important">
-                                                                        নিচ হাতা : <span style="color:red">*</span></label>
+                                                                        নিচ হাতা :
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata" >
+                                                                        id="panjabi_nich_hata" name="panjabi_nich_hata">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -261,9 +353,11 @@
                                                                     <label for="madani_fara"
                                                                         class="form-label form_input_group_label_important">
                                                                         মাদানি ফাড়া :
-                                                                        <span style="color:red">*</span></label>
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_madani_fara" name="panjabi_madani_fara" >
+                                                                        id="panjabi_madani_fara"
+                                                                        name="panjabi_madani_fara">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -271,9 +365,10 @@
                                                                     <label for="mot_mora"
                                                                         class="form-label form_input_group_label_important">
                                                                         মোট মোড়া :
-                                                                        <span style="color:red">*</span></label>
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora" >
+                                                                        id="panjabi_mot_mora" name="panjabi_mot_mora">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -281,9 +376,11 @@
                                                                     <label for="haate_pesting"
                                                                         class="form-label form_input_group_label_important">
                                                                         হাতে পেস্টিং :
-                                                                        <span style="color:red">*</span></label>
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="panjabi_haate_pesting" name="panjabi_haate_pesting" >
+                                                                        id="panjabi_haate_pesting"
+                                                                        name="panjabi_haate_pesting">
                                                                 </div>
                                                             </div>
 
@@ -293,7 +390,7 @@
 
                                                     <div>
                                                         <div class="accordion__heading mt-5">
-                                                            পকেট 
+                                                            পকেট
                                                         </div>
 
                                                         <div class="card p-2 mb-0 ">
@@ -301,9 +398,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="panjabi_buke_pocket_1_ti" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="panjabi_buke_pocket_1_ti"
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             বুকে ১টি পকেট
                                                                         </label>
                                                                     </div>
@@ -311,9 +408,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="panjabi_buke_pocket_2_ti" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="panjabi_buke_pocket_2_ti"
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             বুকে ২টি পকেট
                                                                         </label>
                                                                     </div>
@@ -322,8 +419,7 @@
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="1_pocket_chain" name='pocket[]'>
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                        <label class="form-check-label" for="">
                                                                             ১ পকেটে চেইন
                                                                         </label>
                                                                     </div>
@@ -331,9 +427,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="2_pocket_chain"  name='pocket[]'>
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="2_pocket_chain" name='pocket[]'>
+                                                                        <label class="form-check-label" for="">
                                                                             ২ পকেটে চেইন
                                                                         </label>
                                                                     </div>
@@ -342,8 +437,7 @@
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="pocket_dhaka" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                        <label class="form-check-label" for="">
                                                                             পকেট ঢাকা
                                                                         </label>
                                                                     </div>
@@ -351,9 +445,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="pocket_dhkna" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket_dhkna" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             পকেট ঢাকনা
                                                                         </label>
                                                                     </div>
@@ -361,9 +455,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="kadhe_soldger" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="kadhe_soldger" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             কাধে সোলডার
                                                                         </label>
                                                                     </div>
@@ -371,9 +465,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="hatte_fita" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="hatte_fita" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             হাতে ফিতা
                                                                         </label>
                                                                     </div>
@@ -381,9 +475,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="bon_pocket" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="bon_pocket" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             বন পকেট
                                                                         </label>
                                                                     </div>
@@ -391,9 +485,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="rannar" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="rannar" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             রানার
                                                                         </label>
                                                                     </div>
@@ -401,9 +495,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="bogol_pocket" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="bogol_pocket" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             বগল পকেট
                                                                         </label>
                                                                     </div>
@@ -411,9 +505,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="pocket-1" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-1" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/1.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -423,9 +517,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                            value="pocket-2" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-2" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/2.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -435,9 +529,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-3" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-3" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/3.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -447,9 +541,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                             value="pocket-4" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-4" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/4.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -459,9 +553,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-5" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-5" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/5.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -471,9 +565,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-6" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-6" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/6.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -483,9 +577,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-7" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-7" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/7.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -495,9 +589,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-8" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-8" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/8.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -507,9 +601,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-9" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-9" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/9.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -519,9 +613,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-10" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-10" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/10.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -531,9 +625,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-11" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-11" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/11.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -543,9 +637,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-12" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-12" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/12.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -555,9 +649,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-13" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-13" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/13.jpg') }}"
                                                                                 style="height: 50px ; width:55px;"
                                                                                 alt="images">
@@ -567,9 +661,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-14" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-14" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/14.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -579,9 +673,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-15" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-15" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/15.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -591,9 +685,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-16" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-16" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/16.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:4px ; "
                                                                                 alt="images">
@@ -603,9 +697,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-17" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-17" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/17.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -615,9 +709,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-18" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-18" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/18.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -627,9 +721,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-19" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-19" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/19.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -639,9 +733,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="pocket-20" id="" name="pocket[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="pocket-20" id=""
+                                                                            name="pocket[]">
+                                                                        <label class="form-check-label" for="">
                                                                             <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/20.jpg') }}"
                                                                                 style="height: 50px ; width:50px; margin-left:3px ; "
                                                                                 alt="images">
@@ -665,8 +759,7 @@
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
                                                                             value="round" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                        <label class="form-check-label" for="">
                                                                             রাউন্ড
                                                                         </label>
                                                                     </div>
@@ -674,9 +767,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="sherwani" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="sherwani" id=""
+                                                                            name="colar[]">
+                                                                        <label class="form-check-label" for="">
                                                                             শেরওয়ানি
                                                                         </label>
                                                                     </div>
@@ -684,9 +777,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="single" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="single" id="" name="colar[]">
+                                                                        <label class="form-check-label" for="">
                                                                             সিঙ্গেল
                                                                         </label>
                                                                     </div>
@@ -694,9 +786,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="double" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="double" id="" name="colar[]">
+                                                                        <label class="form-check-label" for="">
                                                                             ডাবল
                                                                         </label>
                                                                     </div>
@@ -704,9 +795,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="band" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="band" id="" name="colar[]">
+                                                                        <label class="form-check-label" for="">
                                                                             ব্যান্ড
                                                                         </label>
                                                                     </div>
@@ -714,9 +804,8 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="square" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="square" id="" name="colar[]">
+                                                                        <label class="form-check-label" for="">
                                                                             স্কয়ার
                                                                         </label>
                                                                     </div>
@@ -724,9 +813,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="site_hem" id="" name="colar[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="site_hem" id=""
+                                                                            name="colar[]">
+                                                                        <label class="form-check-label" for="">
                                                                             সাইট হেম
                                                                         </label>
                                                                     </div>
@@ -748,8 +837,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" 
-                                                                                    value="shirt_colar" id="" name="gola[]">
+                                                                                    type="checkbox" value="shirt_colar"
+                                                                                    id="" name="gola[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     শার্ট কলার
@@ -759,7 +848,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="kof" id="" name="gola[]">
+                                                                                    type="checkbox" value="kof"
+                                                                                    id="" name="gola[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     কফ
@@ -769,7 +859,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="single" id="" name="gola[]">
+                                                                                    type="checkbox" value="single"
+                                                                                    id="" name="gola[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     সিঙ্গেল
@@ -779,7 +870,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="bogol" id="" name="gola[]">
+                                                                                    type="checkbox" value="bogol"
+                                                                                    id="" name="gola[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     বোগল
@@ -789,7 +881,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="gol-gola" id="" name="gola[]">
+                                                                                    type="checkbox" value="gol-gola"
+                                                                                    id="" name="gola[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     গোল গলা
@@ -811,7 +904,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="colar" id="" name="pypin[]">
+                                                                                    type="checkbox" value="colar"
+                                                                                    id="" name="pypin[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     কলার
@@ -821,7 +915,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate" id="" name="pypin[]">
+                                                                                    type="checkbox" value="plate"
+                                                                                    id="" name="pypin[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     প্লেট
@@ -831,7 +926,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="hata" id="" name="pypin[]">
+                                                                                    type="checkbox" value="hata"
+                                                                                    id="" name="pypin[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     হাতা
@@ -841,7 +937,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate_er_ek_side" id="" name="pypin[]">
+                                                                                    type="checkbox"
+                                                                                    value="plate_er_ek_side"
+                                                                                    id="" name="pypin[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     প্লেটের এক সাইড
@@ -867,7 +965,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate-1" id="" name="plate[]">
+                                                                                    type="checkbox" value="plate-1"
+                                                                                    id="" name="plate[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
 
@@ -881,7 +980,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate-2" id="" name="plate[]">
+                                                                                    type="checkbox" value="plate-2"
+                                                                                    id="" name="plate[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/2.png') }}"
@@ -894,7 +994,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate-3" id="" name="plate[]">
+                                                                                    type="checkbox" value="plate-3"
+                                                                                    id="" name="plate[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/3.png') }}"
@@ -907,7 +1008,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate-4" id="" name="plate[]">
+                                                                                    type="checkbox" value="plate-4"
+                                                                                    id="" name="plate[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/plate_img/4.png') }}"
@@ -920,7 +1022,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate_double" id="" name="plate[]">
+                                                                                    type="checkbox" value="plate_double"
+                                                                                    id="" name="plate[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     ডাবল
@@ -942,7 +1045,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="kaff-1" id="" name="kaff[]">
+                                                                                    type="checkbox" value="kaff-1"
+                                                                                    id="" name="kaff[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/kaf_img/1.png') }}"
@@ -955,7 +1059,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="kaff-2" id="" name="kaff[]">
+                                                                                    type="checkbox" value="kaff-2"
+                                                                                    id="" name="kaff[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/kaf_img/2.png') }}"
@@ -968,7 +1073,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="kaff-3" id="" name="kaff[]">
+                                                                                    type="checkbox" value="kaff-3"
+                                                                                    id="" name="kaff[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/kaf_img/3.png') }}"
@@ -982,7 +1088,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="single_kaff" id="" name="kaff[]">
+                                                                                    type="checkbox" value="single_kaff"
+                                                                                    id="" name="kaff[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     সিঙ্গেল কাফ
@@ -993,7 +1100,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox"value="double_kaff_ling" id="" name="kaff[]">
+                                                                                    type="checkbox"value="double_kaff_ling"
+                                                                                    id="" name="kaff[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     ডাবল কাফ লিং
@@ -1017,9 +1125,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="single" id="" name="pasting[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="single" id=""
+                                                                            name="pasting[]">
+                                                                        <label class="form-check-label" for="">
                                                                             সিঙ্গেল
                                                                         </label>
                                                                     </div>
@@ -1027,9 +1135,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="double" id="" name="pasting[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="double" id=""
+                                                                            name="pasting[]">
+                                                                        <label class="form-check-label" for="">
                                                                             ডাবল
                                                                         </label>
                                                                     </div>
@@ -1037,9 +1145,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="haate_pasting" id="" name="pasting[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="haate_pasting" id=""
+                                                                            name="pasting[]">
+                                                                        <label class="form-check-label" for="">
                                                                             হাতে পেস্টিং
                                                                         </label>
                                                                     </div>
@@ -1047,9 +1155,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="botam_plate" id="" name="pasting[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="botam_plate" id=""
+                                                                            name="pasting[]">
+                                                                        <label class="form-check-label" for="">
                                                                             বোতাম প্লেটে
                                                                         </label>
                                                                     </div>
@@ -1072,7 +1180,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="colar" id="" name="laise[]">
+                                                                                    type="checkbox" value="colar"
+                                                                                    id="" name="laise[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     কলার
@@ -1083,7 +1192,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="plate" id="" name="laise[]">
+                                                                                    type="checkbox" value="plate"
+                                                                                    id="" name="laise[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     প্লেট
@@ -1094,7 +1204,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox"value="hata" id="" name="laise[]">
+                                                                                    type="checkbox"value="hata"
+                                                                                    id="" name="laise[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     হাতা
@@ -1106,7 +1217,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="buk" id="" name="laise[]">
+                                                                                    type="checkbox" value="buk"
+                                                                                    id="" name="laise[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     বুক
@@ -1130,7 +1242,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="tira" id="" name="tira[]">
+                                                                                    type="checkbox" value="tira"
+                                                                                    id="" name="tira[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     তিরা
@@ -1141,7 +1254,9 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="mora_double_chap_shelay" id="" name="tira[]">
+                                                                                    type="checkbox"
+                                                                                    value="mora_double_chap_shelay"
+                                                                                    id="" name="tira[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     মোড়া ডাবল চাপ সেলাই
@@ -1152,7 +1267,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="niche_round" id="" name="tira[]">
+                                                                                    type="checkbox" value="niche_round"
+                                                                                    id="" name="tira[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     নিচে রাউন্ড
@@ -1163,7 +1279,8 @@
                                                                         <div class="col-md-4">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input"
-                                                                                    type="checkbox" value="v_tira" id="" name="tira[]">
+                                                                                    type="checkbox" value="v_tira"
+                                                                                    id="" name="tira[]">
                                                                                 <label class="form-check-label"
                                                                                     for="">
                                                                                     ভি-তিরা
@@ -1186,9 +1303,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="shamna" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="shamna" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             সামনা
                                                                         </label>
                                                                     </div>
@@ -1196,9 +1313,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="kalar" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="kalar" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             কালার
                                                                         </label>
                                                                     </div>
@@ -1206,9 +1323,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="plate" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="plate" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             প্লেট
                                                                         </label>
                                                                     </div>
@@ -1216,9 +1333,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="kop" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="kop" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             কপ
                                                                         </label>
                                                                     </div>
@@ -1227,9 +1344,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="gola" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="gola" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             গলা
                                                                         </label>
                                                                     </div>
@@ -1237,9 +1354,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="mora" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="mora" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             মোড়া
                                                                         </label>
                                                                     </div>
@@ -1247,9 +1364,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="kandi" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="kandi" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             কান্দি
                                                                         </label>
                                                                     </div>
@@ -1257,9 +1374,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="dui_pocket" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="dui_pocket" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             দুই পকেট
                                                                         </label>
                                                                     </div>
@@ -1267,9 +1384,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="buk_pocket" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="buk_pocket" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             বুক পকেট
                                                                         </label>
                                                                     </div>
@@ -1277,9 +1394,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="haater_muhuri" id="" name="full[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="haater_muhuri" id=""
+                                                                            name="full[]">
+                                                                        <label class="form-check-label" for="">
                                                                             হাতের মুহুরি
                                                                         </label>
                                                                     </div>
@@ -1288,7 +1405,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div>
                                                         <div class="accordion__heading mt-5">
                                                             বোতাম
@@ -1298,9 +1415,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="chain_botam" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="chain_botam" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             চেইন বোতাম
                                                                         </label>
                                                                     </div>
@@ -1308,9 +1425,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="customar_er_deya_botam" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="customar_er_deya_botam"
+                                                                            id="" name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             কাস্টমারের দেয়া বোতাম
                                                                         </label>
                                                                     </div>
@@ -1318,9 +1435,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="kath_botam" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="kath_botam" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             কাঠ বোতাম
                                                                         </label>
                                                                     </div>
@@ -1328,9 +1445,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="metal_botam_boro" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="metal_botam_boro" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             মেটাল বোতাম(বড়)
                                                                         </label>
                                                                     </div>
@@ -1338,9 +1455,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="normal_botam" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="normal_botam" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             নরমাল বোতাম
                                                                         </label>
                                                                     </div>
@@ -1348,9 +1465,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="design_botam" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="design_botam" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             ডিজাইন বোতাম
                                                                         </label>
                                                                     </div>
@@ -1360,9 +1477,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="metal_botam_choto" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="metal_botam_choto" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             মেটাল বোতাম(ছোট)
                                                                         </label>
                                                                     </div>
@@ -1371,9 +1488,9 @@
                                                                 <div class="col-md-3">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
-                                                                        value="snap_botam" id="" name="botam[]">
-                                                                        <label class="form-check-label"
-                                                                            for="">
+                                                                            value="snap_botam" id=""
+                                                                            name="botam[]">
+                                                                        <label class="form-check-label" for="">
                                                                             স্নাপ বোতাম
                                                                         </label>
                                                                     </div>
@@ -1398,63 +1515,129 @@
                                                 data-bs-parent="#sub-accordionExample">
 
                                                 <div class="accordion-body accordion__body">
+
+                                                    <div class="row dress_input_pant">
+                                                        <div class="col-md-6 mb-3">
+                                                            <div>
+                                                                <label for="">
+                                                                    Dress Name
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="col-md-6 mb-3">
+                                                                <input type="text" name="selected_check_boxes_pant"
+                                                                    id="selected_check_boxes_pant" class="form-control"
+                                                                    readonly />
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Quantity For Lower Dress
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control"
+                                                                        id="quantity_for_lower_dress"></div>
+
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            name="lower_part_dress_quantity"
+                                                                            id="lower_part_dress_quantity" hidden>
+                                                                    </div>
+
+ 
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div>
+                                                                        <label for="">
+                                                                            Total Amount for Lower Dress
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-control"
+                                                                        id='total_for_lower_dress'>
+                                                                        0
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="number"
+                                                                            id="lower_part_dress_total"
+                                                                            name="lower_part_dress_total"
+                                                                            hidden
+                                                                            >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="card p-2 mb-0">
                                                         <div class="row">
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_lomba"
                                                                         class="form-label form_input_group_label_important">
-                                                                        লম্বা : <span style="color:red">*</span></label>
+                                                                        লম্বা :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_lomba" name="pant_lomba" >
+                                                                        id="pant_lomba" name="pant_lomba">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_payer_mukh"
                                                                         class="form-label form_input_group_label_important">
-                                                                        পায়ের মুখ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        পায়ের মুখ :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_payer_mukh" name="pant_payer_mukh" >
+                                                                        id="pant_payer_mukh" name="pant_payer_mukh">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_high"
                                                                         class="form-label form_input_group_label_important">বডি
-                                                                        হাই : <span style="color:red">*</span></label>
+                                                                        হাই :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_high" name="pant_high" >
+                                                                        id="pant_high" name="pant_high">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_thai_luz"
                                                                         class="form-label form_input_group_label_important">
-                                                                        ঘের/থাই লুজ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        ঘের/থাই লুজ :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_thai_luz" name="pant_thai_luz" >
+                                                                        id="pant_thai_luz" name="pant_thai_luz">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_komor"
                                                                         class="form-label form_input_group_label_important">
-                                                                        কোমর : <span style="color:red">*</span></label>
+                                                                        কোমর :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_komor" name="pant_komor" >
+                                                                        id="pant_komor" name="pant_komor">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form_input_group">
                                                                     <label for="pant_belt_type"
                                                                         class="form-label form_input_group_label_important">
-                                                                        বেল্ট টাইপ : <span
-                                                                            style="color:red">*</span></label>
+                                                                        বেল্ট টাইপ :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_belt_type" name="pant_belt_type" >
+                                                                        id="pant_belt_type" name="pant_belt_type">
                                                                 </div>
                                                             </div>
 
@@ -1463,9 +1646,11 @@
                                                                 <div class="form_input_group">
                                                                     <label for="pant_hiff"
                                                                         class="form-label form_input_group_label_important">
-                                                                        হিফ : <span style="color:red">*</span></label>
+                                                                        হিফ :
+
+                                                                    </label>
                                                                     <input type="text" class="form-control"
-                                                                        id="pant_hiff" name="pant_hiff" >
+                                                                        id="pant_hiff" name="pant_hiff">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1477,9 +1662,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="1_pocket_chain" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="1_pocket_chain" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         ১ পকেটে চেইন
                                                                     </label>
                                                                 </div>
@@ -1487,9 +1672,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="2_pocket_chain" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="2_pocket_chain" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         ২ পকেট চেইন
                                                                     </label>
                                                                 </div>
@@ -1498,9 +1683,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="mobile_pocket_1_ti" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="mobile_pocket_1_ti" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         মোবাইল পকেট ১টি
                                                                     </label>
                                                                 </div>
@@ -1508,9 +1693,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pechone_pocket_1_ti" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pechone_pocket_1_ti" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         পেছনে ১টি পকেট
                                                                     </label>
                                                                 </div>
@@ -1518,9 +1703,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pechone_pocket_2_ti" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pechone_pocket_2_ti" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         পেছনে ২টি পকেট
                                                                     </label>
                                                                 </div>
@@ -1528,9 +1713,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="1_tiken" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="1_tiken" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         ১ টিকেন
                                                                     </label>
                                                                 </div>
@@ -1538,9 +1723,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="2_tiken" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="2_tiken" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         ২ টিকেন
                                                                     </label>
                                                                 </div>
@@ -1548,9 +1733,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="tiken_chara" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="tiken_chara" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         টিকেন ছাড়া
                                                                     </label>
                                                                 </div>
@@ -1558,9 +1743,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="Geans_pant_golder_shuta" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="Geans_pant_golder_shuta" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         জিন্স প্যান্ট : গোল্ডেন সূতা
                                                                     </label>
                                                                 </div>
@@ -1568,9 +1753,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="Geans_pant_same_shuta" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="Geans_pant_same_shuta" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         জিন্স প্যান্ট : সেইম সূতা
                                                                     </label>
                                                                 </div>
@@ -1578,9 +1763,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="shamne_chain" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="shamne_chain" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         সামনে চেইন
                                                                     </label>
                                                                 </div>
@@ -1588,9 +1773,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="mobile_pocket_2_ti" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="mobile_pocket_2_ti" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         মোবাইল পকেট ২টি
                                                                     </label>
                                                                 </div>
@@ -1598,9 +1783,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_1" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_1" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/19.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1610,9 +1795,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_2" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_2" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/20.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1622,9 +1807,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_3" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_3" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/21.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1637,9 +1822,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_4" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_4" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/22.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1650,9 +1835,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_5" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_5" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/23.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1663,9 +1848,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_6" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_6" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/24.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1675,9 +1860,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_7" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_7" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/25.jpg') }}"
                                                                             style="height: 50px ; width:42px; margin-left:7px"
                                                                             alt="images">
@@ -1687,9 +1872,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_8" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_8" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/26.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1699,9 +1884,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_9" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_9" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/27.jpg') }}"
                                                                             style="height: 50px ; width:46px; margin-left : 4px"
                                                                             alt="images">
@@ -1711,9 +1896,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_10" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_10" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/28.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1723,9 +1908,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_11" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_11" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/30.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px "
                                                                             alt="images">
@@ -1735,9 +1920,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_12" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_12" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/31.jpg') }}"
                                                                             style="height: 50px ; width:52px; margin-left : 2px;"
                                                                             alt="images">
@@ -1747,9 +1932,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_13" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_13" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/32.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px "
                                                                             alt="images">
@@ -1759,9 +1944,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_14" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_14" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/33.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px"
                                                                             alt="images">
@@ -1771,9 +1956,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_15" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_15" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/34.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1783,9 +1968,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_16" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_16" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/35.jpg') }}"
                                                                             style="height: 50px ; width:50px; margin-left : 3px; "
                                                                             alt="images">
@@ -1795,9 +1980,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_17" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_17" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/36.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1807,9 +1992,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_18" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_18" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/37.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1819,9 +2004,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_19" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_19" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/38.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1831,9 +2016,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_20" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_20" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/39.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1843,9 +2028,9 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="checkbox"
-                                                                    value="pant_pocket_21" id="" name="pant_pocket[]">
-                                                                    <label class="form-check-label"
-                                                                        for="">
+                                                                        value="pant_pocket_21" id=""
+                                                                        name="pant_pocket[]">
+                                                                    <label class="form-check-label" for="">
                                                                         <img src="{{ asset('tailerStaticTemplate/assets/essential_Images/pocket-update/40.jpg') }}"
                                                                             style="height: 50px ; width:55px;"
                                                                             alt="images">
@@ -1882,8 +2067,8 @@
                                                         <label for="majurir_poriman"
                                                             class="form-label form_input_group_label_important">মজুরির
                                                             পরিমান : <span style="color:red">*</span></label>
-                                                        <input type="text" class="form-control" id="majurir_poriman"
-                                                            name="majurir_poriman" required>
+                                                        <input type="text" class="form-control"
+                                                            id="majurir_poriman" name="majurir_poriman" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -1901,8 +2086,9 @@
                                                             class="form-label form_input_group_label_important">অর্ডারের
                                                             তারিখ
                                                             : <span style="color:red">*</span></label>
-                                                       
-                                                        <input id="datepicker1" class="form-control"  name="orderer_tarikh" required/>
+
+                                                        <input id="datepicker1" class="form-control"
+                                                            name="orderer_tarikh" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -1910,8 +2096,9 @@
                                                         <label for="delivery_tarikh"
                                                             class="form-label form_input_group_label_important">ডেলিভারির
                                                             তারিখ : <span style="color:red">*</span></label>
-                            
-                                                            <input id="datepicker2" class="form-control"  name="delivery_tarikh" required/>
+
+                                                        <input id="datepicker2" class="form-control"
+                                                            name="delivery_tarikh" required />
                                                     </div>
 
                                                 </div>
@@ -1955,6 +2142,8 @@
             </form>
 
         </div>
+
+
     @endsection
 
 

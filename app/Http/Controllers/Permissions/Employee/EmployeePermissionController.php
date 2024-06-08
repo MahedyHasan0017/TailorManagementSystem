@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Permissions\Employee;
 
 use App\Http\Controllers\Controller;
+use App\Models\ClothOrder;
 use App\Models\Employee;
 use App\Models\Permission;
 use Illuminate\Http\Request;
@@ -76,7 +77,7 @@ class EmployeePermissionController extends Controller
     }
 
     public function vendor_employee_list(Request $request , $mobile){
-        $employees = Employee::where('vendor_mobile',$mobile)->where('status',1)->get() ; 
+        $employees = Employee::where('vendor_mobile',$mobile)->get() ; 
         $employee_count = Employee::where('vendor_mobile',$mobile)->where('designation','tailor')->get() ; 
         return view('vendor.permissions.employee.employee_list',compact(['employees','employee_count'])) ; 
     }
@@ -132,6 +133,20 @@ class EmployeePermissionController extends Controller
         }
 
     }
+
+
+
+    public function vendor_work_distribution_list(){
+
+        $mobile_number = Auth::guard('vendor')->user()->mobile_number ; 
+
+        $cloth_orders =  ClothOrder::where('vendor_number', $mobile_number)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('vendor.permissions.work_distribution.work_distribution_list',compact('cloth_orders')) ;
+    } 
+
 
 
     // public function register(){

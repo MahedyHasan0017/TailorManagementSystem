@@ -22,6 +22,12 @@ return new class extends Migration
             $table->string('customer_mobile')->nullable();
             $table->string('customer_email')->nullable();
             $table->text('customer_address')->nullable();
+            $table->string('status')->nullable();
+            $table->string('assigned_employee_mobile_number')->nullable();
+            $table->string('wages_bill')->nullable();
+            $table->string('total_bill')->nullable();
+            $table->boolean('is_assigned')->default(false);
+
             $table->timestamps();
         });
     }

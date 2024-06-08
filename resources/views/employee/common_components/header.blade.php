@@ -16,6 +16,7 @@
         href="{{ asset('tailerStaticTemplate/assets/images/favicon.png') }}">
 
 
+        <link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet">
 
 
 

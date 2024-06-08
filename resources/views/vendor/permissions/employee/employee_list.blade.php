@@ -31,10 +31,11 @@
                         <table id="example" class="display" style="width:100%">
                             <thead class="accordion__heading">
                                 <tr>
-                                    <th>employee id</th>
+                                    {{-- <th>employee id</th> --}}
                                     <th>employee name</th>
                                     <th>employee mobile number/email</th>
                                     <th>employee designation</th>
+                                    <th>employee status</th>
                                     <th>view details</th>
                                     <!-- <th>অর্ডারের তারিখ</th>
                                     <th>ডেলিভারির তারিখ </th>
@@ -46,10 +47,17 @@
 
                                 @foreach ($employees as  $employee)
                                 <tr>
-                                    <td>{{$employee->id}}</td>
+
                                     <td>{{$employee->name}}</td>
-                                    <th>{{$employee->email}}</th>
-                                    <th>{{$employee->designation}}</th>
+                                    <td>{{$employee->email}}</td>
+                                    <td>{{$employee->designation}}</td>
+                                    <td>
+                                        @if ($employee->status == 1)
+                                            <span class="badge bg-primary">Active</span>
+                                        @else  
+                                        <span class="badge bg-danger">In active</span>
+                                        @endif
+                                    </td>
                                     <td><a href="{{route('vendor.permission.employee.single',['id' => $employee->id])}}" class="btn btn-primary">view details</a></td>
                                 </tr>
                                 @endforeach

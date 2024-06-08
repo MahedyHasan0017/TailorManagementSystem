@@ -108,6 +108,27 @@
                             <span class="valuee">{{ $order_detail->order_id }}
                             </span>
                         </h4>
+
+                        <h5 class="key_value key_value_calc">
+                            <span class="">মোট - </span>
+                            <span class="valuee">
+
+                                {{ en2bn((int) ($order_detail->cloth_order_delivary->majurir_poriman + $order_detail->cloth_name->total_of_upper_and_lower_part_dress)) }}
+
+                            </span>
+                        </h5>
+                        <h5 class="key_value key_value_calc">
+                            <span>জমা - </span>
+                            <span class="valuee">
+                                {{ en2bn((int) $order_detail->cloth_order_delivary->nogod_prodan) }}
+                            </span>
+                        </h5>
+                        <h5 class="key_value key_value_calc">
+                            <span> বাকি - </span>
+                            <span
+                                class="valuee">{{ en2bn((int) ((int) ($order_detail->cloth_order_delivary->majurir_poriman + $order_detail->cloth_name->total_of_upper_and_lower_part_dress)) - ((int) $order_detail->cloth_order_delivary->nogod_prodan)) }}
+                            </span>
+                        </h5>
                     </div>
                 </div>
 

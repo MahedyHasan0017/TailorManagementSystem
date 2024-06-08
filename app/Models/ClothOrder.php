@@ -19,8 +19,14 @@ class ClothOrder extends Model
         'customer_name',
         'customer_mobile',
         'customer_email',
-        'customer_address'
+        'customer_address',
+        'status',
+        'assigned_employee_mobile_number',
+        'wages_bill',
+        'total_bill',
+        'is_assigned'
     ];
+
 
     public function cloth_name(){
         return $this->hasOne(ClothName::class) ; 

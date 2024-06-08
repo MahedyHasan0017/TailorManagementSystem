@@ -13,13 +13,16 @@ return new class extends Migration
             $table->string('employee_id');
             $table->string('full_name');
             $table->string('mobile_number')->unique();
-            $table->string('vendor_mobile') ; 
+            $table->string('vendor_mobile');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('status')->default(1);
             $table->string('designation')->nullable();
+            $table->string('employee_main_balance')->nullable();
+            $table->string('employee_paid_balance')->nullable();
+            $table->string('employee_rest_balance')->nullable();
             $table->timestamp('draft_at')->nullable();
             $table->timestamps();
         });

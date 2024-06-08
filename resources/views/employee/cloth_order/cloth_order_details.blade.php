@@ -104,10 +104,29 @@
                             <span class="valuee">{{ $order_detail->vendor_number }}
                             </span>
                         </h4>
-                        <h4 class="key_value">
+                        {{-- <h4 class="key_value">
                             <span class="valuee">{{ $order_detail->order_id }}
                             </span>
-                        </h4>
+                        </h4> --}}
+                        <h5 class="key_value key_value_calc">
+                            <span class="">মোট - </span>
+                            <span class="valuee">
+
+                                {{ en2bn((int) ($order_detail->cloth_order_delivary->majurir_poriman + $order_detail->cloth_name->total_of_upper_and_lower_part_dress)) }}
+
+                            </span>
+                        </h5>
+                        <h5 class="key_value key_value_calc">
+                            <span>জমা - </span>
+                            <span class="valuee">
+                                {{ en2bn((int) $order_detail->cloth_order_delivary->nogod_prodan) }}
+                            </span>
+                        </h5>
+                        <h5 class="key_value key_value_calc">
+                            <span> বাকি - </span>
+                            <span class="valuee">{{ en2bn((int)((int) ($order_detail->cloth_order_delivary->majurir_poriman + $order_detail->cloth_name->total_of_upper_and_lower_part_dress)) - ((int) ($order_detail->cloth_order_delivary->nogod_prodan))) }}
+                            </span>
+                        </h5>
                     </div>
                 </div>
 
@@ -227,33 +246,37 @@
             </div>
 
 
-            <div class="row">
-                <div class="col-6 mt-3">
-                    <h4 class="key_value">
-                        <span class="key">
-                            <div>
-                                পাঞ্জাবী / শার্ট
-                            </div>
-                            <div>
-                                :
-                            </div>
-                        </span><span class="value">{{ $order_detail->cloth_name->cloth_name }}
-                        </span>
-                    </h4>
-                    <h4 class="key_value">
-                        <span class="key">
 
-                            <div>
-                                সংখ্যা
-                            </div>
-                            <div>
-                                :
-                            </div>
-                        </span><span class="value">{{ $order_detail->cloth_name->number_of_cloth }}
-                        </span>
-                    </h4>
+
+            @if ($order_detail->cloth_name->upper_part_dress_name != null)
+                <div class="row">
+                    <div class="col-6 mt-3">
+                        <h4 class="key_value">
+                            <span class="key">
+                                <div>
+                                    পাঞ্জাবী / শার্ট
+                                </div>
+                                <div>
+                                    :
+                                </div>
+                            </span><span class="value">{{ $order_detail->cloth_name->upper_part_dress_name }}
+                            </span>
+                        </h4>
+                        <h4 class="key_value">
+                            <span class="key">
+
+                                <div>
+                                    সংখ্যা
+                                </div>
+                                <div>
+                                    :
+                                </div>
+                            </span><span class="value">{{ $order_detail->cloth_name->quantity_of_upper_part_dress }}
+                            </span>
+                        </h4>
+                    </div>
                 </div>
-            </div>
+            @endif
 
             <div class="row panjabi_measurement_parent">
 
@@ -689,7 +712,7 @@
                     </div>
                 @endif
 
-                @if (count($golas) != 0 )
+                @if (count($golas) != 0)
                     <div class="col-md-6 col-lg-4 col-4 mt-2 asset_info">
                         <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
                             <h6 class="key_value">
@@ -921,7 +944,7 @@
                                 <div>
                                     :
                                 </div>
-                            </span><span class="value">{{ $order_detail->cloth_name->cloth_name }}
+                            </span><span class="value">{{ $order_detail->cloth_name->lower_part_dress_name }}
                             </span>
                         </h4>
                         <h4 class="key_value">
@@ -932,7 +955,7 @@
                                 <div>
                                     :
                                 </div>
-                            </span><span class="value">{{ $order_detail->cloth_name->number_of_cloth }}
+                            </span><span class="value">{{ $order_detail->cloth_name->quantity_of_lower_part_dress }}
                             </span>
                         </h4>
                     </div>
@@ -1088,28 +1111,28 @@
 
 
             @if (count($pant_pockets) != 0)
-            <div class="row asset_info_heading">
-                <div class="col-md-6 col-lg-4 col-6 mt-2 asset_info">
-                    <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
-                        <h6 class="key_value">
-                            <span class="key__for__measurements__with__loop">
-                                <div>
-                                    পকেট
-                                </div>
-                                <div>
-                                    :
-                                </div>
-                            </span><span class="value__for__measurements__with__loop">
-                                @foreach ($pant_pockets as $pant_pocket)
+                <div class="row asset_info_heading">
+                    <div class="col-md-6 col-lg-4 col-6 mt-2 asset_info">
+                        <div class="panjabi_measurement_unit bg_transparent_panjabi_measurement_unit">
+                            <h6 class="key_value">
+                                <span class="key__for__measurements__with__loop">
                                     <div>
-                                        {{ $pant_pocket->pant_pocket_name }}
+                                        পকেট
                                     </div>
-                                @endforeach
-                            </span>
-                        </h6>
+                                    <div>
+                                        :
+                                    </div>
+                                </span><span class="value__for__measurements__with__loop">
+                                    @foreach ($pant_pockets as $pant_pocket)
+                                        <div>
+                                            {{ $pant_pocket->pant_pocket_name }}
+                                        </div>
+                                    @endforeach
+                                </span>
+                            </h6>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endif
 
             <div class="row our_text">

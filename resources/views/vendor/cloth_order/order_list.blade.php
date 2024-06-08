@@ -71,7 +71,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                        name="order_number"> -->
+                                                                            name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important"> শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                        name="order_number"> -->
+                                                                            name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -93,7 +93,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                        name="order_number"> -->
+                                                                            name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -167,7 +167,8 @@
                             <tbody>
                                 @foreach ($cloth_orders as $cloth_order)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $loop->index + 1 }}</td>
+                                        {{-- <td>{{ $cloth_order->id }}</td> --}}
                                         <td>{{ $cloth_order->customer_name }}</td>
                                         <td>
 
@@ -211,28 +212,19 @@
                                         <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
 
                                         <td class="action_buttons_in_tablee">
-                                            <span><a href="{{ route('vendor.order.details.view', ['id' => $cloth_order->id]) }}"
-                                                    class="btn btn-primary">view</a></span>
+                                            <span>
+                                                <a href="{{ route('vendor.order.details.view', ['id' => $cloth_order->id]) }}"
+                                                    class="btn btn-sm btn-primary w-100">
+                                                    view
+                                                </a>
+                                            </span>
                                             <span><a href="{{ route('vendor.order.details.delete', ['id' => $cloth_order->id]) }}"
-                                                    class="btn btn-danger">delete</a></span>
+                                                    class="btn btn-danger btn-sm w-100 mt-1">delete</a></span>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
-                            <!-- <tfoot>
-                                                            <tr>
-                                                                <th>Name</th>
-                                                                <th>Position</th>
-                                                                <th>Office</th>
-                                                                <th>Age</th>
-                                                                <th>Start date</th>
-                                                                <th>Salary</th>
-                                                                <td>$313,500</td>
-                                                            </tr>
-                                                        </tfoot> -->
                         </table>
-
-
                     </div>
                 </div>
             </div>

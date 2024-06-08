@@ -334,8 +334,6 @@ class OrderAcceptingController extends Controller
         ]);
 
 
-        // dd($request->all()) ; 
-
         $cloth_order->save();
 
         if ($cloth_order) {
@@ -372,7 +370,6 @@ class OrderAcceptingController extends Controller
             ]);
 
             $cloth_delivary->save();
-
 
             $panjabi_measurement = PanjabiMeasurement::create([
                 'cloth_order_id' => $cloth_order->id,
@@ -528,8 +525,6 @@ class OrderAcceptingController extends Controller
                 }
             }
 
-
-
             $pant_measurement = PantMeasurement::create([
                 'cloth_order_id' => $cloth_order->id,
                 'pant_lomba' => $data['pant_lomba'],
@@ -542,8 +537,6 @@ class OrderAcceptingController extends Controller
             ]);
 
             $pant_measurement->save();
-
-
 
             if ($pant_measurement) {
 
@@ -582,6 +575,8 @@ class OrderAcceptingController extends Controller
 
         $data = $request->all();
 
+
+
         $cloth_order = ClothOrder::create([
             "shop_name" => "ABCD",
             'order_id' => $order_number,
@@ -594,23 +589,22 @@ class OrderAcceptingController extends Controller
             "customer_address" => $data['customer_contact_address']
         ]);
 
-
-        $num_of_cloth = $request->input('number_of_cloth', []);
-        $num_of_cloth = array_filter($num_of_cloth, fn ($value) => !is_null($value) && $value !== '');
-        $num_of_cloth = array_values($num_of_cloth);
-        $num_of_cloth = $num_of_cloth[0];
-
-
         // dd($request->all()) ; 
 
         $cloth_order->save();
 
         if ($cloth_order) {
 
+
             $cloth_name = ClothName::create([
-                'cloth_name' => $data['cloth_full_name'],
                 'cloth_order_id' => $cloth_order->id,
-                'number_of_cloth' => $num_of_cloth,
+                'upper_part_dress_name' => $data['selected_check_boxes'],
+                'quantity_of_upper_part_dress' => $data['upper_part_dress_quantity'],
+                'total_upper_part_dress' => $data['upper_part_dress_total'],
+                'lower_part_dress_name' => $data['selected_check_boxes_pant'],
+                'quantity_of_lower_part_dress' => $data['lower_part_dress_quantity'],
+                'total_lower_part_dress' => $data['lower_part_dress_total'],
+                'total_of_upper_and_lower_part_dress' => $data['total_of_upper_and_lower_part_dress']
             ]);
 
             $cloth_name->save();
@@ -826,7 +820,7 @@ class OrderAcceptingController extends Controller
         $user_employee = Auth::guard('employee')->user();
 
         if ($user_employee != null) {
-            return redirect()->route('employee.order.accepting.list', ['mobile_number' => $user_employee->mobile_number]);
+            return redirect()->route('employee.order.accepting.list', ['vendor_id' => $user_employee->vendor_mobile, 'employee_number' => $user_employee->mobile_number]);
         }
     }
 
@@ -842,9 +836,6 @@ class OrderAcceptingController extends Controller
     public function vendor_order_details_view(Request $request, $id)
     {
         $order_detail = ClothOrder::where('id', $id)->first();
-
-        // dd($order_detail) ; 
-
         return view('vendor.cloth_order.cloth_order_details', compact('order_detail'));
     }
 
@@ -913,17 +904,27 @@ class OrderAcceptingController extends Controller
     public function vendor_order_accepted_list(Request $request, $mobile_number)
     {
 
-        $cloth_orders = ClothOrder::where('vendor_number', $mobile_number)->get();
+        // $cloth_orders = ClothOrder::where('vendor_number', $mobile_number)->orderBy('id','desc')->get();
 
         // dd($cloth_orders) ; 
+
+
+        $orders =  ClothOrder::where('vendor_number', $mobile_number)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $cloth_orders = $orders;
 
         return view('vendor.cloth_order.order_list', compact('cloth_orders'));
     }
 
 
-    public function employee_order_accepted_list(Request $request, $mobile_number)
+    public function employee_order_accepted_list(Request $request, $vendor_id, $employee_number)
     {
-        $cloth_orders = ClothOrder::where('employee_number', $mobile_number)->get();
+
+        $cloth_orders = ClothOrder::where('employee_number', $employee_number)->orderBy('created_at', 'desc')
+            ->get();
+
         return view('employee.cloth_order.order_list', compact('cloth_orders'));
     }
 }
