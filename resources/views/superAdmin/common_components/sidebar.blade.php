@@ -203,7 +203,7 @@
 
                             <li class="sidebar-item"><a href="{{ route('auth.super_admin.list.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
-                                        Admin List
+                                        System Admin
                                     </span></a></li>
                             <li class="sidebar-item"><a href="{{ route('auth.manager.list.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
@@ -345,11 +345,10 @@
                                     </span></a></li>
 
 
-                            <li class="sidebar-item"><a
-                                    href="{{ route('admin.dress.settings') }}"
-                                    {{-- href="{{ route('admin.settings.dress.info', ['id' => Auth::guard('admin')->user()->mobile_number]) }}" --}}
-                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
-                                        সকল পোশাকের লিস্ট 
+                            <li class="sidebar-item"><a href="{{ route('admin.dress.settings') }}"
+                                    {{-- href="{{ route('admin.settings.dress.info', ['id' => Auth::guard('admin')->user()->mobile_number]) }}" --}} class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                        class="hide-menu">
+                                        সকল পোশাকের লিস্ট
                                     </span></a></li>
 
                             <li class="sidebar-item"><a href="{{ route('admin.dress.part.view') }}"
@@ -434,7 +433,7 @@
 
                             <li class="sidebar-item"><a href="{{ route('auth.super_admin.list.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
-                                        Admin List
+                                        System Admin
                                     </span></a></li>
                             <li class="sidebar-item"><a href="{{ route('auth.manager.list.view') }}"
                                     class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">

@@ -34,31 +34,6 @@
 
                         </button>
                     </h2>
-
-                    <div>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                     <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body accordion__body">
@@ -95,7 +70,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                        name="order_number"> -->
+                                                                                                                                                                                                                                                                        name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -106,7 +81,7 @@
                                             শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                        name="order_number"> -->
+                                                                                                                                                                                                                                                                        name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -114,12 +89,11 @@
 
                                 <div class="col-md-2">
                                     <div class="form_input_group">
-                                        <label for="order_number"
-                                            class="form-label form_input_group_label_important">অর্ডার
+                                        <label for="order_number" class="form-label form_input_group_label_important">অর্ডার
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                        name="order_number"> -->
+                                                                                                                                                                                                                                                                        name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -178,7 +152,6 @@
                         <table id="example" class="display" style="width:100%">
                             <thead class="accordion__heading">
                                 <tr>
-
                                     <th>গ্রাহকের তথ্য</th>
                                     <th>পোশাকের নাম</th>
                                     <th>পোশাকের মূল্য</th>
@@ -196,7 +169,7 @@
                                 @foreach ($cloth_orders as $cloth_order)
                                     <tr>
 
-                                        {{-- <div>
+                                        <div>
                                             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                                                 data-bs-keyboard="false" tabindex="-1"
                                                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -213,66 +186,80 @@
                                                             <div class="row">
                                                                 <div class="col-md-8">
                                                                     <div>
-                                                                        <h6>{{ $cloth_order->vendor_name }}</h6>
-                                                                        @if ($cloth_order->cloth_name->upper_part_dress_name != null)
-                                                                            <div class="">
-                                                                                <h4 class="key_value">
-                                                                                    <span class="key">
-                                                                                        <div>
-                                                                                            পাঞ্জাবী / শার্ট
-                                                                                        </div>
-                                                                                        <div>
-                                                                                            :
-                                                                                        </div>
-                                                                                    </span><span
-                                                                                        class="value">{{ $cloth_order->cloth_name->upper_part_dress_name }}
-                                                                                    </span>
-                                                                                </h4>
-                                                                                <h4 class="key_value">
-                                                                                    <span class="key">
+                                                                        <h6> <span>Order Taken By</span> : <span
+                                                                                id='vendor_name_modal'></span></h6>
+                                                                        <div class="" id='panjabi_info_modal'>
+                                                                            <h4 class="key_value">
+                                                                                <span class="key">
+                                                                                    <div id=''>
+                                                                                        পাঞ্জাবী / শার্ট
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        :
+                                                                                    </div>
+                                                                                </span>
+                                                                                <span class="value"
+                                                                                    id='upper_dress_name_modal'>
+                                                                                </span>
+                                                                            </h4>
+                                                                            <h4 class="key_value">
+                                                                                <span class="key">
 
-                                                                                        <div>
-                                                                                            সংখ্যা
-                                                                                        </div>
-                                                                                        <div>
-                                                                                            :
-                                                                                        </div>
-                                                                                    </span><span
-                                                                                        class="value">{{ $cloth_order->cloth_name->quantity_of_upper_part_dress }}
-                                                                                    </span>
-                                                                                </h4>
-                                                                            </div>
-                                                                        @endif
+                                                                                    <div>
+                                                                                        সংখ্যা
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        :
+                                                                                    </div>
+                                                                                </span><span class="value"
+                                                                                    id='upper_dress_qty_modal'>
+                                                                                </span>
+                                                                            </h4>
+                                                                        </div>
 
-                                                                        @if ($cloth_order->pant_measurement->pant_lomba != null)
-                                                                            <div class="">
-                                                                                <h4 class="key_value">
-                                                                                    <span class="key">
-                                                                                        <div>
-                                                                                            পাজামা / প্যান্ট
-                                                                                        </div>
-                                                                                        <div>
-                                                                                            :
-                                                                                        </div>
-                                                                                    </span><span
-                                                                                        class="value">{{ $cloth_order->cloth_name->lower_part_dress_name }}
-                                                                                    </span>
-                                                                                </h4>
-                                                                                <h4 class="key_value">
-                                                                                    <span class="key">
-                                                                                        <div>
-                                                                                            সংখ্যা
-                                                                                        </div>
-                                                                                        <div>
-                                                                                            :
-                                                                                        </div>
-                                                                                    </span><span
-                                                                                        class="value">{{ $cloth_order->cloth_name->quantity_of_lower_part_dress }}
-                                                                                    </span>
-                                                                                </h4>
-                                                                            </div>
-                                                                        @endif
 
+                                                                        <div class="" id='pajama_info_modal'>
+                                                                            <h4 class="key_value">
+                                                                                <span class="key">
+                                                                                    <div>
+                                                                                        পাজামা / প্যান্ট
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        :
+                                                                                    </div>
+                                                                                </span><span class="value"
+                                                                                    id='lower_dress_name_modal'>
+                                                                                </span>
+                                                                            </h4>
+                                                                            <h4 class="key_value">
+                                                                                <span class="key">
+                                                                                    <div>
+                                                                                        সংখ্যা
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        :
+                                                                                    </div>
+                                                                                </span><span class="value"
+                                                                                    id='lower_dress_qty_modal'>
+                                                                                </span>
+                                                                            </h4>
+                                                                        </div>
+
+
+                                                                        <div class="mt-2" id=''>
+                                                                            <h4 class="key_value">
+                                                                                <span class="key">
+                                                                                    <div>
+                                                                                        মজুরি
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        :
+                                                                                    </div>
+                                                                                </span><span class="value"
+                                                                                    id='wages_value_modal'>
+                                                                                </span>
+                                                                            </h4>
+                                                                        </div>
 
                                                                     </div>
                                                                 </div>
@@ -290,25 +277,37 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                        </div> --}}
+                                        </div>
 
                                         {{-- <td>{{ $cloth_order->id }}</td> --}}
-                                        <td>{{ $cloth_order->customer_name }}</td>
+                                        <td id='customer_name'>
+                                            {{ $cloth_order->customer_name }}
+
+                                            <span id='vendor_name{{ $loop->index }}' class="d-none">
+                                                {{ $cloth_order->vendor_name }}
+                                            </span>
+
+                                        </td>
                                         <td>
 
                                             @if ($cloth_order->cloth_name->upper_part_dress_name != null)
                                                 <p>
-                                                    <span>{{ $cloth_order->cloth_name->upper_part_dress_name }}</span> x
-                                                    <span>{{ en2bn((int) $cloth_order->cloth_name->quantity_of_upper_part_dress) }}
+                                                    <span
+                                                        id='upper_part_dress_name{{ $loop->index }}'>{{ $cloth_order->cloth_name->upper_part_dress_name }}</span>
+                                                    x
+                                                    <span
+                                                        id='upper_part_dress_quantity{{ $loop->index }}'>{{ en2bn((int) $cloth_order->cloth_name->quantity_of_upper_part_dress) }}
                                                     </span>
                                                 </p>
                                             @endif
 
                                             @if ($cloth_order->cloth_name->lower_part_dress_name != null)
                                                 <p>
-                                                    <span>{{ $cloth_order->cloth_name->lower_part_dress_name }}</span> x
-                                                    <span>{{ en2bn((int) $cloth_order->cloth_name->quantity_of_lower_part_dress) }}</span>
+                                                    <span
+                                                        id='lower_part_dress_name{{ $loop->index }}'>{{ $cloth_order->cloth_name->lower_part_dress_name }}</span>
+                                                    x
+                                                    <span
+                                                        id='lower_part_dress_quantity{{ $loop->index }}'>{{ en2bn((int) $cloth_order->cloth_name->quantity_of_lower_part_dress) }}</span>
                                                 </p>
                                             @endif
 
@@ -336,8 +335,6 @@
                                         <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
                                         <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
                                         <td>
-
-
                                             @if ($cloth_order->status != null)
                                                 <span class="badge bg-info">
                                                     Running
@@ -349,13 +346,15 @@
                                             @endif
                                         </td>
                                         <td class="action_buttons_in_tablee">
+
                                             <div>
 
-                                                <span class="" id='assign_button_span' onclick="assign_button()">
-                                                    {{-- <button type="button" class="btn btn-sm btn-primary"
-                                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                        Assign
-                                                    </button> --}}
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop"
+                                                    onclick="getValuesToModal({{ $loop->index }})">
+                                                    Assign
+                                                </button>
+                                                {{-- <span class="" id='assign_button_span' onclick="assign_button()">
                                                     <button class="btn btn-sm btn-primary w-100">
                                                         Assign
                                                     </button>
@@ -370,7 +369,7 @@
                                                         <button onclick="assign_active()"
                                                             class="btn btn-sm btn-primary w-100">save</button>
                                                     </p>
-                                                </span>
+                                                </span> --}}
                                             </div>
                                             <div>
                                                 {{-- <span class="badge bg-primary w-100">employee name</span>
@@ -406,6 +405,5 @@
                 assign_button_span.classList.remove('display__none')
                 assign_button_span.classList.add('display__block')
             }
-
         </script>
     @endpush

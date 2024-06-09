@@ -108,6 +108,13 @@ class VendorController extends Controller
     }
 
     public function vendor_deactivated(){
+
+        $vendor = Auth::guard('vendor')->user();
+
+        if($vendor->status == 1){
+            return redirect()->route('vendor_dashboard') ; 
+        }
+
         return view('vendor.auth.vendor_activation') ;
     }
 

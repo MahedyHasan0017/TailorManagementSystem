@@ -5,7 +5,7 @@
                 <th scope="col">পোশাকের নাম <span style="color:red">*</span></th>
                 <th scope="col">সংখ্যা <span style="color:red">*</span></th>
                 <th scope="col">মূল্য</th>
-                <th scope="col">মোট মূল্য</th>
+                <th scope="col" style="width:20%">মোট মূল্য</th>
             </tr>
         </thead>
 
