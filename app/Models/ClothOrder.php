@@ -10,7 +10,7 @@ class ClothOrder extends Model
     use HasFactory;
 
     protected $fillable = [
-        'cloth_name' , 
+        'cloth_name',
         'shop_name',
         'order_id',
         'vendor_name',
@@ -24,24 +24,28 @@ class ClothOrder extends Model
         'assigned_employee_mobile_number',
         'wages_bill',
         'total_bill',
-        'is_assigned'
+        'is_assigned',
+        'assigned_employee_name'
     ];
 
 
-    public function cloth_name(){
-        return $this->hasOne(ClothName::class) ; 
+    public function cloth_name()
+    {
+        return $this->hasOne(ClothName::class);
     }
 
-    public function panjabi_measurement(){
-        return $this->hasOne(PanjabiMeasurement::class) ; 
+    public function panjabi_measurement()
+    {
+        return $this->hasOne(PanjabiMeasurement::class);
     }
 
-    public function pant_measurement(){
-        return $this->hasOne(PantMeasurement::class) ; 
+    public function pant_measurement()
+    {
+        return $this->hasOne(PantMeasurement::class);
     }
 
-    public function cloth_order_delivary(){
-        return $this->hasOne(ClothOrderDelivaryInfo::class) ; 
+    public function cloth_order_delivary()
+    {
+        return $this->hasOne(ClothOrderDelivaryInfo::class);
     }
-
 }

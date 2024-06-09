@@ -291,33 +291,24 @@
 
 
 <script>
-    const customer_name = document.getElementById('customer_name');
-
-    const vendor_name = document.getElementById('vendor_name');
-    const vendor_name_modal = document.getElementById('vendor_name_modal');
-
-    // console.log(vendor_name);
-
     function getValuesToModal(idx) {
+
+        const customer_name = document.getElementById('customer_name');
+        const order_id = document.getElementById(`order_id${idx}`);
+        const order_id_from_modal = document.getElementById('order_id_from_modal');
+
+        order_id_from_modal.value = order_id.innerHTML;
 
         const vendor_name_modal = document.getElementById('vendor_name_modal');
         const vendor_name = document.getElementById(`vendor_name${idx}`);
+
         vendor_name_modal.innerHTML = vendor_name.innerHTML;
 
         const upper_part_dress_name = document.getElementById(`upper_part_dress_name${idx}`);
         const upper_part_dress_quantity = document.getElementById(`upper_part_dress_quantity${idx}`);
 
-        // console.log(upper_part_dress_name);
-        // console.log(upper_part_dress_quantity);
-
         const lower_part_dress_name = document.getElementById(`lower_part_dress_name${idx}`);
         const lower_part_dress_quantity = document.getElementById(`lower_part_dress_quantity${idx}`);
-
-        // console.log(lower_part_dress_name);
-        // console.log(lower_part_dress_quantity);
-
-        // upper_dress_info_modal.innerHTML = '' ; 
-
 
         const panjabi_info_modal = document.getElementById('panjabi_info_modal');
         const pajama_info_modal = document.getElementById('pajama_info_modal');
@@ -334,13 +325,8 @@
             upper_dress_qty_modal.innerHTML = upper_part_dress_quantity.innerHTML + 'পিছ';
         }
 
-
-
-
         const lower_dress_name_modal = document.getElementById('lower_dress_name_modal');
         const lower_dress_qty_modal = document.getElementById('lower_dress_qty_modal');
-
-
 
         if (lower_part_dress_name == null) {
             lower_dress_name_modal.innerHTML = "N/A"
@@ -350,35 +336,18 @@
             lower_dress_qty_modal.innerHTML = lower_part_dress_quantity.innerHTML + 'পিছ';
         }
 
+        const total_value_order = document.getElementById(`total_value_order${idx}`);
+        const wages_value_order = document.getElementById(`wages_value_order${idx}`);
+        const wages_value_modal = document.getElementById('wages_value_modal');
+        const wages_bill_from_modal = document.getElementById('wages_bill_from_modal');
+        const total_bill_from_modal = document.getElementById('total_bill_from_modal');
 
+        wages_value_modal.innerHTML = wages_value_order.innerHTML;
+        wages_bill_from_modal.value = wages_value_order.innerHTML;
+        total_bill_from_modal.value = total_value_order.innerHTML;
 
-        // panjabi_info_modal.classList.add('display__block')
-        // pajama_info_modal.classList.add('display__block')
-
-
-
-
-
-
-        // if(upper_part_dress_name == null){
-        //     panjabi_info_modal.classList.add('display__none'); 
-        // }
-        // else if(upper_part_dress_quantity == null){
-        //     pajama_info_modal.classList.add('display__none') ; 
-        // }
-
-
-        // console.log(panjabi_info_modal);
-        // console.log(pajama_info_modal);
-
-
-
-
-
-        // panjabi_info_modal
-
-
-
+        const tailor_full_name_from_modal = document.getElementById('tailor_full_name_from_modal');
+        tailor_full_name_from_modal.value = vendor_name.innerHTML;
 
     }
 </script>

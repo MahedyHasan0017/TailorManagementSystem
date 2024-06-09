@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('assigned_employee_mobile_number')->nullable();
             $table->string('wages_bill')->nullable();
             $table->string('total_bill')->nullable();
+           
             $table->boolean('is_assigned')->default(false);
 
             $table->timestamps();

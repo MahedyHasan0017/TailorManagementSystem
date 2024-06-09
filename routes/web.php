@@ -197,7 +197,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::post('/dress/info/submit/{id}', [DressNameAndWageController::class, 'dress_info_submit_from_admin'])->name('admin.settings.dress.info.submit');
 
         Route::get('/admin/dress/info/list', [DressNameAndWageController::class, 'dress_info_list_from_admin'])->name('admin.dress.settings');
-
     });
 });
 
@@ -227,10 +226,10 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
 
         Route::group(['prefix' => 'work/distribution'], function () {
-            Route::get('list/{mobile_number}',[EmployeePermissionController::class  , 'vendor_work_distribution_list'])->name('vendor.work.distribution.employee.list');
+            Route::get('list/{mobile_number}', [EmployeePermissionController::class, 'vendor_work_distribution_list'])->name('vendor.work.distribution.employee.list');
+
+            Route::post('store', [EmployeePermissionController::class, 'vendor_work_distribution_save'])->name('vendor.work.distribution.store');
         });
-
-
     });
 
     Route::group(['prefix' => 'profile'], function () {
