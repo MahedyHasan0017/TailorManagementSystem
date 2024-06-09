@@ -927,4 +927,17 @@ class OrderAcceptingController extends Controller
 
         return view('employee.cloth_order.order_list', compact('cloth_orders'));
     }
+
+
+
+    public function assigned_order_list()
+    {
+
+        $employee_number = Auth::guard('employee')->user()->mobile_number;
+
+        $cloth_orders = ClothOrder::where('assigned_employee_mobile_number', $employee_number)->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('employee.cloth_order.order_assigning_list', compact('cloth_orders'));
+    }
 }

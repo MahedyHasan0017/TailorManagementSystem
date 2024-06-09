@@ -247,8 +247,10 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
     Route::group(['prefix' => 'cloth'], function () {
         Route::get('order/accepting/{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'employee_order_accepting'])->name('employee.order.accepting.view');
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'employee_order_details_view'])->name('employee.order.details.view');
-        Route::get('order/accepted/list/{vendor_id}/{employee_number}', [OrderAcceptingController::class, 'employee_order_accepted_list'])->name('employee.order.accepting.list');
+        Route::get('order/accepted/list/{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'employee_order_accepted_list'])->name('employee.order.accepting.list');
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'employee_order_details_delete'])->name('employee.order.details.delete');
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'employee_order_accepting_store'])->name('employee.order.accepting.store');
+
+        Route::get('assigned/order/list{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'assigned_order_list'])->name('employee.order.assigned.list');
     });
 });
