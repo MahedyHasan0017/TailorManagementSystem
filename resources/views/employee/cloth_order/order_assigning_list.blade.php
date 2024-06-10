@@ -71,7 +71,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                name="order_number"> -->
+                                                                                name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important"> শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                name="order_number"> -->
+                                                                                name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -93,7 +93,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                name="order_number"> -->
+                                                                                name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -157,8 +157,7 @@
                                     <th>পোশাকের নাম</th>
                                     <th>পোশাকের মূল্য</th>
                                     <th>মজুরি</th>
-                                    <th>মোট বিল</th>
-                                    <th>জমার পরিমান</th>
+
                                     <th>অর্ডারের তারিখ</th>
                                     <th>ডেলিভারির তারিখ </th>
                                     <th>Action</th>
@@ -205,10 +204,6 @@
 
                                         <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->majurir_poriman) }}</td>
 
-                                        <td>{{ en2bn((int) ($cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_upper_and_lower_part_dress)) }}
-                                        </td>
-                                        <td>{{ en2bn((int) $cloth_order->cloth_order_delivary->nogod_prodan) }}</td>
-
                                         <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
                                         <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
 
@@ -216,12 +211,11 @@
                                             <span>
                                                 <a style="margin: 2px;"
                                                     href="{{ route('employee.order.details.view', ['id' => $cloth_order->id]) }}"
-                                                    class="btn btn-sm btn-primary w-100">view</a>
+                                                    class="btn btn-sm btn-primary w-100">View</a>
                                             </span>
                                             <span>
-                                                <a style="margin: 2px;"
-                                                    href="{{ route('employee.order.details.delete', ['id' => $cloth_order->id]) }}"
-                                                    class="btn btn-sm btn-danger w-100">delete</a>
+                                                <a style="margin: 2px;" href="#"
+                                                    class="btn btn-sm btn-danger w-100">Ready</a>
                                             </span>
                                         </td>
                                     </tr>

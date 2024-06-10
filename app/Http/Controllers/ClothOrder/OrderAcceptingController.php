@@ -934,7 +934,6 @@ class OrderAcceptingController extends Controller
     {
 
         $employee_number = Auth::guard('employee')->user()->mobile_number;
-
         $cloth_orders = ClothOrder::where('assigned_employee_mobile_number', $employee_number)->orderBy('created_at', 'desc')
             ->get();
 
