@@ -330,7 +330,8 @@ class OrderAcceptingController extends Controller
             "customer_name" => $data['customer_name'],
             "customer_mobile" => $data['customer_mobile_number'],
             "customer_email" => $data['customer_email'],
-            "customer_address" => $data['customer_contact_address']
+            "customer_address" => $data['customer_contact_address'],
+            "status" => "not_assigned"
         ]);
 
 

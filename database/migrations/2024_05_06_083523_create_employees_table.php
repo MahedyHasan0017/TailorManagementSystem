@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('status')->default(1);
             $table->string('designation')->nullable();
-            $table->string('employee_main_balance')->nullable();
-            $table->string('employee_paid_balance')->nullable();
-            $table->string('employee_rest_balance')->nullable();
+            $table->string('employee_main_balance')->default(0);
+            $table->string('employee_paid_balance')->default(0);
+            $table->string('employee_rest_balance')->default(0);
             $table->timestamp('draft_at')->nullable();
             $table->timestamps();
         });

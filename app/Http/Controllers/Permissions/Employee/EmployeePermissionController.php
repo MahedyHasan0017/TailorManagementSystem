@@ -72,9 +72,12 @@ class EmployeePermissionController extends Controller
 
     public function vendor_employee_list(Request $request, $mobile)
     {
-        $employees = Employee::where('vendor_mobile', $mobile)->get();
+
+        $vendor_mobile = Auth::guard('vendor')->user()->mobile_number;
+
+        $employees = Employee::where('vendor_mobile', $vendor_mobile)->get();
         $employee_count = Employee::where('vendor_mobile', $mobile)->where('designation', 'tailor')->get();
-        return view('vendor.permissions.employee.employee_list', compact(['employees', 'employee_count']));
+        return view('vendor.employee_management.employee.employee_list', compact(['employees', 'employee_count']));
     }
 
 
@@ -136,14 +139,15 @@ class EmployeePermissionController extends Controller
         $mobile_number = Auth::guard('vendor')->user()->mobile_number;
 
         $cloth_orders =  ClothOrder::where('vendor_number', $mobile_number)
+            ->whereNot('status', 'delivered')
+            ->whereNot('status', 'ready')
             ->orderBy('created_at', 'desc')
             ->get();
 
         $tailors = Employee::where('designation', 'tailor')->get();
 
-        // dd($tailors) ; 
 
-        return view('vendor.permissions.work_distribution.work_distribution_list', compact(['cloth_orders', 'tailors']));
+        return view('vendor.employee_management.work_distribution.work_distribution_list', compact(['cloth_orders', 'tailors']));
     }
 
     public function vendor_work_distribution_save(Request $request)

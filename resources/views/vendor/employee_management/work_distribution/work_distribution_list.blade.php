@@ -215,7 +215,7 @@
                                             class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -226,7 +226,7 @@
                                             শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -239,7 +239,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -385,7 +385,7 @@
                                         <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
                                         <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
                                         <td>
-                                            @if ($cloth_order->status != null)
+                                            @if ($cloth_order->status == 'running')
                                                 <span class="badge bg-info">
                                                     Running
                                                 </span>

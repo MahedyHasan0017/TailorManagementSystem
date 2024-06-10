@@ -57,20 +57,20 @@
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a
-                                        href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                             নতুন
                                             কর্মচারী যোগ
                                         </span></a></li>
 
                                 <li class="sidebar-item"><a
-                                        href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                             কর্মচারী লিস্ট
                                         </span></a></li>
 
                                 <li class="sidebar-item"><a
-                                        href="{{ route('vendor.work.distribution.employee.list', ['mobile_number' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        href="{{ route('vendor.work.distribution.employee.list', ['mobile_number' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link">
                                         <i class="fas fa-angle-right"></i><span class="hide-menu">
                                             কাজ বণ্টন
@@ -78,7 +78,8 @@
 
 
 
-                                <li class="sidebar-item"><a href="{{ route('admin.salary.employee.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.salary.management.employee.list', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
                                             বেতন
                                             ব্যবস্থাপনা

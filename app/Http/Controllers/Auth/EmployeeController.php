@@ -42,10 +42,9 @@ class EmployeeController extends Controller
             $tailor = Employee::where('employee_id', $user)->first();
 
             if ($tailor->status == 0) {
-              
 
-                return view('employee.auth.deactivate_page') ; 
 
+                return view('employee.auth.deactivate_page');
             } else {
                 if ($tailor->draft_at != null && $tailor->draft_at <= Carbon::now()) {
                     $tailor->status = 0;
@@ -74,8 +73,9 @@ class EmployeeController extends Controller
 
     public function register(Request $request, $mobile)
     {
+        $vendor_mobile = Auth::guard('vendor')->user()->mobile_number;
 
-        $employees = Employee::where('vendor_mobile', $mobile)->where('designation', 'tailor')->get();
+        $employees = Employee::where('vendor_mobile', $vendor_mobile)->where('designation', 'tailor')->get();
         $total = count($employees);
         return view('employee/auth/register', compact('total'));
     }

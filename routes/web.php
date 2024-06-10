@@ -230,6 +230,10 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
             Route::get('list/{mobile_number}', [EmployeePermissionController::class, 'vendor_work_distribution_list'])->name('vendor.work.distribution.employee.list');
             Route::post('store', [EmployeePermissionController::class, 'vendor_work_distribution_save'])->name('vendor.work.distribution.store');
         });
+
+        Route::group(['prefix' => 'salary-management'], function () {
+            Route::get('employee/list/{vendor_id}', [SalaryEmployeeController::class, 'salary_management_employee_from_vendor'])->name('vendor.salary.management.employee.list');
+        });
     });
 
     Route::group(['prefix' => 'profile'], function () {
@@ -243,7 +247,7 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
     Route::group(['prefix' => 'order-report'], function () {
         Route::get('running/order/{vendor_id}', [VendorOrderReportController::class, 'running_order'])->name('vendor.running.order.list');
         Route::get('ready/order/{vendor_id}', [VendorOrderReportController::class, 'ready_order'])->name('vendor.ready.order.list');
-        
+
         Route::get('delivered/order/{vendor_id}', [VendorOrderReportController::class, 'delivered_order'])->name('vendor.delivered.order.list');
 
         Route::get('order/ready/store/{id}', [VendorOrderReportController::class, 'ready_order_store'])->name('vendor.ready.order.store');
