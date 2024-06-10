@@ -12,6 +12,7 @@ use App\Http\Controllers\IncomeCost\DurationSummaryController;
 use App\Http\Controllers\IncomeCost\QSectorController;
 use App\Http\Controllers\MessageSending\SendingMessageController;
 use App\Http\Controllers\MessageSending\SendingMessageListController;
+use App\Http\Controllers\OrderReport\VendorOrderReportController;
 use App\Http\Controllers\Permissions\Employee\EmployeePermissionController;
 use App\Http\Controllers\Permissions\Vendor\VendorPermissionController;
 use App\Http\Controllers\Report\OrderReportController;
@@ -227,7 +228,6 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
         Route::group(['prefix' => 'work/distribution'], function () {
             Route::get('list/{mobile_number}', [EmployeePermissionController::class, 'vendor_work_distribution_list'])->name('vendor.work.distribution.employee.list');
-
             Route::post('store', [EmployeePermissionController::class, 'vendor_work_distribution_save'])->name('vendor.work.distribution.store');
         });
     });
@@ -236,9 +236,14 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::get('{id}', [VendorController::class, 'vendor_profile'])->name('vendor.profile.view');
     });
 
-
     Route::group(['prefix' => 'subscription'], function () {
-        Route::post('/submit/{mobile_number}', [VendorController::class, 'vendor_subscription_payment'])->name('vendor.subscription.payment.request');
+        Route::post('submit/{mobile_number}', [VendorController::class, 'vendor_subscription_payment'])->name('vendor.subscription.payment.request');
+    });
+
+    Route::group(['prefix' => 'order-report'], function () {
+        Route::get('running/order/{vendor_id}', [VendorOrderReportController::class, 'running_order'])->name('vendor.running.order.list');
+        Route::get('ready/order/{vendor_id}', [VendorOrderReportController::class, 'ready_order'])->name('vendor.ready.order.list');
+        Route::get('delivered/order/{vendor_id}', [VendorOrderReportController::class, 'delivered_order'])->name('vendor.delivered.order.list');
     });
 });
 
@@ -250,7 +255,6 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
         Route::get('order/accepted/list/{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'employee_order_accepted_list'])->name('employee.order.accepting.list');
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'employee_order_details_delete'])->name('employee.order.details.delete');
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'employee_order_accepting_store'])->name('employee.order.accepting.store');
-
         Route::get('assigned/order/list{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'assigned_order_list'])->name('employee.order.assigned.list');
     });
 });

@@ -131,11 +131,25 @@
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="order.html" aria-expanded="false"><i class="fas fa-file"></i><span
-                                    class="hide-menu">রিপোর্ট </span></a>
+                                    class="hide-menu">অর্ডার রিপোর্ট </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('admin.order.report.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.running.order.list', ['vendor_id' => Auth::guard('vendor')->user()->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
-                                            class="hide-menu">অর্ডার রিপোর্ট
+                                            class="hide-menu">চলমান অর্ডার
+                                        </span></a></li>
+
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.ready.order.list', ['vendor_id' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">
+                                            প্রস্তুত অর্ডার
+                                        </span></a></li>
+
+                                <li class="sidebar-item"><a
+                                        href={{ route('vendor.delivered.order.list', ['vendor_id' => Auth::guard('vendor')->user()->mobile_number]) }}
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">অর্ডার বিতরণ
                                         </span></a></li>
                             </ul>
                         </li>
@@ -180,29 +194,29 @@
                                         </span></a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                        {{-- <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="order.html" aria-expanded="false"><i class="fas fa-envelope"></i><span
                                     class="hide-menu">Employee
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
 
                                 <li class="sidebar-item">
-                                    {{-- <a href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}" --}}
-                                    <a href="#" class="sidebar-link"><i class="fas fa-angle-right"></i><span
-                                            class="hide-menu">
+                                    <a href="{{ route('vendor.employee.register.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        <a href="#" class="sidebar-link"><i
+                                            class="fas fa-angle-right"></i><span class="hide-menu">
                                             register a employee
                                         </span></a>
                                 </li>
 
                                 <li class="sidebar-item">
-                                    {{-- <a href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}" --}}
-                                    <a href="#" class="sidebar-link"><i class="fas fa-angle-right"></i><span
-                                            class="hide-menu">
+                                    <a href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        <a href="#" class="sidebar-link"><i
+                                            class="fas fa-angle-right"></i><span class="hide-menu">
                                             employee list
                                         </span></a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     @endif
                 @endif
 

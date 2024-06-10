@@ -71,7 +71,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                name="order_number"> -->
+                                                                                                name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important"> শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                name="order_number"> -->
+                                                                                                name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -93,7 +93,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                name="order_number"> -->
+                                                                                                name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -157,7 +157,6 @@
                                     <th>পোশাকের নাম</th>
                                     <th>পোশাকের মূল্য</th>
                                     <th>মজুরি</th>
-
                                     <th>অর্ডারের তারিখ</th>
                                     <th>ডেলিভারির তারিখ </th>
                                     <th>Action</th>
