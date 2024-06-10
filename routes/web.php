@@ -243,7 +243,11 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
     Route::group(['prefix' => 'order-report'], function () {
         Route::get('running/order/{vendor_id}', [VendorOrderReportController::class, 'running_order'])->name('vendor.running.order.list');
         Route::get('ready/order/{vendor_id}', [VendorOrderReportController::class, 'ready_order'])->name('vendor.ready.order.list');
+        
         Route::get('delivered/order/{vendor_id}', [VendorOrderReportController::class, 'delivered_order'])->name('vendor.delivered.order.list');
+
+        Route::get('order/ready/store/{id}', [VendorOrderReportController::class, 'ready_order_store'])->name('vendor.ready.order.store');
+        Route::post('delivered/order/success/store', [VendorOrderReportController::class, 'vendor_pay_employee'])->name('vendor.delivered.order.store');
     });
 });
 
@@ -255,6 +259,7 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
         Route::get('order/accepted/list/{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'employee_order_accepted_list'])->name('employee.order.accepting.list');
         Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'employee_order_details_delete'])->name('employee.order.details.delete');
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'employee_order_accepting_store'])->name('employee.order.accepting.store');
-        Route::get('assigned/order/list{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'assigned_order_list'])->name('employee.order.assigned.list');
+        Route::get('order/assigned/list/{vendor_id}/{employee_id}', [OrderAcceptingController::class, 'assigned_order_list'])->name('employee.order.assigned.list');
+        Route::post('order/ready', [OrderAcceptingController::class, 'employee_order_ready'])->name('employee.order.ready');
     });
 });

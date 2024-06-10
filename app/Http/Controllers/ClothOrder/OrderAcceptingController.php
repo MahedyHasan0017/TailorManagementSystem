@@ -934,9 +934,28 @@ class OrderAcceptingController extends Controller
     {
 
         $employee_number = Auth::guard('employee')->user()->mobile_number;
-        $cloth_orders = ClothOrder::where('assigned_employee_mobile_number', $employee_number)->orderBy('created_at', 'desc')
+        $cloth_orders = ClothOrder::where('assigned_employee_mobile_number', $employee_number)->where('status', 'running')->orderBy('created_at', 'desc')
             ->get();
 
         return view('employee.cloth_order.order_assigning_list', compact('cloth_orders'));
+    }
+
+
+
+
+    public function employee_order_ready(Request $request)
+    {
+        $employee_number = Auth::guard('employee')->user()->mobile_number;
+        $cloth_order = ClothOrder::where('id', $request->order_id)->first();
+
+        $cloth_order->status = 'ready';
+        $done = $cloth_order->save();
+        if ($done) {
+            toastr()->success('Order Ready!');
+            return redirect()->back();
+        } else {
+            toastr()->error('Something Went Wrong!');
+            return redirect()->back();
+        }
     }
 }

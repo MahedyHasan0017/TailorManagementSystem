@@ -69,7 +69,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -92,7 +92,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -258,9 +258,24 @@
                                                     @endif
                                                 </button> --}}
 
-                                                <button class="btn btn-primary">
-                                                    Pay Tailor
-                                                </button>
+                                                <form action="{{ route('vendor.delivered.order.store') }}"
+                                                    method="post">
+                                                    @csrf
+
+                                                    <input type="text" name="order_id" value="{{ $cloth_order->id }}"
+                                                        hidden>
+
+                                                    <input type="text" name="assigned_employee_name"
+                                                        value="{{ $cloth_order->assigned_employee_name }}" hidden>
+
+                                                    <input type="text" name='assigned_employee_mobile_number'
+                                                        value="{{ $cloth_order->assigned_employee_mobile_number }}"
+                                                        hidden>
+                                                    <input type="text" name='wages_of_product'
+                                                        value="{{ $cloth_order->cloth_order_delivary->majurir_poriman }}"
+                                                        hidden>
+                                                    <button type="submit" class="btn btn-primary">Pay Tailor</button>
+                                                </form>
                                             </div>
                                             <div>
 

@@ -12,10 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('cloth_orders', function (Blueprint $table) {
-            $table->string('assigned_employee_name')->nullable();
+            $table->boolean('payment_status')->default(false);
         });
     }
-
 
     /**
      * Reverse the migrations.
