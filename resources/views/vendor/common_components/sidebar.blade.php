@@ -109,6 +109,13 @@
                                     class="hide-menu">আয় ব্যয় হিসাব
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
+
+
+                                <li class="sidebar-item"><a href="#" class="sidebar-link"><i
+                                            class="fas fa-angle-right"></i><span class="hide-menu">single earning
+                                            record
+                                        </span></a></li>
+
                                 <li class="sidebar-item"><a
                                         href="{{ route('admin.income.cost.account.management.view') }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
@@ -158,7 +165,6 @@
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">পেমেন্ট হিস্টোরি
                                         </span></a></li>
-
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
