@@ -139,8 +139,7 @@ class EmployeePermissionController extends Controller
         $mobile_number = Auth::guard('vendor')->user()->mobile_number;
 
         $cloth_orders =  ClothOrder::where('vendor_number', $mobile_number)
-            ->whereNot('status', 'delivered')
-            ->whereNot('status', 'ready')
+            ->whereIn('status', ['not_assigned', 'running'])
             ->orderBy('created_at', 'desc')
             ->get();
 

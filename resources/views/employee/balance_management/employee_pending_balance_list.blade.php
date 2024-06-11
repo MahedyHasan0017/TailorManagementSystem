@@ -88,7 +88,9 @@
                                                 @csrf
                                                 <input type="text" name='order_id' value="{{ $cloth_order->id }}"
                                                     hidden>
-                                                <button type="submit" class="btn btn-sm btn-danger w-100">Recieved</button>
+                                                <input type="text" name='assigned_employee_mobile_number'
+                                                    value="{{ $cloth_order->assigned_employee_mobile_number }}" hidden>
+                                                <button type="submit" class="btn btn-sm btn-danger w-100">Recieve</button>
                                             </form>
                                             </p>
                                         </td>

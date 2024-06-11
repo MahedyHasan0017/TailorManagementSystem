@@ -126,7 +126,8 @@
         order: [
             [3, 'desc']
         ],
-        responsive: true
+        responsive: true,
+        ordering: false
     });
 
     $('#datepicker1').datepicker({

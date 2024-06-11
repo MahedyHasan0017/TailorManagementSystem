@@ -933,7 +933,7 @@
 
 
 
-            @if ($order_detail->pant_measurement->pant_lomba != null)
+            @if ($order_detail->cloth_name->lower_part_dress_name != null)
                 <div class="row">
                     <div class="col-6 mt-3">
                         <h4 class="key_value">

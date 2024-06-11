@@ -85,14 +85,6 @@
                                                 <a href="{{ route('employee.order.details.view', ['id' => $cloth_order->id]) }}"
                                                     class="btn btn-sm btn-primary w-100">View</a>
                                             </span>
-                                            <p>
-                                            <form action="{{ route('employee.order.ready') }}" method="post">
-                                                @csrf
-                                                <input type="text" name='order_id' value="{{ $cloth_order->id }}"
-                                                    hidden>
-                                                <button type="submit" class="btn btn-sm btn-danger w-100">Ready</button>
-                                            </form>
-                                            </p>
                                         </td>
                                     </tr>
                                 @endforeach

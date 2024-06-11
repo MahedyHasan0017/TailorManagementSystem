@@ -120,7 +120,8 @@ class VendorOrderReportController extends Controller
     public function vendor_payment_history()
     {
         $mobile_number = Auth::guard('vendor')->user()->mobile_number;
-        $cloth_orders =  ClothOrder::where('vendor_number', $mobile_number)->where('status', 'payment_pending')
+        $cloth_orders =  ClothOrder::where('vendor_number', $mobile_number)
+            ->whereIn('status', ['recieved', 'payment_pending'])
             ->orderBy('created_at', 'desc')
             ->get();
 

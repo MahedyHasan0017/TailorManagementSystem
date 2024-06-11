@@ -587,7 +587,8 @@ class OrderAcceptingController extends Controller
             "customer_name" => $data['customer_name'],
             "customer_mobile" => $data['customer_mobile_number'],
             "customer_email" => $data['customer_email'],
-            "customer_address" => $data['customer_contact_address']
+            "customer_address" => $data['customer_contact_address'],
+            "status" => "not_assigned"
         ]);
 
         // dd($request->all()) ; 
@@ -821,7 +822,7 @@ class OrderAcceptingController extends Controller
         $user_employee = Auth::guard('employee')->user();
 
         if ($user_employee != null) {
-            return redirect()->route('employee.order.accepting.list', ['vendor_id' => $user_employee->vendor_mobile, 'employee_number' => $user_employee->mobile_number]);
+            return redirect()->route('employee.order.accepting.list', ['vendor_id' => $user_employee->vendor_mobile, 'employee_id' => $user_employee->mobile_number]);
         }
     }
 
@@ -904,11 +905,6 @@ class OrderAcceptingController extends Controller
 
     public function vendor_order_accepted_list(Request $request, $mobile_number)
     {
-
-        // $cloth_orders = ClothOrder::where('vendor_number', $mobile_number)->orderBy('id','desc')->get();
-
-        // dd($cloth_orders) ; 
-
 
         $orders =  ClothOrder::where('vendor_number', $mobile_number)
             ->orderBy('created_at', 'desc')

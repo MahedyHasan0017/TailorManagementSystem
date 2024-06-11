@@ -124,7 +124,8 @@
                         </h5>
                         <h5 class="key_value key_value_calc">
                             <span> বাকি - </span>
-                            <span class="valuee">{{ en2bn((int)((int) ($order_detail->cloth_order_delivary->majurir_poriman + $order_detail->cloth_name->total_of_upper_and_lower_part_dress)) - ((int) ($order_detail->cloth_order_delivary->nogod_prodan))) }}
+                            <span
+                                class="valuee">{{ en2bn((int) ((int) ($order_detail->cloth_order_delivary->majurir_poriman + $order_detail->cloth_name->total_of_upper_and_lower_part_dress)) - ((int) $order_detail->cloth_order_delivary->nogod_prodan)) }}
                             </span>
                         </h5>
                     </div>
@@ -932,8 +933,7 @@
             </div>
 
 
-
-            @if ($order_detail->pant_measurement->pant_lomba != null)
+            @if ($order_detail->cloth_name->lower_part_dress_name != null)
                 <div class="row">
                     <div class="col-6 mt-3">
                         <h4 class="key_value">

@@ -69,7 +69,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -92,7 +92,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -245,11 +245,18 @@
                                             @endif
                                         </td>
                                         <td class="action_buttons_in_tablee">
-
+                                            <div class="mb-2">
+                                                <span>
+                                                    <a href="{{ route('vendor.order.details.view', ['id' => $cloth_order->id]) }}"
+                                                        class="btn btn-sm btn-primary w-100">
+                                                        view
+                                                    </a>
+                                                </span>
+                                            </div>
                                             <div>
 
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#staticBackdrop"
+                                                <button type="button" class="btn btn-sm btn-primary w-100"
+                                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                                     onclick="getValuesToModal({{ $loop->index }})">
                                                     @if ($cloth_order->is_assigned == true)
                                                         {{ $cloth_order->assigned_employee_name }}
@@ -257,9 +264,6 @@
                                                         Assign
                                                     @endif
                                                 </button>
-
-                                            </div>
-                                            <div>
 
                                             </div>
                                         </td>

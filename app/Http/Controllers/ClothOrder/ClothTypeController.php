@@ -34,7 +34,7 @@ class ClothTypeController extends Controller
             ]);
         } else {
             return response()->json([
-                "msg" => "snot ok"
+                "msg" => "not ok"
             ]);
         }
     }
