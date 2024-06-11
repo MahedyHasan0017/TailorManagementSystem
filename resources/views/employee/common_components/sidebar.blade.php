@@ -288,6 +288,23 @@
                         </li>
                     @else
                     @endif
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                            href="order.html" aria-expanded="false"><i class="fas fa-envelope"></i><span
+                                class="hide-menu">Balance Info
+                            </span></a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item"><a
+                                    href="{{ route('employee.pending.balance.list', ['vendor_id' => $employee->vendor_mobile, 'employee_id' => $employee->mobile_number]) }}"
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
+                                        Pending Balance
+                                    </span></a></li>
+                            <li class="sidebar-item"><a
+                                    href="{{ route('employee.recieved.balance.list', ['vendor_id' => $employee->vendor_mobile, 'employee_id' => $employee->mobile_number]) }}"
+                                    class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
+                                        Received Balance
+                                    </span></a></li>
+                        </ul>
+                    </li>
                 @else
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                             href="order.html" aria-expanded="false"><i class="fas fa-file"></i><span

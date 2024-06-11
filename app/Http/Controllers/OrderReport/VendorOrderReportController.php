@@ -68,31 +68,62 @@ class VendorOrderReportController extends Controller
             'wages_of_product' => 'required'
         ]);
 
-        $name = "Employee Name : " . $data['assigned_employee_name'] . " Has Paid Successfully";
-        $employee = Employee::where('mobile_number', $data['assigned_employee_mobile_number'])->first();
+        $order = ClothOrder::where('id', $data['order_id'])->first();
 
-        $employee->employee_main_balance += (int)$data['wages_of_product'];
-        $done = $employee->save();
+        $order->status = 'payment_pending';
+        $completed = $order->save();
 
-        if ($done) {
-
+        if ($completed) {
             $order = ClothOrder::where('id', $data['order_id'])->first();
-
-            $order->payment_status = true;
-            $completed = $order->save();
-
-            if ($completed) {
-                toastr()->success($name);
-                return redirect()->back();
-            } else {
-                toastr()->error('Something Went Wrong!');
-                return redirect()->back();
-            }
+            // dd($order->status);
+            toastr()->success('Payment Pending Successfully');
+            return redirect()->back();
         } else {
             toastr()->error('Something Went Wrong!');
             return redirect()->back();
         }
 
+
+
+        // $name = "Employee Name : " . $data['assigned_employee_name'] . " Has Paid Successfully";
+        // $employee = Employee::where('mobile_number', $data['assigned_employee_mobile_number'])->first();
+
+        // $employee->employee_main_balance += (int)$data['wages_of_product'];
+        // $done = $employee->save();
+
+        // if ($done) {
+
+        //     $order = ClothOrder::where('id', $data['order_id'])->first();
+
+        //     $order->payment_status = true;
+        //     $completed = $order->save();
+        //     if ($completed) {
+
+
+
+
+        //         toastr()->success($name);
+        //         return redirect()->back();
+        //     } else {
+        //         toastr()->error('Something Went Wrong!');
+        //         return redirect()->back();
+        //     }
+        // } else {
+        //     toastr()->error('Something Went Wrong!');
+        //     return redirect()->back();
+        // }
+
         // dd($employee->employee_main_balance);
+    }
+
+
+    public function vendor_payment_history()
+    {
+        $mobile_number = Auth::guard('vendor')->user()->mobile_number;
+        $cloth_orders =  ClothOrder::where('vendor_number', $mobile_number)->where('status', 'payment_pending')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('vendor.order_report.vendor_payment_history', compact('cloth_orders'));
     }
 }

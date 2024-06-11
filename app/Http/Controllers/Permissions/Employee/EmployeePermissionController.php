@@ -85,7 +85,7 @@ class EmployeePermissionController extends Controller
     {
         $persmissions = Permission::where('employee_id', $id)->get();
         $employee = Employee::where('id', $id)->first();
-        return view('vendor.permissions.employee.employee_single', compact(['id', 'persmissions', 'employee']));
+        return view('vendor.employee_management.employee.employee_single', compact(['id', 'persmissions', 'employee']));
     }
 
     public function vendor_employee_submit_permissions(Request $request)

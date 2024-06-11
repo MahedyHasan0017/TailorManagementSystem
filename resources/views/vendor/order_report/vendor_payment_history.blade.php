@@ -6,7 +6,7 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Order Delivered Page</h4>
+                    <h4 class="page-title">Payment history Page</h4>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -69,7 +69,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -92,7 +92,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            name="order_number"> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -238,16 +238,19 @@
                                         <td>{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}</td>
                                         <td>{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}</td>
                                         <td>
-                                            @if ($cloth_order->status != null)
+                                            @if ($cloth_order->payment_status == 0)
+                                                <span class="badge bg-info">
+                                                    Not Recieved
+                                                </span>
+                                            @elseif ($cloth_order->payment_status == 1)
                                                 <span class="badge bg-success">
-                                                    Delivered
+                                                    Recieved
                                                 </span>
                                             @endif
                                         </td>
                                         <td class="action_buttons_in_tablee">
 
                                             <div>
-
                                                 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                     data-bs-target="#staticBackdrop"
                                                     onclick="getValuesToModal({{ $loop->index }})">
@@ -258,24 +261,10 @@
                                                     @endif
                                                 </button> --}}
 
-                                                <form action="{{ route('vendor.delivered.order.store') }}"
-                                                    method="post">
-                                                    @csrf
+                                                <a href='#' class="btn btn-primary">
+                                                    Something
+                                                </a>
 
-                                                    <input type="text" name="order_id" value="{{ $cloth_order->id }}"
-                                                        hidden>
-
-                                                    <input type="text" name="assigned_employee_name"
-                                                        value="{{ $cloth_order->assigned_employee_name }}" hidden>
-
-                                                    <input type="text" name='assigned_employee_mobile_number'
-                                                        value="{{ $cloth_order->assigned_employee_mobile_number }}"
-                                                        hidden>
-                                                    <input type="text" name='wages_of_product'
-                                                        value="{{ $cloth_order->cloth_order_delivary->majurir_poriman }}"
-                                                        hidden>
-                                                    <button type="submit" class="btn btn-primary">Pay Tailor</button>
-                                                </form>
                                             </div>
                                             <div>
 

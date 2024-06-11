@@ -9,6 +9,7 @@ class BotamForPanjabi extends Model
 {
     use HasFactory;
 
+    
     protected $fillable = [
         'panjabi_measurement_id' ,
         'botam_name' , 

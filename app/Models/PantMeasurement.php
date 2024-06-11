@@ -9,6 +9,9 @@ class PantMeasurement extends Model
 {
     use HasFactory;
 
+    public $timestamps = true;
+
+
     protected $fillable = [
         'cloth_order_id',
         'pant_lomba',
@@ -20,12 +23,13 @@ class PantMeasurement extends Model
         'pant_hiff'
     ];
 
-    public function cloth_order(){
-        return $this->belongsTo(ClothOrder::class) ; 
+    public function cloth_order()
+    {
+        return $this->belongsTo(ClothOrder::class);
     }
 
-    public function pant_pocket(){
-        return $this->hasMany(PocketForPant::class) ;  
+    public function pant_pocket()
+    {
+        return $this->hasMany(PocketForPant::class);
     }
-
 }

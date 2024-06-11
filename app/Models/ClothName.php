@@ -9,6 +9,9 @@ class ClothName extends Model
 {
     use HasFactory;
 
+
+    public $timestamps = true;
+
     protected $fillable = [
         'cloth_order_id',
         'upper_part_dress_name',

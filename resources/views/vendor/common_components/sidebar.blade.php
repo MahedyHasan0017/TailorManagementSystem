@@ -152,6 +152,13 @@
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">অর্ডার বিতরণ
                                         </span></a></li>
+
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.payment.history.list', ['vendor_id' => Auth::guard('vendor')->user()->mobile_number]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">পেমেন্ট হিস্টোরি
+                                        </span></a></li>
+
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"

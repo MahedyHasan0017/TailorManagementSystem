@@ -9,6 +9,9 @@ class ClothOrder extends Model
 {
     use HasFactory;
 
+
+    public $timestamps = true;
+
     protected $fillable = [
         'cloth_name',
         'shop_name',
