@@ -13,7 +13,6 @@ class ShopEarningsController extends Controller
     public function vendor_single_payment_record()
     {
 
-
         $mobile_number = Auth::guard('vendor')->user()->mobile_number;
         $cloth_orders =  SingleEarningRecord::orderBy('created_at', 'desc')->get();
 
@@ -28,6 +27,6 @@ class ShopEarningsController extends Controller
     public function total_earning_record(Request $request)
     {
         // dd($request->all());
-        return 'hey';
+        return view('vendor.debit_credit.total_earning_record');
     }
 }
