@@ -36,8 +36,8 @@
                                     <th>employee mobile number/email</th>
                                     <th>employee designation</th>
                                     <th>employee main balance</th>
-                                    <th>employee paid balance</th>
-                                    <th>employee rest balance</th>
+                                    {{-- <th>employee paid balance</th>
+                                    <th>employee rest balance</th> --}}
                                     <th>employee status</th>
                                     <th>view details</th>
 
@@ -50,8 +50,8 @@
                                         <td>{{ $employee->email }}</td>
                                         <td>{{ $employee->designation }}</td>
                                         <td>{{ $employee->employee_main_balance }}</td>
-                                        <td>{{ $employee->employee_paid_balance }}</td>
-                                        <td>{{ $employee->employee_rest_balance }}</td>
+                                        {{-- <td>{{ $employee->employee_paid_balance }}</td> --}}
+                                        {{-- <td>{{ $employee->employee_rest_balance }}</td> --}}
                                         <td>
                                             @if ($employee->status == 1)
                                                 <span class="badge bg-primary">Active</span>

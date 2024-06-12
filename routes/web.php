@@ -227,7 +227,6 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
             Route::post('permissions/submit', [EmployeePermissionController::class, 'vendor_employee_submit_permissions'])->name('vendor.employee.submit.permissions');
         });
 
-
         Route::group(['prefix' => 'work/distribution'], function () {
             Route::get('list/{mobile_number}', [EmployeePermissionController::class, 'vendor_work_distribution_list'])->name('vendor.work.distribution.employee.list');
             Route::post('store', [EmployeePermissionController::class, 'vendor_work_distribution_save'])->name('vendor.work.distribution.store');
@@ -249,18 +248,17 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
     Route::group(['prefix' => 'order-report'], function () {
         Route::get('running/order/{vendor_id}', [VendorOrderReportController::class, 'running_order'])->name('vendor.running.order.list');
         Route::get('ready/order/{vendor_id}', [VendorOrderReportController::class, 'ready_order'])->name('vendor.ready.order.list');
-
         Route::get('delivered/order/{vendor_id}', [VendorOrderReportController::class, 'delivered_order'])->name('vendor.delivered.order.list');
-
         Route::get('order/ready/store/{id}', [VendorOrderReportController::class, 'ready_order_store'])->name('vendor.ready.order.store');
         Route::post('delivered/order/success/store', [VendorOrderReportController::class, 'vendor_pay_employee'])->name('vendor.delivered.order.store');
-
         Route::get('payment/history/{vendor_id}', [VendorOrderReportController::class, 'vendor_payment_history'])->name('vendor.payment.history.list');
     });
 
 
-    Route::group(['prefix' => 'payment'], function () {
-        // Route::post('/completed/{id}', [ShopEarningsController::class, 'vendor_payment_completed'])->name('vendor.payment.tailor.completed');
+    Route::group(['prefix' => 'debit-credit'], function () {
+        Route::get('single/payment/record/{vendor_id}', [ShopEarningsController::class, 'vendor_single_payment_record'])->name('vendor.single.payment.record.view');
+        Route::post('payment/completed/{vendor_id}', [ShopEarningsController::class, 'vendor_payment_completed'])->name('vendor.payment.tailor.completed');
+        Route::get('total/earning/record/{vendor_id}', [ShopEarningsController::class, 'total_earning_record'])->name('total.earning.record.view');
     });
 });
 

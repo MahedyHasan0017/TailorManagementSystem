@@ -62,7 +62,6 @@
                                             নতুন
                                             কর্মচারী যোগ
                                         </span></a></li>
-
                                 <li class="sidebar-item"><a
                                         href="{{ route('vendor.permission.employee.list.view', ['mobile' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
@@ -75,8 +74,6 @@
                                         <i class="fas fa-angle-right"></i><span class="hide-menu">
                                             কাজ বণ্টন
                                         </span></a></li>
-
-
 
                                 <li class="sidebar-item"><a
                                         href="{{ route('vendor.salary.management.employee.list', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
@@ -110,10 +107,18 @@
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
 
+                                <li class="sidebar-item"><a
+                                        href="{{ route('vendor.single.payment.record.view', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">Single Earning
+                                            Record
+                                        </span></a></li>
 
-                                <li class="sidebar-item"><a href="#" class="sidebar-link"><i
-                                            class="fas fa-angle-right"></i><span class="hide-menu">single earning
-                                            record
+                                <li class="sidebar-item"><a
+                                        href="{{ route('total.earning.record.view', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">Total Earning
+                                            Record
                                         </span></a></li>
 
                                 <li class="sidebar-item"><a

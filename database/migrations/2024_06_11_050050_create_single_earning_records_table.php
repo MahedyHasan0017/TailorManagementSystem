@@ -13,12 +13,17 @@ return new class extends Migration
     {
         Schema::create('single_earning_records', function (Blueprint $table) {
             $table->id();
+            $table->string('cloth_upper_name')->nullable();
+            $table->string('cloth_lower_name')->nullable();
+            $table->string('total_cloth_price');
+            $table->string('total_bill');
+            $table->string('tailor_wage');
             $table->string('tailor_name');
             $table->string('tailor_mobile_number');
-            $table->string('tailor_wage');
-            $table->string('total_price_from_this_order');
-            $table->string('income_from_this_order');
-            $table->boolean('tailor_status');
+            $table->string('deposite_amount');
+            $table->string('rest_amount');
+            $table->string('orderer_tarikh');
+            $table->string('delivery_tarikh');
             $table->timestamps();
         });
     }

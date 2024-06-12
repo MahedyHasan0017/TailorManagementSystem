@@ -12,11 +12,16 @@ class SingleEarningRecord extends Model
     public $timestamp = true;
 
     protected $fillable = [
+        'cloth_upper_name',
+        'cloth_lower_name',
+        'total_cloth_price',
+        'total_bill',
+        'tailor_wage',
         'tailor_name',
         'tailor_mobile_number',
-        'tailor_wage',
-        'total_price_from_this_order',
-        'income_from_this_order',
-        'tailor_status'
+        'deposite_amount',
+        'rest_amount',
+        'orderer_tarikh',
+        'delivery_tarikh',
     ];
 }

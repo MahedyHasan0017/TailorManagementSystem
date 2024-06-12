@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('total_balance')->default(0);
             $table->string('total_wages_balance')->default(0);
+            $table->string('total_deposite_balance')->default(0);
             $table->string('total_rest_balance')->default(0);
+            $table->string('total_income')->default(0);
+            $table->string('total_cost')->default(0);
             $table->string('total_revenue')->default(0);
             $table->timestamps();
         });

@@ -14,7 +14,10 @@ class ShopEarnings extends Model
     protected $fillable = [
         'total_balance',
         'total_wages_balance',
+        'total_deposite_balance',
         'total_rest_balance',
+        'total_income',
+        'total_cost',
         'total_revenue'
     ];
 }
