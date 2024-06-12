@@ -38,38 +38,43 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
 
-                                    <td>
+                                @foreach ($earning_records as $record)
+                                    <tr>
 
-                                    </td>
+                                        <td>
 
-                                    <td>
+                                        </td>
 
-                                    </td>
+                                        <td>
 
-                                    <td>
+                                        </td>
 
-                                    </td>
+                                        <td>
 
-                                    <td>
+                                        </td>
 
-                                    </td>
-                                    <td>
+                                        <td>
 
-                                    </td>
+                                        </td>
+                                        <td>
 
-                                    <td id=''>
+                                        </td>
 
-                                    </td>
+                                        <td id=''>
 
-                                    <td>
+                                        </td>
 
-                                    </td>
-                                    <td>
+                                        <td>
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
                             </tbody>
                         </table>
                     </div>

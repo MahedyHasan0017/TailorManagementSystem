@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClothOrder;
+use App\Models\ShopEarnings;
 use App\Models\SingleEarningRecord;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +28,8 @@ class ShopEarningsController extends Controller
     public function total_earning_record(Request $request)
     {
         // dd($request->all());
-        return view('vendor.debit_credit.total_earning_record');
+
+        $earning_records = SingleEarningRecord::orderBy('created_at', 'desc')->get();
+        return view('vendor.debit_credit.total_earning_record', compact('earning_records'));
     }
 }
