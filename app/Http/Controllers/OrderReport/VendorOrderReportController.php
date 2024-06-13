@@ -83,27 +83,28 @@ class VendorOrderReportController extends Controller
 
         $order = ClothOrder::where('id', $data['order_id'])->first();
         $order->status = 'payment_pending';
-        $completed = $order->save();
+        // $completed = $order->save();
 
-        if ($completed) {
+        if (true) {
             $order = ClothOrder::where('id', $data['order_id'])->first();
 
-            $done = $single_record = SingleEarningRecord::create([
-                'cloth_upper_name' => $data['cloth_upper_name'],
-                'cloth_lower_name' => $data['cloth_lower_name'],
-                'total_cloth_price' => $data['total_cloth_price'],
-                'total_bill' => $data['total_bill'],
-                'tailor_wage' => $data['tailor_wage'],
-                'tailor_name' => $data['assigned_employee_name'],
-                'tailor_mobile_number' => $data['assigned_employee_mobile_number'],
-                'deposite_amount' => $data['deposite_amount'],
-                'rest_amount' => $data['rest_amount'],
-                'orderer_tarikh' => $data['orderer_tarikh'],
-                'delivery_tarikh' => $data['delivery_tarikh']
-            ]);
+            // $done = SingleEarningRecord::create([
+            //     'cloth_upper_name' => $data['cloth_upper_name'],
+            //     'cloth_lower_name' => $data['cloth_lower_name'],
+            //     'total_cloth_price' => $data['total_cloth_price'],
+            //     'total_bill' => $data['total_bill'],
+            //     'tailor_wage' => $data['tailor_wage'],
+            //     'tailor_name' => $data['assigned_employee_name'],
+            //     'tailor_mobile_number' => $data['assigned_employee_mobile_number'],
+            //     'deposite_amount' => $data['deposite_amount'],
+            //     'rest_amount' => $data['rest_amount'],
+            //     'orderer_tarikh' => $data['orderer_tarikh'],
+            //     'delivery_tarikh' => $data['delivery_tarikh']
+            // ]);
 
-            if ($done) {
+            $shop = ShopEarnings::where('id', 1)->first();
 
+            if ($shop == null) {
                 ShopEarnings::create([
                     'total_balance' => $data[''],
                     'total_wages_balance' => $data[''],
@@ -113,6 +114,16 @@ class VendorOrderReportController extends Controller
                     'total_cost' => $data[''],
                     'total_revenue' => $data['']
                 ]);
+            }
+
+
+
+            if (true) {
+
+
+                $shop_earnings = ShopEarnings::where('id', 1)->first();
+
+                dd($shop_earnings);
 
 
                 toastr()->success('Payment Pending Successfully');
