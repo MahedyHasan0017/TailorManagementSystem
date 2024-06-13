@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\EmployeeController;
 use App\Http\Controllers\Auth\VendorController;
 use App\Http\Controllers\ClothOrder\OrderAcceptingController;
 use App\Http\Controllers\Employee\BalanceManagementController;
+use App\Http\Controllers\Employee\EmployeeOrderReportController;
 use App\Http\Controllers\EmployeeManagement\AddEmployeeController;
 use App\Http\Controllers\EmployeeManagement\ListEmployeeController;
 use App\Http\Controllers\EmployeeManagement\SalaryEmployeeController;
@@ -26,6 +27,7 @@ use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
 use App\Http\Controllers\ShopEarningsController;
 use App\Http\Controllers\SubscriptionPaymentController;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
@@ -273,12 +275,20 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
     });
 
 
+    Route::group(['prefix' => 'order-report'], function () {
+        Route::get('running/order/{vendor_id}/{employee_id}', [EmployeeOrderReportController::class, 'running_order'])->name('employee.running.order.list');
+        Route::get('ready/order/{vendor_id}/{employee_id}', [EmployeeOrderReportController::class, 'ready_order'])->name('employee.ready.order.list');
+        Route::get('delivered/order/{vendor_id}/{employee_id}', [EmployeeOrderReportController::class, 'delivered_order'])->name('employee.delivered.order.list');
+        // Route::get('order/ready/store/{id}/{employee_id}', [VendorOrderReportController::class, 'ready_order_store'])->name('vendor.ready.order.store');
+        // Route::post('delivered/order/success/store', [VendorOrderReportController::class, 'vendor_pay_employee'])->name('vendor.delivered.order.store');
+        // Route::get('payment/history/{vendor_id}/{employee_id}', [VendorOrderReportController::class, 'vendor_payment_history'])->name('vendor.payment.history.list');
+    });
+
+
 
     Route::group(['prefix' => 'balance'], function () {
         Route::get('pending/{vendor_id}/{employee_id}', [BalanceManagementController::class, 'employee_pending_balance_list'])->name('employee.pending.balance.list');
         Route::get('recieved/{vendor_id}/{employee_id}', [BalanceManagementController::class, 'employee_recieved_balance_list'])->name('employee.recieved.balance.list');
-
-
         Route::post('pending/order/recieved/store', [BalanceManagementController::class, 'employee_pending_order_recieved_store'])->name('employee.pending.order.recieved.store');
     });
 });

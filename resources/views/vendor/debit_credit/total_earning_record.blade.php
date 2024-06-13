@@ -43,33 +43,32 @@
                                     <tr>
 
                                         <td>
-
+                                            {{ $record->total_balance }}
                                         </td>
 
                                         <td>
-
+                                            {{ $record->total_balance }}
                                         </td>
 
                                         <td>
-
+                                            {{ $record->total_wages_balance }}
                                         </td>
 
                                         <td>
-
+                                            {{ $record->total_deposite_balance }}
                                         </td>
                                         <td>
-
-                                        </td>
-
-                                        <td id=''>
-
+                                            {{ $record->total_rest_balance }}
                                         </td>
 
                                         <td>
-
+                                            {{ $record->total_income }}
                                         </td>
                                         <td>
-
+                                            {{ $record->total_cost }}
+                                        </td>
+                                        <td>
+                                            {{ $record->total_revenue }}
                                         </td>
                                     </tr>
                                 @endforeach

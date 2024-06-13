@@ -135,19 +135,13 @@
                                                     <input type="text" name="order_id" value="{{ $cloth_order->id }}"
                                                         hidden>
 
-                                                    @if ($cloth_order->cloth_name->upper_part_dress_name != null)
-                                                        <input type="text" name="cloth_upper_name"
-                                                            value="{{ $cloth_order->cloth_name->upper_part_dress_name }}"
-                                                            hidden>
-                                                    @endif
+                                                    <input type="text" name="cloth_upper_name"
+                                                        value="{{ $cloth_order->cloth_name->upper_part_dress_name }}"
+                                                        hidden>
 
-                                                    @if ($cloth_order->cloth_name->lower_part_dress_name != null)
-                                                        <input type="text" name="cloth_lower_name"
-                                                            value="{{ $cloth_order->cloth_name->lower_part_dress_name }}"
-                                                            hidden>
-                                                    @endif
-
-
+                                                    <input type="text" name="cloth_lower_name"
+                                                        value="{{ $cloth_order->cloth_name->lower_part_dress_name }}"
+                                                        hidden>
 
                                                     <input type="text" name="total_cloth_price" hidden
                                                         value="{{ $cloth_order->cloth_name->total_of_upper_and_lower_part_dress }}">

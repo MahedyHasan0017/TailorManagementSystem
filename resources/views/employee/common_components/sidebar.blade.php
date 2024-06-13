@@ -216,20 +216,24 @@
                                 href="order.html" aria-expanded="false"><i class="fas fa-file"></i><span
                                     class="hide-menu">রিপোর্ট </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('admin.order.report.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('employee.running.order.list', ['vendor_id' => $employee->vendor_mobile, 'employee_id' => $employee->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">চলমান অর্ডার
                                         </span></a></li>
 
-                                <li class="sidebar-item"><a href="{{ route('admin.order.report.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('employee.ready.order.list', ['vendor_id' => $employee->vendor_mobile, 'employee_id' => $employee->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">প্রস্তুত অর্ডার
                                         </span></a></li>
 
-                                <li class="sidebar-item"><a href="{{ route('admin.order.report.view') }}"
+                                <li class="sidebar-item"><a
+                                        href="{{ route('employee.delivered.order.list', ['vendor_id' => $employee->vendor_mobile, 'employee_id' => $employee->mobile_number]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">অর্ডার বিতরণ
                                         </span></a></li>
+
                             </ul>
                         </li>
                     @else

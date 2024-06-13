@@ -29,7 +29,7 @@ class ShopEarningsController extends Controller
     {
         // dd($request->all());
 
-        $earning_records = SingleEarningRecord::orderBy('created_at', 'desc')->get();
+        $earning_records = ShopEarnings::orderBy('created_at', 'desc')->get();
         return view('vendor.debit_credit.total_earning_record', compact('earning_records'));
     }
 }

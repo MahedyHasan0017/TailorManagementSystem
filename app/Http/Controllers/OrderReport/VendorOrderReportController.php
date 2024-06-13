@@ -62,7 +62,8 @@ class VendorOrderReportController extends Controller
 
     public function vendor_pay_employee(Request $request)
     {
-        // payment_status
+
+
         $data = $request->validate([
             'order_id' => 'required',
             'cloth_upper_name' => 'sometimes',
@@ -80,54 +81,69 @@ class VendorOrderReportController extends Controller
             'wages_of_product' => 'required'
         ]);
 
+        // dd();
+
+
+        // if($data['cloth_upper_name'] == Undefined )
+
+
 
         $order = ClothOrder::where('id', $data['order_id'])->first();
         $order->status = 'payment_pending';
-        // $completed = $order->save();
+        $completed = $order->save();
 
-        if (true) {
+        if ($completed) {
             $order = ClothOrder::where('id', $data['order_id'])->first();
 
-            // $done = SingleEarningRecord::create([
-            //     'cloth_upper_name' => $data['cloth_upper_name'],
-            //     'cloth_lower_name' => $data['cloth_lower_name'],
-            //     'total_cloth_price' => $data['total_cloth_price'],
-            //     'total_bill' => $data['total_bill'],
-            //     'tailor_wage' => $data['tailor_wage'],
-            //     'tailor_name' => $data['assigned_employee_name'],
-            //     'tailor_mobile_number' => $data['assigned_employee_mobile_number'],
-            //     'deposite_amount' => $data['deposite_amount'],
-            //     'rest_amount' => $data['rest_amount'],
-            //     'orderer_tarikh' => $data['orderer_tarikh'],
-            //     'delivery_tarikh' => $data['delivery_tarikh']
-            // ]);
+            $done = SingleEarningRecord::create([
+                'cloth_upper_name' => $data['cloth_upper_name'],
+                'cloth_lower_name' => $data['cloth_lower_name'],
+                'total_cloth_price' => $data['total_cloth_price'],
+                'total_bill' => $data['total_bill'],
+                'tailor_wage' => $data['tailor_wage'],
+                'tailor_name' => $data['assigned_employee_name'],
+                'tailor_mobile_number' => $data['assigned_employee_mobile_number'],
+                'deposite_amount' => $data['deposite_amount'],
+                'rest_amount' => $data['rest_amount'],
+                'orderer_tarikh' => $data['orderer_tarikh'],
+                'delivery_tarikh' => $data['delivery_tarikh']
+            ]);
 
             $shop = ShopEarnings::where('id', 1)->first();
 
             if ($shop == null) {
                 ShopEarnings::create([
-                    'total_balance' => $data[''],
-                    'total_wages_balance' => $data[''],
-                    'total_deposite_balance' => $data[''],
-                    'total_rest_balance' => $data[''],
-                    'total_income' => $data[''],
-                    'total_cost' => $data[''],
-                    'total_revenue' => $data['']
+                    'total_balance' => 0,
+                    'total_wages_balance' => 0,
+                    'total_deposite_balance' => 0,
+                    'total_rest_balance' => 0,
+                    'total_income' => 0,
+                    'total_cost' => 0,
+                    'total_revenue' => 0
                 ]);
             }
 
 
 
-            if (true) {
+            if ($done) {
 
 
                 $shop_earnings = ShopEarnings::where('id', 1)->first();
 
-                dd($shop_earnings);
+                $shop_earnings->total_balance = $shop_earnings->total_balance +  $data['total_bill'];
+                $shop_earnings->total_wages_balance = $shop_earnings->total_wages_balance + $data['tailor_wage'];
+                $shop_earnings->total_deposite_balance = $shop_earnings->total_deposite_balance + $data['deposite_amount'];
+                $shop_earnings->total_rest_balance = $shop_earnings->total_rest_balance + ($data['total_bill'] - $data['deposite_amount']);
+                $shop_earnings->total_income = $shop_earnings->total_balance +  $data['total_bill'];
+                $shop_earnings->total_cost = $shop_earnings->total_cost + $data['tailor_wage'];
+                $shop_earnings->total_revenue = $shop_earnings->total_balance -  $shop_earnings->total_cost;
 
+                $done = $shop_earnings->save();
 
-                toastr()->success('Payment Pending Successfully');
-                return redirect()->back();
+                if ($done) {
+                    toastr()->success('Payment Pending Successfully');
+                    return redirect()->back();
+                }
             } else {
                 toastr()->error('Something Went Wrong!');
                 return redirect()->back();
