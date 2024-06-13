@@ -107,7 +107,7 @@
                                 </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
 
-                                <li class="sidebar-item"><a
+                                {{-- <li class="sidebar-item"><a
                                         href="{{ route('vendor.single.payment.record.view', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">Single Earning
@@ -119,7 +119,7 @@
                                         class="sidebar-link"><i class="fas fa-angle-right"></i><span
                                             class="hide-menu">Total Earning
                                             Record
-                                        </span></a></li>
+                                        </span></a></li> --}}
 
                                 <li class="sidebar-item"><a
                                         href="{{ route('admin.income.cost.account.management.view') }}"
