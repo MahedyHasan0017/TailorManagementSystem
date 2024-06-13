@@ -68,7 +68,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
 
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('vendor_dashboard') }}">
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon ps-2"> -->
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -231,7 +231,9 @@
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:void(0)"><i class="fas fa-lock"></i>
                                         লগইন তথ্য</a>
-                                    <a class="dropdown-item" href="{{ route('vendor.profile.view',['id'=> Auth::guard('vendor')->user()->id]) }}"><i class="fas fa-user"></i>
+                                    <a class="dropdown-item"
+                                        href="{{ route('vendor.profile.view', ['id' => Auth::guard('vendor')->user()->id]) }}"><i
+                                            class="fas fa-user"></i>
                                         প্রোফাইল আপডেট</a>
                                     <a class="dropdown-item" href="javascript:void(0)"><i
                                             class="fas fa-cart-plus"></i>
