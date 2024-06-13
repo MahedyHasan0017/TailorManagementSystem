@@ -253,8 +253,6 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::post('delivered/order/success/store', [VendorOrderReportController::class, 'vendor_pay_employee'])->name('vendor.delivered.order.store');
         Route::get('payment/history/{vendor_id}', [VendorOrderReportController::class, 'vendor_payment_history'])->name('vendor.payment.history.list');
     });
-
-
     Route::group(['prefix' => 'debit-credit'], function () {
         Route::get('single/payment/record/{vendor_id}', [ShopEarningsController::class, 'vendor_single_payment_record'])->name('vendor.single.payment.record.view');
         Route::post('payment/completed/{vendor_id}', [ShopEarningsController::class, 'vendor_payment_completed'])->name('vendor.payment.tailor.completed');

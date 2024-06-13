@@ -132,46 +132,49 @@
                                                 <form action="{{ route('vendor.delivered.order.store') }}" method="post">
                                                     @csrf
 
-                                                    <input type="text" name="order_id" value="{{ $cloth_order->id }}">
+                                                    <input type="text" name="order_id" value="{{ $cloth_order->id }}"
+                                                        hidden>
 
                                                     @if ($cloth_order->cloth_name->upper_part_dress_name != null)
                                                         <input type="text" name="cloth_upper_name"
-                                                            value="{{ $cloth_order->cloth_name->upper_part_dress_name }}">
+                                                            value="{{ $cloth_order->cloth_name->upper_part_dress_name }}"
+                                                            hidden>
                                                     @endif
 
                                                     @if ($cloth_order->cloth_name->lower_part_dress_name != null)
                                                         <input type="text" name="cloth_lower_name"
-                                                            value="{{ $cloth_order->cloth_name->lower_part_dress_name }}">
+                                                            value="{{ $cloth_order->cloth_name->lower_part_dress_name }}"
+                                                            hidden>
                                                     @endif
 
 
 
-                                                    <input type="text" name="total_cloth_price"
+                                                    <input type="text" name="total_cloth_price" hidden
                                                         value="{{ $cloth_order->cloth_name->total_of_upper_and_lower_part_dress }}">
-                                                    <input type="text" name="total_bill"
+                                                    <input type="text" name="total_bill" hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_upper_and_lower_part_dress }}">
-                                                    <input type="text" name="tailor_wage"
+                                                    <input type="text" name="tailor_wage" hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->majurir_poriman }}">
-                                                    <input type="text" name="tailor_name"
+                                                    <input type="text" name="tailor_name" hidden
                                                         value="{{ $cloth_order->assigned_employee_name }}">
-                                                    <input type="text" name="tailor_mobile_number"
+                                                    <input type="text" name="tailor_mobile_number" hidden
                                                         value="{{ $cloth_order->assigned_employee_mobile_number }}">
-                                                    <input type="text" name="deposite_amount"
+                                                    <input type="text" name="deposite_amount" hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->nogod_prodan }}">
-                                                    <input type="text" name="rest_amount"
+                                                    <input type="text" name="rest_amount" hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->majurir_poriman + $cloth_order->cloth_name->total_of_upper_and_lower_part_dress - $cloth_order->cloth_order_delivary->nogod_prodan }}">
-                                                    <input type="text" name="orderer_tarikh"
+                                                    <input type="text" name="orderer_tarikh" hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->orderer_tarikh }}">
-                                                    <input type="text" name="delivery_tarikh"
+                                                    <input type="text" name="delivery_tarikh" hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->delivery_tarikh }}">
-                                                    <input type="text" name="tailor_status"
+                                                    <input type="text" name="tailor_status" hidden
                                                         value="{{ $cloth_order->id }}">
 
-                                                    <input type="text" name="assigned_employee_name"
+                                                    <input type="text" name="assigned_employee_name" hidden
                                                         value="{{ $cloth_order->assigned_employee_name }}">
-                                                    <input type="text" name='assigned_employee_mobile_number'
+                                                    <input type="text" name='assigned_employee_mobile_number' hidden
                                                         value="{{ $cloth_order->assigned_employee_mobile_number }}">
-                                                    <input type="text" name='wages_of_product'
+                                                    <input type="text" name='wages_of_product' hidden
                                                         value="{{ $cloth_order->cloth_order_delivary->majurir_poriman }}">
                                                     <button type="submit" class="btn btn-primary btn-sm w-100">Pay
                                                         Tailor</button>

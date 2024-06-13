@@ -5,6 +5,7 @@ namespace App\Http\Controllers\OrderReport;
 use App\Http\Controllers\Controller;
 use App\Models\ClothOrder;
 use App\Models\Employee;
+use App\Models\ShopEarnings;
 use App\Models\SingleEarningRecord;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -102,6 +103,18 @@ class VendorOrderReportController extends Controller
             ]);
 
             if ($done) {
+
+                ShopEarnings::create([
+                    'total_balance' => $data[''],
+                    'total_wages_balance' => $data[''],
+                    'total_deposite_balance' => $data[''],
+                    'total_rest_balance' => $data[''],
+                    'total_income' => $data[''],
+                    'total_cost' => $data[''],
+                    'total_revenue' => $data['']
+                ]);
+
+
                 toastr()->success('Payment Pending Successfully');
                 return redirect()->back();
             } else {
