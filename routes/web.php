@@ -27,25 +27,8 @@ use App\Http\Controllers\Settings\LanguageSettingsController;
 use App\Http\Controllers\Settings\SmsTemplateController;
 use App\Http\Controllers\ShopEarningsController;
 use App\Http\Controllers\SubscriptionPaymentController;
-use App\Models\Employee;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/api', function () {
-
-    $response = Http::get('https://jsonplaceholder.typicode.com/posts');
-
-    if ($response->successful()) {
-        $posts = $response->json();
-    } else {
-        // Handle errors
-    }
-
-    dd($posts);
-
-    return $posts;
-});
 
 Route::get('/', function () {
     return redirect()->route('super_admin_dashboard');
@@ -205,9 +188,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     });
 });
 
-// {{ route('admin.settings.dress.info', ['id' => Auth::guard('vendor')->user()->mobile_number]) }}
-
-
 
 Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
 
@@ -274,7 +254,6 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
         Route::post('order/ready', [OrderAcceptingController::class, 'employee_order_ready'])->name('employee.order.ready');
     });
 
-
     Route::group(['prefix' => 'order-report'], function () {
         Route::get('running/order/{vendor_id}/{employee_id}', [EmployeeOrderReportController::class, 'running_order'])->name('employee.running.order.list');
         Route::get('ready/order/{vendor_id}/{employee_id}', [EmployeeOrderReportController::class, 'ready_order'])->name('employee.ready.order.list');
@@ -283,8 +262,6 @@ Route::group(['prefix' => 'employee', 'middleware' => 'employee'], function () {
         // Route::post('delivered/order/success/store', [VendorOrderReportController::class, 'vendor_pay_employee'])->name('vendor.delivered.order.store');
         // Route::get('payment/history/{vendor_id}/{employee_id}', [VendorOrderReportController::class, 'vendor_payment_history'])->name('vendor.payment.history.list');
     });
-
-
 
     Route::group(['prefix' => 'balance'], function () {
         Route::get('pending/{vendor_id}/{employee_id}', [BalanceManagementController::class, 'employee_pending_balance_list'])->name('employee.pending.balance.list');

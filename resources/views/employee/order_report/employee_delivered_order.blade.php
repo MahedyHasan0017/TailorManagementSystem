@@ -46,10 +46,6 @@
 
                                 @foreach ($cloth_orders as $cloth_order)
                                     <tr>
-
-
-
-                                        {{-- <td>{{ $cloth_order->id }}</td> --}}
                                         <td id='customer_name'>
                                             {{ $cloth_order->customer_name }}
 

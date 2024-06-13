@@ -1,6 +1,6 @@
 <footer class="footer text-center">
-    All Rights Reserved by Zero Point Computing. Designed and Developed by <a
-        href="https://www.zeropointcomputing.com">Zero-Point-Computing</a>.
+    Copyright © 2024 Best Web Design and Development Company in Rajshahi, Bangladesh | <a
+        href="https://www.zeropointcomputing.com">Zeropoint Computing</a>.
 </footer>
 
 </div>
