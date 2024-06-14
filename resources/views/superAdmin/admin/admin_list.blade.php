@@ -6,7 +6,7 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Admin লিস্ট</h4>
+                    <h4 class="page-title">System Admin</h4>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -46,14 +46,19 @@
                                         <td>{{ $admin->name }}</td>
                                         <th>{{ $admin->email }}</th>
 
-                                        <td>
+                                        <td class="text-end">
 
                                             <a href="{{ route('auth.update.manager.from.admin', ['id' => $admin->id]) }}"
-                                                class="btn btn-primary">update to manager</a>
+                                                class="btn btn-primary mb-2">update to manager</a>
 
                                             @if (Auth::guard('admin')->user()->status == 5)
-                                                <a href="{{ route('auth.delete.superadmin.from.admin', ['id' => $admin->id]) }}"
-                                                    class="btn btn-primary">Delete</a>
+                                                <form
+                                                    action="{{ route('auth.delete.superadmin.from.admin', ['id' => $admin->id]) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-primary" type="submit">Delete</button>
+                                                </form>
                                             @endif
 
 

@@ -36,9 +36,9 @@
                                     <th>Manager mobile number/email</th>
                                     <th>Action</th>
                                     <!-- <th>অর্ডারের তারিখ</th>
-                                                <th>ডেলিভারির তারিখ </th>
-                                                <th>মোট বিল</th>
-                                                <th>জমার পরিমান</th> -->
+                                                                <th>ডেলিভারির তারিখ </th>
+                                                                <th>মোট বিল</th>
+                                                                <th>জমার পরিমান</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,15 +49,22 @@
                                         <td>{{ $manager->name }}</td>
                                         <th>{{ $manager->email }}</th>
 
-                                        <td>
+                                        <td style="text-align: right">
 
 
                                             @if (Auth::guard('admin')->user()->status != 0)
                                                 <a href="{{ route('auth.update.superadmin.from.admin', ['id' => $manager->id]) }}"
-                                                    class="btn btn-primary">update to system admin</a>
+                                                    class="btn btn-primary mb-2">update to system admin</a>
                                                 @if (Auth::guard('admin')->user()->status == 5)
-                                                    <a href="{{ route('auth.delete.superadmin.from.admin', ['id' => $manager->id]) }}"
-                                                        class="btn btn-primary">Delete</a>
+                                                    <form
+                                                        action="{{ route('auth.delete.superadmin.from.admin', ['id' => $manager->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-primary">
+                                                            Delete
+                                                        </button>
+                                                    </form>
                                                 @endif
                                             @endif
 

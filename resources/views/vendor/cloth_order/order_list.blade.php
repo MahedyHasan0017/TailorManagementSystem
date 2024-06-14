@@ -71,7 +71,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important">শুরুর
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                            name="order_number"> -->
+                                                                                                        name="order_number"> -->
                                         <input id="datepicker1" class="form-control" />
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <label for="order_number" class="form-label form_input_group_label_important"> শেষের
                                             তারিখ : <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                            name="order_number"> -->
+                                                                                                        name="order_number"> -->
 
                                         <input id="datepicker2" class="form-control" />
                                     </div>
@@ -93,7 +93,7 @@
                                             স্ট্যাটাস :
                                             <span style="color:red">*</span></label>
                                         <!-- <input type="text" class="form-control" id="order_number"
-                                                                            name="order_number"> -->
+                                                                                                        name="order_number"> -->
                                         <select name="" id="" class="form-control">
                                             <option value="">All</option>
                                             <option value="">রানিং</option>
@@ -218,8 +218,16 @@
                                                     view
                                                 </a>
                                             </span>
-                                            <span><a href="{{ route('vendor.order.details.delete', ['id' => $cloth_order->id]) }}"
-                                                    class="btn btn-danger btn-sm w-100 mt-1">delete</a></span>
+                                            <span>
+                                                <form
+                                                    action="{{ route('vendor.order.details.delete', ['id' => $cloth_order->id]) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                        class="btn btn-danger btn-sm w-100 mt-1">delete</button>
+                                                </form>
+                                            </span>
                                         </td>
                                     </tr>
                                 @endforeach

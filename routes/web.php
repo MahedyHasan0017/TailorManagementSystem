@@ -36,13 +36,13 @@ Route::get('/', function () {
 
 
 
-Route::get('/super_admin', [AdminController::class, 'index'])->name('super_admin_dashboard')->middleware('admin');
+Route::get('admin', [AdminController::class, 'index'])->name('super_admin_dashboard')->middleware('admin');
 
-Route::get('/vendor', [VendorController::class, 'index'])->name('vendor_dashboard')->middleware('vendor');
+Route::get('vendor', [VendorController::class, 'index'])->name('vendor_dashboard')->middleware('vendor');
 
-Route::get('/employee', [EmployeeController::class, 'index'])->name('employee_dashboard')->middleware('employee');
+Route::get('employee', [EmployeeController::class, 'index'])->name('employee_dashboard')->middleware('employee');
 
-Route::get('/docs', function () {
+Route::get('docs', function () {
     return view('docs');
 })->name('docs');
 
@@ -58,12 +58,12 @@ Route::group(['prefix' => 'auth'], function () {
         Route::post('register/store', [AdminController::class, 'register_store'])->name('auth.admin.register.store');
 
         Route::group(['middleware' => 'admin'], function () {
-            Route::get('super-admin/list', [AdminController::class, 'super_admin_list'])->name('auth.super_admin.list.view');
+            Route::get('admin/list', [AdminController::class, 'super_admin_list'])->name('auth.super_admin.list.view');
             Route::get('manager/list', [AdminController::class, 'manager_list'])->name('auth.manager.list.view');
 
             Route::get('/update/manager/{id}', [AdminController::class, 'update_manager_from_admin'])->name('auth.update.manager.from.admin');
-            Route::get('/update/super-admin/{id}', [AdminController::class, 'update_super_admin_from_admin'])->name('auth.update.superadmin.from.admin');
-            Route::get('/delete/super-admin/{id}', [AdminController::class, 'delete_super_admin_from_admin'])->name('auth.delete.superadmin.from.admin');
+            Route::get('/update/admin/{id}', [AdminController::class, 'update_super_admin_from_admin'])->name('auth.update.superadmin.from.admin');
+            Route::delete('/delete/admin/{id}', [AdminController::class, 'delete_admin_from_admin_panel'])->name('auth.delete.superadmin.from.admin');
 
 
             Route::get('register/vendor', [AdminController::class, 'vendor_register_from_admin'])->name('auth.admin.register.vendor.view');
@@ -117,7 +117,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         // Route::post('order/accepting/con', [OrderAcceptingController::class, 'order_accepting_store'])->name('admin.order.accepting.store');
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'admin_order_accepting_store'])->name('admin.order.accepting.store');
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'order_details_view'])->name('admin.order.details.view');
-        Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'order_details_delete'])->name('admin.order.details.delete');
+        Route::delete('order/details/delete/{id}', [OrderAcceptingController::class, 'order_details_delete'])->name('admin.order.details.delete');
         Route::get('order/accepted/list', [OrderAcceptingController::class, 'order_accepted_list'])->name('admin.order.accepting.list');
         // Route::post('add/cloth-type/store', [ClothTypeController::class, 'add_cloth_type_store'])->name('admin.add.cloth.store');
     });
@@ -195,7 +195,7 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::get('order/accepting/{id}', [OrderAcceptingController::class, 'vendor_order_accepting'])->name('vendor.order.accepting.view')->middleware('vendor');
         Route::get('order/details/view/{id}', [OrderAcceptingController::class, 'vendor_order_details_view'])->name('vendor.order.details.view');
         Route::get('order/accepted/list/{mobile_number}', [OrderAcceptingController::class, 'vendor_order_accepted_list'])->name('vendor.order.accepting.list');
-        Route::get('order/details/delete/{id}', [OrderAcceptingController::class, 'vendor_order_details_delete'])->name('vendor.order.details.delete');
+        Route::delete('order/details/delete/{id}', [OrderAcceptingController::class, 'vendor_order_details_delete'])->name('vendor.order.details.delete');
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
     });
 

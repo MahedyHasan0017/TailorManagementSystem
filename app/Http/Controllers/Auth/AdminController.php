@@ -149,10 +149,9 @@ class AdminController extends Controller
         }
     }
 
-    public function delete_super_admin_from_admin(Request $request, $id)
+    public function delete_admin_from_admin_panel(Request $request, $id)
     {
-
-
+        // dd($id);
         $admin = AdminUser::where('id', $id)->first();
         $done = $admin->delete();
         if ($done) {

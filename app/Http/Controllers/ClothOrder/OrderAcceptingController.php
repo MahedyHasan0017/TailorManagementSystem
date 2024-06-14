@@ -867,6 +867,7 @@ class OrderAcceptingController extends Controller
 
     public function vendor_order_details_delete(Request $request, $id)
     {
+        // dd($id);
         $cloth = ClothOrder::where('id', $id)->first();
         $done = $cloth->delete();
         if ($done) {
