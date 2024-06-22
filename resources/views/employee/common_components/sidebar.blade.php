@@ -80,6 +80,12 @@
                                             নির্ধারিত অর্ডারের তালিকা
                                         </span></a></li>
 
+                                <li class="sidebar-item"><a
+                                        href="{{ route('employee.order.assigned.list', ['vendor_id' => $employee->vendor_mobile, 'employee_id' => $employee->mobile_number]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span class="hide-menu">
+                                            চেক লিস্ট 
+                                        </span></a></li>
+
                             </ul>
                         </li>
                     @else

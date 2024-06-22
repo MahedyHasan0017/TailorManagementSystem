@@ -51,6 +51,26 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
+
+    <style>
+        .cotton_detail_unit {
+            display: flex;
+            align-content: center;
+            gap: 10px;
+        }
+
+        .cotton_price_unit {
+            display: flex;
+            align-items: baseline;
+            flex-direction: column;
+            justify-content: end;
+        }
+    </style>
+
+
+
 </head>
 
 <body>

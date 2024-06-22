@@ -236,6 +236,26 @@
                                 </li>
                             </ul>
                         </li> --}}
+
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="order.html" aria-expanded="false"><i class="fas fa-envelope"></i><span
+                                    class="hide-menu">Inventory
+                                </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a
+                                        href="{{ route('inventory.cotton.add.vendor', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">
+                                            Add Cotton
+                                        </span></a></li>
+                                <li class="sidebar-item"><a
+                                        href="{{ route('inventory.cotton.list.vendor', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">
+                                            View Cotton List
+                                        </span></a></li>
+                            </ul>
+                        </li>
                     @endif
                 @endif
 

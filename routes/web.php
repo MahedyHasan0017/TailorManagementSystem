@@ -12,6 +12,7 @@ use App\Http\Controllers\EmployeeManagement\SalaryEmployeeController;
 use App\Http\Controllers\IncomeCost\AccountManagementController;
 use App\Http\Controllers\IncomeCost\DurationSummaryController;
 use App\Http\Controllers\IncomeCost\QSectorController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\MessageSending\SendingMessageController;
 use App\Http\Controllers\MessageSending\SendingMessageListController;
 use App\Http\Controllers\OrderReport\VendorOrderReportController;
@@ -199,7 +200,6 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::post('order/accepting/store', [OrderAcceptingController::class, 'order_accepting_store'])->name('order.accepting.store');
     });
 
-
     Route::group(['prefix' => 'permissions'], function () {
         Route::group(['prefix' => 'employee'], function () {
             Route::get('/register/{mobile}', [EmployeeController::class, 'register'])->name('vendor.employee.register.view');
@@ -239,6 +239,15 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::get('single/payment/record/{vendor_id}', [ShopEarningsController::class, 'vendor_single_payment_record'])->name('vendor.single.payment.record.view');
         Route::post('payment/completed/{vendor_id}', [ShopEarningsController::class, 'vendor_payment_completed'])->name('vendor.payment.tailor.completed');
         Route::get('total/earning/record/{vendor_id}', [ShopEarningsController::class, 'total_earning_record'])->name('total.earning.record.view');
+    });
+
+    Route::group(['prefix' => 'inventory'], function () {
+        Route::get('cotton/add/{vendor_id}', [InventoryController::class, 'add_cotton_from_vendor'])->name('inventory.cotton.add.vendor');
+        Route::post('cotton/add/{vendor_id}/store', [InventoryController::class, 'add_cotton_from_vendor_store'])->name('inventory.cotton.add.vendor.store');
+        Route::get('cotton/list/{vendor_id}', [InventoryController::class, 'cotton_list_from_vendor'])->name('inventory.cotton.list.vendor');
+        Route::get('cotton/list/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_single_from_vendor'])->name('inventory.cotton.details.vendor');
+
+        Route::post('cotton/production/calc/store/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_production_calculation_view'])->name('inventory.cotton.production.calculation.store');
     });
 });
 
