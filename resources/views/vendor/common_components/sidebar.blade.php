@@ -254,6 +254,14 @@
                                             class="hide-menu">
                                             View Cotton List
                                         </span></a></li>
+
+                                <li class="sidebar-item"><a
+                                        href="{{ route('inventory.cotton.in.production.list.vendor', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                                        class="sidebar-link"><i class="fas fa-angle-right"></i><span
+                                            class="hide-menu">
+                                            Cotton In Production List
+                                        </span></a></li>
+
                             </ul>
                         </li>
                     @endif

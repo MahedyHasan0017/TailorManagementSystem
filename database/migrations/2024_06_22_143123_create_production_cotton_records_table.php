@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('production_cotton_records', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('inventory_id')->constrained('inventories')->cascadeOnDelete();
+            $table->string('cotton_yards_for_production');
+            $table->string('cotton_joint_for_production');
             $table->timestamps();
         });
     }

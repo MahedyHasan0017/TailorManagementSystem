@@ -67,6 +67,17 @@
             flex-direction: column;
             justify-content: end;
         }
+
+        .cotton_unit_list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cotton_unit_list_unit {
+            border: 1px solid black;
+            width: 48%;
+            text-align: center;
+        }
     </style>
 
 

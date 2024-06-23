@@ -6,7 +6,7 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Add Cotton</h4>
+                    <h4 class="page-title">Add More Cotton</h4>
                     <div class="ms-auto text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -26,35 +26,39 @@
             </div>
 
             <form
-                action="{{ route('inventory.cotton.add.vendor.store', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id]) }}"
+                action="{{ route('inventory.cotton.update.single.vendor.store', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id, 'cotton_id' => $cotton->id]) }}"
                 method="post">
 
                 @csrf
 
+                <input type="text" name='cotton_id' id='cotton_id' value="{{ $cotton->id }}" hidden>
 
                 <div class="row">
                     <div class="col-md-6">
                         <div>
-                            <input type="text" class="form-control" name="supplier_company_name"
+                            <input type="text" class="form-control"
+                                value="{{ $cotton->supplier[$n - 1]->supplier_company_name }}" name="supplier_company_name"
                                 id="supplier_company_name" placeholder="Company Name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div>
-                            <input type="text" class="form-control" name="supplier_name" id="supplier_name"
-                                placeholder="Supplier Name" required>
+                            <input type="text" class="form-control" value="{{ $cotton->supplier[$n - 1]->supplier_name }}"
+                                name="supplier_name" id="supplier_name" placeholder="Supplier Name">
                         </div>
                     </div>
                     <div class="col-md-6 mt-2">
                         <div>
-                            <input type="text" class="form-control" name="supplier_mobile_number"
-                                id="supplier_mobile_number" placeholder="Supplier Mobile Number" required>
+                            <input type="text" class="form-control"
+                                value="{{ $cotton->supplier[$n - 1]->supplier_mobile_number }}" name="supplier_mobile_number"
+                                id="supplier_mobile_number" placeholder="Supplier Mobile Number">
                         </div>
                     </div>
                     <div class="col-md-6 mt-2">
                         <div>
-                            <input type="text" class="form-control" name="supplier_address" id="supplier_address"
-                                placeholder="Supplier Address">
+                            <input type="text" class="form-control"
+                                value="{{ $cotton->supplier[$n - 1]->supplier_address }}" name="supplier_address"
+                                id="supplier_address" placeholder="Supplier Address">
                         </div>
                     </div>
                 </div>
@@ -68,39 +72,55 @@
                     <div class="col-md-6">
                         <div>
                             <input type="text" class="form-control" name="cotton_name" id="cotton_name"
-                                placeholder="Cotton Name" required>
+                                placeholder="Cotton Name" value="{{ $cotton->cotton_name }}" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div>
                             <input type="text" class="form-control" name="cotton_type" id="cotton_type"
-                                placeholder="Cotton Type" required>
+                                placeholder="Cotton Type" value="{{ $cotton->cotton_type }}" readonly>
                         </div>
                     </div>
                     <div class="col-md-6 mt-2">
                         <div>
                             <input type="number" min=0 class="form-control" name="cotton_price" id="cotton_price"
-                                placeholder="Cotton Price" required>
+                                placeholder="Cotton Price" value="{{ $cotton->cotton_price }}" readonly>
                         </div>
                     </div>
                     <div class="col-md-6 mt-2">
                         <div>
-                            <select name="cotton_size" class="form-control" id="cotton_size">
-                                <option value="">Cotton Size</option>
-                                <option value="2">2</option>
-                                <option value="2.5">2.5</option>
-                                <option value="3">3</option>
-                                <option value="3.5">3.5</option>
-                            </select>
+                            {{-- <input type="number" min=0 class="form-control" name="cotton_price" id="cotton_price"
+                                placeholder="Cotton Price"> --}}
                         </div>
                     </div>
                     <div class="col-md-6 mt-2">
                         <div>
                             <textarea name="cotton_description" class="form-control" id="cotton_description" cols="30" rows="4"
-                                placeholder='Cotton Description'></textarea>
+                                placeholder='Cotton Description'>
+                                {{ $cotton->cotton_description }}
+                            </textarea>
                         </div>
                     </div>
                     <div class="col-md-6 mt-2 cotton_price_unit">
+
+                        <div class="row w-100">
+                            <h5 style="display: flex ; gap : 10px ">
+                                <div>
+                                    Cotton In Stock :
+                                </div>
+                                <div>
+                                    <div style="display: flex ; gap : 20px; ">
+                                        <div>
+                                            Yards-{{ $cotton->cotton_yards }}
+                                        </div>
+                                        <div>
+                                            Joints-{{ $cotton->cotton_joint }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </h5>
+                        </div>
+
                         <div class="row w-100">
                             <div class="col-6">
                                 <div>

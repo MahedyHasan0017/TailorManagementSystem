@@ -9,22 +9,20 @@ class Supplier extends Model
 {
     use HasFactory;
 
-
     public $timestamps = true;
-
-
 
     protected $fillable = [
         'supplier_company_name',
         'supplier_name',
         'supplier_mobile_number',
         'supplier_address',
-        'inventory_id'
+        'inventory_id',
+        'cotton_yards_from_supplier',
+        'cotton_joint_from_supplier'
     ];
-
 
     public function inventory()
     {
-        return $this->hasOne(Supplier::class);
+        return $this->belongsTo(Inventory::class);
     }
 }

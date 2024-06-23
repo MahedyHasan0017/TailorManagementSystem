@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            // add inventory order with foreign key with supplier one inventory order have one supplier
+            $table->foreignId('inventory_id')->constrained('inventories')->cascadeOnDelete();
             $table->string('supplier_company_name')->nullable();
             $table->string('supplier_name');
             $table->string('supplier_mobile_number');
             $table->string('supplier_address')->nullable();
+            $table->string('cotton_yards_from_supplier');
+            $table->string('cotton_joint_from_supplier');
             $table->timestamps();
         });
     }

@@ -19,13 +19,22 @@ class Inventory extends Model
         'cotton_price',
         'cotton_stock_management_unit',
         'cotton_amount',
+        'cotton_size',
         'vendor_info',
-        'supplier_id'
+        // 'supplier_id',
+        'cotton_yards',
+        'cotton_joint'
     ];
 
 
-    public function supplier(){
-        return $this->belongsTo(Supplier::class) ; 
+    public function supplier()
+    {
+        return $this->hasMany(Supplier::class);
     }
 
+
+    public function production_record()
+    {
+        return $this->hasMany(ProductionCottonRecord::class);
+    }
 }

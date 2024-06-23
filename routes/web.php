@@ -246,8 +246,15 @@ Route::group(['prefix' => 'vendor', 'middleware' => 'vendor'], function () {
         Route::post('cotton/add/{vendor_id}/store', [InventoryController::class, 'add_cotton_from_vendor_store'])->name('inventory.cotton.add.vendor.store');
         Route::get('cotton/list/{vendor_id}', [InventoryController::class, 'cotton_list_from_vendor'])->name('inventory.cotton.list.vendor');
         Route::get('cotton/list/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_single_from_vendor'])->name('inventory.cotton.details.vendor');
+        Route::post('cotton/production/calc/store/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_production_calculation_store'])->name('inventory.cotton.production.calculation.store');
 
-        Route::post('cotton/production/calc/store/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_production_calculation_view'])->name('inventory.cotton.production.calculation.store');
+
+        Route::get('cotton/update/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_update_single_from_vendor'])->name('inventory.cotton.update.single.vendor');
+        Route::post('cotton/update/store/{vendor_id}/{cotton_id}', [InventoryController::class, 'cotton_update_single_from_vendor_store'])->name('inventory.cotton.update.single.vendor.store');
+
+        Route::get('cotton/in-production/list/{vendor_id}', [InventoryController::class, 'cotton_in_production_list_from_vendor'])->name('inventory.cotton.in.production.list.vendor');
+
+        Route::get('cotton/supplier/single/info/{vendor_id}/{cotton_id}/{supplier_id}', [InventoryController::class, 'cotton_supplier_single_info_view'])->name('inventory.cotton.supplier.single.info.view');
     });
 });
 

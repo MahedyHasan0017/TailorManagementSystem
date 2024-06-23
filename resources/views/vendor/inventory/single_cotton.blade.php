@@ -24,19 +24,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="cotton_detail_unit">
-                        <h5>Cotton Name : </h5>
+                        <h5>কাপড়ের নাম : </h5>
                         <h5>{{ $cotton->cotton_name }}</h5>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="cotton_detail_unit">
-                        <h5>Cotton Type : </h5>
+                        <h5>কাপড়ের ধরণ : </h5>
                         <h5>{{ $cotton->cotton_type }}</h5>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="cotton_detail_unit">
-                        <h5>Cotton Price : </h5>
+                        <h5>কাপড়ের মূল্য : </h5>
                         <h5>{{ $cotton->cotton_price }}</h5>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 @if ($cotton->cotton_description != null)
                     <div class="col-md-6">
                         <div class="cotton_detail_unit">
-                            <h5>Cotton Description : </h5>
+                            <h5>কাপড়ের বর্ণনা : </h5>
                             <h5>{{ $cotton->cotton_description }}</h5>
                         </div>
                     </div>
@@ -52,60 +52,81 @@
 
                 <div class="col-md-6">
                     <div class="cotton_detail_unit">
-                        <h5>Cotton Measurement Unit : </h5>
-                        <h5>{{ $cotton->cotton_stock_management_unit }}</h5>
+                        <h5>স্টকের জমা থাকা কাপড় : </h5>
+                        <div>
+                            <h5>{{ $cotton->cotton_yards }} গজ</h5>
+                            <h5>{{ $cotton->cotton_joint }} গিরা </h5>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="cotton_detail_unit">
-                        <h5>Stock Cotton Amount : </h5>
-                        <h5>{{ $cotton->cotton_amount }}</h5>
-                    </div>
-                </div>
+
 
                 <div class="mt-2">
 
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Cotton Amount
-                    </button>
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            Cotton Amount Going For Production
+                        </button>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="{{ route('inventory.cotton.update.single.vendor', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id, 'cotton_id' => $cotton->id]) }}"
+                            class="btn btn-info btn-sm">Add More Cotton To Stock</a>
+                    </div>
+
 
                 </div>
 
             </div>
 
             <div class="row mt-4 mb-2">
-                <h4>Supplier Details</h4>
-            </div>
-            <div class="row">
-                @if ($cotton->supplier->supplier_company_name != null)
-                    <div class="col-md-6">
-                        <div class="cotton_detail_unit">
-                            <h5>Supplier Company Name : </h5>
-                            <h5>{{ $cotton->supplier->supplier_company_name }}</h5>
-                        </div>
-                    </div>
-                @endif
-                <div class="col-md-6">
-                    <div class="cotton_detail_unit">
-                        <h5>Supplier Name : </h5>
-                        <h5>{{ $cotton->supplier->supplier_name }}</h5>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="cotton_detail_unit">
-                        <h5>Supplier Mobile Number : </h5>
-                        <h5>{{ $cotton->supplier->supplier_mobile_number }}</h5>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="cotton_detail_unit">
-                        <h5>Supplier Address : </h5>
-                        <h5>{{ $cotton->supplier->supplier_address }}</h5>
-                    </div>
-                </div>
+                <h4>সাপ্লায়ারের লিস্ট</h4>
             </div>
 
+            <div>
+                @foreach ($suppliers as $supplier)
+                    <div class="row mb-3">
+                        @if ($supplier->supplier_company_name != null)
+                            <div class="col-md-6">
+                                <div class="cotton_detail_unit">
+                                    <h5>সাপ্লায়ারের কোম্পানির নাম : </h5>
+                                    <h5>{{ $supplier->supplier_company_name }}</h5>
+                                </div>
+                            </div>
+                        @endif
+                        <div class="col-md-6">
+                            <div class="cotton_detail_unit">
+                                <h5>সাপ্লায়ারের নাম : </h5>
+                                <h5>
+                                    {{ $supplier->supplier_name }}
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="cotton_detail_unit">
+                                <h5>সাপ্লায়ারের মোবাইল নাম্বার : </h5>
+                                <h5>
+                                    {{ $supplier->supplier_mobile_number }}
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="cotton_detail_unit">
+                                <h5>সাপ্লায়ারের ঠিকানা : </h5>
+                                <h5>{{ $supplier->supplier_address }}</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <a href="{{ route('inventory.cotton.supplier.single.info.view', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id, 'cotton_id' => $cotton->id, 'supplier_id' => $supplier->id]) }}"
+                                class="btn btn-info">
+                                View Supplier Details
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 
@@ -131,8 +152,13 @@
                             <div>
                                 <h5>Cotton Type : {{ $cotton->cotton_type }} </h5>
                             </div>
-                            <div>
-                                <h5>Cotton In Stock : {{ $cotton->cotton_amount }} </h5>
+                            <div style="display: flex; gap : 10px;">
+                                <h5>Cotton In Stock :
+                                </h5>
+                                <div style="display: flex ; gap : 10px">
+                                    <h5>{{ $cotton->cotton_yards }} গজ</h5>
+                                    <h5>{{ $cotton->cotton_joint }} গিরা </h5>
+                                </div>
                             </div>
                             <div>
                                 <h5>Cotton Amount Going For Production : </h5>
@@ -140,21 +166,17 @@
                                     <input type="text" name='production_amount_cotton_id'
                                         id='production_amount_cotton_id' value="{{ $cotton->id }}" hidden />
                                 </div>
-                                <div class="my-3">
-                                    <input type="number" min=0 placeholder="Enter Amount" name='production_amount'
-                                        id='production_amount' class="form-control" required />
-                                </div>
-                                <div style="display: flex ; align-items : center ; gap : 20px ; ">
-                                    <span>
-                                        <input type="radio" value="meter" name="production_amount_unit"
-                                            id="production_amount_unit" required>
-                                        <label for="production_amount_unit">Meter</label>
-                                    </span>
-                                    <span style="">
-                                        <input type="radio" value="yards" name="production_amount_unit"
-                                            id="production_amount_unit" required>
-                                        <label for="production_amount_unit">গজ</label>
-                                    </span>
+                                <div class="my-3 row">
+                                    <div class="col-6">
+                                        <input type="number" min=0 placeholder="yards amount"
+                                            name='cotton_yards_for_production' id='cotton_yards_for_production'
+                                            class="form-control" required />
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" min=0 placeholder="joint amount"
+                                            name='cotton_joint_for_production' id='cotton_joint_for_production'
+                                            class="form-control" required />
+                                    </div>
                                 </div>
                             </div>
                         </div>

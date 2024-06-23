@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('supplier_id')->constrained('suppliers')->cascadeOnDelete();
             $table->string('vendor_info');
             $table->string('cotton_name');
             $table->string('cotton_type');
             $table->string('cotton_description')->nullable();
             $table->double('cotton_price');
-            $table->string('cotton_stock_management_unit');
-            $table->string('cotton_amount');
+            $table->string('cotton_stock_management_unit')->nullable();
+            $table->string('cotton_size');
+            $table->string('cotton_yards')->nullable();
+            $table->string('cotton_joint')->nullable();
             $table->timestamps();
         });
     }
