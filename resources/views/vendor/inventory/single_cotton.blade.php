@@ -62,21 +62,16 @@
 
 
                 <div class="mt-2">
-
-
                     <div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
                             Cotton Amount Going For Production
                         </button>
                     </div>
-
                     <div class="mt-3">
                         <a href="{{ route('inventory.cotton.update.single.vendor', ['vendor_id' => Auth::guard('vendor')->user()->vendor_id, 'cotton_id' => $cotton->id]) }}"
                             class="btn btn-info btn-sm">Add More Cotton To Stock</a>
                     </div>
-
-
                 </div>
 
             </div>
@@ -170,12 +165,12 @@
                                     <div class="col-6">
                                         <input type="number" min=0 placeholder="yards amount"
                                             name='cotton_yards_for_production' id='cotton_yards_for_production'
-                                            class="form-control" required />
+                                            class="form-control" />
                                     </div>
                                     <div class="col-6">
-                                        <input type="number" min=0 placeholder="joint amount"
+                                        <input type="number" min=0 max="16" placeholder="joint amount"
                                             name='cotton_joint_for_production' id='cotton_joint_for_production'
-                                            class="form-control" required />
+                                            class="form-control" />
                                     </div>
                                 </div>
                             </div>
